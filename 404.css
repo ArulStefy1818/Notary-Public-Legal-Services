@@ -1,0 +1,795 @@
+/* =========================================================
+   NOTARY PUBLIC & LEGAL SERVICES
+   PROFESSIONAL 404 ERROR PAGE
+   Fixed Viewport | No Unnecessary Scrollbars
+   Responsive | Desktop | Tablet | Mobile
+========================================================= */
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.npl-404-page,
+.npl-404-page * {
+    box-sizing: border-box;
+}
+
+.npl-404-page {
+    --npl-404-dark: #172322;
+    --npl-404-background: #222d2e;
+    --npl-404-gold: #c39a65;
+    --npl-404-light-gold: #e4c99d;
+    --npl-404-white: #ffffff;
+    --npl-404-muted: #bdc6c5;
+
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+
+    min-height: 0;
+    padding: 24px 5%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(195, 154, 101, 0.09),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(195, 154, 101, 0.07),
+            transparent 30%
+        ),
+        var(--npl-404-background);
+
+    color: var(--npl-404-white);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* =========================
+   BACKGROUND DECORATIONS
+========================= */
+
+.npl-404-decoration {
+    position: absolute;
+    z-index: -1;
+
+    border: 1px solid rgba(195, 154, 101, 0.13);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.npl-404-decoration-one {
+    top: -170px;
+    left: -150px;
+
+    width: 400px;
+    height: 400px;
+}
+
+.npl-404-decoration-two {
+    right: -180px;
+    bottom: -200px;
+
+    width: 480px;
+    height: 480px;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.npl-404-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* =========================
+   LOGO
+   Optional if added to HTML
+========================= */
+
+.npl-404-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    text-decoration: none;
+}
+
+.npl-404-logo img {
+    display: block;
+
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+/* =========================
+   404 ILLUSTRATION
+========================= */
+
+.npl-404-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    width: 100%;
+    margin: 0 auto 15px;
+}
+
+.npl-404-number {
+    display: block;
+
+    color: var(--npl-404-gold);
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(90px, 12vw, 145px);
+    font-weight: 800;
+
+    line-height: 0.9;
+
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Center Scale Icon */
+
+.npl-404-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    width: clamp(82px, 10vw, 112px);
+    height: clamp(82px, 10vw, 112px);
+
+    border: 1px solid rgba(195, 154, 101, 0.65);
+    border-radius: 50%;
+
+    background: rgba(10, 17, 16, 0.65);
+
+    color: var(--npl-404-light-gold);
+
+    box-shadow:
+        0 0 0 8px rgba(195, 154, 101, 0.05),
+        0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.npl-404-icon i {
+    font-size: clamp(32px, 4vw, 46px);
+}
+
+/* =========================
+   ERROR CONTENT
+========================= */
+
+.npl-404-content {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.npl-404-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    margin-bottom: 10px;
+
+    color: var(--npl-404-light-gold);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.npl-404-label span {
+    display: block;
+
+    width: 24px;
+    height: 1px;
+
+    background: var(--npl-404-gold);
+}
+
+.npl-404-content h1 {
+    margin: 0;
+
+    color: var(--npl-404-white);
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.npl-404-content > p {
+    max-width: 570px;
+
+    margin: 12px auto 0;
+
+    color: var(--npl-404-muted);
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.npl-404-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-top: 23px;
+}
+
+.npl-404-btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 155px;
+    min-height: 49px;
+
+    padding: 12px 23px;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.npl-404-btn i {
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+/* Go Home Button */
+
+.npl-404-home {
+    border-color: var(--npl-404-gold);
+
+    background: var(--npl-404-gold);
+    color: #17201e;
+}
+
+.npl-404-home:hover {
+    border-color: var(--npl-404-light-gold);
+
+    background: var(--npl-404-light-gold);
+    color: #17201e;
+
+    box-shadow: 0 8px 24px rgba(195, 154, 101, 0.18);
+
+    transform: translateY(-2px);
+}
+
+/* Go Back Button */
+
+.npl-404-back {
+    border-color: rgba(195, 154, 101, 0.65);
+
+    background: transparent;
+    color: var(--npl-404-white);
+}
+
+.npl-404-back:hover {
+    border-color: var(--npl-404-gold);
+
+    background: rgba(195, 154, 101, 0.12);
+    color: var(--npl-404-light-gold);
+
+    transform: translateY(-2px);
+}
+
+/* Remove Default Button Font Differences */
+
+button.npl-404-btn {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Keyboard Accessibility */
+
+.npl-404-btn:focus-visible,
+.npl-404-logo:focus-visible,
+.npl-404-help a:focus-visible {
+    outline: 3px solid var(--npl-404-light-gold);
+    outline-offset: 4px;
+}
+
+/* =========================
+   CONTACT HELP LINK
+========================= */
+
+.npl-404-help {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 21px;
+
+    color: var(--npl-404-muted);
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.npl-404-help > i {
+    margin-right: 3px;
+    color: var(--npl-404-gold);
+}
+
+.npl-404-help a {
+    color: var(--npl-404-light-gold);
+
+    font-weight: 700;
+
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+
+    transition: text-decoration-color 0.3s ease;
+}
+
+.npl-404-help a:hover {
+    text-decoration-color: var(--npl-404-light-gold);
+}
+
+/* =========================
+   DECORATIVE LEGAL SEAL
+========================= */
+
+.npl-404-seal {
+    position: absolute;
+
+    top: 50%;
+    right: -95px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 82px;
+    height: 82px;
+
+    border: 1px solid rgba(195, 154, 101, 0.2);
+    border-radius: 50%;
+
+    color: rgba(228, 201, 157, 0.55);
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+}
+
+.npl-404-seal i {
+    margin-bottom: 2px;
+    font-size: 21px;
+}
+
+/* =========================
+   OPTIONAL FOOTER
+========================= */
+
+.npl-404-footer {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 20px auto 0;
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+}
+
+.npl-404-footer p {
+    margin: 0;
+
+    color: #aab5b3;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+    .npl-404-page {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .npl-404-seal {
+        display: none;
+    }
+
+    .npl-404-illustration {
+        gap: 12px;
+    }
+
+    .npl-404-number {
+        font-size: clamp(90px, 14vw, 130px);
+    }
+
+    .npl-404-icon {
+        width: 95px;
+        height: 95px;
+    }
+
+    .npl-404-content h1 {
+        font-size: clamp(34px, 4.5vw, 44px);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .npl-404-page {
+        padding: 22px 6%;
+    }
+
+    .npl-404-container {
+        max-width: 100%;
+    }
+
+    .npl-404-logo {
+        margin-bottom: 16px;
+    }
+
+    .npl-404-logo img {
+        width: 115px;
+    }
+
+    .npl-404-illustration {
+        gap: 7px;
+        margin-bottom: 17px;
+    }
+
+    .npl-404-number {
+        font-size: clamp(72px, 20vw, 105px);
+        line-height: 0.95;
+    }
+
+    .npl-404-icon {
+        width: clamp(65px, 18vw, 88px);
+        height: clamp(65px, 18vw, 88px);
+    }
+
+    .npl-404-icon i {
+        font-size: clamp(27px, 8vw, 35px);
+    }
+
+    .npl-404-label {
+        gap: 8px;
+        margin-bottom: 9px;
+
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .npl-404-label span {
+        width: 18px;
+    }
+
+    .npl-404-content h1 {
+        font-size: clamp(29px, 7.5vw, 36px);
+        line-height: 1.2;
+    }
+
+    .npl-404-content > p {
+        max-width: 420px;
+
+        margin-top: 12px;
+
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .npl-404-actions {
+        gap: 10px;
+        margin-top: 21px;
+    }
+
+    .npl-404-btn {
+        flex: 1 1 135px;
+
+        min-width: 0;
+        min-height: 47px;
+
+        gap: 8px;
+        padding: 11px 12px;
+
+        font-size: 13px;
+    }
+
+    .npl-404-help {
+        gap: 6px;
+        margin-top: 19px;
+
+        font-size: 12px;
+    }
+
+    .npl-404-decoration-one {
+        top: -170px;
+        left: -180px;
+
+        width: 330px;
+        height: 330px;
+    }
+
+    .npl-404-decoration-two {
+        right: -190px;
+        bottom: -190px;
+
+        width: 350px;
+        height: 350px;
+    }
+
+    .npl-404-footer {
+        margin-top: 16px;
+        padding-top: 10px;
+    }
+
+    .npl-404-footer p {
+        font-size: 10px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+    .npl-404-page {
+        padding: 18px 5%;
+    }
+
+    .npl-404-illustration {
+        gap: 5px;
+        margin-bottom: 14px;
+    }
+
+    .npl-404-number {
+        font-size: clamp(65px, 19vw, 78px);
+    }
+
+    .npl-404-icon {
+        width: 61px;
+        height: 61px;
+    }
+
+    .npl-404-icon i {
+        font-size: 25px;
+    }
+
+    .npl-404-content h1 {
+        font-size: 29px;
+    }
+
+    .npl-404-content > p {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .npl-404-actions {
+        gap: 9px;
+        margin-top: 17px;
+    }
+
+    .npl-404-btn {
+        flex: 1 1 120px;
+        min-height: 44px;
+        padding: 10px 8px;
+
+        font-size: 12px;
+    }
+
+    .npl-404-help {
+        margin-top: 16px;
+        font-size: 11px;
+    }
+}
+
+/* =========================
+   SHORT DESKTOP SCREENS
+========================= */
+
+@media (min-width: 601px) and (max-height: 650px) {
+    .npl-404-page {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .npl-404-illustration {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .npl-404-number {
+        font-size: 85px;
+    }
+
+    .npl-404-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .npl-404-icon i {
+        font-size: 30px;
+    }
+
+    .npl-404-content h1 {
+        font-size: 35px;
+    }
+
+    .npl-404-content > p {
+        margin-top: 8px;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .npl-404-actions {
+        margin-top: 15px;
+    }
+
+    .npl-404-btn {
+        min-height: 43px;
+        padding: 10px 20px;
+    }
+
+    .npl-404-help {
+        margin-top: 12px;
+    }
+}
+
+/* =========================
+   VERY SHORT MOBILE SCREENS
+========================= */
+
+@media (max-width: 600px) and (max-height: 650px) {
+    .npl-404-page {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .npl-404-illustration {
+        margin-bottom: 10px;
+    }
+
+    .npl-404-number {
+        font-size: clamp(58px, 15vw, 78px);
+    }
+
+    .npl-404-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .npl-404-icon i {
+        font-size: 24px;
+    }
+
+    .npl-404-content h1 {
+        font-size: 27px;
+    }
+
+    .npl-404-content > p {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .npl-404-actions {
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .npl-404-btn {
+        min-height: 40px;
+        padding: 9px 10px;
+    }
+
+    .npl-404-help {
+        margin-top: 11px;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-404-btn,
+    .npl-404-help a {
+        transition: none;
+    }
+
+    .npl-404-home:hover,
+    .npl-404-back:hover {
+        transform: none;
+    }
+}
+

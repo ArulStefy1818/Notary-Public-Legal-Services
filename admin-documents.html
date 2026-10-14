@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Admin Dashboard for managing clients, legal cases, appointments, and documents.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="npl-admin-dashboard">
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div class="npl-admin-overlay" id="nplAdminOverlay"></div>
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="npl-admin-sidebar" id="nplAdminSidebar">
+
+            <div class="npl-admin-brand">
+
+                <a href="admin.html" class="npl-admin-logo" aria-label="Stackly Legal Home">
+                    <img src="Stackly-logo-Blue.webp" alt="Stackly Legal Services">
+                </a>
+
+                <button type="button" class="npl-admin-mobile-close"
+                    id="nplAdminClose" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p class="npl-admin-sidebar-label">Workspace</p>
+
+            <nav class="npl-admin-nav" aria-label="Admin navigation">
+
+                <a href="admin.html"
+                    class="npl-admin-nav-link"
+                    aria-current="page">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-cases.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Legal Cases</span>
+                    <span class="npl-admin-nav-count">12</span>
+                </a>
+
+                <a href="admin-clients.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+
+                <a href="admin-appointments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="npl-admin-nav-count">5</span>
+                </a>
+
+                <a href="admin-documents.html" class="npl-admin-nav-link npl-admin-active">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documents</span>
+                </a>
+
+                <p class="npl-admin-sidebar-label">Management</p>
+
+                <a href="admin-notary.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-stamp"></i>
+                    <span>Notary Services</span>
+                </a>
+
+                <a href="admin-payments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                 
+                <p class="npl-admin-sidebar-label">Preferences</p>
+
+                <a href="admin-settings.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="npl-admin-sidebar-bottom">
+
+                 <div class="npl-admin-support-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Legal Support</h4>
+                    <p>Keep your legal operations organized and your client services running smoothly.</p>
+                </div>
+
+                <a href="index.html" class="npl-admin-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="npl-admin-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="npl-admin-topbar">
+
+                <div class="npl-admin-topbar-left">
+
+                    <button type="button" class="npl-admin-menu-toggle"
+                        id="nplAdminMenuToggle"
+                        aria-label="Open navigation menu"
+                        aria-controls="nplAdminSidebar"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="npl-admin-page-heading">
+                        <h1>Admin Dashboard</h1>
+                        <p>Manage your legal services workspace</p>
+                    </div>
+
+                </div>
+
+                <div class="npl-admin-topbar-right">
+
+                    <span class="npl-admin-topbar-date" id="nplAdminDate"></span>
+
+                    <a href="404-admin.html"><button type="button" class="npl-admin-notification"
+                        aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="npl-admin-notification-dot"></span>
+                    </button></a>
+
+                    <!-- ADMIN EMAIL TOP RIGHT -->
+
+                    <div class="npl-admin-profile">
+
+                        
+<div class="npl-admin-profile-info">
+    <strong id="nplAdminUserName">Administrator</strong>
+    <a href="mailto:admin@stacklylegal.com"
+       id="nplAdminUserEmail">
+        admin@stacklylegal.com
+    </a>
+</div>
+
+                        <div class="npl-admin-avatar" aria-hidden="true">
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+<!-- =========================================
+     DOCUMENTS MANAGEMENT WORKSPACE
+========================================== -->
+
+<section class="npl-docs-workspace">
+
+    <!-- PAGE INTRO -->
+    <div class="npl-docs-intro">
+        <div class="npl-docs-intro-content">
+            <span class="npl-docs-eyebrow">
+                <i class="fa-solid fa-folder-open"></i>
+                DOCUMENT CONTROL CENTER
+            </span>
+
+            <h2>Documents & Records</h2>
+
+            <p>
+                Organize legal files, review submitted documents,
+                and keep every important record secure and accessible.
+            </p>
+        </div>
+
+        <div class="npl-docs-intro-actions">
+            <a href="404-admin.html"><button type="button" class="npl-docs-btn npl-docs-btn-outline"
+                id="nplDocsExportBtn">
+                <i class="fa-solid fa-download"></i>
+                Export Records
+            </button></a>
+
+            <a href="404-admin.html"><button type="button" class="npl-docs-btn npl-docs-btn-primary"
+                id="nplDocsUploadBtn">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                Upload Document
+            </button></a>
+        </div>
+    </div>
+
+    <!-- DOCUMENT STATISTICS -->
+    <div class="npl-docs-stats">
+
+        <article class="npl-docs-stat-card">
+            <div class="npl-docs-stat-top">
+                <span class="npl-docs-stat-icon npl-docs-icon-green">
+                    <i class="fa-solid fa-folder-tree"></i>
+                </span>
+                <span class="npl-docs-stat-trend">
+                    <i class="fa-solid fa-arrow-up"></i> 12.8%
+                </span>
+            </div>
+
+            <p>Total Documents</p>
+            <h3>1,284</h3>
+            <span class="npl-docs-stat-note">
+                Across all legal matters
+            </span>
+        </article>
+
+        <article class="npl-docs-stat-card">
+            <div class="npl-docs-stat-top">
+                <span class="npl-docs-stat-icon npl-docs-icon-gold">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+                <span class="npl-docs-stat-badge">Review needed</span>
+            </div>
+
+            <p>Pending Review</p>
+            <h3>18</h3>
+            <span class="npl-docs-stat-note">
+                Awaiting document verification
+            </span>
+        </article>
+
+        <article class="npl-docs-stat-card">
+            <div class="npl-docs-stat-top">
+                <span class="npl-docs-stat-icon npl-docs-icon-blue">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <span class="npl-docs-stat-positive">Verified</span>
+            </div>
+
+            <p>Verified Documents</p>
+            <h3>1,096</h3>
+            <span class="npl-docs-stat-note">
+                Successfully reviewed records
+            </span>
+        </article>
+
+        <article class="npl-docs-stat-card">
+            <div class="npl-docs-stat-top">
+                <span class="npl-docs-stat-icon npl-docs-icon-purple">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </span>
+                <span class="npl-docs-stat-positive">Protected</span>
+            </div>
+
+            <p>Secure Storage</p>
+            <h3>100%</h3>
+            <span class="npl-docs-stat-note">
+                Organized digital records
+            </span>
+        </article>
+
+    </div>
+
+    <!-- DOCUMENT CATEGORY CARDS -->
+    <section class="npl-docs-categories">
+        <div class="npl-docs-section-heading">
+            <div>
+                <span class="npl-docs-section-label">LIBRARY OVERVIEW</span>
+                <h3>Browse by Category</h3>
+            </div>
+
+            <span class="npl-docs-heading-caption">
+                Select a category to filter documents
+            </span>
+        </div>
+
+        <div class="npl-docs-category-grid">
+
+            <a href="404-admin.html"><button type="button" class="npl-docs-category-card is-active"
+                data-doc-category="all">
+                <span class="npl-docs-category-icon npl-docs-category-all">
+                    <i class="fa-solid fa-layer-group"></i>
+                </span>
+                <span class="npl-docs-category-info">
+                    <strong>All Documents</strong>
+                    <small>Complete document library</small>
+                </span>
+                <span class="npl-docs-category-count">1,284</span>
+            </button></a>
+            <a href="404-admin.html"><button type="button" class="npl-docs-category-card"
+                data-doc-category="contracts">
+                <span class="npl-docs-category-icon npl-docs-category-contract">
+                    <i class="fa-solid fa-file-signature"></i>
+                </span>
+                <span class="npl-docs-category-info">
+                    <strong>Contracts</strong>
+                    <small>Agreements and deeds</small>
+                </span>
+                <span class="npl-docs-category-count">326</span>
+            </button></a>
+
+            <a href="404-admin.html"><button type="button" class="npl-docs-category-card"
+                data-doc-category="identity">
+                <span class="npl-docs-category-icon npl-docs-category-identity">
+                    <i class="fa-solid fa-id-card"></i>
+                </span>
+                <span class="npl-docs-category-info">
+                    <strong>Identity Records</strong>
+                    <small>Client identification files</small>
+                </span>
+                <span class="npl-docs-category-count">284</span>
+            </button></a>
+
+            <a href="404-admin.html"><button type="button" class="npl-docs-category-card"
+                data-doc-category="property">
+                <span class="npl-docs-category-icon npl-docs-category-property">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+                <span class="npl-docs-category-info">
+                    <strong>Property Files</strong>
+                    <small>Ownership and property deeds</small>
+                </span>
+                <span class="npl-docs-category-count">198</span>
+            </button></a>
+
+            <a href="404-admin.html"><button type="button" class="npl-docs-category-card"
+                data-doc-category="affidavits">
+                <span class="npl-docs-category-icon npl-docs-category-affidavit">
+                    <i class="fa-solid fa-stamp"></i>
+                </span>
+                <span class="npl-docs-category-info">
+                    <strong>Affidavits</strong>
+                    <small>Sworn statements and declarations</small>
+                </span>
+                <span class="npl-docs-category-count">176</span>
+            </button></a>
+
+            <a href="404-admin.html"><button type="button" class="npl-docs-category-card"
+                data-doc-category="other">
+                <span class="npl-docs-category-icon npl-docs-category-other">
+                    <i class="fa-solid fa-file-lines"></i>
+                </span>
+                <span class="npl-docs-category-info">
+                    <strong>Other Records</strong>
+                    <small>Additional legal documents</small>
+                </span>
+                <span class="npl-docs-category-count">300</span>
+            </button></a>
+
+        </div>
+    </section>
+
+    <!-- DOCUMENT WORKSPACE GRID -->
+    <div class="npl-docs-main-grid">
+
+        <!-- RECENT DOCUMENTS -->
+        <section class="npl-docs-panel npl-docs-library-panel">
+
+            <div class="npl-docs-panel-heading">
+                <div>
+                    <span class="npl-docs-section-label">FILE DIRECTORY</span>
+                    <h3>Recent Documents</h3>
+                    <p>Review and manage your latest uploaded files.</p>
+                </div>
+
+                <span class="npl-docs-live-indicator">
+                    <span></span> Live Library
+                </span>
+            </div>
+
+             
+
+            <!-- DOCUMENT TABLE -->
+            <div class="npl-docs-table-wrap">
+                <table class="npl-docs-table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Client</th>
+                            <th>Category</th>
+                            <th>Last Updated</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="nplDocsTableBody">
+
+                        <tr data-category="contracts"
+                            data-status="verified"
+                            data-date="2026-10-12"
+                            data-name="property-sale-agreement">
+                            <td>
+                                <div class="npl-docs-file-cell">
+                                    <span class="npl-docs-file-icon npl-docs-file-pdf">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Property Sale Agreement</strong>
+                                        <small>PDF · 2.4 MB · DOC-1024</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="npl-docs-client">
+                                    <span class="npl-docs-client-avatar npl-docs-avatar-green">RK</span>
+                                    <span>
+                                        <strong>R. Kumar</strong>
+                                        <small>CL-0084</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>Contracts</td>
+                            <td>Oct 12, 2026</td>
+                            <td><span class="npl-docs-status npl-docs-status-verified">Verified</span></td>
+                            <td>
+                                <div class="npl-docs-row-actions">
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="view"
+                                        aria-label="View Property Sale Agreement"
+                                        title="View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="download"
+                                        aria-label="Download Property Sale Agreement"
+                                        title="Download">
+                                        <i class="fa-solid fa-download"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="details"
+                                        aria-label="More details for Property Sale Agreement"
+                                        title="More details">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr data-category="identity"
+                            data-status="pending"
+                            data-date="2026-10-11"
+                            data-name="identity-verification-record">
+                            <td>
+                                <div class="npl-docs-file-cell">
+                                    <span class="npl-docs-file-icon npl-docs-file-word">
+                                        <i class="fa-solid fa-file-word"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Identity Verification Record</strong>
+                                        <small>DOCX · 860 KB · DOC-1023</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="npl-docs-client">
+                                    <span class="npl-docs-client-avatar npl-docs-avatar-blue">SP</span>
+                                    <span>
+                                        <strong>S. Priya</strong>
+                                        <small>CL-0092</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>Identity Records</td>
+                            <td>Oct 11, 2026</td>
+                            <td><span class="npl-docs-status npl-docs-status-pending">Pending Review</span></td>
+                            <td>
+                                <div class="npl-docs-row-actions">
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="view"
+                                        aria-label="View Property Sale Agreement"
+                                        title="View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="download"
+                                        aria-label="Download Property Sale Agreement"
+                                        title="Download">
+                                        <i class="fa-solid fa-download"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="details"
+                                        aria-label="More details for Property Sale Agreement"
+                                        title="More details">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr data-category="property"
+                            data-status="verified"
+                            data-date="2026-10-10"
+                            data-name="property-ownership-deed">
+                            <td>
+                                <div class="npl-docs-file-cell">
+                                    <span class="npl-docs-file-icon npl-docs-file-pdf">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Property Ownership Deed</strong>
+                                        <small>PDF · 3.1 MB · DOC-1022</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="npl-docs-client">
+                                    <span class="npl-docs-client-avatar npl-docs-avatar-gold">AM</span>
+                                    <span>
+                                        <strong>A. Meena</strong>
+                                        <small>CL-0078</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>Property Files</td>
+                            <td>Oct 10, 2026</td>
+                            <td><span class="npl-docs-status npl-docs-status-verified">Verified</span></td>
+                            <td>
+                                <div class="npl-docs-row-actions">
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="view"
+                                        aria-label="View Property Sale Agreement"
+                                        title="View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="download"
+                                        aria-label="Download Property Sale Agreement"
+                                        title="Download">
+                                        <i class="fa-solid fa-download"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="details"
+                                        aria-label="More details for Property Sale Agreement"
+                                        title="More details">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr data-category="affidavits"
+                            data-status="revision"
+                            data-date="2026-10-09"
+                            data-name="sworn-affidavit">
+                            <td>
+                                <div class="npl-docs-file-cell">
+                                    <span class="npl-docs-file-icon npl-docs-file-pdf">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Sworn Affidavit</strong>
+                                        <small>PDF · 1.2 MB · DOC-1021</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="npl-docs-client">
+                                    <span class="npl-docs-client-avatar npl-docs-avatar-purple">VK</span>
+                                    <span>
+                                        <strong>V. Karthik</strong>
+                                        <small>CL-0101</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>Affidavits</td>
+                            <td>Oct 9, 2026</td>
+                            <td><span class="npl-docs-status npl-docs-status-revision">Needs Revision</span></td>
+                            <td>
+                                <div class="npl-docs-row-actions">
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="view"
+                                        aria-label="View Property Sale Agreement"
+                                        title="View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="download"
+                                        aria-label="Download Property Sale Agreement"
+                                        title="Download">
+                                        <i class="fa-solid fa-download"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="details"
+                                        aria-label="More details for Property Sale Agreement"
+                                        title="More details">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr data-category="contracts"
+                            data-status="verified"
+                            data-date="2026-10-08"
+                            data-name="service-agreement">
+                            <td>
+                                <div class="npl-docs-file-cell">
+                                    <span class="npl-docs-file-icon npl-docs-file-word">
+                                        <i class="fa-solid fa-file-word"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Legal Service Agreement</strong>
+                                        <small>DOCX · 740 KB · DOC-1020</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="npl-docs-client">
+                                    <span class="npl-docs-client-avatar npl-docs-avatar-green">NS</span>
+                                    <span>
+                                        <strong>N. Suresh</strong>
+                                        <small>CL-0065</small>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>Contracts</td>
+                            <td>Oct 8, 2026</td>
+                            <td><span class="npl-docs-status npl-docs-status-verified">Verified</span></td>
+                            <td>
+                                <div class="npl-docs-row-actions">
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="view"
+                                        aria-label="View Property Sale Agreement"
+                                        title="View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="download"
+                                        aria-label="Download Property Sale Agreement"
+                                        title="Download">
+                                        <i class="fa-solid fa-download"></i>
+                                    </button></a>
+                                    <a href="404-admin.html"><button type="button" class="npl-docs-action-btn"
+                                        data-doc-action="details"
+                                        aria-label="More details for Property Sale Agreement"
+                                        title="More details">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div class="npl-docs-empty" id="nplDocsEmpty" hidden>
+                    <i class="fa-solid fa-folder-open"></i>
+                    <h4>No documents found</h4>
+                    <p>Try another search term or change your filters.</p>
+                </div>
+            </div>
+
+            <div class="npl-docs-table-footer">
+                <span id="nplDocsResultCount">Showing 5 sample documents</span>
+
+                <a href="404-admin.html" class="npl-docs-view-all">
+                    View Full Library
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="npl-docs-side-column">
+
+            <!-- UPLOAD AREA -->
+            <section class="npl-docs-panel npl-docs-upload-panel">
+                <div class="npl-docs-panel-heading">
+                    <div>
+                        <span class="npl-docs-section-label">ADD TO LIBRARY</span>
+                        <h3>Upload Files</h3>
+                    </div>
+                    <span class="npl-docs-upload-heading-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </span>
+                </div>
+
+                <label class="npl-docs-dropzone" id="nplDocsDropzone">
+                    <input type="file" id="nplDocsFileInput"
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                        multiple hidden>
+
+                    <span class="npl-docs-dropzone-icon">
+                        <i class="fa-solid fa-file-arrow-up"></i>
+                    </span>
+
+                    <strong>Drop files here</strong>
+                    <span>or click to browse your computer</span>
+                    <small>PDF, DOC, DOCX, JPG or PNG · Max 10 MB per file</small>
+                </label>
+
+                <div class="npl-docs-selected-files" id="nplDocsSelectedFiles" hidden></div>
+
+                <div class="npl-docs-upload-guidelines">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <p>
+                        <strong>Secure document handling</strong>
+                        <span>Only upload files you are authorized to store.</span>
+                    </p>
+                </div>
+            </section>
+
+            
+
+            <!-- STORAGE SUMMARY -->
+            <section class="npl-docs-storage-card">
+                <div class="npl-docs-storage-top">
+                    <span class="npl-docs-storage-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </span>
+                    <span>STORAGE OVERVIEW</span>
+                </div>
+
+                <h3>68.4 GB <small>of 100 GB</small></h3>
+
+                <div class="npl-docs-storage-track">
+                    <span></span>
+                </div>
+
+                <div class="npl-docs-storage-meta">
+                    <span>68.4% used</span>
+                    <span>31.6 GB available</span>
+                </div>
+
+                <p>
+                    Keep your legal records organized and monitor available
+                    storage as your document library grows.
+                </p>
+            </section>
+
+        </aside>
+
+    </div>
+
+    <!-- DOCUMENT ACTIVITY TIMELINE -->
+    <section class="npl-docs-panel npl-docs-activity-panel">
+        <div class="npl-docs-panel-heading">
+            <div>
+                <span class="npl-docs-section-label">RECENT CHANGES</span>
+                <h3>Document Activity</h3>
+                <p>A quick overview of recent actions in your document library.</p>
+            </div>
+
+            <a href="404-admin.html" class="npl-docs-view-all">
+                View Activity
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="npl-docs-activity-list">
+
+            <article class="npl-docs-activity-item">
+                <span class="npl-docs-activity-icon npl-docs-activity-green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <div class="npl-docs-activity-content">
+                    <p><strong>Property Sale Agreement</strong> was marked as verified.</p>
+                    <span>R. Kumar · Document DOC-1024</span>
+                </div>
+                <time datetime="2026-10-12T10:30">Today, 10:30 AM</time>
+            </article>
+
+            <article class="npl-docs-activity-item">
+                <span class="npl-docs-activity-icon npl-docs-activity-blue">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                </span>
+                <div class="npl-docs-activity-content">
+                    <p><strong>Identity Verification Record</strong> was uploaded.</p>
+                    <span>S. Priya · Document DOC-1023</span>
+                </div>
+                <time datetime="2026-10-11T15:15">Oct 11, 3:15 PM</time>
+            </article>
+
+            <article class="npl-docs-activity-item">
+                <span class="npl-docs-activity-icon npl-docs-activity-gold">
+                    <i class="fa-solid fa-rotate"></i>
+                </span>
+                <div class="npl-docs-activity-content">
+                    <p><strong>Sworn Affidavit</strong> was returned for revision.</p>
+                    <span>V. Karthik · Document DOC-1021</span>
+                </div>
+                <time datetime="2026-10-09T11:45">Oct 9, 11:45 AM</time>
+            </article>
+
+        </div>
+    </section>
+
+</section>
+
+<!-- UPLOAD CONFIRMATION MODAL -->
+<div class="npl-docs-modal" id="nplDocsModal"
+    role="dialog" aria-modal="true"
+    aria-labelledby="nplDocsModalTitle" aria-hidden="true">
+
+    <div class="npl-docs-modal-backdrop" data-docs-modal-close></div>
+
+    <div class="npl-docs-modal-card">
+        <div class="npl-docs-modal-heading">
+            <div>
+                <span class="npl-docs-section-label">DOCUMENT WORKSPACE</span>
+                <h3 id="nplDocsModalTitle">Upload Documents</h3>
+            </div>
+
+            <button type="button" class="npl-docs-modal-close"
+                data-docs-modal-close aria-label="Close upload dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="nplDocsUploadForm">
+            <div class="npl-docs-form-group">
+                <label for="nplDocsDocumentTitle">Document Title</label>
+                <input type="text" id="nplDocsDocumentTitle"
+                    name="documentTitle"
+                    placeholder="Enter a document title" required>
+            </div>
+
+            <div class="npl-docs-form-row">
+                <div class="npl-docs-form-group">
+                    <label for="nplDocsDocumentCategory">Category</label>
+                    <select id="nplDocsDocumentCategory"
+                        name="documentCategory" required>
+                        <option value="">Select category</option>
+                        <option value="contracts">Contracts</option>
+                        <option value="identity">Identity Records</option>
+                        <option value="property">Property Files</option>
+                        <option value="affidavits">Affidavits</option>
+                        <option value="other">Other Records</option>
+                    </select>
+                </div>
+
+                <div class="npl-docs-form-group">
+                    <label for="nplDocsClientName">Client Name</label>
+                    <input type="text" id="nplDocsClientName"
+                        name="clientName"
+                        placeholder="Enter client name">
+                </div>
+            </div>
+
+            <div class="npl-docs-form-group">
+                <label for="nplDocsDocumentNotes">Notes (Optional)</label>
+                <textarea id="nplDocsDocumentNotes"
+                    name="documentNotes" rows="3"
+                    placeholder="Add document details or review notes"></textarea>
+            </div>
+
+            <div class="npl-docs-modal-actions">
+                <button type="button" class="npl-docs-btn npl-docs-btn-outline"
+                    data-docs-modal-close>
+                    Cancel
+                </button>
+
+                <button type="submit" class="npl-docs-btn npl-docs-btn-primary">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    Confirm Upload
+                </button>
+            </div>
+
+            <p class="npl-docs-form-message" id="nplDocsFormMessage"
+                role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</div>
+
+<!-- FEEDBACK TOAST -->
+<div class="npl-docs-toast" id="nplDocsToast"
+    role="status" aria-live="polite"></div>
+
+
+</main>
+
+    </div>
+
+    <!-- =========================================
+         MOBILE SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1668 @@
+
+        /* ==========================================
+           STACKLY LEGAL AUTHENTICATION PAGE
+        ========================================== */
+
+        :root {
+            --npl-auth-green: #031d19;
+            --npl-auth-green-light: #0b3028;
+            --npl-auth-gold: #d9b77d;
+            --npl-auth-cream: #f7f7f2;
+            --npl-auth-white: #ffffff;
+            --npl-auth-text: #26332e;
+            --npl-auth-muted: #78827c;
+            --npl-auth-border: #e2e6df;
+            --npl-auth-error: #b42318;
+            --npl-auth-success: #18794e;
+            --npl-auth-shadow: 0 25px 80px rgba(0, 0, 0, 0.18);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--npl-auth-cream);
+            color: var(--npl-auth-text);
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+        }
+
+        body,
+        input,
+        button {
+            font-family: "DM Sans", sans-serif;
+        }
+
+        button,
+        input {
+            font-size: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* ==========================================
+           TOP HEADER
+        ========================================== */
+
+        .npl-auth-header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            min-height: 90px;
+            padding: 18px 6%;
+            background: var(--npl-auth-white);
+            border-bottom: 1px solid rgba(3, 29, 25, 0.08);
+        }
+
+        .npl-auth-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 13px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .npl-auth-logo img {
+    display: block;
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+
+    filter: brightness(0) saturate(100%)
+        invert(65%) sepia(17%) saturate(1000%)
+        hue-rotate(1deg) brightness(90%) contrast(88%);
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.npl-auth-logo:hover img {
+    transform: scale(1.05);
+    filter: brightness(0) saturate(100%)
+            invert(65%) sepia(17%) saturate(1200%)
+            hue-rotate(1deg) brightness(105%) contrast(95%)
+            drop-shadow(0 4px 8px rgba(189, 148, 95, 0.45));
+}
+
+        .npl-auth-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 46px;
+            padding: 0 20px;
+            border: 1px solid var(--npl-auth-green);
+            border-radius: 3px;
+            background: transparent;
+            color: var(--npl-auth-green);
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition:
+                color 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .npl-auth-home i {
+            font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .npl-auth-home:hover {
+            background: var(--npl-auth-green);
+            color: var(--npl-auth-white);
+        }
+
+        .npl-auth-home:hover i {
+            transform: translateX(-3px);
+        }
+
+        .npl-auth-home:focus-visible,
+        .npl-auth-logo:focus-visible {
+            outline: 2px solid var(--npl-auth-gold);
+            outline-offset: 5px;
+        }
+
+        /* ==========================================
+           MAIN CONTENT
+        ========================================== */
+
+        .npl-auth-main {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 90px);
+            padding: 65px 5%;
+            isolation: isolate;
+        }
+
+        .npl-auth-main::before {
+            position: absolute;
+            z-index: -1;
+            top: -80px;
+            right: -100px;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(217, 183, 125, 0.28);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .npl-auth-main::after {
+            position: absolute;
+            z-index: -1;
+            bottom: -130px;
+            left: -100px;
+            width: 380px;
+            height: 380px;
+            border: 1px solid rgba(3, 29, 25, 0.08);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .npl-auth-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            width: 100%;
+            max-width: 1180px;
+            min-height: 680px;
+            overflow: visible;
+            border-radius: 7px;
+            background: var(--npl-auth-white);
+            box-shadow: var(--npl-auth-shadow);
+        }
+
+        /* ==========================================
+           LEFT BRAND PANEL
+        ========================================== */
+
+        .npl-auth-brand-panel {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 0;
+            padding: 55px 45px;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(217, 183, 125, 0.13),
+                    transparent 32%
+                ),
+                linear-gradient(
+                    145deg,
+                    #0b3028 0%,
+                    #031d19 58%,
+                    #021511 100%
+                );
+            color: var(--npl-auth-cream);
+        }
+
+        .npl-auth-brand-panel::before {
+            position: absolute;
+            right: -100px;
+            bottom: 100px;
+            width: 310px;
+            height: 310px;
+            border: 1px solid rgba(217, 183, 125, 0.18);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .npl-auth-brand-panel::after {
+            position: absolute;
+            right: -55px;
+            bottom: 145px;
+            width: 220px;
+            height: 220px;
+            border: 1px solid rgba(217, 183, 125, 0.14);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .npl-auth-brand-top,
+        .npl-auth-brand-bottom {
+            position: relative;
+            z-index: 1;
+        }
+
+        .npl-auth-brand-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 27px;
+            color: var(--npl-auth-gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .npl-auth-brand-tag span {
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background: var(--npl-auth-gold);
+        }
+
+        .npl-auth-brand-panel h1 {
+            max-width: 400px;
+            margin-bottom: 22px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 4vw, 53px);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .npl-auth-brand-panel h1 span {
+            display: block;
+            color: var(--npl-auth-gold);
+            font-style: italic;
+        }
+
+        .npl-auth-brand-description {
+            max-width: 365px;
+            color: #c1cec8;
+            font-size: 15px;
+            line-height: 1.95;
+        }
+
+        .npl-auth-benefits {
+            display: grid;
+            gap: 20px;
+            margin-top: 42px;
+        }
+
+        .npl-auth-benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .npl-auth-benefit-icon {
+            display: flex;
+            flex: 0 0 42px;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(217, 183, 125, 0.4);
+            border-radius: 50%;
+            color: var(--npl-auth-gold);
+            font-size: 15px;
+        }
+
+        .npl-auth-benefit h3 {
+            margin: 1px 0 5px;
+            color: var(--npl-auth-cream);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .npl-auth-benefit p {
+            color: #aebeb6;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .npl-auth-brand-bottom {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            margin-top: 45px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: #b6c5bd;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .npl-auth-brand-bottom i {
+            color: var(--npl-auth-gold);
+            font-size: 15px;
+        }
+
+        /* ==========================================
+           RIGHT FORM PANEL
+        ========================================== */
+
+        .npl-auth-form-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+            padding: 50px 55px;
+            background: var(--npl-auth-white);
+        }
+
+        .npl-auth-form-content {
+            width: 100%;
+            max-width: 460px;
+            min-width: 0;
+        }
+
+        .npl-auth-mobile-brand {
+            display: none;
+            margin-bottom: 28px;
+            color: var(--npl-auth-green);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .npl-auth-mobile-brand span {
+            color: #9c7943;
+        }
+
+        .npl-auth-heading {
+            margin-bottom: 27px;
+        }
+
+        .npl-auth-eyebrow {
+            display: block;
+            margin-bottom: 12px;
+            color: #987541;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .npl-auth-heading h2 {
+            margin-bottom: 12px;
+            color: var(--npl-auth-green);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 3vw, 40px);
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .npl-auth-heading p {
+            color: var(--npl-auth-muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* ==========================================
+           LOGIN / SIGNUP SWITCH
+        ========================================== */
+
+        .npl-auth-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            margin-bottom: 28px;
+            padding: 5px;
+            border-radius: 4px;
+            background: #f1f3ee;
+        }
+
+        .npl-auth-tab {
+            min-height: 47px;
+            padding: 11px 14px;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            background: transparent;
+            color: #68756d;
+            font-size: 14px;
+            font-weight: 700;
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .npl-auth-tab.active {
+            background: var(--npl-auth-green);
+            color: var(--npl-auth-white);
+            box-shadow: 0 3px 9px rgba(3, 29, 25, 0.12);
+        }
+
+        .npl-auth-tab:focus-visible {
+            outline: 2px solid var(--npl-auth-gold);
+            outline-offset: 3px;
+        }
+
+        /* ==========================================
+           FORMS
+        ========================================== */
+
+        .npl-auth-form {
+            display: none;
+            width: 100%;
+        }
+
+        .npl-auth-form.active {
+            display: block;
+            animation: nplAuthFadeIn 0.3s ease both;
+        }
+
+        @keyframes nplAuthFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(7px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .npl-auth-field {
+            position: relative;
+            min-width: 0;
+            margin-bottom: 19px;
+        }
+
+        .npl-auth-field > label,
+        .npl-auth-field-label {
+            display: block;
+            margin-bottom: 9px;
+            color: #27362f;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .npl-auth-required {
+            color: #a46e2a;
+        }
+
+        .npl-auth-input-wrap {
+            position: relative;
+            width: 100%;
+        }
+
+        .npl-auth-input {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            height: 51px;
+            padding: 0 15px;
+            border: 1px solid var(--npl-auth-border);
+            border-radius: 3px;
+            outline: none;
+            background: #fff;
+            color: var(--npl-auth-text);
+            font-size: 14px;
+            transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .npl-auth-input::placeholder {
+            color: #a1aaa4;
+            opacity: 1;
+        }
+
+        .npl-auth-input:focus {
+            border-color: #b39765;
+            box-shadow: 0 0 0 3px rgba(217, 183, 125, 0.17);
+        }
+
+        .npl-auth-input[aria-invalid="true"] {
+            border-color: var(--npl-auth-error);
+        }
+
+        .npl-auth-input.has-icon {
+            padding-right: 48px;
+        }
+
+        .npl-auth-field-error {
+            display: block;
+            min-height: 0;
+            margin-top: 6px;
+            color: var(--npl-auth-error);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .npl-auth-field-error:empty {
+            display: none;
+        }
+
+        /* ==========================================
+           CUSTOM ROLE DROPDOWN
+        ========================================== */
+
+        .npl-auth-role {
+            position: relative;
+            width: 100%;
+        }
+
+        .npl-auth-role-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+            min-height: 51px;
+            padding: 0 15px;
+            border: 1px solid var(--npl-auth-border);
+            border-radius: 3px;
+            background: #fff;
+            color: var(--npl-auth-text);
+            text-align: left;
+            font-size: 14px;
+            transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .npl-auth-role-trigger:focus-visible,
+        .npl-auth-role.open .npl-auth-role-trigger {
+            border-color: #b39765;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(217, 183, 125, 0.17);
+        }
+
+        .npl-auth-role-trigger-text {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            min-width: 0;
+        }
+
+        .npl-auth-role-trigger-text i {
+            color: #987541;
+            font-size: 15px;
+        }
+
+        .npl-auth-role-placeholder {
+            color: #9aa39d;
+        }
+
+        .npl-auth-role-chevron {
+            color: #65736b;
+            font-size: 12px;
+            transition: transform 0.25s ease;
+        }
+
+        .npl-auth-role.open .npl-auth-role-chevron {
+            transform: rotate(180deg);
+        }
+
+        .npl-auth-role-options {
+            position: absolute;
+            z-index: 20;
+            top: calc(100% + 7px);
+            right: 0;
+            left: 0;
+            display: none;
+            padding: 6px;
+            border: 1px solid #e0e5de;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 15px 35px rgba(3, 29, 25, 0.14);
+        }
+
+        .npl-auth-role.open .npl-auth-role-options {
+            display: block;
+            animation: nplAuthFadeIn 0.18s ease both;
+        }
+
+        .npl-auth-role-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            min-height: 47px;
+            padding: 10px 12px;
+            border: 0;
+            border-radius: 3px;
+            background: transparent;
+            color: var(--npl-auth-text);
+            text-align: left;
+            font-size: 14px;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .npl-auth-role-option i {
+            width: 18px;
+            color: #987541;
+            text-align: center;
+        }
+
+        .npl-auth-role-option:hover,
+        .npl-auth-role-option[aria-selected="true"] {
+            background: #f3f1e9;
+            color: var(--npl-auth-green);
+        }
+
+        .npl-auth-role-option:focus-visible {
+            outline: 2px solid var(--npl-auth-gold);
+            outline-offset: -2px;
+        }
+
+        .npl-auth-role[aria-invalid="true"]
+        .npl-auth-role-trigger {
+            border-color: var(--npl-auth-error);
+        }
+
+        /* ==========================================
+           PASSWORD EYE BUTTON
+        ========================================== */
+
+        .npl-auth-password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 30px;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            color: #77847b;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .npl-auth-password-toggle:hover {
+            color: var(--npl-auth-green);
+        }
+
+        .npl-auth-password-toggle:focus-visible {
+            outline: 2px solid var(--npl-auth-gold);
+            outline-offset: 2px;
+            border-radius: 3px;
+        }
+
+        /* ==========================================
+           REMEMBER ME / FORGOT PASSWORD
+        ========================================== */
+
+        .npl-auth-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 5px 0 24px;
+        }
+
+        .npl-auth-checkbox-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: #66736b;
+            font-size: 13px;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .npl-auth-checkbox-label input {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            accent-color: var(--npl-auth-green);
+            cursor: pointer;
+        }
+
+        .npl-auth-link {
+            border: 0;
+            background: transparent;
+            color: #87652f;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .npl-auth-link:hover {
+            color: var(--npl-auth-green);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ==========================================
+           PRIMARY SUBMIT BUTTON
+        ========================================== */
+
+        .npl-auth-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            min-height: 55px;
+            padding: 14px 20px;
+            border: 1px solid var(--npl-auth-green);
+            border-radius: 3px;
+            background: var(--npl-auth-green);
+            color: var(--npl-auth-white);
+            font-size: 14px;
+            font-weight: 700;
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .npl-auth-submit i {
+            font-size: 13px;
+            transition: transform 0.25s ease;
+        }
+
+        .npl-auth-submit:hover {
+            border-color: #b7955b;
+            background: var(--npl-auth-gold);
+            color: var(--npl-auth-green);
+            transform: translateY(-2px);
+        }
+
+        .npl-auth-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        .npl-auth-submit:focus-visible {
+            outline: 2px solid var(--npl-auth-gold);
+            outline-offset: 4px;
+        }
+
+        .npl-auth-submit:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ==========================================
+           SWITCH FORM FOOTER
+        ========================================== */
+
+        .npl-auth-switch {
+            margin-top: 24px;
+            color: #758078;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .npl-auth-switch button {
+            display: inline;
+            margin-left: 4px;
+            border: 0;
+            background: transparent;
+            color: #87652f;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .npl-auth-switch button:hover {
+            color: var(--npl-auth-green);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .npl-auth-privacy-note {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding-top: 19px;
+            border-top: 1px solid #edf0eb;
+            color: #879188;
+            font-size: 11px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .npl-auth-privacy-note i {
+            margin-top: 3px;
+            color: #987541;
+        }
+
+        /* ==========================================
+           FORM STATUS MESSAGE
+        ========================================== */
+
+        .npl-auth-status {
+            display: none;
+            margin-bottom: 18px;
+            padding: 12px 14px;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .npl-auth-status.visible {
+            display: block;
+        }
+
+        .npl-auth-status.error {
+            border-color: #f1c7c4;
+            background: #fff4f2;
+            color: var(--npl-auth-error);
+        }
+
+        .npl-auth-status.success {
+            border-color: #b7dfc9;
+            background: #f0fbf4;
+            color: var(--npl-auth-success);
+        }
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        .npl-auth-footer {
+            padding: 22px 5%;
+            background: var(--npl-auth-white);
+            border-top: 1px solid rgba(3, 29, 25, 0.08);
+            color: #7b867e;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .npl-auth-footer span {
+            color: #987541;
+        }
+
+        
+/* ==========================================
+   STACKLY LEGAL AUTH PAGE
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .npl-auth-main {
+        width: 100%;
+        min-width: 0;
+        padding: 40px 3%;
+        overflow-x: clip;
+    }
+
+    .npl-auth-layout {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .npl-auth-brand-panel {
+        min-width: 0;
+        padding: 40px 25px;
+    }
+
+    .npl-auth-brand-panel h1 {
+        font-size: clamp(32px, 4vw, 39px);
+        overflow-wrap: break-word;
+    }
+
+    .npl-auth-brand-description {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .npl-auth-benefit {
+        gap: 12px;
+        min-width: 0;
+    }
+
+    .npl-auth-benefit > div:last-child {
+        min-width: 0;
+    }
+
+    .npl-auth-benefit h3 {
+        font-size: 14px;
+    }
+
+    .npl-auth-benefit p {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .npl-auth-form-panel {
+        min-width: 0;
+        padding: 35px 25px;
+    }
+
+    .npl-auth-form-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .npl-auth-field,
+    .npl-auth-input-wrap,
+    .npl-auth-role {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .npl-auth-input {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .npl-auth-role-options {
+        max-width: 100%;
+    }
+}
+
+
+/* ==========================================
+   MOBILE VIEW
+   UP TO 760PX
+========================================== */
+
+@media (max-width: 760px) {
+
+    /* Prevent page-level horizontal overflow */
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    .npl-auth-header,
+    .npl-auth-main,
+    .npl-auth-footer {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Header */
+
+    .npl-auth-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        min-height: 70px;
+        padding: 12px 4%;
+        overflow: hidden;
+    }
+
+    .npl-auth-logo {
+        display: inline-flex;
+        flex: 0 1 auto;
+        align-items: center;
+        min-width: 0;
+        max-width: 58%;
+        overflow: hidden;
+    }
+
+    .npl-auth-logo img {
+        display: block;
+        width: clamp(100px, 25vw, 135px);
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .npl-auth-home {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        min-width: 0;
+        min-height: 40px;
+        max-width: 48%;
+        padding: 0 11px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .npl-auth-home i {
+        font-size: 11px;
+    }
+
+    /* Main area */
+
+    .npl-auth-main {
+        display: block;
+        min-height: auto;
+        padding: 25px 4%;
+        overflow: hidden;
+    }
+
+    .npl-auth-main::before {
+        top: -100px;
+        right: -180px;
+        width: 260px;
+        height: 260px;
+    }
+
+    .npl-auth-main::after {
+        bottom: -100px;
+        left: -170px;
+        width: 260px;
+        height: 260px;
+    }
+
+    /* Single-column authentication card */
+
+    .npl-auth-layout {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 520px;
+        min-height: 0;
+        margin: 0 auto;
+        overflow: visible;
+        border-radius: 5px;
+    }
+
+    /* Hide decorative left panel on mobile */
+
+    .npl-auth-brand-panel {
+        display: none;
+    }
+
+    /* Form container */
+
+    .npl-auth-form-panel {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding: 30px 22px;
+        overflow: visible;
+        border-radius: 5px;
+    }
+
+    .npl-auth-form-content {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .npl-auth-mobile-brand {
+        display: block;
+        margin-bottom: 22px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Heading */
+
+    .npl-auth-heading {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 23px;
+    }
+
+    .npl-auth-eyebrow {
+        margin-bottom: 10px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        line-height: 1.7;
+    }
+
+    .npl-auth-heading h2 {
+        margin-bottom: 10px;
+        font-size: clamp(29px, 7vw, 35px);
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+
+    .npl-auth-heading p {
+        font-size: 13px;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+    /* Login and signup tabs */
+
+    .npl-auth-tabs {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        width: 100%;
+        min-width: 0;
+        gap: 4px;
+        margin-bottom: 23px;
+        padding: 4px;
+    }
+
+    .npl-auth-tab {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        padding: 10px 6px;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Forms and fields */
+
+    .npl-auth-form,
+    .npl-auth-form.active {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .npl-auth-field {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 17px;
+    }
+
+    .npl-auth-field > label,
+    .npl-auth-field-label {
+        margin-bottom: 8px;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .npl-auth-input-wrap {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .npl-auth-input {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: 48px;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+    .npl-auth-input.has-icon {
+        padding-right: 43px;
+    }
+
+    .npl-auth-input::placeholder {
+        font-size: 12px;
+        text-overflow: ellipsis;
+    }
+
+    .npl-auth-field-error {
+        font-size: 11px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    /* Custom role dropdown */
+
+    .npl-auth-role {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .npl-auth-role-trigger {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 48px;
+        gap: 8px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .npl-auth-role-trigger-text {
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+        gap: 9px;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .npl-auth-role-trigger-text > span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .npl-auth-role-chevron {
+        flex: 0 0 auto;
+    }
+
+    .npl-auth-role-options {
+        position: absolute;
+        z-index: 30;
+        top: calc(100% + 5px);
+        right: 0;
+        left: 0;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding: 5px;
+    }
+
+    .npl-auth-role-option {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        padding: 10px;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Password eye icon */
+
+    .npl-auth-password-toggle {
+        right: 9px;
+        width: 28px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    /* Remember me and forgot password */
+
+    .npl-auth-options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+        margin: 3px 0 22px;
+    }
+
+    .npl-auth-checkbox-label {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 8px;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .npl-auth-checkbox-label input {
+        flex: 0 0 16px;
+        margin-top: 2px;
+    }
+
+    .npl-auth-link {
+        min-width: 0;
+        font-size: 12px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    /* Terms and conditions */
+
+    #nplAuthSignupForm .npl-auth-checkbox-label {
+        align-items: flex-start;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+    #nplAuthSignupForm .npl-auth-checkbox-label span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    #nplAuthSignupForm .npl-auth-checkbox-label a {
+        display: inline;
+        white-space: normal;
+    }
+
+    /* Submit button */
+
+    .npl-auth-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 51px;
+        padding: 12px 10px;
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    .npl-auth-submit span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .npl-auth-submit i {
+        flex: 0 0 auto;
+    }
+
+    /* Account switching */
+
+    .npl-auth-switch {
+        margin-top: 21px;
+        font-size: 12px;
+        line-height: 1.9;
+        overflow-wrap: anywhere;
+    }
+
+    .npl-auth-switch button {
+        font-size: 12px;
+    }
+
+    /* Privacy note */
+
+    .npl-auth-privacy-note {
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 22px;
+        padding-top: 17px;
+        font-size: 11px;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .npl-auth-privacy-note i {
+        flex: 0 0 auto;
+        margin-top: 3px;
+    }
+
+    .npl-auth-privacy-note p {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* Status messages */
+
+    .npl-auth-status {
+        width: 100%;
+        min-width: 0;
+        padding: 11px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Footer */
+
+    .npl-auth-footer {
+        padding: 18px 5%;
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   UP TO 420PX
+========================================== */
+
+@media (max-width: 420px) {
+
+    .npl-auth-header {
+        gap: 7px;
+        min-height: 64px;
+        padding: 11px 3%;
+    }
+
+    .npl-auth-logo {
+        max-width: 52%;
+    }
+
+    .npl-auth-logo img {
+        width: clamp(90px, 27vw, 112px);
+        max-width: 100%;
+    }
+
+    .npl-auth-home {
+        max-width: 48%;
+        min-height: 36px;
+        gap: 5px;
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .npl-auth-home i {
+        font-size: 10px;
+    }
+
+    .npl-auth-main {
+        padding: 20px 3%;
+    }
+
+    .npl-auth-layout {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .npl-auth-form-panel {
+        padding: 25px 16px;
+    }
+
+    .npl-auth-mobile-brand {
+        margin-bottom: 19px;
+        font-size: 11px;
+    }
+
+    .npl-auth-heading {
+        margin-bottom: 21px;
+    }
+
+    .npl-auth-heading h2 {
+        font-size: clamp(27px, 8vw, 32px);
+    }
+
+    .npl-auth-heading p {
+        font-size: 12px;
+    }
+
+    .npl-auth-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.2px;
+    }
+
+    .npl-auth-tabs {
+        margin-bottom: 21px;
+    }
+
+    .npl-auth-tab {
+        min-height: 42px;
+        font-size: 12px;
+    }
+
+    .npl-auth-field {
+        margin-bottom: 15px;
+    }
+
+    .npl-auth-input,
+    .npl-auth-role-trigger {
+        height: 46px;
+        min-height: 46px;
+        font-size: 12px;
+    }
+
+    .npl-auth-input {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .npl-auth-input.has-icon {
+        padding-right: 40px;
+    }
+
+    .npl-auth-input::placeholder {
+        font-size: 11px;
+    }
+
+    .npl-auth-role-trigger {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .npl-auth-role-trigger-text {
+        gap: 7px;
+    }
+
+    .npl-auth-role-trigger-text i {
+        font-size: 13px;
+    }
+
+    .npl-auth-options {
+        gap: 10px 8px;
+    }
+
+    .npl-auth-checkbox-label,
+    .npl-auth-link {
+        font-size: 11px;
+    }
+
+    .npl-auth-submit {
+        min-height: 48px;
+        padding: 11px 8px;
+        font-size: 12px;
+    }
+
+    .npl-auth-switch {
+        font-size: 11px;
+    }
+
+    .npl-auth-switch button {
+        font-size: 11px;
+    }
+
+    .npl-auth-privacy-note {
+        font-size: 10px;
+    }
+
+    .npl-auth-footer {
+        padding: 16px 4%;
+        font-size: 10px;
+    }
+}
+
+
+/* ==========================================
+   EXTRA SMALL DEVICES
+   UP TO 340PX
+========================================== */
+
+@media (max-width: 340px) {
+
+    .npl-auth-header {
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+        gap: 5px;
+    }
+
+    .npl-auth-logo {
+        max-width: 49%;
+    }
+
+    .npl-auth-logo img {
+        width: 90px;
+    }
+
+    .npl-auth-home {
+        max-width: 49%;
+        padding: 0 6px;
+        gap: 4px;
+        font-size: 9px;
+    }
+
+    .npl-auth-main {
+        padding: 16px 2.5%;
+    }
+
+    .npl-auth-form-panel {
+        padding: 22px 12px;
+    }
+
+    .npl-auth-heading h2 {
+        font-size: 27px;
+    }
+
+    .npl-auth-options {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .npl-auth-checkbox-label,
+    .npl-auth-link {
+        font-size: 11px;
+    }
+
+    .npl-auth-submit {
+        gap: 6px;
+        font-size: 11px;
+    }
+
+    .npl-auth-role-trigger {
+        gap: 5px;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .npl-auth-header *,
+    .npl-auth-main *,
+    .npl-auth-footer *,
+    .npl-auth-header *::before,
+    .npl-auth-main *::before,
+    .npl-auth-footer *::before,
+    .npl-auth-header *::after,
+    .npl-auth-main *::after,
+    .npl-auth-footer *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+

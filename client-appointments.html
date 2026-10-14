@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Client Dashboard to manage legal cases, appointments, documents, and client information.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+<div class="npl-client-dashboard">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="npl-client-overlay" id="nplClientOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="npl-client-sidebar" id="nplClientSidebar"
+        aria-label="Client dashboard navigation">
+
+        <div class="npl-client-brand">
+
+            <a href="client.html" class="npl-client-brand-link"
+                aria-label="Stackly Legal Services home">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Legal Services Logo"
+                    class="npl-client-logo">
+
+                 
+
+            </a>
+
+            <button type="button"
+                class="npl-client-mobile-close"
+                id="nplClientMobileClose"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        
+        <nav class="npl-client-nav">
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client.html"
+                class="npl-client-nav-link"
+                aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="client-cases.html" class="npl-client-nav-link">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>My Legal Cases</span>
+            </a>
+
+            <a href="client-appointments.html" class="npl-client-nav-link npl-client-nav-active">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="client-documents.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>My Documents</span>
+            </a>
+
+            <a href="client-messages.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-comments"></i>
+                <span>Messages</span>
+            </a>
+
+            <a href="client-billing.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Billing & Payments</span>
+            </a>
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client-profile.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="npl-client-sidebar-spacer"></div>
+
+        <div class="npl-client-help-card">
+            <div class="npl-client-help-icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <h4>Need legal assistance?</h4>
+
+            <p>Contact our legal team if you need help with your case or documents.</p>
+
+            <a href="404-client.html">
+                Contact Support <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        
+
+        <div class="npl-client-sidebar-bottom">
+
+            <a href="index.html"
+                class="npl-client-nav-link npl-client-logout"
+                id="nplClientLogout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="npl-client-main">
+
+        <!-- TOP BAR -->
+        <header class="npl-client-topbar">
+
+            <div class="npl-client-topbar-left">
+
+                <button type="button"
+                    class="npl-client-menu-button"
+                    id="nplClientMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="nplClientSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="npl-client-page-heading">
+                    <h1>Client Dashboard</h1>
+                    <p>Manage your legal matters in one place.</p>
+                </div>
+
+            </div>
+
+            <div class="npl-client-topbar-right">
+
+                <a href="404-client.html"><button type="button"
+                    class="npl-client-notification"
+                    aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="npl-client-notification-dot"></span>
+                </button></a>
+
+                <div class="npl-client-user">
+
+                    <div class="npl-client-user-info">
+                        <strong id="nplClientUserName">Client</strong>
+
+                        <a href="mailto:client@example.com"
+                            id="nplClientUserEmail">
+                            client@example.com
+                        </a>
+                    </div>
+
+                    <div class="npl-client-user-avatar"
+                        id="nplClientUserAvatar"
+                        aria-hidden="true">
+                        C
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- ==========================================
+     CLIENT APPOINTMENTS PAGE CONTENT
+========================================== -->
+
+<section class="npl-client-appointments-page">
+
+    <!-- PAGE INTRODUCTION -->
+    <div class="npl-client-appt-intro">
+        <div class="npl-client-appt-intro-content">
+            <span class="npl-client-appt-eyebrow">
+                <i class="fa-regular fa-calendar-check"></i>
+                YOUR LEGAL SCHEDULE
+            </span>
+
+            <h2>Appointments & Consultations</h2>
+
+            <p>
+                Stay connected with your legal team, manage upcoming
+                consultations, and keep every important meeting on track.
+            </p>
+        </div>
+
+        <a href="404-client.html"
+           class="npl-client-appt-primary-btn">
+            <i class="fa-solid fa-plus"></i>
+            Book an Appointment
+        </a>
+    </div>
+
+
+    <!-- APPOINTMENT STATISTICS -->
+    <div class="npl-client-appt-stats">
+
+        <article class="npl-client-appt-stat-card">
+            <div class="npl-client-appt-stat-top">
+                <span>Total Appointments</span>
+                <div class="npl-client-appt-stat-icon npl-appt-icon-green">
+                    <i class="fa-regular fa-calendar"></i>
+                </div>
+            </div>
+            <h3>12</h3>
+            <p><i class="fa-solid fa-arrow-trend-up"></i> All scheduled meetings</p>
+        </article>
+
+        <article class="npl-client-appt-stat-card">
+            <div class="npl-client-appt-stat-top">
+                <span>Upcoming</span>
+                <div class="npl-client-appt-stat-icon npl-appt-icon-gold">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+            </div>
+            <h3>03</h3>
+            <p>Awaiting consultation</p>
+        </article>
+
+        <article class="npl-client-appt-stat-card">
+            <div class="npl-client-appt-stat-top">
+                <span>Completed</span>
+                <div class="npl-client-appt-stat-icon npl-appt-icon-blue">
+                    <i class="fa-solid fa-check-double"></i>
+                </div>
+            </div>
+            <h3>08</h3>
+            <p>Successfully attended</p>
+        </article>
+
+        <article class="npl-client-appt-stat-card">
+            <div class="npl-client-appt-stat-top">
+                <span>Rescheduled</span>
+                <div class="npl-client-appt-stat-icon npl-appt-icon-purple">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </div>
+            </div>
+            <h3>01</h3>
+            <p>Updated meeting time</p>
+        </article>
+
+    </div>
+
+
+    <!-- NEXT APPOINTMENT FEATURE -->
+    <section class="npl-client-appt-feature">
+
+        <div class="npl-client-appt-feature-main">
+
+            <div class="npl-client-appt-feature-label">
+                <span class="npl-client-appt-live-dot"></span>
+                YOUR NEXT CONSULTATION
+            </div>
+
+            <h2>Legal Strategy Consultation</h2>
+
+            <p class="npl-client-appt-feature-description">
+                Review your case progress, discuss the next legal steps,
+                and get answers to your questions with your assigned attorney.
+            </p>
+
+            <div class="npl-client-appt-attorney">
+                <div class="npl-client-appt-attorney-avatar">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <div>
+                    <strong>Adv. Michael Anderson</strong>
+                    <span>Senior Legal Consultant</span>
+                </div>
+            </div>
+
+            <div class="npl-client-appt-feature-actions">
+                <a href="404-client.html"
+                   class="npl-client-appt-light-btn">
+                    <i class="fa-solid fa-video"></i>
+                    Meeting Details
+                </a>
+
+                <a href="404-client.html"
+                   class="npl-client-appt-outline-btn">
+                    <i class="fa-regular fa-calendar"></i>
+                    Reschedule
+                </a>
+            </div>
+
+        </div>
+
+        <div class="npl-client-appt-date-panel">
+
+            <div class="npl-client-appt-date-heading">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>UPCOMING MEETING</span>
+            </div>
+
+            <div class="npl-client-appt-date">
+                <span>OCT</span>
+                <strong>20</strong>
+                <span>TUESDAY</span>
+            </div>
+
+            <div class="npl-client-appt-date-divider"></div>
+
+            <div class="npl-client-appt-date-detail">
+                <i class="fa-regular fa-clock"></i>
+                <span>10:30 AM – 11:15 AM</span>
+            </div>
+
+            <div class="npl-client-appt-date-detail">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Online Consultation</span>
+            </div>
+
+            <span class="npl-client-appt-confirmed">
+                <i class="fa-solid fa-circle-check"></i>
+                Confirmed
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING AND PREPARATION -->
+    <div class="npl-client-appt-lower-grid">
+
+        <!-- BOOK APPOINTMENT FORM -->
+        <section class="npl-client-appt-booking"
+                 id="nplClientBookAppointment">
+
+            <div class="npl-client-appt-section-heading">
+                <div>
+                    <span class="npl-client-appt-section-label">
+                        PLAN AHEAD
+                    </span>
+                    <h2>Request an Appointment</h2>
+                    <p>Choose a consultation type and preferred schedule.</p>
+                </div>
+
+                <div class="npl-client-appt-heading-icon">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+            </div>
+
+            <form class="npl-client-appt-form"
+                  action="404-client.html"
+                  method="get">
+
+                
+<div class="npl-client-appt-form-group">
+    <label for="nplClientApptType">Consultation Type</label>
+
+    <div class="npl-client-appt-input-wrap npl-client-appt-custom-select">
+        <i class="fa-solid fa-scale-balanced npl-client-appt-select-icon"></i>
+
+        <button type="button"
+                class="npl-client-appt-select-trigger"
+                id="nplClientApptType"
+                aria-expanded="false"
+                aria-haspopup="listbox">
+            <span class="npl-client-appt-selected-text">
+                Select consultation
+            </span>
+            <i class="fa-solid fa-chevron-down npl-client-appt-select-arrow"></i>
+        </button>
+
+        <input type="hidden"
+               name="appointmentType"
+               id="nplClientApptTypeValue"
+               required>
+
+        <div class="npl-client-appt-select-options"
+             role="listbox"
+             aria-label="Consultation Type"
+             hidden>
+            <button type="button" role="option" data-value="case-review">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Legal Case Review</span>
+            </button>
+
+            <button type="button" role="option" data-value="document-review">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Document Review</span>
+            </button>
+
+            <button type="button" role="option" data-value="notary">
+                <i class="fa-solid fa-stamp"></i>
+                <span>Notary Services</span>
+            </button>
+
+            <button type="button" role="option" data-value="family-law">
+                <i class="fa-solid fa-people-roof"></i>
+                <span>Family Law Consultation</span>
+            </button>
+
+            <button type="button" role="option" data-value="corporate-law">
+                <i class="fa-solid fa-building"></i>
+                <span>Corporate Legal Advice</span>
+            </button>
+
+            <button type="button" role="option" data-value="follow-up">
+                <i class="fa-solid fa-comments"></i>
+                <span>Follow-up Consultation</span>
+            </button>
+        </div>
+    </div>
+</div>
+                <div class="npl-client-appt-form-row">
+
+                    <div class="npl-client-appt-form-group">
+                        <label for="nplClientApptDate">Preferred Date</label>
+
+                        <div class="npl-client-appt-input-wrap">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input type="date"
+                                   id="nplClientApptDate"
+                                   name="appointmentDate"
+                                   required>
+                        </div>
+                    </div>
+
+                    
+<div class="npl-client-appt-form-group">
+    <label for="nplClientApptTime">Preferred Time</label>
+
+    <div class="npl-client-appt-input-wrap npl-client-appt-time-select">
+
+        <i class="fa-regular fa-clock npl-client-appt-time-icon"></i>
+
+        <button type="button"
+                class="npl-client-appt-time-trigger"
+                id="nplClientApptTime"
+                aria-expanded="false"
+                aria-haspopup="listbox">
+            <span class="npl-client-appt-time-selected">
+                Select time
+            </span>
+
+            <i class="fa-solid fa-chevron-down npl-client-appt-time-arrow"></i>
+        </button>
+
+        <input type="hidden"
+               name="appointmentTime"
+               id="nplClientApptTimeValue"
+               required>
+
+        <div class="npl-client-appt-time-options"
+             role="listbox"
+             aria-label="Preferred Time"
+             hidden>
+
+            <button type="button" role="option" data-value="09:00">
+                <i class="fa-regular fa-clock"></i>
+                <span>09:00 AM</span>
+            </button>
+
+            <button type="button" role="option" data-value="10:30">
+                <i class="fa-regular fa-clock"></i>
+                <span>10:30 AM</span>
+            </button>
+
+            <button type="button" role="option" data-value="12:00">
+                <i class="fa-regular fa-clock"></i>
+                <span>12:00 PM</span>
+            </button>
+
+            <button type="button" role="option" data-value="14:00">
+                <i class="fa-regular fa-clock"></i>
+                <span>02:00 PM</span>
+            </button>
+
+            <button type="button" role="option" data-value="15:30">
+                <i class="fa-regular fa-clock"></i>
+                <span>03:30 PM</span>
+            </button>
+
+            <button type="button" role="option" data-value="16:30">
+                <i class="fa-regular fa-clock"></i>
+                <span>04:30 PM</span>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+                </div>
+
+                
+<div class="npl-client-appt-form-group">
+    <label for="nplClientApptMode">Meeting Preference</label>
+
+    <div class="npl-client-appt-input-wrap npl-client-appt-mode-select">
+
+        <i class="fa-solid fa-video npl-client-appt-mode-icon"></i>
+
+        <button type="button"
+                class="npl-client-appt-mode-trigger"
+                id="nplClientApptMode"
+                aria-expanded="false"
+                aria-haspopup="listbox">
+            <span class="npl-client-appt-mode-selected">
+                Choose meeting format
+            </span>
+
+            <i class="fa-solid fa-chevron-down npl-client-appt-mode-arrow"></i>
+        </button>
+
+        <input type="hidden"
+               name="meetingMode"
+               id="nplClientApptModeValue"
+               required>
+
+        <div class="npl-client-appt-mode-options"
+             role="listbox"
+             aria-label="Meeting Preference"
+             hidden>
+
+            <button type="button" role="option" data-value="online">
+                <i class="fa-solid fa-video"></i>
+                <span>Online Consultation</span>
+            </button>
+
+            <button type="button" role="option" data-value="office">
+                <i class="fa-solid fa-building"></i>
+                <span>In-Person Meeting</span>
+            </button>
+
+            <button type="button" role="option" data-value="phone">
+                <i class="fa-solid fa-phone"></i>
+                <span>Phone Consultation</span>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+                <div class="npl-client-appt-form-group">
+                    <label for="nplClientApptNotes">
+                        Additional Information
+                        <span>(Optional)</span>
+                    </label>
+
+                    <textarea id="nplClientApptNotes"
+                              name="appointmentNotes"
+                              rows="3"
+                              placeholder="Briefly describe what you would like to discuss..."></textarea>
+                </div>
+
+                <button type="submit"
+                        class="npl-client-appt-submit-btn">
+                    Request Appointment
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <p class="npl-client-appt-form-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Your appointment request is handled confidentially.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- APPOINTMENT PREPARATION CHECKLIST -->
+        <aside class="npl-client-appt-preparation">
+
+            <div class="npl-client-appt-section-heading">
+                <div>
+                    <span class="npl-client-appt-section-label">
+                        BEFORE YOU MEET
+                    </span>
+                    <h2>Prepare for Your Visit</h2>
+                    <p>A few things to keep your consultation productive.</p>
+                </div>
+            </div>
+
+            <div class="npl-client-appt-checklist">
+
+                <div class="npl-client-appt-check-item">
+                    <span class="npl-client-appt-check-icon">
+                        <i class="fa-regular fa-folder-open"></i>
+                    </span>
+                    <div>
+                        <strong>Gather Your Documents</strong>
+                        <p>Keep relevant legal papers ready for review.</p>
+                    </div>
+                </div>
+
+                <div class="npl-client-appt-check-item">
+                    <span class="npl-client-appt-check-icon">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </span>
+                    <div>
+                        <strong>Prepare Your Questions</strong>
+                        <p>Write down the main points you want to discuss.</p>
+                    </div>
+                </div>
+
+                <div class="npl-client-appt-check-item">
+                    <span class="npl-client-appt-check-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </span>
+                    <div>
+                        <strong>Check Meeting Details</strong>
+                        <p>Confirm the location or online meeting instructions.</p>
+                    </div>
+                </div>
+
+                <div class="npl-client-appt-check-item">
+                    <span class="npl-client-appt-check-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </span>
+                    <div>
+                        <strong>Arrive a Little Early</strong>
+                        <p>Allow time to settle in before your appointment.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="404-client.html"
+               class="npl-client-appt-documents-link">
+                <i class="fa-regular fa-folder-open"></i>
+                Review My Documents
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="npl-client-appt-help">
+                <div class="npl-client-appt-help-icon">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+                <div>
+                    <strong>Need to make a change?</strong>
+                    <p>Contact the legal team for help with scheduling.</p>
+                    <a href="404-client.html">Get scheduling support</a>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- APPOINTMENT HISTORY -->
+    <section class="npl-client-appt-history">
+
+        <div class="npl-client-appt-section-heading">
+            <div>
+                <span class="npl-client-appt-section-label">
+                    YOUR RECORDS
+                </span>
+                <h2>Recent Appointments</h2>
+                <p>Review the status of your previous consultations.</p>
+            </div>
+
+            <a href="404-client.html"
+               class="npl-client-appt-view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="npl-client-appt-table-wrap">
+            <table class="npl-client-appt-table">
+
+                <thead>
+                    <tr>
+                        <th>Appointment</th>
+                        <th>Legal Consultant</th>
+                        <th>Date & Time</th>
+                        <th>Meeting Type</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <div class="npl-client-appt-table-title">
+                                <span class="npl-client-appt-table-icon">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </span>
+                                <div>
+                                    <strong>Case Progress Review</strong>
+                                    <small>CASE-2026-014</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Adv. Michael Anderson</td>
+                        <td>
+                            <strong>Oct 08, 2026</strong>
+                            <small>10:00 AM</small>
+                        </td>
+                        <td>Online</td>
+                        <td>
+                            <span class="npl-client-appt-status npl-appt-status-completed">
+                                Completed
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-appt-detail-link"
+                               aria-label="View case progress review details">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="npl-client-appt-table-title">
+                                <span class="npl-client-appt-table-icon">
+                                    <i class="fa-regular fa-file-lines"></i>
+                                </span>
+                                <div>
+                                    <strong>Document Verification</strong>
+                                    <small>CASE-2026-009</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Adv. Sarah Mitchell</td>
+                        <td>
+                            <strong>Sep 24, 2026</strong>
+                            <small>02:30 PM</small>
+                        </td>
+                        <td>In Person</td>
+                        <td>
+                            <span class="npl-client-appt-status npl-appt-status-completed">
+                                Completed
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-appt-detail-link"
+                               aria-label="View document verification details">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="npl-client-appt-table-title">
+                                <span class="npl-client-appt-table-icon">
+                                    <i class="fa-solid fa-file-signature"></i>
+                                </span>
+                                <div>
+                                    <strong>Notary Consultation</strong>
+                                    <small>CASE-2026-006</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Adv. David Wilson</td>
+                        <td>
+                            <strong>Sep 12, 2026</strong>
+                            <small>11:30 AM</small>
+                        </td>
+                        <td>In Person</td>
+                        <td>
+                            <span class="npl-client-appt-status npl-appt-status-cancelled">
+                                Cancelled
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-appt-detail-link"
+                               aria-label="View notary consultation details">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </section>
+
+
+    <!-- APPOINTMENT REMINDER -->
+    <section class="npl-client-appt-reminder">
+
+        <div class="npl-client-appt-reminder-icon">
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <div class="npl-client-appt-reminder-content">
+            <h3>Never Miss an Important Meeting</h3>
+            <p>
+                Check your appointment schedule and keep your case documents
+                ready before every consultation.
+            </p>
+        </div>
+
+        <a href="404-client.html"
+           class="npl-client-appt-reminder-btn">
+            Check Documents
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</section>
+
+
+</main>
+
+</div>
+
+<script src="client.js"></script>
+
+</body>
+</html>

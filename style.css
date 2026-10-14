@@ -1,0 +1,9249 @@
+/* ==========================================
+   STACKLY LEGAL — ABOUT PAGE HERO
+   Background Image | Responsive | Premium
+========================================== */
+
+.npl-about-hero,
+.npl-about-hero * {
+    box-sizing: border-box;
+}
+
+.npl-about-hero {
+    --npl-about-gold: #d9b77d;
+    --npl-about-dark: #031d19;
+    --npl-about-muted: #aabbb5;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 100px 6% 40px;
+    overflow: hidden;
+
+    background-color: var(--npl-about-dark);
+    background-image:
+        linear-gradient(
+            100deg,
+            rgba(3, 29, 25, 0.65) 0%,
+            rgba(3, 29, 25, 0.48) 48%,
+            rgba(3, 29, 25, 0.30) 100%
+        ),
+        url("about-banner.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+}
+
+/* BACKGROUND DECORATION */
+
+.npl-about-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(217, 183, 125, 0.13),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(3, 29, 25, 0.2),
+            rgba(9, 43, 37, 0.25)
+        );
+}
+
+/* MAIN CONTAINER */
+
+.npl-about-hero-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 75px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   LEFT CONTENT
+========================================== */
+
+.npl-about-hero-content {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+    padding: 20px 0;
+}
+
+/* EYEBROW */
+
+.npl-about-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 25px;
+    color: var(--npl-about-gold);
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.npl-about-hero-line {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 38px;
+    height: 1px;
+    background: var(--npl-about-gold);
+}
+
+/* MAIN HEADING */
+
+.npl-about-hero-content h1 {
+    max-width: 650px;
+    margin: 0;
+    color: #ffffff;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 67px);
+    font-weight: 500;
+    line-height: 1.16;
+    letter-spacing: -1.5px;
+    overflow-wrap: break-word;
+}
+
+.npl-about-hero-content h1 span {
+    color: var(--npl-about-gold);
+    font-style: italic;
+}
+
+/* DESCRIPTION */
+
+.npl-about-hero-description {
+    max-width: 510px;
+    margin: 25px 0 30px;
+    color: var(--npl-about-muted);
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.95;
+}
+
+/* ==========================================
+   BREADCRUMB
+========================================== */
+
+.npl-about-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+}
+
+.npl-about-breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.npl-about-breadcrumb a:hover {
+    color: var(--npl-about-gold);
+}
+
+.npl-about-breadcrumb i {
+    color: var(--npl-about-gold);
+    font-size: 10px;
+}
+
+.npl-about-breadcrumb span {
+    color: var(--npl-about-gold);
+}
+
+/* ==========================================
+   RIGHT IMAGE PANEL
+========================================== */
+
+.npl-about-hero-visual {
+    position: relative;
+    min-width: 0;
+    padding: 10px 20px 45px 0;
+}
+
+/* IMAGE FRAME */
+
+.npl-about-hero-image-frame {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    border: 1px solid rgba(217, 183, 125, 0.4);
+    border-radius: 180px 180px 8px 8px;
+    background: #173c33;
+}
+
+/* INNER GOLD BORDER */
+
+.npl-about-hero-image-frame::before {
+    position: absolute;
+    inset: 12px;
+    z-index: 2;
+    border: 1px solid rgba(217, 183, 125, 0.5);
+    border-radius: 170px 170px 4px 4px;
+    content: "";
+    pointer-events: none;
+}
+
+/* IMAGE */
+
+.npl-about-hero-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s ease;
+}
+
+.npl-about-hero-visual:hover
+.npl-about-hero-image-frame img {
+    transform: scale(1.04);
+}
+
+/* IMAGE OVERLAY */
+
+.npl-about-hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(3, 29, 25, 0.02) 35%,
+        rgba(3, 29, 25, 0.65) 100%
+    );
+    pointer-events: none;
+}
+
+/* LEGAL ICON SEAL */
+
+.npl-about-hero-seal {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border: 1px solid var(--npl-about-gold);
+    border-radius: 50%;
+    background: rgba(3, 29, 25, 0.88);
+    color: var(--npl-about-gold);
+    font-size: 25px;
+}
+
+/* ==========================================
+   FLOATING INFORMATION CARD
+========================================== */
+
+.npl-about-hero-note {
+    position: absolute;
+    left: -40px;
+    bottom: 80px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: max-content;
+    max-width: 310px;
+    padding: 18px 22px;
+    border: 1px solid rgba(217, 183, 125, 0.3);
+    border-radius: 5px;
+    background: #0d3028;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+}
+
+.npl-about-hero-note-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(217, 183, 125, 0.13);
+    color: var(--npl-about-gold);
+    font-size: 19px;
+}
+
+.npl-about-hero-note div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.npl-about-hero-note strong {
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.npl-about-hero-note div span {
+    color: var(--npl-about-muted);
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   IMAGE NUMBER LABEL
+========================================== */
+
+.npl-about-hero-number {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--npl-about-muted);
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.npl-about-hero-number span:first-child {
+    color: var(--npl-about-gold);
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    letter-spacing: 0;
+}
+
+.npl-about-hero-number-line {
+    display: inline-block;
+    width: 35px;
+    height: 1px;
+    background: var(--npl-about-gold);
+}
+
+/* ==========================================
+   BOTTOM BRAND VALUES
+========================================== */
+
+.npl-about-hero-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 70px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    color: #c0ccc7;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.npl-about-hero-bottom-dot {
+    flex-shrink: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--npl-about-gold);
+}
+
+/* ==========================================
+   ABOUT HERO BOTTOM — HOVER EFFECTS
+========================================== */
+
+.npl-about-hero-bottom span {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+/* Gold text on hover */
+.npl-about-hero-bottom span:not(.npl-about-hero-bottom-dot):hover {
+    color: #d9b77d;
+    transform: translateY(-3px);
+    text-shadow: 0 0 12px rgba(217, 183, 125, 0.25);
+}
+
+/* Animated gold dots */
+.npl-about-hero-bottom-dot {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.npl-about-hero-bottom:hover .npl-about-hero-bottom-dot {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(217, 183, 125, 0.55);
+}
+
+/* Subtle divider effect */
+.npl-about-hero-bottom {
+    transition: border-color 0.35s ease;
+}
+
+.npl-about-hero-bottom:hover {
+    border-top-color: rgba(217, 183, 125, 0.5);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .npl-about-hero-bottom,
+    .npl-about-hero-bottom span,
+    .npl-about-hero-bottom-dot {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+    .npl-about-hero {
+        padding: 80px 5% 35px;
+        background-position: 60% center;
+    }
+
+    .npl-about-hero-container {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 40px;
+    }
+
+    .npl-about-hero-content h1 {
+        font-size: clamp(40px, 5.5vw, 56px);
+    }
+
+    .npl-about-hero-description {
+        font-size: 14px;
+    }
+
+    .npl-about-hero-image-frame {
+        height: 370px;
+    }
+
+    .npl-about-hero-note {
+        left: -20px;
+        max-width: 275px;
+        padding: 15px;
+    }
+
+    .npl-about-hero-bottom {
+        margin-top: 55px;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 700px) {
+    .npl-about-hero {
+    padding: 65px 6% 30px;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(3, 29, 25, 0.60) 0%,
+            rgba(3, 29, 25, 0.45) 100%
+        ),
+        url("about-banner.webp");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    .npl-about-hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .npl-about-hero-content {
+        padding: 0;
+    }
+
+    .npl-about-hero-eyebrow {
+        gap: 10px;
+        margin-bottom: 20px;
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .npl-about-hero-line {
+        width: 30px;
+    }
+
+    .npl-about-hero-content h1 {
+        font-size: clamp(39px, 10vw, 52px);
+        line-height: 1.2;
+        letter-spacing: -0.8px;
+    }
+
+    .npl-about-hero-description {
+        margin: 20px 0 25px;
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .npl-about-breadcrumb {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .npl-about-hero-visual {
+        width: calc(100% - 12px);
+        margin-left: 12px;
+        padding: 0 0 45px;
+    }
+
+    .npl-about-hero-image-frame {
+        height: 390px;
+        border-radius: 150px 150px 6px 6px;
+    }
+
+    .npl-about-hero-image-frame::before {
+        border-radius: 140px 140px 4px 4px;
+    }
+
+    .npl-about-hero-note {
+        left: -12px;
+        bottom: 75px;
+        width: auto;
+        max-width: min(285px, calc(100% - 15px));
+        padding: 13px;
+        gap: 10px;
+    }
+
+    .npl-about-hero-note-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .npl-about-hero-note strong {
+        font-size: 12px;
+    }
+
+    .npl-about-hero-note div span {
+        font-size: 10px;
+    }
+
+    .npl-about-hero-seal {
+        right: 22px;
+        bottom: 22px;
+        width: 53px;
+        height: 53px;
+        font-size: 21px;
+    }
+
+    .npl-about-hero-number {
+        right: 0;
+        bottom: 0;
+        gap: 8px;
+        font-size: 9px;
+    }
+
+    .npl-about-hero-number span:first-child {
+        font-size: 24px;
+    }
+
+    .npl-about-hero-bottom {
+        gap: 12px;
+        margin-top: 45px;
+        padding-top: 22px;
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+    .npl-about-hero {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .npl-about-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .npl-about-hero-image-frame {
+        height: 320px;
+    }
+
+    .npl-about-hero-bottom {
+        gap: 8px;
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .npl-about-hero-note {
+        max-width: calc(100% - 10px);
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-about-hero-image-frame img,
+    .npl-about-breadcrumb a {
+        transition: none;
+    }
+
+    .npl-about-hero-visual:hover
+    .npl-about-hero-image-frame img {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   STACKLY NOTARY PUBLIC & LEGAL SERVICES
+   SERVICES PAGE HERO
+   Premium Design | Responsive | Animations | Hover Effects
+========================================================= */
+
+.npl-services-hero,
+.npl-services-hero * {
+    box-sizing: border-box;
+}
+
+.npl-services-hero {
+    --npl-services-gold: #d9b77d;
+    --npl-services-dark: #031d19;
+    --npl-services-muted: #b7c5bf;
+    --npl-services-white: #ffffff;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 95px 6% 38px;
+    overflow: hidden;
+
+    background-color: var(--npl-services-dark);
+    background-image:
+        linear-gradient(
+            110deg,
+            rgba(3, 29, 25, 0.72) 0%,
+            rgba(3, 29, 25, 0.58) 50%,
+            rgba(3, 29, 25, 0.42) 100%
+        ),
+        url("services-banner.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: var(--npl-services-white);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.npl-services-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 78% 30%,
+            rgba(217, 183, 125, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            transparent 65%,
+            rgba(3, 29, 25, 0.45) 100%
+        );
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.npl-services-hero-container {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    align-items: center;
+    gap: 65px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.npl-services-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 720px;
+
+    animation: nplServicesContentReveal 1s ease-out both;
+}
+
+/* Eyebrow */
+
+.npl-services-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 26px;
+
+    color: var(--npl-services-gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+}
+
+.npl-services-hero-eyebrow-line {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 2px;
+
+    background: var(--npl-services-gold);
+
+    transform-origin: left;
+    animation: nplServicesLineReveal 0.8s ease-out both;
+    transition: width 0.35s ease, box-shadow 0.35s ease;
+}
+
+.npl-services-hero-eyebrow:hover
+.npl-services-hero-eyebrow-line {
+    width: 65px;
+    box-shadow: 0 0 12px rgba(217, 183, 125, 0.55);
+}
+
+/* Main Heading */
+
+.npl-services-hero-content h1 {
+    max-width: 760px;
+    margin: 0 0 25px;
+
+    color: var(--npl-services-white);
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(44px, 5.2vw, 76px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+
+    overflow-wrap: break-word;
+}
+
+.npl-services-hero-content h1 span {
+    display: block;
+    margin-top: 7px;
+
+    color: var(--npl-services-gold);
+
+    transition:
+        color 0.35s ease,
+        text-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+.npl-services-hero-content h1 span:hover {
+    color: #f0d5a5;
+    text-shadow: 0 5px 25px rgba(217, 183, 125, 0.18);
+    transform: translateX(5px);
+}
+
+/* Description */
+
+.npl-services-hero-description {
+    max-width: 590px;
+    margin: 0 0 32px;
+
+    color: var(--npl-services-muted);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 0.1px;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.npl-services-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    margin-bottom: 42px;
+}
+
+/* Primary Button */
+
+.npl-services-hero-btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    min-height: 58px;
+    padding: 16px 25px;
+
+    border: 1px solid var(--npl-services-gold);
+    border-radius: 3px;
+
+    background: var(--npl-services-gold);
+    color: var(--npl-services-dark);
+
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.npl-services-hero-btn::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--npl-services-dark);
+    content: "";
+
+    transform: translateX(-102%);
+    transition: transform 0.4s ease;
+}
+
+.npl-services-hero-btn i {
+    font-size: 14px;
+
+    transition: transform 0.35s ease;
+}
+
+.npl-services-hero-btn:hover {
+    color: var(--npl-services-gold);
+    border-color: var(--npl-services-gold);
+
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.npl-services-hero-btn:hover::before {
+    transform: translateX(0);
+}
+
+.npl-services-hero-btn:hover i {
+    transform: translateX(5px);
+}
+
+.npl-services-hero-btn:focus-visible,
+.npl-services-hero-text-link:focus-visible,
+.npl-services-hero-breadcrumb a:focus-visible {
+    outline: 2px solid var(--npl-services-gold);
+    outline-offset: 5px;
+}
+
+/* Secondary Text Link */
+
+.npl-services-hero-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 10px 0;
+
+    color: var(--npl-services-white);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.npl-services-hero-text-link i {
+    color: var(--npl-services-gold);
+    font-size: 13px;
+
+    transition: transform 0.3s ease;
+}
+
+.npl-services-hero-text-link:hover {
+    color: var(--npl-services-gold);
+}
+
+.npl-services-hero-text-link:hover i {
+    transform: translate(4px, -3px);
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.npl-services-hero-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    color: var(--npl-services-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.npl-services-hero-breadcrumb a {
+    color: var(--npl-services-white);
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.npl-services-hero-breadcrumb a:hover {
+    color: var(--npl-services-gold);
+}
+
+.npl-services-hero-breadcrumb > i {
+    color: var(--npl-services-gold);
+    font-size: 10px;
+}
+
+.npl-services-hero-breadcrumb span {
+    color: var(--npl-services-gold);
+}
+
+/* =========================================================
+   RIGHT IMAGE VISUAL
+========================================================= */
+
+.npl-services-hero-visual {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    justify-self: end;
+
+    padding: 0 22px 25px 0;
+
+    animation: nplServicesVisualReveal 1.1s ease-out both;
+}
+
+.npl-services-hero-image-frame {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    height: 510px;
+    overflow: hidden;
+
+    border: 1px solid rgba(217, 183, 125, 0.48);
+    border-radius: 220px 220px 5px 5px;
+
+    background: #16332d;
+
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.22);
+}
+
+.npl-services-hero-image-frame img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    filter: brightness(0.92) saturate(0.88);
+
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.6s ease;
+}
+
+.npl-services-hero-image-frame:hover img {
+    transform: scale(1.07);
+    filter: brightness(1.08) saturate(1.02);
+}
+
+/* Image Shade */
+
+.npl-services-hero-image-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background: linear-gradient(
+        180deg,
+        rgba(3, 29, 25, 0.02) 35%,
+        rgba(3, 29, 25, 0.72) 100%
+    );
+
+    transition: opacity 0.4s ease;
+}
+
+.npl-services-hero-image-frame:hover
+.npl-services-hero-image-shade {
+    opacity: 0.78;
+}
+
+/* Image Information Card */
+
+.npl-services-hero-image-label {
+    position: absolute;
+    right: 16px;
+    bottom: 24px;
+    left: 16px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(217, 183, 125, 0.35);
+    border-radius: 4px;
+
+    background: rgba(3, 29, 25, 0.88);
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.npl-services-hero-image-frame:hover
+.npl-services-hero-image-label {
+    transform: translateY(-5px);
+    border-color: var(--npl-services-gold);
+    background: rgba(3, 29, 25, 0.94);
+}
+
+.npl-services-hero-label-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(217, 183, 125, 0.55);
+    border-radius: 50%;
+
+    color: var(--npl-services-gold);
+    font-size: 21px;
+
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+.npl-services-hero-image-frame:hover
+.npl-services-hero-label-icon {
+    color: var(--npl-services-dark);
+    background: var(--npl-services-gold);
+    transform: rotate(-8deg);
+}
+
+.npl-services-hero-image-label > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.npl-services-hero-image-label strong {
+    color: var(--npl-services-white);
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.npl-services-hero-image-label > div > span {
+    color: var(--npl-services-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Vertical Number */
+
+.npl-services-hero-side-number {
+    position: absolute;
+    top: 50%;
+    right: -2px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--npl-services-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    writing-mode: vertical-rl;
+    transform: translateY(-50%);
+}
+
+.npl-services-hero-side-number > span:first-child {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.npl-services-hero-side-line {
+    display: block;
+    width: 1px;
+    height: 55px;
+
+    background: var(--npl-services-gold);
+    opacity: 0.7;
+}
+
+/* =========================================================
+   BOTTOM VALUES STRIP
+========================================================= */
+
+.npl-services-hero-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 65px auto 0;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.19);
+
+    color: #d1dad5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    transition: border-color 0.35s ease;
+}
+
+.npl-services-hero-bottom > span:not(.npl-services-hero-dot) {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.npl-services-hero-bottom > span:not(.npl-services-hero-dot):hover {
+    color: var(--npl-services-gold);
+    transform: translateY(-3px);
+    text-shadow: 0 0 12px rgba(217, 183, 125, 0.22);
+}
+
+.npl-services-hero-dot {
+    display: block;
+    flex-shrink: 0;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: var(--npl-services-gold);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.npl-services-hero-bottom:hover {
+    border-top-color: rgba(217, 183, 125, 0.55);
+}
+
+.npl-services-hero-bottom:hover .npl-services-hero-dot {
+    transform: scale(1.4);
+    box-shadow: 0 0 10px rgba(217, 183, 125, 0.45);
+}
+
+/* =========================================================
+   KEYFRAME ANIMATIONS
+========================================================= */
+
+@keyframes nplServicesContentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nplServicesVisualReveal {
+    from {
+        opacity: 0;
+        transform: translate(25px, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes nplServicesLineReveal {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* =========================================================
+   LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1100px) {
+    .npl-services-hero {
+        padding: 80px 5% 35px;
+    }
+
+    .npl-services-hero-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        gap: 38px;
+    }
+
+    .npl-services-hero-content h1 {
+        font-size: clamp(42px, 5.1vw, 60px);
+    }
+
+    .npl-services-hero-description {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .npl-services-hero-image-frame {
+        height: 440px;
+    }
+
+    .npl-services-hero-bottom {
+        margin-top: 50px;
+    }
+}
+
+/* =========================================================
+   TABLETS AND MOBILE LANDSCAPE
+========================================================= */
+
+@media (max-width: 850px) {
+    .npl-services-hero {
+        padding: 75px 6% 32px;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(3, 29, 25, 0.66) 0%,
+                rgba(3, 29, 25, 0.58) 100%
+            ),
+            url("services-banner.webp");
+
+        background-position: center;
+    }
+
+    .npl-services-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 48px;
+    }
+
+    .npl-services-hero-content {
+        max-width: 720px;
+    }
+
+    .npl-services-hero-content h1 {
+        max-width: 650px;
+        font-size: clamp(46px, 7.5vw, 66px);
+        line-height: 1.12;
+    }
+
+    .npl-services-hero-description {
+        max-width: 650px;
+        font-size: 17px;
+    }
+
+    .npl-services-hero-visual {
+        width: min(100%, 500px);
+        justify-self: center;
+        padding-right: 22px;
+    }
+
+    .npl-services-hero-image-frame {
+        height: 470px;
+    }
+
+    .npl-services-hero-side-number {
+        right: -1px;
+    }
+
+    .npl-services-hero-bottom {
+        justify-content: flex-start;
+        gap: 17px;
+        margin-top: 45px;
+        padding-top: 22px;
+        font-size: 10px;
+        letter-spacing: 1.6px;
+    }
+}
+
+/* =========================================================
+   MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 600px) {
+    .npl-services-hero {
+        padding: 60px 5% 28px;
+    }
+
+    .npl-services-hero-container {
+        gap: 38px;
+    }
+
+    .npl-services-hero-eyebrow {
+        gap: 10px;
+        margin-bottom: 22px;
+
+        font-size: 11px;
+        letter-spacing: 2.2px;
+    }
+
+    .npl-services-hero-eyebrow-line {
+        width: 30px;
+    }
+
+    .npl-services-hero-eyebrow:hover
+    .npl-services-hero-eyebrow-line {
+        width: 42px;
+    }
+
+    .npl-services-hero-content h1 {
+        margin-bottom: 20px;
+
+        font-size: clamp(37px, 9vw, 49px);
+        line-height: 1.16;
+        letter-spacing: -0.8px;
+    }
+
+    .npl-services-hero-content h1 span {
+        margin-top: 5px;
+    }
+
+    .npl-services-hero-description {
+        margin-bottom: 25px;
+
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .npl-services-hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 30px;
+    }
+
+    .npl-services-hero-btn {
+        width: 100%;
+        min-height: 56px;
+        padding: 15px 18px;
+        gap: 12px;
+
+        font-size: 14px;
+    }
+
+    .npl-services-hero-text-link {
+        font-size: 14px;
+    }
+
+    .npl-services-hero-breadcrumb {
+        gap: 11px;
+        font-size: 13px;
+    }
+
+    .npl-services-hero-visual {
+        width: calc(100% - 10px);
+        max-width: 430px;
+        padding: 0 13px 18px 0;
+    }
+
+    .npl-services-hero-image-frame {
+        height: clamp(330px, 100vw, 430px);
+        border-radius: 180px 180px 4px 4px;
+    }
+
+    .npl-services-hero-image-label {
+        right: 10px;
+        bottom: 13px;
+        left: 10px;
+        gap: 11px;
+        padding: 13px;
+    }
+
+    .npl-services-hero-label-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .npl-services-hero-image-label strong {
+        font-size: 15px;
+    }
+
+    .npl-services-hero-image-label > div > span {
+        font-size: 12px;
+    }
+
+    .npl-services-hero-side-number {
+        right: -2px;
+        gap: 8px;
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .npl-services-hero-side-number > span:first-child {
+        font-size: 20px;
+    }
+
+    .npl-services-hero-side-line {
+        height: 38px;
+    }
+
+    .npl-services-hero-bottom {
+        justify-content: center;
+        gap: 13px;
+
+        margin-top: 35px;
+        padding-top: 20px;
+
+        font-size: 9px;
+        line-height: 1.8;
+        letter-spacing: 1.2px;
+        text-align: center;
+    }
+
+    .npl-services-hero-dot {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+    .npl-services-hero {
+        padding: 48px 5% 24px;
+    }
+
+    .npl-services-hero-content h1 {
+        font-size: 35px;
+        letter-spacing: -0.6px;
+    }
+
+    .npl-services-hero-description {
+        font-size: 15px;
+    }
+
+    .npl-services-hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.7px;
+    }
+
+    .npl-services-hero-image-frame {
+        height: 315px;
+        border-radius: 145px 145px 4px 4px;
+    }
+
+    .npl-services-hero-image-label {
+        padding: 10px;
+    }
+
+    .npl-services-hero-image-label strong {
+        font-size: 14px;
+    }
+
+    .npl-services-hero-bottom {
+        gap: 10px;
+        font-size: 8px;
+        letter-spacing: 0.9px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-services-hero-content,
+    .npl-services-hero-visual,
+    .npl-services-hero-eyebrow-line {
+        animation: none !important;
+    }
+
+    .npl-services-hero *,
+    .npl-services-hero *::before,
+    .npl-services-hero *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+
+/* =========================================================
+   STACKLY NOTARY PUBLIC & LEGAL SERVICES
+   DOCUMENTS PAGE HERO SECTION
+   Large Typography | Background Image | Animations
+   Responsive Design | Hover Effects
+========================================================= */
+
+.npl-documents-hero,
+.npl-documents-hero * {
+    box-sizing: border-box;
+}
+
+.npl-documents-hero {
+    --npl-doc-gold: #d9b77d;
+    --npl-doc-gold-light: #f0d9a9;
+    --npl-doc-dark: #031d19;
+    --npl-doc-dark-soft: #092923;
+    --npl-doc-white: #ffffff;
+    --npl-doc-muted: #d4ded9;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px 5% 110px;
+
+    background:
+        url("documents-banner.webp") center center / cover no-repeat,
+        var(--npl-doc-dark);
+
+    color: var(--npl-doc-white);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.npl-documents-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(3, 29, 25, 0.65) 0%,
+            rgba(3, 29, 25, 0.48) 48%,
+            rgba(3, 29, 25, 0.30) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(3, 29, 25, 0.65),
+            transparent 55%
+        );
+}
+
+/* Decorative gold glow */
+
+.npl-documents-hero::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    left: -140px;
+    width: 450px;
+    height: 450px;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    background: rgba(217, 183, 125, 0.09);
+    filter: blur(90px);
+    animation: nplDocumentsGlow 9s ease-in-out infinite alternate;
+}
+
+.npl-documents-hero::after {
+    content: "";
+    position: absolute;
+    right: -160px;
+    bottom: 40px;
+    width: 380px;
+    height: 380px;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    background: rgba(217, 183, 125, 0.08);
+    filter: blur(100px);
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.npl-documents-hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    align-items: center;
+    gap: 75px;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.npl-documents-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 700px;
+    animation: nplDocumentsContentIn 1s ease-out both;
+}
+
+/* Eyebrow */
+
+.npl-documents-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 27px;
+
+    color: var(--npl-doc-gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.npl-documents-hero-eyebrow-line {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 48px;
+    height: 2px;
+    background: var(--npl-doc-gold);
+    transform-origin: left;
+    animation: nplDocumentsLineIn 1s ease-out 0.3s both;
+}
+
+/* Main heading */
+
+.npl-documents-hero-content h1 {
+    max-width: 760px;
+    margin: 0 0 26px;
+
+    color: var(--npl-doc-white);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(46px, 5.2vw, 76px);
+    font-weight: 600;
+    line-height: 1.13;
+    letter-spacing: -1.8px;
+    overflow-wrap: break-word;
+}
+
+.npl-documents-hero-content h1 span {
+    display: block;
+    margin-top: 8px;
+
+    color: var(--npl-doc-gold);
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Description */
+
+.npl-documents-hero-description {
+    max-width: 610px;
+    margin: 0 0 34px;
+
+    color: var(--npl-doc-muted);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.95;
+    letter-spacing: 0.15px;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.npl-documents-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 38px;
+}
+
+.npl-documents-hero-btn,
+.npl-documents-hero-secondary {
+    min-height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    padding: 16px 25px;
+    border-radius: 3px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Primary button */
+
+.npl-documents-hero-btn {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    color: var(--npl-doc-dark);
+    background: var(--npl-doc-gold);
+    border: 1px solid var(--npl-doc-gold);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+}
+
+.npl-documents-hero-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--npl-doc-white);
+    transform: translateX(-105%);
+    transition: transform 0.4s ease;
+}
+
+.npl-documents-hero-btn i {
+    font-size: 15px;
+    transition: transform 0.35s ease;
+}
+
+.npl-documents-hero-btn:hover {
+    color: var(--npl-doc-dark);
+    border-color: var(--npl-doc-white);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.23);
+}
+
+.npl-documents-hero-btn:hover::before {
+    transform: translateX(0);
+}
+
+.npl-documents-hero-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Secondary button */
+
+.npl-documents-hero-secondary {
+    color: var(--npl-doc-white);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(217, 183, 125, 0.65);
+}
+
+.npl-documents-hero-secondary i {
+    color: var(--npl-doc-gold);
+    font-size: 13px;
+    transition: transform 0.35s ease;
+}
+
+.npl-documents-hero-secondary:hover {
+    color: var(--npl-doc-dark);
+    background: var(--npl-doc-gold);
+    border-color: var(--npl-doc-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.npl-documents-hero-secondary:hover i {
+    color: var(--npl-doc-dark);
+    transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.npl-documents-hero-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.npl-documents-hero-breadcrumb a {
+    color: var(--npl-doc-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.npl-documents-hero-breadcrumb a:hover {
+    color: var(--npl-doc-gold);
+}
+
+.npl-documents-hero-breadcrumb > i {
+    color: var(--npl-doc-gold);
+    font-size: 10px;
+}
+
+.npl-documents-hero-breadcrumb span {
+    color: var(--npl-doc-gold);
+    font-weight: 600;
+}
+
+/* =========================================================
+   RIGHT IMAGE VISUAL
+========================================================= */
+
+.npl-documents-hero-visual {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    justify-self: end;
+    padding: 0 22px 22px 0;
+
+    animation: nplDocumentsVisualIn 1.1s ease-out both;
+    animation-delay: 0.15s;
+}
+
+.npl-documents-hero-image-frame {
+    position: relative;
+    width: 100%;
+    height: 490px;
+    overflow: hidden;
+    isolation: isolate;
+
+    background: var(--npl-doc-dark-soft);
+    border: 1px solid rgba(217, 183, 125, 0.55);
+    border-radius: 190px 190px 4px 4px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.npl-documents-hero-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.02);
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.3, 1),
+        filter 0.6s ease;
+}
+
+.npl-documents-hero-image-frame:hover {
+    border-color: var(--npl-doc-gold);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.npl-documents-hero-image-frame:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.08);
+}
+
+/* Image shade */
+
+.npl-documents-hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background: linear-gradient(
+        180deg,
+        rgba(3, 29, 25, 0.04) 20%,
+        rgba(3, 29, 25, 0.16) 48%,
+        rgba(3, 29, 25, 0.83) 100%
+    );
+}
+
+/* =========================================================
+   FLOATING DOCUMENT ICON
+========================================================= */
+
+.npl-documents-hero-document-icon {
+    position: absolute;
+    top: 28px;
+    right: 26px;
+    z-index: 2;
+
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--npl-doc-dark);
+    background: var(--npl-doc-gold);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+
+    font-size: 23px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.23);
+
+    animation: nplDocumentsIconFloat 4s ease-in-out infinite;
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+.npl-documents-hero-image-frame:hover
+.npl-documents-hero-document-icon {
+    color: var(--npl-doc-gold);
+    background: var(--npl-doc-dark);
+    transform: rotate(-8deg);
+}
+
+/* =========================================================
+   IMAGE INFORMATION CARD
+========================================================= */
+
+.npl-documents-hero-info-card {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 25px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px 19px;
+
+    background: rgba(3, 29, 25, 0.88);
+    border: 1px solid rgba(217, 183, 125, 0.58);
+    border-radius: 4px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.npl-documents-hero-image-frame:hover
+.npl-documents-hero-info-card {
+    background: rgba(3, 29, 25, 0.96);
+    border-color: var(--npl-doc-gold);
+    transform: translateY(-5px);
+}
+
+.npl-documents-hero-info-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--npl-doc-dark);
+    background: var(--npl-doc-gold);
+    border-radius: 3px;
+    font-size: 21px;
+}
+
+.npl-documents-hero-info-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.npl-documents-hero-info-card strong {
+    color: var(--npl-doc-white);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.npl-documents-hero-info-card > div > span {
+    color: var(--npl-doc-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   VERTICAL SIDE LABEL
+========================================================= */
+
+.npl-documents-hero-side-label {
+    position: absolute;
+    top: 50%;
+    right: -4px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--npl-doc-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+
+    transform: translate(100%, -50%) rotate(90deg);
+    transform-origin: left center;
+}
+
+.npl-documents-hero-side-label > span:first-child {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.npl-documents-hero-side-line {
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: var(--npl-doc-gold);
+}
+
+/* =========================================================
+   BOTTOM VALUES STRIP
+========================================================= */
+
+.npl-documents-hero-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+
+    width: 100%;
+    min-height: 64px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 17px 5%;
+
+    color: var(--npl-doc-muted);
+    background: rgba(3, 29, 25, 0.82);
+    border-top: 1px solid rgba(217, 183, 125, 0.3);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.npl-documents-hero-bottom > span:not(.npl-documents-hero-dot) {
+    transition: color 0.3s ease;
+}
+
+.npl-documents-hero-bottom > span:not(.npl-documents-hero-dot):hover {
+    color: var(--npl-doc-gold);
+}
+
+.npl-documents-hero-dot {
+    width: 5px;
+    height: 5px;
+    flex-shrink: 0;
+
+    background: var(--npl-doc-gold);
+    border-radius: 50%;
+}
+
+/* =========================================================
+   KEYFRAME ANIMATIONS
+========================================================= */
+
+@keyframes nplDocumentsContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nplDocumentsVisualIn {
+    from {
+        opacity: 0;
+        transform: translateX(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes nplDocumentsLineIn {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes nplDocumentsGlow {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(45px, 30px) scale(1.15);
+    }
+}
+
+@keyframes nplDocumentsIconFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* =========================================================
+   LARGE LAPTOPS
+========================================================= */
+
+@media (max-width: 1200px) {
+    .npl-documents-hero {
+        min-height: 680px;
+        padding: 90px 4.5% 100px;
+    }
+
+    .npl-documents-hero-container {
+        gap: 45px;
+    }
+
+    .npl-documents-hero-content h1 {
+        font-size: clamp(44px, 5vw, 65px);
+    }
+
+    .npl-documents-hero-description {
+        font-size: 17px;
+        line-height: 1.85;
+    }
+
+    .npl-documents-hero-image-frame {
+        height: 450px;
+    }
+
+    .npl-documents-hero-side-label {
+        right: -2px;
+    }
+}
+
+/* =========================================================
+   TABLETS AND SMALL LAPTOPS
+========================================================= */
+
+@media (max-width: 992px) {
+    .npl-documents-hero {
+        min-height: auto;
+        padding: 85px 5% 105px;
+    }
+
+    .npl-documents-hero-overlay {
+        background: linear-gradient(
+            110deg,
+            rgba(3, 29, 25, 0.94) 0%,
+            rgba(3, 29, 25, 0.85) 55%,
+            rgba(3, 29, 25, 0.76) 100%
+        );
+    }
+
+    .npl-documents-hero-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        gap: 35px;
+    }
+
+    .npl-documents-hero-content h1 {
+        font-size: clamp(40px, 5.3vw, 55px);
+        letter-spacing: -1px;
+    }
+
+    .npl-documents-hero-eyebrow {
+        font-size: 12px;
+        letter-spacing: 2.5px;
+    }
+
+    .npl-documents-hero-description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .npl-documents-hero-actions {
+        gap: 13px;
+    }
+
+    .npl-documents-hero-btn,
+    .npl-documents-hero-secondary {
+        min-height: 54px;
+        padding: 14px 17px;
+        font-size: 13px;
+    }
+
+    .npl-documents-hero-image-frame {
+        height: 390px;
+        border-radius: 145px 145px 4px 4px;
+    }
+
+    .npl-documents-hero-visual {
+        padding-right: 12px;
+    }
+
+    .npl-documents-hero-info-card {
+        left: 15px;
+        right: 15px;
+        bottom: 17px;
+        gap: 11px;
+        padding: 14px 12px;
+    }
+
+    .npl-documents-hero-info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .npl-documents-hero-info-card strong {
+        font-size: 14px;
+    }
+
+    .npl-documents-hero-info-card > div > span {
+        font-size: 11px;
+    }
+
+    .npl-documents-hero-document-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .npl-documents-hero-side-label {
+        display: none;
+    }
+
+    .npl-documents-hero-bottom {
+        gap: 16px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* =========================================================
+   MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 700px) {
+    .npl-documents-hero {
+        min-height: auto;
+        padding: 75px 6% 100px;
+        background-position: center center;
+    }
+
+    .npl-documents-hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(3, 29, 25, 0.78) 0%,
+                rgba(3, 29, 25, 0.87) 50%,
+                rgba(3, 29, 25, 0.94) 100%
+            );
+    }
+
+    .npl-documents-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 42px;
+    }
+
+    .npl-documents-hero-content {
+        max-width: 100%;
+    }
+
+    .npl-documents-hero-eyebrow {
+        gap: 11px;
+        margin-bottom: 22px;
+        font-size: 12px;
+        letter-spacing: 2.3px;
+    }
+
+    .npl-documents-hero-eyebrow-line {
+        width: 35px;
+    }
+
+    .npl-documents-hero-content h1 {
+        max-width: 600px;
+        margin-bottom: 22px;
+        font-size: clamp(40px, 8vw, 56px);
+        line-height: 1.16;
+        letter-spacing: -0.8px;
+    }
+
+    .npl-documents-hero-content h1 span {
+        margin-top: 7px;
+    }
+
+    .npl-documents-hero-description {
+        max-width: 100%;
+        margin-bottom: 27px;
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .npl-documents-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 30px;
+    }
+
+    .npl-documents-hero-btn,
+    .npl-documents-hero-secondary {
+        width: 100%;
+        min-height: 56px;
+        justify-content: center;
+        padding: 15px 18px;
+        font-size: 15px;
+    }
+
+    .npl-documents-hero-breadcrumb {
+        gap: 11px;
+        font-size: 13px;
+    }
+
+    /* Image */
+
+    .npl-documents-hero-visual {
+        width: 100%;
+        max-width: 480px;
+        justify-self: center;
+        padding: 0 10px 10px 0;
+    }
+
+    .npl-documents-hero-image-frame {
+        height: clamp(340px, 100vw, 440px);
+        border-radius: 155px 155px 4px 4px;
+    }
+
+    .npl-documents-hero-document-icon {
+        top: 22px;
+        right: 20px;
+        width: 53px;
+        height: 53px;
+        font-size: 20px;
+    }
+
+    .npl-documents-hero-info-card {
+        left: 15px;
+        right: 15px;
+        bottom: 16px;
+        gap: 12px;
+        padding: 16px 14px;
+    }
+
+    .npl-documents-hero-info-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 19px;
+    }
+
+    .npl-documents-hero-info-card strong {
+        font-size: 15px;
+    }
+
+    .npl-documents-hero-info-card > div > span {
+        font-size: 12px;
+    }
+
+    /* Bottom values */
+
+    .npl-documents-hero-bottom {
+        position: relative;
+        bottom: auto;
+        left: auto;
+
+        min-height: auto;
+        margin: 45px -6% -100px;
+        width: calc(100% + 12%);
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 15px;
+
+        padding: 19px 5%;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        line-height: 1.7;
+    }
+
+    .npl-documents-hero-dot {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 420px) {
+    .npl-documents-hero {
+        padding: 62px 5% 90px;
+    }
+
+    .npl-documents-hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .npl-documents-hero-content h1 {
+        font-size: clamp(35px, 9vw, 43px);
+        line-height: 1.2;
+        letter-spacing: -0.6px;
+    }
+
+    .npl-documents-hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .npl-documents-hero-container {
+        gap: 32px;
+    }
+
+    .npl-documents-hero-image-frame {
+        height: 340px;
+        border-radius: 125px 125px 3px 3px;
+    }
+
+    .npl-documents-hero-info-card {
+        left: 10px;
+        right: 10px;
+        bottom: 11px;
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    .npl-documents-hero-info-icon {
+        width: 37px;
+        height: 37px;
+        font-size: 16px;
+    }
+
+    .npl-documents-hero-info-card strong {
+        font-size: 13px;
+    }
+
+    .npl-documents-hero-info-card > div > span {
+        font-size: 11px;
+    }
+
+    .npl-documents-hero-document-icon {
+        top: 18px;
+        right: 15px;
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .npl-documents-hero-bottom {
+        gap: 9px 11px;
+        font-size: 9px;
+        letter-spacing: 0.9px;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 340px) {
+    .npl-documents-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .npl-documents-hero-eyebrow {
+        letter-spacing: 1.2px;
+    }
+
+    .npl-documents-hero-image-frame {
+        height: 300px;
+    }
+
+    .npl-documents-hero-breadcrumb {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .npl-documents-hero-info-card strong {
+        font-size: 12px;
+    }
+
+    .npl-documents-hero-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .npl-documents-hero-dot {
+        display: none;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-documents-hero *,
+    .npl-documents-hero *::before,
+    .npl-documents-hero *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+/* =========================================================
+   STACKLY NOTARY PUBLIC & LEGAL SERVICES
+   BLOG PAGE HERO SECTION
+   Premium Design | Large Fonts | Hover Effects
+   Background Image | Animations | Responsive Layout
+========================================================= */
+
+.npl-blog-hero,
+.npl-blog-hero * {
+    box-sizing: border-box;
+}
+
+.npl-blog-hero {
+    --npl-blog-dark: #031d19;
+    --npl-blog-dark-soft: #092923;
+    --npl-blog-gold: #d9b77d;
+    --npl-blog-gold-light: #f0d9a9;
+    --npl-blog-white: #ffffff;
+    --npl-blog-muted: #d4ded9;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 720px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 100px 5% 110px;
+    overflow: hidden;
+
+    background-color: var(--npl-blog-dark);
+    background-image: url("blog-banner.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: var(--npl-blog-white);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.npl-blog-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(3, 29, 25, 0.65) 0%,
+            rgba(3, 29, 25, 0.48) 48%,
+            rgba(3, 29, 25, 0.30) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(3, 29, 25, 0.65) 0%,
+            transparent 65%
+        );
+}
+
+/* Decorative background glow */
+
+.npl-blog-hero::before {
+    content: "";
+    position: absolute;
+    top: -160px;
+    left: -150px;
+    z-index: 0;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+    background: rgba(217, 183, 125, 0.10);
+    filter: blur(100px);
+    pointer-events: none;
+
+    animation: nplBlogGlow 9s ease-in-out infinite alternate;
+}
+
+.npl-blog-hero::after {
+    content: "";
+    position: absolute;
+    right: -160px;
+    bottom: 30px;
+    z-index: 0;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+    background: rgba(217, 183, 125, 0.08);
+    filter: blur(95px);
+    pointer-events: none;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.npl-blog-hero-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    align-items: center;
+    gap: 70px;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.npl-blog-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 700px;
+
+    animation: nplBlogContentIn 1s ease-out both;
+}
+
+/* Eyebrow label */
+
+.npl-blog-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 26px;
+
+    color: var(--npl-blog-gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.7;
+    text-transform: uppercase;
+}
+
+.npl-blog-hero-eyebrow-line {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 2px;
+
+    background: var(--npl-blog-gold);
+    transform-origin: left;
+
+    animation: nplBlogLineIn 0.9s ease-out 0.3s both;
+}
+
+/* Main heading */
+
+.npl-blog-hero-content h1 {
+    max-width: 760px;
+    margin: 0 0 26px;
+
+    color: var(--npl-blog-white);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 5.2vw, 76px);
+    font-weight: 600;
+    line-height: 1.13;
+    letter-spacing: -1.7px;
+
+    overflow-wrap: break-word;
+}
+
+.npl-blog-hero-content h1 span {
+    display: block;
+    margin-top: 8px;
+
+    color: var(--npl-blog-gold);
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Description */
+
+.npl-blog-hero-description {
+    max-width: 610px;
+    margin: 0 0 34px;
+
+    color: var(--npl-blog-muted);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.95;
+    letter-spacing: 0.15px;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.npl-blog-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 38px;
+}
+
+.npl-blog-hero-btn,
+.npl-blog-hero-secondary {
+    position: relative;
+
+    min-height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 16px 25px;
+    border-radius: 3px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Primary CTA */
+
+.npl-blog-hero-btn {
+    isolation: isolate;
+    overflow: hidden;
+
+    color: var(--npl-blog-dark);
+    background: var(--npl-blog-gold);
+    border: 1px solid var(--npl-blog-gold);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.npl-blog-hero-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--npl-blog-white);
+    transform: translateX(-105%);
+    transition: transform 0.4s ease;
+}
+
+.npl-blog-hero-btn i {
+    font-size: 15px;
+    transition: transform 0.35s ease;
+}
+
+.npl-blog-hero-btn:hover {
+    color: var(--npl-blog-dark);
+    border-color: var(--npl-blog-white);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+}
+
+.npl-blog-hero-btn:hover::before {
+    transform: translateX(0);
+}
+
+.npl-blog-hero-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Secondary CTA */
+
+.npl-blog-hero-secondary {
+    color: var(--npl-blog-white);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(217, 183, 125, 0.65);
+}
+
+.npl-blog-hero-secondary i {
+    color: var(--npl-blog-gold);
+    font-size: 13px;
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+.npl-blog-hero-secondary:hover {
+    color: var(--npl-blog-dark);
+    background: var(--npl-blog-gold);
+    border-color: var(--npl-blog-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.npl-blog-hero-secondary:hover i {
+    color: var(--npl-blog-dark);
+    transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.npl-blog-hero-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.npl-blog-hero-breadcrumb a {
+    color: var(--npl-blog-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.npl-blog-hero-breadcrumb a:hover {
+    color: var(--npl-blog-gold);
+}
+
+.npl-blog-hero-breadcrumb > i {
+    color: var(--npl-blog-gold);
+    font-size: 10px;
+}
+
+.npl-blog-hero-breadcrumb span {
+    color: var(--npl-blog-gold);
+    font-weight: 600;
+}
+
+/* =========================================================
+   RIGHT IMAGE VISUAL
+========================================================= */
+
+.npl-blog-hero-visual {
+    position: relative;
+
+    width: 100%;
+    max-width: 540px;
+    justify-self: end;
+
+    padding: 0 22px 22px 0;
+
+    animation: nplBlogVisualIn 1.1s ease-out 0.15s both;
+}
+
+/* Image frame */
+
+.npl-blog-hero-image-frame {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    height: 490px;
+    overflow: hidden;
+
+    background: var(--npl-blog-dark-soft);
+    border: 1px solid rgba(217, 183, 125, 0.55);
+    border-radius: 190px 190px 4px 4px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.npl-blog-hero-image-frame img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.02);
+
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.3, 1),
+        filter 0.6s ease;
+}
+
+.npl-blog-hero-image-frame:hover {
+    border-color: var(--npl-blog-gold);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+}
+
+.npl-blog-hero-image-frame:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.08);
+}
+
+/* Image gradient */
+
+.npl-blog-hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background: linear-gradient(
+        180deg,
+        rgba(3, 29, 25, 0.03) 15%,
+        rgba(3, 29, 25, 0.15) 48%,
+        rgba(3, 29, 25, 0.86) 100%
+    );
+}
+
+/* =========================================================
+   FLOATING BOOK ICON
+========================================================= */
+
+.npl-blog-hero-document-icon {
+    position: absolute;
+    top: 28px;
+    right: 26px;
+    z-index: 2;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--npl-blog-dark);
+    background: var(--npl-blog-gold);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+
+    font-size: 23px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.23);
+
+    animation: nplBlogIconFloat 4s ease-in-out infinite;
+
+    transition:
+        color 0.35s ease,
+        background 0.35s ease;
+}
+
+.npl-blog-hero-image-frame:hover
+.npl-blog-hero-document-icon {
+    color: var(--npl-blog-gold);
+    background: var(--npl-blog-dark);
+}
+
+/* =========================================================
+   FLOATING INFORMATION CARD
+========================================================= */
+
+.npl-blog-hero-info-card {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 25px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px 19px;
+
+    background: rgba(3, 29, 25, 0.89);
+    border: 1px solid rgba(217, 183, 125, 0.58);
+    border-radius: 4px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.npl-blog-hero-image-frame:hover
+.npl-blog-hero-info-card {
+    background: rgba(3, 29, 25, 0.97);
+    border-color: var(--npl-blog-gold);
+    transform: translateY(-5px);
+}
+
+.npl-blog-hero-info-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--npl-blog-dark);
+    background: var(--npl-blog-gold);
+    border-radius: 3px;
+
+    font-size: 21px;
+}
+
+.npl-blog-hero-info-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.npl-blog-hero-info-card strong {
+    color: var(--npl-blog-white);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.npl-blog-hero-info-card > div > span {
+    color: var(--npl-blog-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   VERTICAL SIDE LABEL
+========================================================= */
+
+.npl-blog-hero-side-label {
+    position: absolute;
+    top: 50%;
+    right: -4px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--npl-blog-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+
+    transform: translate(100%, -50%) rotate(90deg);
+    transform-origin: left center;
+}
+
+.npl-blog-hero-side-label > span:first-child {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.npl-blog-hero-side-line {
+    display: block;
+    width: 48px;
+    height: 1px;
+
+    background: var(--npl-blog-gold);
+}
+
+/* =========================================================
+   BOTTOM VALUES STRIP
+========================================================= */
+
+.npl-blog-hero-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+
+    width: 100%;
+    min-height: 64px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 17px 5%;
+
+    color: var(--npl-blog-muted);
+    background: rgba(3, 29, 25, 0.84);
+    border-top: 1px solid rgba(217, 183, 125, 0.3);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.npl-blog-hero-bottom > span:not(.npl-blog-hero-dot) {
+    transition: color 0.3s ease;
+}
+
+.npl-blog-hero-bottom > span:not(.npl-blog-hero-dot):hover {
+    color: var(--npl-blog-gold);
+}
+
+.npl-blog-hero-dot {
+    flex-shrink: 0;
+
+    width: 5px;
+    height: 5px;
+
+    background: var(--npl-blog-gold);
+    border-radius: 50%;
+}
+
+/* =========================================================
+   KEYFRAME ANIMATIONS
+========================================================= */
+
+@keyframes nplBlogContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nplBlogVisualIn {
+    from {
+        opacity: 0;
+        transform: translateX(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes nplBlogLineIn {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes nplBlogGlow {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(45px, 30px) scale(1.15);
+    }
+}
+
+@keyframes nplBlogIconFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* =========================================================
+   LAPTOP RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+    .npl-blog-hero {
+        min-height: 680px;
+        padding: 90px 4.5% 100px;
+    }
+
+    .npl-blog-hero-container {
+        gap: 45px;
+    }
+
+    .npl-blog-hero-content h1 {
+        font-size: clamp(44px, 5vw, 65px);
+    }
+
+    .npl-blog-hero-description {
+        font-size: 17px;
+        line-height: 1.85;
+    }
+
+    .npl-blog-hero-image-frame {
+        height: 450px;
+    }
+}
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+    .npl-blog-hero {
+        min-height: auto;
+        padding: 85px 5% 105px;
+    }
+
+    .npl-blog-hero-overlay {
+        background: linear-gradient(
+            110deg,
+            rgba(3, 29, 25, 0.94) 0%,
+            rgba(3, 29, 25, 0.86) 55%,
+            rgba(3, 29, 25, 0.76) 100%
+        );
+    }
+
+    .npl-blog-hero-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        gap: 35px;
+    }
+
+    .npl-blog-hero-content h1 {
+        font-size: clamp(40px, 5.2vw, 55px);
+        letter-spacing: -1px;
+    }
+
+    .npl-blog-hero-eyebrow {
+        font-size: 12px;
+        letter-spacing: 2.3px;
+    }
+
+    .npl-blog-hero-description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .npl-blog-hero-actions {
+        gap: 12px;
+    }
+
+    .npl-blog-hero-btn,
+    .npl-blog-hero-secondary {
+        min-height: 54px;
+        padding: 14px 17px;
+        font-size: 13px;
+    }
+
+    .npl-blog-hero-visual {
+        padding-right: 12px;
+    }
+
+    .npl-blog-hero-image-frame {
+        height: 390px;
+        border-radius: 145px 145px 4px 4px;
+    }
+
+    .npl-blog-hero-info-card {
+        left: 15px;
+        right: 15px;
+        bottom: 17px;
+        gap: 11px;
+        padding: 14px 12px;
+    }
+
+    .npl-blog-hero-info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .npl-blog-hero-info-card strong {
+        font-size: 14px;
+    }
+
+    .npl-blog-hero-info-card > div > span {
+        font-size: 11px;
+    }
+
+    .npl-blog-hero-document-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .npl-blog-hero-side-label {
+        display: none;
+    }
+
+    .npl-blog-hero-bottom {
+        gap: 16px;
+        font-size: 10px;
+        letter-spacing: 1.4px;
+    }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+    .npl-blog-hero {
+        min-height: auto;
+        padding: 75px 6% 100px;
+        background-position: center;
+    }
+
+    .npl-blog-hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(3, 29, 25, 0.78) 0%,
+            rgba(3, 29, 25, 0.88) 52%,
+            rgba(3, 29, 25, 0.95) 100%
+        );
+    }
+
+    .npl-blog-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 42px;
+    }
+
+    .npl-blog-hero-content {
+        max-width: 100%;
+    }
+
+    .npl-blog-hero-eyebrow {
+        gap: 11px;
+        margin-bottom: 22px;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .npl-blog-hero-eyebrow-line {
+        width: 35px;
+    }
+
+    .npl-blog-hero-content h1 {
+        max-width: 600px;
+        margin-bottom: 22px;
+
+        font-size: clamp(40px, 8vw, 56px);
+        line-height: 1.16;
+        letter-spacing: -0.8px;
+    }
+
+    .npl-blog-hero-content h1 span {
+        margin-top: 7px;
+    }
+
+    .npl-blog-hero-description {
+        max-width: 100%;
+        margin-bottom: 27px;
+
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    /* Stack buttons on mobile */
+
+    .npl-blog-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 13px;
+        margin-bottom: 30px;
+    }
+
+    .npl-blog-hero-btn,
+    .npl-blog-hero-secondary {
+        width: 100%;
+        min-height: 56px;
+        justify-content: center;
+        padding: 15px 18px;
+        font-size: 15px;
+    }
+
+    .npl-blog-hero-breadcrumb {
+        gap: 11px;
+        font-size: 13px;
+    }
+
+    /* Image */
+
+    .npl-blog-hero-visual {
+        width: 100%;
+        max-width: 480px;
+        justify-self: center;
+        padding: 0 10px 10px 0;
+    }
+
+    .npl-blog-hero-image-frame {
+        height: clamp(340px, 100vw, 440px);
+        border-radius: 155px 155px 4px 4px;
+    }
+
+    .npl-blog-hero-document-icon {
+        top: 22px;
+        right: 20px;
+        width: 53px;
+        height: 53px;
+        font-size: 20px;
+    }
+
+    .npl-blog-hero-info-card {
+        left: 15px;
+        right: 15px;
+        bottom: 16px;
+        gap: 12px;
+        padding: 16px 14px;
+    }
+
+    .npl-blog-hero-info-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 19px;
+    }
+
+    .npl-blog-hero-info-card strong {
+        font-size: 15px;
+    }
+
+    .npl-blog-hero-info-card > div > span {
+        font-size: 12px;
+    }
+
+    /* Bottom strip becomes part of normal document flow */
+
+    .npl-blog-hero-bottom {
+        position: relative;
+        bottom: auto;
+        left: auto;
+
+        width: calc(100% + 12%);
+        min-height: auto;
+
+        margin: 45px -6% -100px;
+        padding: 19px 5%;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px 15px;
+
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        line-height: 1.7;
+    }
+
+    .npl-blog-hero-dot {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+    .npl-blog-hero {
+        padding: 62px 5% 90px;
+    }
+
+    .npl-blog-hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .npl-blog-hero-content h1 {
+        font-size: clamp(35px, 9vw, 43px);
+        line-height: 1.2;
+        letter-spacing: -0.6px;
+    }
+
+    .npl-blog-hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .npl-blog-hero-container {
+        gap: 32px;
+    }
+
+    .npl-blog-hero-image-frame {
+        height: 340px;
+        border-radius: 125px 125px 3px 3px;
+    }
+
+    .npl-blog-hero-info-card {
+        left: 10px;
+        right: 10px;
+        bottom: 11px;
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    .npl-blog-hero-info-icon {
+        width: 37px;
+        height: 37px;
+        font-size: 16px;
+    }
+
+    .npl-blog-hero-info-card strong {
+        font-size: 13px;
+    }
+
+    .npl-blog-hero-info-card > div > span {
+        font-size: 11px;
+    }
+
+    .npl-blog-hero-document-icon {
+        top: 18px;
+        right: 15px;
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .npl-blog-hero-bottom {
+        gap: 9px 11px;
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL SCREENS
+========================================================= */
+
+@media (max-width: 340px) {
+    .npl-blog-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .npl-blog-hero-eyebrow {
+        letter-spacing: 1px;
+    }
+
+    .npl-blog-hero-image-frame {
+        height: 300px;
+    }
+
+    .npl-blog-hero-breadcrumb {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .npl-blog-hero-info-card strong {
+        font-size: 12px;
+    }
+
+    .npl-blog-hero-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .npl-blog-hero-dot {
+        display: none;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY: REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-blog-hero *,
+    .npl-blog-hero *::before,
+    .npl-blog-hero *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+/* =========================================================
+   STACKLY NOTARY PUBLIC & LEGAL SERVICES
+   CONTACT PAGE HERO
+   Responsive | Animated | Hover Effects
+========================================================= */
+
+/* ---------- HERO BASE ---------- */
+
+.npl-contact-hero,
+.npl-contact-hero * {
+    box-sizing: border-box;
+}
+
+.npl-contact-hero {
+    --npl-contact-dark: #031d19;
+    --npl-contact-dark-light: #092a24;
+    --npl-contact-gold: #d9b77d;
+    --npl-contact-white: #ffffff;
+    --npl-contact-muted: #c1cbc5;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 760px;
+    padding: 115px 6% 95px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(217, 183, 125, 0.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            125deg,
+            var(--npl-contact-dark) 0%,
+            #071f1b 55%,
+            #102c25 100%
+        );
+    color: var(--npl-contact-white);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Decorative background glow */
+
+.npl-contact-hero::before {
+    content: "";
+    position: absolute;
+    top: -190px;
+    left: -170px;
+    width: 440px;
+    height: 440px;
+    border: 1px solid rgba(217, 183, 125, 0.14);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 45px rgba(217, 183, 125, 0.025),
+        0 0 0 90px rgba(217, 183, 125, 0.02);
+    pointer-events: none;
+    animation: nplContactGlow 12s ease-in-out infinite alternate;
+}
+
+.npl-contact-hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: 60px;
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(217, 183, 125, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: nplContactGlow 10s ease-in-out infinite alternate-reverse;
+}
+
+/* ---------- BACKGROUND OVERLAY ---------- */
+
+.npl-contact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(
+            110deg,
+            rgba(3, 29, 25, 0.72) 0%,
+            rgba(3, 29, 25, 0.58) 50%,
+            rgba(3, 29, 25, 0.42) 100%
+        ),
+        url("contact-banner.webp") center / cover no-repeat;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.npl-contact-hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(45px, 6vw, 95px);
+}
+
+/* ---------- LEFT CONTENT ---------- */
+
+.npl-contact-hero-content {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+    animation: nplContactContentIn 1s ease both;
+}
+
+/* Eyebrow */
+
+.npl-contact-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+    color: var(--npl-contact-gold);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.npl-contact-hero-eyebrow-line {
+    display: inline-block;
+    flex: 0 0 43px;
+    width: 43px;
+    height: 2px;
+    background: var(--npl-contact-gold);
+    transform-origin: left;
+    animation: nplContactLineIn 1s ease both;
+}
+
+/* Main heading */
+
+.npl-contact-hero-content h1 {
+    max-width: 720px;
+    margin: 0 0 26px;
+    color: var(--npl-contact-white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(44px, 5.2vw, 76px);
+    font-weight: 600;
+    letter-spacing: -1.8px;
+    line-height: 1.13;
+    overflow-wrap: break-word;
+}
+
+.npl-contact-hero-content h1 span {
+    display: block;
+    margin-top: 7px;
+    color: var(--npl-contact-gold);
+    font-style: italic;
+    transition: color 0.35s ease;
+}
+
+.npl-contact-hero-content h1 span:hover {
+    color: #f0d5a5;
+}
+
+/* Description */
+
+.npl-contact-hero-description {
+    max-width: 610px;
+    margin: 0 0 35px;
+    color: var(--npl-contact-muted);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.95;
+    letter-spacing: 0.15px;
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+
+.npl-contact-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.npl-contact-hero-btn,
+.npl-contact-hero-secondary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    min-height: 58px;
+    padding: 16px 25px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    text-align: center;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.npl-contact-hero-btn {
+    background: var(--npl-contact-gold);
+    color: var(--npl-contact-dark);
+    box-shadow: 0 8px 25px rgba(217, 183, 125, 0.13);
+}
+
+.npl-contact-hero-btn i,
+.npl-contact-hero-secondary i {
+    font-size: 14px;
+    transition: transform 0.35s ease;
+}
+
+.npl-contact-hero-btn:hover {
+    background: var(--npl-contact-white);
+    color: var(--npl-contact-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+.npl-contact-hero-btn:hover i {
+    transform: translateX(5px);
+}
+
+.npl-contact-hero-secondary {
+    border-color: rgba(217, 183, 125, 0.55);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--npl-contact-white);
+}
+
+.npl-contact-hero-secondary:hover {
+    border-color: var(--npl-contact-gold);
+    background: rgba(217, 183, 125, 0.12);
+    color: var(--npl-contact-gold);
+    transform: translateY(-4px);
+}
+
+.npl-contact-hero-secondary:hover i {
+    transform: translate(3px, -3px);
+}
+
+/* Keyboard accessibility */
+
+.npl-contact-hero a:focus-visible {
+    outline: 2px solid var(--npl-contact-gold);
+    outline-offset: 5px;
+}
+
+/* ---------- BREADCRUMB ---------- */
+
+.npl-contact-hero-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    color: var(--npl-contact-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.npl-contact-hero-breadcrumb a {
+    color: var(--npl-contact-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.npl-contact-hero-breadcrumb a:hover {
+    color: var(--npl-contact-gold);
+}
+
+.npl-contact-hero-breadcrumb > i {
+    color: var(--npl-contact-gold);
+    font-size: 10px;
+}
+
+.npl-contact-hero-breadcrumb span {
+    color: var(--npl-contact-gold);
+}
+
+/* ---------- RIGHT IMAGE AREA ---------- */
+
+.npl-contact-hero-visual {
+    position: relative;
+    min-width: 0;
+    padding: 0 24px 30px 0;
+    animation: nplContactVisualIn 1.1s ease both;
+    animation-delay: 0.15s;
+}
+
+.npl-contact-hero-image-frame {
+    position: relative;
+    width: 100%;
+    height: 510px;
+    overflow: hidden;
+    border: 1px solid rgba(217, 183, 125, 0.48);
+    border-radius: 4px;
+    background: var(--npl-contact-dark-light);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+.npl-contact-hero-image-frame::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    pointer-events: none;
+    transition: inset 0.4s ease, border-color 0.4s ease;
+}
+
+.npl-contact-hero-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1),
+        filter 0.5s ease;
+}
+
+.npl-contact-hero-image-frame:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.08);
+}
+
+.npl-contact-hero-image-frame:hover::before {
+    inset: 18px;
+    border-color: rgba(217, 183, 125, 0.65);
+}
+
+/* Image overlay */
+
+.npl-contact-hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(3, 29, 25, 0.02) 35%,
+        rgba(3, 29, 25, 0.72) 100%
+    );
+    pointer-events: none;
+}
+
+/* ---------- FLOATING CONTACT ICON ---------- */
+
+.npl-contact-hero-document-icon {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(217, 183, 125, 0.7);
+    border-radius: 50%;
+    background: rgba(3, 29, 25, 0.88);
+    color: var(--npl-contact-gold);
+    font-size: 23px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(8px);
+    animation: nplContactFloat 4s ease-in-out infinite;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.npl-contact-hero-document-icon:hover {
+    background: var(--npl-contact-gold);
+    color: var(--npl-contact-dark);
+    transform: rotate(-8deg) scale(1.08);
+}
+
+/* ---------- IMAGE INFORMATION CARD ---------- */
+
+.npl-contact-hero-info-card {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    left: 28px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 22px;
+    border: 1px solid rgba(217, 183, 125, 0.35);
+    border-radius: 4px;
+    background: rgba(3, 29, 25, 0.91);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    transition:
+        border-color 0.35s ease,
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+.npl-contact-hero-info-card:hover {
+    border-color: var(--npl-contact-gold);
+    background: rgba(7, 42, 35, 0.97);
+    transform: translateY(-5px);
+}
+
+.npl-contact-hero-info-icon {
+    display: flex;
+    flex: 0 0 52px;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(217, 183, 125, 0.55);
+    border-radius: 50%;
+    color: var(--npl-contact-gold);
+    font-size: 20px;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+.npl-contact-hero-info-card:hover .npl-contact-hero-info-icon {
+    background: var(--npl-contact-gold);
+    color: var(--npl-contact-dark);
+}
+
+.npl-contact-hero-info-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.npl-contact-hero-info-card strong {
+    color: var(--npl-contact-white);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.npl-contact-hero-info-card > div > span {
+    color: var(--npl-contact-muted);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* ---------- VERTICAL SIDE LABEL ---------- */
+
+.npl-contact-hero-side-label {
+    position: absolute;
+    top: 35px;
+    right: -3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    color: var(--npl-contact-gold);
+}
+
+.npl-contact-hero-side-label > span:first-child {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.npl-contact-hero-side-line {
+    display: block;
+    width: 1px;
+    height: 62px;
+    background: var(--npl-contact-gold);
+    opacity: 0.8;
+}
+
+.npl-contact-hero-side-label > span:last-child {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+/* ---------- BOTTOM VALUES ---------- */
+
+.npl-contact-hero-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 1440px;
+    margin: 70px auto 0;
+    padding-top: 26px;
+    border-top: 1px solid rgba(217, 183, 125, 0.25);
+    color: #d0d8d2;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.npl-contact-hero-bottom > span:not(.npl-contact-hero-dot) {
+    transition: color 0.3s ease;
+}
+
+.npl-contact-hero-bottom > span:not(.npl-contact-hero-dot):hover {
+    color: var(--npl-contact-gold);
+}
+
+.npl-contact-hero-dot {
+    flex: 0 0 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--npl-contact-gold);
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes nplContactContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nplContactVisualIn {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes nplContactLineIn {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes nplContactFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes nplContactGlow {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(25px, 18px);
+    }
+}
+
+/* ---------- LARGE LAPTOPS ---------- */
+
+@media (max-width: 1200px) {
+    .npl-contact-hero {
+        padding: 100px 5% 80px;
+    }
+
+    .npl-contact-hero-container {
+        gap: 50px;
+    }
+
+    .npl-contact-hero-content h1 {
+        font-size: clamp(43px, 5.3vw, 65px);
+    }
+
+    .npl-contact-hero-image-frame {
+        height: 460px;
+    }
+
+    .npl-contact-hero-info-card {
+        right: 22px;
+        bottom: 22px;
+        left: 22px;
+        padding: 18px;
+    }
+
+    .npl-contact-hero-side-label {
+        right: -8px;
+    }
+}
+
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 992px) {
+    .npl-contact-hero {
+        min-height: auto;
+        padding: 95px 6% 65px;
+    }
+
+    .npl-contact-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 48px;
+    }
+
+    .npl-contact-hero-content {
+        max-width: 760px;
+    }
+
+    .npl-contact-hero-content h1 {
+        max-width: 700px;
+        font-size: clamp(48px, 7vw, 70px);
+    }
+
+    .npl-contact-hero-description {
+        max-width: 700px;
+        font-size: 17px;
+    }
+
+    .npl-contact-hero-visual {
+        width: min(100%, 650px);
+        margin: 0 auto;
+        padding-right: 24px;
+    }
+
+    .npl-contact-hero-image-frame {
+        height: 500px;
+    }
+
+    .npl-contact-hero-bottom {
+        margin-top: 55px;
+        gap: 18px;
+    }
+}
+
+/* ---------- MOBILE LANDSCAPE / SMALL TABLETS ---------- */
+
+@media (max-width: 700px) {
+    .npl-contact-hero {
+        padding: 75px 6% 48px;
+    }
+
+    .npl-contact-hero-container {
+        gap: 38px;
+    }
+
+    .npl-contact-hero-eyebrow {
+        gap: 10px;
+        margin-bottom: 20px;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .npl-contact-hero-eyebrow-line {
+        flex-basis: 32px;
+        width: 32px;
+    }
+
+    .npl-contact-hero-content h1 {
+        margin-bottom: 20px;
+        font-size: clamp(39px, 8vw, 55px);
+        letter-spacing: -1px;
+        line-height: 1.16;
+    }
+
+    .npl-contact-hero-description {
+        margin-bottom: 27px;
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .npl-contact-hero-actions {
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .npl-contact-hero-btn,
+    .npl-contact-hero-secondary {
+        min-height: 54px;
+        padding: 14px 19px;
+        font-size: 14px;
+    }
+
+    .npl-contact-hero-visual {
+        padding: 0 15px 20px 0;
+    }
+
+    .npl-contact-hero-image-frame {
+        height: 420px;
+    }
+
+    .npl-contact-hero-image-frame::before {
+        inset: 9px;
+    }
+
+    .npl-contact-hero-document-icon {
+        top: 22px;
+        right: 22px;
+        width: 54px;
+        height: 54px;
+        font-size: 20px;
+    }
+
+    .npl-contact-hero-info-card {
+        right: 18px;
+        bottom: 18px;
+        left: 18px;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .npl-contact-hero-info-icon {
+        flex-basis: 45px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .npl-contact-hero-info-card strong {
+        font-size: 14px;
+    }
+
+    .npl-contact-hero-info-card > div > span {
+        font-size: 12px;
+    }
+
+    .npl-contact-hero-side-label {
+        top: 20px;
+        right: -8px;
+        gap: 9px;
+    }
+
+    .npl-contact-hero-side-line {
+        height: 42px;
+    }
+
+    .npl-contact-hero-side-label > span:last-child {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .npl-contact-hero-bottom {
+        justify-content: flex-start;
+        gap: 12px 16px;
+        margin-top: 35px;
+        padding-top: 22px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        text-align: left;
+    }
+
+    .npl-contact-hero-dot {
+        flex-basis: 4px;
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* ---------- STANDARD MOBILE ---------- */
+
+@media (max-width: 480px) {
+    .npl-contact-hero {
+        padding: 65px 20px 40px;
+    }
+
+    .npl-contact-hero::before {
+        top: -130px;
+        left: -180px;
+        width: 320px;
+        height: 320px;
+    }
+
+    .npl-contact-hero::after {
+        right: -190px;
+        width: 260px;
+        height: 260px;
+    }
+
+    .npl-contact-hero-container {
+        gap: 32px;
+    }
+
+    .npl-contact-hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.6px;
+    }
+
+    .npl-contact-hero-content h1 {
+        font-size: clamp(36px, 9vw, 44px);
+        letter-spacing: -0.7px;
+        line-height: 1.2;
+    }
+
+    .npl-contact-hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .npl-contact-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .npl-contact-hero-btn,
+    .npl-contact-hero-secondary {
+        width: 100%;
+        min-height: 53px;
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+
+    .npl-contact-hero-breadcrumb {
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .npl-contact-hero-visual {
+        padding: 0 9px 15px 0;
+    }
+
+    .npl-contact-hero-image-frame {
+        height: 360px;
+    }
+
+    .npl-contact-hero-image-frame::before {
+        inset: 7px;
+    }
+
+    .npl-contact-hero-document-icon {
+        top: 17px;
+        right: 17px;
+        width: 47px;
+        height: 47px;
+        font-size: 18px;
+    }
+
+    .npl-contact-hero-info-card {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .npl-contact-hero-info-icon {
+        flex-basis: 39px;
+        width: 39px;
+        height: 39px;
+        font-size: 16px;
+    }
+
+    .npl-contact-hero-info-card strong {
+        font-size: 13px;
+    }
+
+    .npl-contact-hero-info-card > div > span {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .npl-contact-hero-side-label {
+        right: -7px;
+        gap: 7px;
+    }
+
+    .npl-contact-hero-side-label > span:first-child {
+        font-size: 11px;
+    }
+
+    .npl-contact-hero-side-line {
+        height: 34px;
+    }
+
+    .npl-contact-hero-side-label > span:last-child {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .npl-contact-hero-bottom {
+        gap: 10px 12px;
+        margin-top: 28px;
+        font-size: 9px;
+        letter-spacing: 0.9px;
+        line-height: 1.7;
+    }
+}
+
+/* ---------- VERY SMALL MOBILE ---------- */
+
+@media (max-width: 340px) {
+    .npl-contact-hero {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .npl-contact-hero-content h1 {
+        font-size: 33px;
+    }
+
+    .npl-contact-hero-eyebrow {
+        gap: 8px;
+        font-size: 9px;
+        letter-spacing: 1.2px;
+    }
+
+    .npl-contact-hero-description {
+        font-size: 14px;
+    }
+
+    .npl-contact-hero-image-frame {
+        height: 315px;
+    }
+
+    .npl-contact-hero-info-card {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .npl-contact-hero-info-card strong {
+        font-size: 12px;
+    }
+
+    .npl-contact-hero-info-card > div > span {
+        font-size: 10px;
+    }
+
+    .npl-contact-hero-bottom {
+        gap: 8px;
+        font-size: 8px;
+    }
+}
+
+/* ---------- REDUCED MOTION ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-contact-hero *,
+    .npl-contact-hero *::before,
+    .npl-contact-hero *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+/* =========================================================
+   STACKLY LEGAL
+   DOCUMENT DISCOVERY SECTION
+   Professional | Responsive | Animated
+========================================================= */
+
+.npl-doc-discovery,
+.npl-doc-discovery * {
+    box-sizing: border-box;
+}
+
+.npl-doc-discovery {
+    --doc-dark: #031d19;
+    --doc-dark-soft: #0a2a23;
+    --doc-gold: #d9b77d;
+    --doc-cream: #f6f4ed;
+    --doc-muted: #66716b;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 70px 6%;
+    overflow: hidden;
+    background: var(--doc-cream);
+    color: var(--doc-dark);
+    font-family: "DM Sans", sans-serif;
+}
+
+.npl-doc-discovery-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* ---------- SECTION HEADING ---------- */
+
+.npl-doc-discovery-heading {
+    margin-bottom: 44px;
+}
+
+.npl-doc-discovery-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #79613d;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.8px;
+}
+
+.npl-doc-discovery-eyebrow > span {
+    width: 38px;
+    height: 2px;
+    background: var(--doc-gold);
+}
+
+.npl-doc-discovery-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.npl-doc-discovery-title-wrap {
+    max-width: 830px;
+}
+
+.npl-doc-discovery-title-wrap h2 {
+    margin: 0 0 19px;
+    color: var(--doc-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(38px, 4.3vw, 60px);
+    font-weight: 600;
+    letter-spacing: -1.2px;
+    line-height: 1.18;
+}
+
+.npl-doc-discovery-title-wrap h2 span {
+    display: block;
+    color: #947344;
+    font-style: italic;
+}
+
+.npl-doc-discovery-title-wrap p {
+    max-width: 720px;
+    margin: 0;
+    color: var(--doc-muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.npl-doc-discovery-view-all {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 14px 19px;
+    border: 1px solid rgba(3, 29, 25, 0.22);
+    color: var(--doc-dark);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.npl-doc-discovery-view-all:hover {
+    transform: translateY(-3px);
+    border-color: var(--doc-dark);
+    background: var(--doc-dark);
+    color: var(--doc-gold);
+}
+
+.npl-doc-discovery-view-all i {
+    transition: transform 0.3s ease;
+}
+
+.npl-doc-discovery-view-all:hover i {
+    transform: translate(3px, -3px);
+}
+
+/* ---------- FEATURED PANEL ---------- */
+
+.npl-doc-discovery-featured {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 45px;
+    min-height: 435px;
+    margin-bottom: 100px;
+    padding: 50px 6%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(217, 183, 125, 0.12),
+            transparent 34%
+        ),
+        linear-gradient(125deg, #031d19, #0b3028);
+    color: #fff;
+}
+
+.npl-doc-discovery-featured::before {
+    content: "";
+    position: absolute;
+    right: -100px;
+    bottom: -190px;
+    width: 390px;
+    height: 390px;
+    border: 1px solid rgba(217, 183, 125, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 0 45px rgba(217, 183, 125, 0.025);
+    pointer-events: none;
+    animation: nplDocOrbit 12s ease-in-out infinite alternate;
+}
+
+.npl-doc-discovery-featured-content {
+    position: relative;
+    z-index: 2;
+    max-width: 610px;
+}
+
+.npl-doc-discovery-featured-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: var(--doc-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+}
+
+.npl-doc-discovery-featured-label i {
+    font-size: 14px;
+}
+
+.npl-doc-discovery-featured-content h3 {
+    margin: 0 0 21px;
+    color: #fff;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 3.6vw, 47px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.6px;
+}
+
+.npl-doc-discovery-featured-content > p {
+    max-width: 540px;
+    margin: 0 0 27px;
+    color: #c7d1cb;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.npl-doc-discovery-featured-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    min-height: 54px;
+    padding: 15px 21px;
+    background: var(--doc-gold);
+    color: var(--doc-dark);
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.npl-doc-discovery-featured-btn:hover {
+    transform: translateY(-4px);
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.npl-doc-discovery-featured-btn i {
+    transition: transform 0.3s ease;
+}
+
+.npl-doc-discovery-featured-btn:hover i {
+    transform: translateX(5px);
+}
+
+.npl-doc-discovery-featured-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    color: #d2dcd5;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.npl-doc-discovery-featured-note i {
+    color: var(--doc-gold);
+    font-size: 15px;
+}
+
+/* ---------- ILLUSTRATED DOCUMENT ---------- */
+
+.npl-doc-discovery-featured-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 330px;
+    padding: 20px;
+}
+
+.npl-doc-discovery-visual-orbit {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border: 1px solid rgba(217, 183, 125, 0.24);
+    border-radius: 50%;
+    animation: nplDocRotate 24s linear infinite;
+}
+
+.npl-doc-discovery-visual-orbit::before,
+.npl-doc-discovery-visual-orbit::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--doc-gold);
+}
+
+.npl-doc-discovery-visual-orbit::before {
+    top: 45px;
+    left: 30px;
+}
+
+.npl-doc-discovery-visual-orbit::after {
+    right: 15px;
+    bottom: 75px;
+}
+
+.npl-doc-discovery-document-sheet {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 285px);
+    min-height: 340px;
+    padding: 27px;
+    transform: rotate(-4deg);
+    background: #f7f4eb;
+    color: var(--doc-dark);
+    box-shadow: 18px 25px 45px rgba(0, 0, 0, 0.28);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.npl-doc-discovery-featured-visual:hover
+.npl-doc-discovery-document-sheet {
+    transform: rotate(0) translateY(-7px);
+    box-shadow: 20px 30px 55px rgba(0, 0, 0, 0.34);
+}
+
+.npl-doc-discovery-sheet-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.npl-doc-discovery-sheet-seal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #b89a65;
+    border-radius: 50%;
+    color: #81643c;
+    font-size: 19px;
+}
+
+.npl-doc-discovery-sheet-status {
+    color: #81643c;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.npl-doc-discovery-sheet-rule {
+    height: 2px;
+    margin: 18px 0 24px;
+    background: #d8c7a5;
+}
+
+.npl-doc-discovery-sheet-title {
+    margin-bottom: 20px;
+    color: #173c30;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.npl-doc-discovery-sheet-line {
+    height: 5px;
+    margin: 12px 0;
+    background: #d9ded6;
+}
+
+.npl-doc-line-long {
+    width: 100%;
+}
+
+.npl-doc-line-medium {
+    width: 78%;
+}
+
+.npl-doc-line-short {
+    width: 57%;
+}
+
+.npl-doc-discovery-sheet-paragraph {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.npl-doc-discovery-sheet-paragraph span {
+    height: 4px;
+    background: #e0e2da;
+}
+
+.npl-doc-discovery-sheet-paragraph span:last-child {
+    width: 65%;
+}
+
+.npl-doc-discovery-sheet-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 27px;
+}
+
+.npl-doc-discovery-sheet-signature > span {
+    width: 90px;
+    height: 1px;
+    background: #9c9e91;
+}
+
+.npl-doc-discovery-sheet-signature small {
+    color: #73786c;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.npl-doc-discovery-sheet-stamp {
+    position: absolute;
+    right: 23px;
+    bottom: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border: 2px solid #9c8150;
+    border-radius: 50%;
+    color: #9c8150;
+    font-size: 17px;
+    transform: rotate(-12deg);
+}
+
+/* Floating information badge */
+
+.npl-doc-discovery-floating-badge {
+    position: absolute;
+    right: -3px;
+    bottom: 30px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 19px;
+    border: 1px solid rgba(217, 183, 125, 0.45);
+    background: #fff;
+    color: var(--doc-dark);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+    animation: nplDocFloat 4s ease-in-out infinite;
+}
+
+.npl-doc-discovery-floating-badge > i {
+    color: #947344;
+    font-size: 25px;
+}
+
+.npl-doc-discovery-floating-badge > span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.npl-doc-discovery-floating-badge strong {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.npl-doc-discovery-floating-badge small {
+    color: var(--doc-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* ---------- CATEGORY HEADING ---------- */
+
+.npl-doc-discovery-category-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+.npl-doc-discovery-small-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #947344;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.1px;
+}
+
+.npl-doc-discovery-category-heading h3 {
+    margin: 0;
+    color: var(--doc-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.npl-doc-discovery-category-heading > p {
+    max-width: 380px;
+    margin: 0;
+    color: var(--doc-muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* ---------- CATEGORY GRID ---------- */
+
+.npl-doc-discovery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.npl-doc-discovery-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 315px;
+    padding: 27px 23px 24px;
+    border: 1px solid #e2e0d7;
+    background: #fff;
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.npl-doc-discovery-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--doc-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.npl-doc-discovery-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(148, 115, 68, 0.55);
+    box-shadow: 0 18px 42px rgba(3, 29, 25, 0.09);
+}
+
+.npl-doc-discovery-card:hover::before {
+    transform: scaleX(1);
+}
+
+.npl-doc-discovery-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.npl-doc-discovery-card-number {
+    color: #a2a79f;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.npl-doc-discovery-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border: 1px solid #e5d7bd;
+    background: #faf7ef;
+    color: #947344;
+    font-size: 23px;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.npl-doc-discovery-card:hover .npl-doc-discovery-card-icon {
+    transform: rotate(-5deg);
+    background: var(--doc-dark);
+    color: var(--doc-gold);
+}
+
+.npl-doc-discovery-card h4 {
+    margin: 0 0 13px;
+    color: var(--doc-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.npl-doc-discovery-card > p {
+    flex: 1;
+    margin: 0 0 24px;
+    color: var(--doc-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.npl-doc-discovery-card-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d9c7a5;
+    color: var(--doc-dark);
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.npl-doc-discovery-card-link i {
+    color: #947344;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.npl-doc-discovery-card-link:hover {
+    gap: 15px;
+    color: #947344;
+}
+
+.npl-doc-discovery-card-link:hover i {
+    transform: translateX(3px);
+}
+
+/* ---------- BOTTOM ASSISTANCE STRIP ---------- */
+
+.npl-doc-discovery-bottom {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 65px;
+    padding: 28px 32px;
+    border: 1px solid rgba(217, 183, 125, 0.3);
+    background: #eae8df;
+}
+
+.npl-doc-discovery-bottom-icon {
+    display: flex;
+    flex: 0 0 55px;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background: var(--doc-dark);
+    color: var(--doc-gold);
+    font-size: 22px;
+}
+
+.npl-doc-discovery-bottom-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.npl-doc-discovery-bottom-text h4 {
+    margin: 0 0 7px;
+    color: var(--doc-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.npl-doc-discovery-bottom-text p {
+    margin: 0;
+    color: var(--doc-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.npl-doc-discovery-bottom-btn {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 51px;
+    padding: 14px 20px;
+    background: var(--doc-dark);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.npl-doc-discovery-bottom-btn:hover {
+    transform: translateY(-3px);
+    background: var(--doc-gold);
+    color: var(--doc-dark);
+}
+
+.npl-doc-discovery-bottom-btn i {
+    transition: transform 0.3s ease;
+}
+
+.npl-doc-discovery-bottom-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* ---------- KEYBOARD ACCESSIBILITY ---------- */
+
+.npl-doc-discovery a:focus-visible {
+    outline: 2px solid #947344;
+    outline-offset: 4px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes nplDocFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes nplDocRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes nplDocOrbit {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-18px, -15px);
+    }
+}
+
+/* ---------- LAPTOP ---------- */
+
+@media (max-width: 1200px) {
+    .npl-doc-discovery {
+        padding: 90px 5%;
+    }
+
+    .npl-doc-discovery-featured {
+        gap: 25px;
+        padding: 45px 4%;
+    }
+
+    .npl-doc-discovery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .npl-doc-discovery-card {
+        min-height: 285px;
+    }
+
+    .npl-doc-discovery-floating-badge {
+        right: -10px;
+    }
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+    .npl-doc-discovery {
+        padding: 80px 5%;
+    }
+
+    .npl-doc-discovery-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .npl-doc-discovery-featured {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 42px 6%;
+    }
+
+    .npl-doc-discovery-featured-content {
+        max-width: 100%;
+    }
+
+    .npl-doc-discovery-featured-visual {
+        min-height: 370px;
+    }
+
+    .npl-doc-discovery-category-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .npl-doc-discovery-category-heading > p {
+        max-width: 600px;
+    }
+
+    .npl-doc-discovery-bottom {
+        flex-wrap: wrap;
+    }
+
+    .npl-doc-discovery-bottom-text {
+        flex-basis: calc(100% - 85px);
+    }
+
+    .npl-doc-discovery-bottom-btn {
+        margin-left: 77px;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+    .npl-doc-discovery {
+        padding: 65px 20px;
+    }
+
+    .npl-doc-discovery-heading {
+        margin-bottom: 32px;
+    }
+
+    .npl-doc-discovery-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .npl-doc-discovery-title-wrap h2 {
+        font-size: clamp(33px, 8vw, 43px);
+        letter-spacing: -0.6px;
+        line-height: 1.22;
+    }
+
+    .npl-doc-discovery-title-wrap p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .npl-doc-discovery-view-all {
+        width: 100%;
+    }
+
+    .npl-doc-discovery-featured {
+        gap: 15px;
+        margin-bottom: 70px;
+        padding: 32px 22px;
+    }
+
+    .npl-doc-discovery-featured-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .npl-doc-discovery-featured-content h3 {
+        font-size: 32px;
+        line-height: 1.28;
+    }
+
+    .npl-doc-discovery-featured-content > p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .npl-doc-discovery-featured-btn {
+        width: 100%;
+        padding: 14px 12px;
+        font-size: 12px;
+    }
+
+    .npl-doc-discovery-featured-note {
+        align-items: flex-start;
+        font-size: 11px;
+    }
+
+    .npl-doc-discovery-featured-visual {
+        min-height: 350px;
+        padding: 15px 10px;
+    }
+
+    .npl-doc-discovery-document-sheet {
+        width: 245px;
+        min-height: 310px;
+        padding: 23px;
+    }
+
+    .npl-doc-discovery-visual-orbit {
+        width: 265px;
+        height: 265px;
+    }
+
+    .npl-doc-discovery-floating-badge {
+        right: -5px;
+        bottom: 12px;
+        gap: 9px;
+        padding: 12px;
+    }
+
+    .npl-doc-discovery-floating-badge > i {
+        font-size: 21px;
+    }
+
+    .npl-doc-discovery-floating-badge strong {
+        font-size: 11px;
+    }
+
+    .npl-doc-discovery-floating-badge small {
+        font-size: 9px;
+    }
+
+    .npl-doc-discovery-category-heading h3 {
+        font-size: 29px;
+    }
+
+    .npl-doc-discovery-category-heading > p {
+        font-size: 13px;
+    }
+
+    .npl-doc-discovery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .npl-doc-discovery-card {
+        min-height: 0;
+        padding: 24px;
+    }
+
+    .npl-doc-discovery-card-top {
+        margin-bottom: 21px;
+    }
+
+    .npl-doc-discovery-card h4 {
+        font-size: 22px;
+    }
+
+    .npl-doc-discovery-card > p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .npl-doc-discovery-bottom {
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 45px;
+        padding: 23px 19px;
+    }
+
+    .npl-doc-discovery-bottom-icon {
+        flex-basis: 45px;
+        width: 45px;
+        height: 45px;
+        font-size: 19px;
+    }
+
+    .npl-doc-discovery-bottom-text {
+        flex-basis: calc(100% - 60px);
+    }
+
+    .npl-doc-discovery-bottom-text h4 {
+        font-size: 20px;
+    }
+
+    .npl-doc-discovery-bottom-text p {
+        font-size: 12px;
+    }
+
+    .npl-doc-discovery-bottom-btn {
+        width: 100%;
+        margin-left: 0;
+        font-size: 13px;
+    }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 360px) {
+    .npl-doc-discovery {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .npl-doc-discovery-title-wrap h2 {
+        font-size: 31px;
+    }
+
+    .npl-doc-discovery-featured-content h3 {
+        font-size: 28px;
+    }
+
+    .npl-doc-discovery-document-sheet {
+        width: 220px;
+        min-height: 290px;
+        padding: 19px;
+    }
+
+    .npl-doc-discovery-floating-badge {
+        right: -3px;
+        padding: 10px;
+    }
+
+    .npl-doc-discovery-card {
+        padding: 20px;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-doc-discovery *,
+    .npl-doc-discovery *::before,
+    .npl-doc-discovery *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+/* ==========================================
+   STACKLY LEGAL
+   DOCUMENT PROCESS SECTION
+========================================== */
+
+.npl-document-process,
+.npl-document-process * {
+    box-sizing: border-box;
+}
+
+.npl-document-process {
+    --npl-process-dark: #031d19;
+    --npl-process-dark-soft: #0b2c26;
+    --npl-process-gold: #d9b77d;
+    --npl-process-text: #182d28;
+    --npl-process-muted: #68766f;
+    --npl-process-border: #e7e9e1;
+    --npl-process-cream: #f7f7f1;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 50px 5%;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: "DM Sans", sans-serif;
+}
+
+.npl-document-process-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* SECTION HEADING */
+
+.npl-document-process-heading {
+    max-width: 760px;
+    margin: 0 auto 62px;
+    text-align: center;
+}
+
+.npl-document-process-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin-bottom: 19px;
+    color: #8b6d3d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.npl-document-process-eyebrow span {
+    width: 27px;
+    height: 2px;
+    background: var(--npl-process-gold);
+}
+
+.npl-document-process-heading h2 {
+    margin: 0 0 20px;
+    color: var(--npl-process-dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(35px, 4.1vw, 54px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+}
+
+.npl-document-process-heading h2 span {
+    display: block;
+    color: #9b7b48;
+}
+
+.npl-document-process-heading > p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--npl-process-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* MAIN LAYOUT */
+
+.npl-document-process-layout {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    align-items: stretch;
+    gap: 42px;
+}
+
+/* LEFT INTRO PANEL */
+
+.npl-document-process-intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 590px;
+    padding: 42px 35px;
+    overflow: hidden;
+    border: 1px solid rgba(217, 183, 125, 0.22);
+    border-radius: 5px;
+    background:
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(217, 183, 125, 0.14),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            var(--npl-process-dark-soft),
+            var(--npl-process-dark)
+        );
+    color: #ffffff;
+}
+
+.npl-document-process-intro-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 33px;
+    border: 1px solid rgba(217, 183, 125, 0.48);
+    border-radius: 3px;
+    background: rgba(217, 183, 125, 0.1);
+    color: var(--npl-process-gold);
+    font-size: 25px;
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.npl-document-process-intro:hover
+.npl-document-process-intro-icon {
+    transform: translateY(-4px);
+    background: rgba(217, 183, 125, 0.19);
+}
+
+.npl-document-process-intro-label {
+    margin-bottom: 17px;
+    color: var(--npl-process-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.npl-document-process-intro h3 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 3vw, 42px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.npl-document-process-intro h3 span {
+    display: block;
+    color: var(--npl-process-gold);
+    font-style: italic;
+}
+
+.npl-document-process-intro > p {
+    position: relative;
+    z-index: 1;
+    max-width: 360px;
+    margin: 0 0 28px;
+    color: #c4d0c9;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.npl-document-process-intro-btn {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    min-height: 49px;
+    padding: 13px 19px;
+    border: 1px solid var(--npl-process-gold);
+    background: var(--npl-process-gold);
+    color: var(--npl-process-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.npl-document-process-intro-btn:hover {
+    transform: translateY(-3px);
+    background: transparent;
+    color: var(--npl-process-gold);
+}
+
+.npl-document-process-intro-btn i {
+    transition: transform 0.3s ease;
+}
+
+.npl-document-process-intro-btn:hover i {
+    transform: translateX(4px);
+}
+
+.npl-document-process-note {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 34px;
+    color: #d5dfd8;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.npl-document-process-note i {
+    color: var(--npl-process-gold);
+    font-size: 15px;
+}
+
+.npl-document-process-decoration {
+    position: absolute;
+    right: -30px;
+    bottom: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    height: 175px;
+    border: 1px solid rgba(217, 183, 125, 0.12);
+    border-radius: 50%;
+    color: rgba(217, 183, 125, 0.12);
+    font-size: 85px;
+    transform: rotate(-14deg);
+    pointer-events: none;
+}
+
+.npl-document-process-decoration::before,
+.npl-document-process-decoration::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(217, 183, 125, 0.1);
+    border-radius: 50%;
+}
+
+.npl-document-process-decoration::before {
+    inset: 13px;
+}
+
+.npl-document-process-decoration::after {
+    inset: -13px;
+}
+
+/* RIGHT PROCESS STEPS */
+
+.npl-document-process-steps {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border-top: 1px solid var(--npl-process-border);
+}
+
+.npl-document-process-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 38px 58px minmax(0, 1fr) 18px;
+    align-items: center;
+    gap: 17px;
+    min-height: 145px;
+    padding: 23px 5px;
+    border-bottom: 1px solid var(--npl-process-border);
+    transition: background 0.3s ease,
+                padding 0.3s ease;
+}
+
+.npl-document-process-step:hover {
+    padding-right: 13px;
+    padding-left: 13px;
+    background: var(--npl-process-cream);
+}
+
+.npl-document-process-step-number {
+    align-self: start;
+    padding-top: 7px;
+    color: #9b7b48;
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.npl-document-process-step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border: 1px solid #e8dfcd;
+    border-radius: 3px;
+    background: #faf8f2;
+    color: #8b6d3d;
+    font-size: 20px;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.npl-document-process-step:hover
+.npl-document-process-step-icon {
+    border-color: var(--npl-process-dark);
+    background: var(--npl-process-dark);
+    color: var(--npl-process-gold);
+}
+
+.npl-document-process-step-content {
+    min-width: 0;
+}
+
+.npl-document-process-step-content > span {
+    display: block;
+    margin-bottom: 7px;
+    color: #9b7b48;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.npl-document-process-step-content h3 {
+    margin: 0 0 8px;
+    color: var(--npl-process-text);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.npl-document-process-step-content p {
+    max-width: 400px;
+    margin: 0;
+    color: var(--npl-process-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.npl-document-process-step-arrow {
+    color: #a0a79e;
+    font-size: 13px;
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.npl-document-process-step:hover
+.npl-document-process-step-arrow {
+    color: #8b6d3d;
+    transform: translate(3px, -3px);
+}
+
+/* BOTTOM ASSISTANCE STRIP */
+
+.npl-document-process-bottom {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 55px;
+    padding: 27px 32px;
+    border: 1px solid #e7e4d9;
+    background: #f8f8f3;
+}
+
+.npl-document-process-bottom-icon {
+    display: flex;
+    flex: 0 0 53px;
+    align-items: center;
+    justify-content: center;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background: var(--npl-process-dark);
+    color: var(--npl-process-gold);
+    font-size: 20px;
+}
+
+.npl-document-process-bottom-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.npl-document-process-bottom-copy h3 {
+    margin: 0 0 6px;
+    color: var(--npl-process-dark);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.npl-document-process-bottom-copy p {
+    margin: 0;
+    color: var(--npl-process-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.npl-document-process-bottom-btn {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    min-height: 47px;
+    padding: 13px 19px;
+    background: var(--npl-process-dark);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                color 0.3s ease;
+}
+
+.npl-document-process-bottom-btn:hover {
+    background: var(--npl-process-gold);
+    color: var(--npl-process-dark);
+}
+
+.npl-document-process-bottom-btn i {
+    transition: transform 0.3s ease;
+}
+
+.npl-document-process-bottom-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (min-width: 1500px) {
+    .npl-document-process {
+        padding: 120px 6%;
+    }
+
+    .npl-document-process-container {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .npl-document-process {
+        padding: 85px 4%;
+    }
+
+    .npl-document-process-layout {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 25px;
+    }
+
+    .npl-document-process-intro {
+        padding: 35px 27px;
+    }
+
+    .npl-document-process-step {
+        grid-template-columns: 30px 48px minmax(0, 1fr) 15px;
+        gap: 12px;
+    }
+
+    .npl-document-process-step-icon {
+        width: 47px;
+        height: 47px;
+        font-size: 18px;
+    }
+
+    .npl-document-process-step-content h3 {
+        font-size: 19px;
+    }
+
+    .npl-document-process-step-content p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 850px) {
+    .npl-document-process {
+        padding: 75px 5%;
+    }
+
+    .npl-document-process-heading {
+        margin-bottom: 42px;
+    }
+
+    .npl-document-process-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .npl-document-process-intro {
+        min-height: 440px;
+        padding: 35px;
+    }
+
+    .npl-document-process-intro > p {
+        max-width: 490px;
+    }
+
+    .npl-document-process-decoration {
+        right: 0;
+        bottom: 40px;
+    }
+
+    .npl-document-process-step {
+        grid-template-columns: 35px 55px minmax(0, 1fr) 18px;
+        min-height: 130px;
+        gap: 15px;
+        padding: 22px 5px;
+    }
+
+    .npl-document-process-step-icon {
+        width: 53px;
+        height: 53px;
+    }
+
+    .npl-document-process-step-content p {
+        max-width: 520px;
+        font-size: 12px;
+    }
+
+    .npl-document-process-bottom {
+        flex-wrap: wrap;
+        gap: 17px;
+        margin-top: 40px;
+    }
+
+    .npl-document-process-bottom-copy {
+        flex-basis: calc(100% - 75px);
+    }
+
+    .npl-document-process-bottom-btn {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 520px) {
+    .npl-document-process {
+        padding: 60px 5%;
+    }
+
+    .npl-document-process-heading {
+        margin-bottom: 32px;
+    }
+
+    .npl-document-process-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.8px;
+    }
+
+    .npl-document-process-heading h2 {
+        font-size: 34px;
+        letter-spacing: -0.8px;
+    }
+
+    .npl-document-process-heading > p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .npl-document-process-intro {
+        min-height: 450px;
+        padding: 28px 23px;
+    }
+
+    .npl-document-process-intro-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 25px;
+        font-size: 22px;
+    }
+
+    .npl-document-process-intro h3 {
+        font-size: 34px;
+    }
+
+    .npl-document-process-intro > p {
+        font-size: 13px;
+    }
+
+    .npl-document-process-intro-btn {
+        gap: 10px;
+        padding: 12px 14px;
+        font-size: 11px;
+    }
+
+    .npl-document-process-decoration {
+        right: -45px;
+        bottom: 55px;
+        width: 135px;
+        height: 135px;
+        font-size: 65px;
+    }
+
+    .npl-document-process-note {
+        max-width: 245px;
+        font-size: 10px;
+    }
+
+    .npl-document-process-step {
+        grid-template-columns: 28px 43px minmax(0, 1fr);
+        gap: 10px;
+        padding: 21px 0;
+    }
+
+    .npl-document-process-step:hover {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .npl-document-process-step-number {
+        font-size: 14px;
+    }
+
+    .npl-document-process-step-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .npl-document-process-step-content > span {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .npl-document-process-step-content h3 {
+        font-size: 17px;
+    }
+
+    .npl-document-process-step-content p {
+        font-size: 11px;
+        line-height: 1.75;
+    }
+
+    .npl-document-process-step-arrow {
+        display: none;
+    }
+
+    .npl-document-process-bottom {
+        align-items: flex-start;
+        padding: 23px 19px;
+    }
+
+    .npl-document-process-bottom-icon {
+        flex-basis: 43px;
+        width: 43px;
+        height: 43px;
+        font-size: 17px;
+    }
+
+    .npl-document-process-bottom-copy {
+        flex-basis: calc(100% - 60px);
+    }
+
+    .npl-document-process-bottom-copy h3 {
+        font-size: 18px;
+    }
+
+    .npl-document-process-bottom-copy p {
+        font-size: 11px;
+    }
+
+    .npl-document-process-bottom-btn {
+        margin-left: 0;
+        padding: 12px 16px;
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-document-process *,
+    .npl-document-process *::before,
+    .npl-document-process *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ==========================================
+   STACKLY LEGAL
+   KNOWLEDGE CENTER
+   Larger Typography | Responsive Layout
+========================================== */
+
+.npl-knowledge-center,
+.npl-knowledge-center * {
+    box-sizing: border-box;
+}
+
+.npl-knowledge-center {
+    --npl-k-dark: #031d19;
+    --npl-k-dark-soft: #0b2c26;
+    --npl-k-gold: #d9b77d;
+    --npl-k-text: #172e27;
+    --npl-k-muted: #69776f;
+    --npl-k-border: #e7e9e2;
+    --npl-k-light: #f7f7f2;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 70px 5%;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: "DM Sans", sans-serif;
+}
+
+.npl-knowledge-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.npl-knowledge-header {
+    margin-bottom: 52px;
+}
+
+.npl-knowledge-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: #947345;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+}
+
+.npl-knowledge-eyebrow > span {
+    width: 32px;
+    height: 2px;
+    background: var(--npl-k-gold);
+}
+
+.npl-knowledge-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.npl-knowledge-heading-content {
+    max-width: 800px;
+}
+
+.npl-knowledge-heading-content h2 {
+    margin: 0 0 20px;
+    color: var(--npl-k-dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 4.2vw, 58px);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -1.2px;
+}
+
+.npl-knowledge-heading-content h2 span {
+    display: block;
+    color: #967647;
+}
+
+.npl-knowledge-heading-content p {
+    max-width: 720px;
+    margin: 0;
+    color: var(--npl-k-muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.npl-knowledge-header-link {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 52px;
+    padding: 15px 21px;
+    border: 1px solid #d9b77d;
+    color: var(--npl-k-dark);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                color 0.3s ease;
+}
+
+.npl-knowledge-header-link:hover {
+    background: var(--npl-k-dark);
+    color: var(--npl-k-gold);
+}
+
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+.npl-knowledge-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* ==========================================
+   FEATURED CARD
+========================================== */
+
+.npl-knowledge-featured {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--npl-k-border);
+    background: #ffffff;
+}
+
+.npl-knowledge-featured-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 23px 26px;
+    border-bottom: 1px solid rgba(217, 183, 125, 0.2);
+    background: var(--npl-k-dark);
+}
+
+.npl-knowledge-featured-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--npl-k-gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.npl-knowledge-featured-number {
+    color: #c0cdc5;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   DOCUMENT ILLUSTRATION
+========================================== */
+
+.npl-knowledge-featured-illustration {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 285px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #f5f3e9 0%,
+        #e9e9dc 100%
+    );
+}
+
+.npl-knowledge-illustration-circle {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(3, 29, 25, 0.09);
+    border-radius: 50%;
+}
+
+.npl-knowledge-illustration-circle::before,
+.npl-knowledge-illustration-circle::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(3, 29, 25, 0.08);
+    border-radius: 50%;
+}
+
+.npl-knowledge-illustration-circle::before {
+    inset: 18px;
+}
+
+.npl-knowledge-illustration-circle::after {
+    inset: -18px;
+}
+
+.npl-knowledge-paper {
+    position: relative;
+    z-index: 1;
+    width: 195px;
+    min-height: 228px;
+    padding: 22px 20px;
+    border: 1px solid #e1dfd4;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(3, 29, 25, 0.13);
+    transform: rotate(-4deg);
+    transition: transform 0.4s ease;
+}
+
+.npl-knowledge-featured:hover
+.npl-knowledge-paper {
+    transform: rotate(0deg) translateY(-4px);
+}
+
+.npl-knowledge-paper-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: #8d7043;
+}
+
+.npl-knowledge-paper-header i {
+    font-size: 24px;
+}
+
+.npl-knowledge-paper-header span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.npl-knowledge-paper-line {
+    height: 1px;
+    margin: 15px 0;
+    background: #deded3;
+}
+
+.npl-knowledge-paper-title {
+    margin-bottom: 17px;
+    color: var(--npl-k-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.npl-knowledge-paper-text {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.npl-knowledge-paper-text span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #e9e9e2;
+}
+
+.npl-knowledge-paper-text span:nth-child(2) {
+    width: 88%;
+}
+
+.npl-knowledge-paper-text span:nth-child(3) {
+    width: 95%;
+}
+
+.npl-knowledge-paper-text span:nth-child(4) {
+    width: 66%;
+}
+
+.npl-knowledge-paper-seal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin: 17px 0 0 auto;
+    border: 1px solid #b69b68;
+    border-radius: 50%;
+    color: #8d7043;
+    font-size: 15px;
+}
+
+.npl-knowledge-floating-icon {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49px;
+    height: 49px;
+    border: 1px solid rgba(217, 183, 125, 0.5);
+    background: var(--npl-k-dark);
+    color: var(--npl-k-gold);
+    box-shadow: 0 8px 22px rgba(3, 29, 25, 0.12);
+    font-size: 20px;
+}
+
+.npl-knowledge-float-one {
+    top: 40px;
+    left: calc(50% - 130px);
+    transform: rotate(-10deg);
+}
+
+.npl-knowledge-float-two {
+    right: calc(50% - 138px);
+    bottom: 37px;
+    transform: rotate(9deg);
+}
+
+/* ==========================================
+   FEATURED TEXT
+========================================== */
+
+.npl-knowledge-featured-content {
+    flex: 1;
+    padding: 31px 29px 34px;
+}
+
+.npl-knowledge-category {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #947345;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.npl-knowledge-featured-content h3 {
+    margin: 0 0 15px;
+    color: var(--npl-k-dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(26px, 2.2vw, 32px);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.npl-knowledge-featured-content > p {
+    margin: 0 0 25px;
+    color: var(--npl-k-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.npl-knowledge-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--npl-k-dark);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.npl-knowledge-read-link i {
+    color: #9a7b4a;
+    transition: transform 0.3s ease;
+}
+
+.npl-knowledge-read-link:hover i {
+    transform: translateX(5px);
+}
+
+/* ==========================================
+   TOPIC LIST
+========================================== */
+
+.npl-knowledge-topics {
+    min-width: 0;
+    padding: 29px 30px;
+    border: 1px solid var(--npl-k-border);
+    background: #fbfbf8;
+}
+
+.npl-knowledge-topics-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--npl-k-border);
+}
+
+.npl-knowledge-topics-heading > div > span {
+    display: block;
+    margin-bottom: 9px;
+    color: #947345;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.npl-knowledge-topics-heading h3 {
+    margin: 0;
+    color: var(--npl-k-dark);
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.npl-knowledge-topics-heading > i {
+    display: flex;
+    flex: 0 0 50px;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e5dcc9;
+    color: #8d7043;
+    font-size: 22px;
+}
+
+.npl-knowledge-topic {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr) 20px;
+    align-items: center;
+    gap: 17px;
+    padding: 23px 0;
+    border-bottom: 1px solid var(--npl-k-border);
+    color: inherit;
+    text-decoration: none;
+}
+
+.npl-knowledge-topic:last-child {
+    border-bottom: none;
+}
+
+.npl-knowledge-topic-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49px;
+    height: 49px;
+    border: 1px solid #e9e0cf;
+    background: #ffffff;
+    color: #8d7043;
+    font-size: 20px;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.npl-knowledge-topic:hover
+.npl-knowledge-topic-icon {
+    border-color: var(--npl-k-dark);
+    background: var(--npl-k-dark);
+    color: var(--npl-k-gold);
+}
+
+.npl-knowledge-topic-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.npl-knowledge-topic-label {
+    margin-bottom: 7px;
+    color: #947345;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.npl-knowledge-topic-content strong {
+    margin-bottom: 7px;
+    color: var(--npl-k-text);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.npl-knowledge-topic:hover
+.npl-knowledge-topic-content strong {
+    color: #92703d;
+}
+
+.npl-knowledge-topic-content small {
+    color: var(--npl-k-muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.npl-knowledge-topic-arrow {
+    color: #9b9f95;
+    font-size: 15px;
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.npl-knowledge-topic:hover
+.npl-knowledge-topic-arrow {
+    color: #92703d;
+    transform: translate(3px, -3px);
+}
+
+/* ==========================================
+   LEGAL TIP BANNER
+========================================== */
+
+.npl-knowledge-tip {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 45px;
+    padding: 34px 36px;
+    border: 1px solid rgba(217, 183, 125, 0.2);
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(217, 183, 125, 0.12),
+            transparent 35%
+        ),
+        var(--npl-k-dark);
+}
+
+.npl-knowledge-tip-icon {
+    display: flex;
+    flex: 0 0 62px;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    border: 1px solid rgba(217, 183, 125, 0.5);
+    color: var(--npl-k-gold);
+    font-size: 25px;
+}
+
+.npl-knowledge-tip-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.npl-knowledge-tip-content > span {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--npl-k-gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.npl-knowledge-tip-content h3 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.npl-knowledge-tip-content p {
+    max-width: 680px;
+    margin: 0;
+    color: #c4d0c9;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.npl-knowledge-tip-btn {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    min-height: 51px;
+    padding: 15px 21px;
+    border: 1px solid var(--npl-k-gold);
+    background: var(--npl-k-gold);
+    color: var(--npl-k-dark);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                color 0.3s ease;
+}
+
+.npl-knowledge-tip-btn:hover {
+    background: transparent;
+    color: var(--npl-k-gold);
+}
+
+.npl-knowledge-tip-btn i {
+    transition: transform 0.3s ease;
+}
+
+.npl-knowledge-tip-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   DISCLAIMER
+========================================== */
+
+.npl-knowledge-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 1050px;
+    margin: 27px auto 0;
+    color: #778078;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.npl-knowledge-disclaimer i {
+    flex: 0 0 auto;
+    margin-top: 4px;
+    color: #9b7b48;
+}
+
+/* ==========================================
+   LARGE DESKTOP
+========================================== */
+
+@media (min-width: 1500px) {
+    .npl-knowledge-center {
+        padding: 125px 6%;
+    }
+
+    .npl-knowledge-container {
+        max-width: 1320px;
+    }
+
+    .npl-knowledge-heading-content h2 {
+        font-size: 62px;
+    }
+
+    .npl-knowledge-featured-content h3 {
+        font-size: 34px;
+    }
+
+    .npl-knowledge-topic-content strong {
+        font-size: 22px;
+    }
+}
+
+/* ==========================================
+   TABLET / SMALL LAPTOP
+========================================== */
+
+@media (max-width: 1050px) {
+    .npl-knowledge-center {
+        padding: 90px 4%;
+    }
+
+    .npl-knowledge-heading-content h2 {
+        font-size: clamp(39px, 4.5vw, 50px);
+    }
+
+    .npl-knowledge-heading-content p {
+        font-size: 15px;
+    }
+
+    .npl-knowledge-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .npl-knowledge-featured-top {
+        padding: 21px 20px;
+    }
+
+    .npl-knowledge-featured-label {
+        font-size: 10px;
+    }
+
+    .npl-knowledge-featured-content {
+        padding: 26px 22px 29px;
+    }
+
+    .npl-knowledge-featured-content h3 {
+        font-size: 27px;
+    }
+
+    .npl-knowledge-featured-content > p {
+        font-size: 14px;
+    }
+
+    .npl-knowledge-topics {
+        padding: 24px 20px;
+    }
+
+    .npl-knowledge-topics-heading h3 {
+        font-size: 24px;
+    }
+
+    .npl-knowledge-topic {
+        grid-template-columns: 44px minmax(0, 1fr) 17px;
+        gap: 12px;
+        padding: 22px 0;
+    }
+
+    .npl-knowledge-topic-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 17px;
+    }
+
+    .npl-knowledge-topic-content strong {
+        font-size: 18px;
+    }
+
+    .npl-knowledge-topic-content small {
+        font-size: 12px;
+    }
+
+    .npl-knowledge-tip {
+        gap: 19px;
+        padding: 29px 25px;
+    }
+
+    .npl-knowledge-tip-content h3 {
+        font-size: 25px;
+    }
+
+    .npl-knowledge-tip-content p {
+        font-size: 13px;
+    }
+
+    .npl-knowledge-tip-btn {
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   TABLET / MOBILE
+========================================== */
+
+@media (max-width: 800px) {
+    .npl-knowledge-center {
+        padding: 78px 5%;
+    }
+
+    .npl-knowledge-header {
+        margin-bottom: 38px;
+    }
+
+    .npl-knowledge-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .npl-knowledge-heading-content h2 {
+        font-size: clamp(38px, 6vw, 48px);
+    }
+
+    .npl-knowledge-heading-content p {
+        font-size: 15px;
+    }
+
+    .npl-knowledge-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .npl-knowledge-featured-illustration {
+        min-height: 270px;
+    }
+
+    .npl-knowledge-featured-content {
+        padding: 29px 27px 32px;
+    }
+
+    .npl-knowledge-featured-content h3 {
+        font-size: 30px;
+    }
+
+    .npl-knowledge-featured-content > p {
+        font-size: 15px;
+    }
+
+    .npl-knowledge-topics {
+        padding: 27px;
+    }
+
+    .npl-knowledge-topic {
+        grid-template-columns: 49px minmax(0, 1fr) 19px;
+        gap: 15px;
+        padding: 23px 0;
+    }
+
+    .npl-knowledge-topic-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 19px;
+    }
+
+    .npl-knowledge-topic-content strong {
+        font-size: 20px;
+    }
+
+    .npl-knowledge-topic-content small {
+        font-size: 13px;
+    }
+
+    .npl-knowledge-tip {
+        flex-wrap: wrap;
+        gap: 19px;
+    }
+
+    .npl-knowledge-tip-content {
+        flex-basis: calc(100% - 85px);
+    }
+
+    .npl-knowledge-tip-content h3 {
+        font-size: 26px;
+    }
+
+    .npl-knowledge-tip-btn {
+        margin-left: 80px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 520px) {
+    .npl-knowledge-center {
+        padding: 62px 5%;
+    }
+
+    .npl-knowledge-header {
+        margin-bottom: 32px;
+    }
+
+    .npl-knowledge-eyebrow {
+        gap: 9px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .npl-knowledge-eyebrow > span {
+        width: 25px;
+    }
+
+    .npl-knowledge-heading-content h2 {
+        margin-bottom: 16px;
+        font-size: clamp(34px, 8vw, 40px);
+        letter-spacing: -0.6px;
+    }
+
+    .npl-knowledge-heading-content p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .npl-knowledge-header-link {
+        min-height: 47px;
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .npl-knowledge-featured-top {
+        padding: 18px 16px;
+    }
+
+    .npl-knowledge-featured-label {
+        gap: 7px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .npl-knowledge-featured-number {
+        font-size: 11px;
+    }
+
+    .npl-knowledge-featured-illustration {
+        min-height: 235px;
+    }
+
+    .npl-knowledge-illustration-circle {
+        width: 210px;
+        height: 210px;
+    }
+
+    .npl-knowledge-paper {
+        width: 185px;
+        min-height: 218px;
+        transform: scale(0.92) rotate(-4deg);
+    }
+
+    .npl-knowledge-float-one {
+        left: calc(50% - 112px);
+    }
+
+    .npl-knowledge-float-two {
+        right: calc(50% - 119px);
+    }
+
+    .npl-knowledge-floating-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 17px;
+    }
+
+    .npl-knowledge-featured-content {
+        padding: 24px 19px 27px;
+    }
+
+    .npl-knowledge-category {
+        font-size: 10px;
+    }
+
+    .npl-knowledge-featured-content h3 {
+        font-size: 25px;
+        line-height: 1.4;
+    }
+
+    .npl-knowledge-featured-content > p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .npl-knowledge-read-link {
+        font-size: 13px;
+    }
+
+    .npl-knowledge-topics {
+        padding: 22px 17px;
+    }
+
+    .npl-knowledge-topics-heading {
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 20px;
+    }
+
+    .npl-knowledge-topics-heading > div > span {
+        font-size: 10px;
+    }
+
+    .npl-knowledge-topics-heading h3 {
+        font-size: 22px;
+    }
+
+    .npl-knowledge-topics-heading > i {
+        flex-basis: 41px;
+        width: 41px;
+        height: 41px;
+        font-size: 18px;
+    }
+
+    .npl-knowledge-topic {
+        grid-template-columns: 41px minmax(0, 1fr) 14px;
+        gap: 11px;
+        padding: 19px 0;
+    }
+
+    .npl-knowledge-topic-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .npl-knowledge-topic-label {
+        margin-bottom: 6px;
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .npl-knowledge-topic-content strong {
+        margin-bottom: 6px;
+        font-size: 16px;
+        line-height: 1.45;
+    }
+
+    .npl-knowledge-topic-content small {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .npl-knowledge-topic-arrow {
+        font-size: 12px;
+    }
+
+    .npl-knowledge-tip {
+        gap: 15px;
+        margin-top: 30px;
+        padding: 23px 17px;
+    }
+
+    .npl-knowledge-tip-icon {
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+        font-size: 19px;
+    }
+
+    .npl-knowledge-tip-content {
+        flex-basis: calc(100% - 61px);
+    }
+
+    .npl-knowledge-tip-content > span {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+    }
+
+    .npl-knowledge-tip-content h3 {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    .npl-knowledge-tip-content p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .npl-knowledge-tip-btn {
+        min-height: 45px;
+        margin-left: 61px;
+        padding: 12px 14px;
+        font-size: 11px;
+    }
+
+    .npl-knowledge-disclaimer {
+        gap: 9px;
+        margin-top: 22px;
+        font-size: 10px;
+        line-height: 1.8;
+    }
+}
+
+/* ==========================================
+   EXTRA SMALL MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+    .npl-knowledge-center {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .npl-knowledge-heading-content h2 {
+        font-size: 32px;
+    }
+
+    .npl-knowledge-featured-label {
+        font-size: 8px;
+    }
+
+    .npl-knowledge-featured-number {
+        font-size: 10px;
+    }
+
+    .npl-knowledge-topics {
+        padding: 19px 13px;
+    }
+
+    .npl-knowledge-topic {
+        grid-template-columns: 36px minmax(0, 1fr) 12px;
+        gap: 9px;
+    }
+
+    .npl-knowledge-topic-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    .npl-knowledge-topic-content strong {
+        font-size: 15px;
+    }
+
+    .npl-knowledge-topic-content small {
+        font-size: 10px;
+    }
+
+    .npl-knowledge-tip-btn {
+        margin-left: 0;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-knowledge-center *,
+    .npl-knowledge-center *::before,
+    .npl-knowledge-center *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+/* =========================================================
+   STACKLY LEGAL
+   PROFESSIONAL CONTACT FORM
+   Responsive | Custom Dropdown | Accessible Styling
+========================================================= */
+
+.npl-contact-form-section,
+.npl-contact-form-section *,
+.npl-contact-form-section *::before,
+.npl-contact-form-section *::after {
+    box-sizing: border-box;
+}
+
+.npl-contact-form-section {
+    --npl-cf-dark: #031d19;
+    --npl-cf-dark-soft: #0b2c26;
+    --npl-cf-gold: #d9b77d;
+    --npl-cf-text: #18342c;
+    --npl-cf-muted: #68766e;
+    --npl-cf-border: #e5e8df;
+    --npl-cf-light: #f7f7f2;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 50px 5%;
+    overflow: hidden;
+    background: var(--npl-cf-light);
+    font-family: "DM Sans", sans-serif;
+}
+
+.npl-contact-form-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.npl-contact-form-heading {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.npl-contact-form-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #947345;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.npl-contact-form-eyebrow span {
+    width: 30px;
+    height: 2px;
+    background: var(--npl-cf-gold);
+}
+
+.npl-contact-form-heading h2 {
+    margin: 0 0 20px;
+    color: var(--npl-cf-dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(36px, 4.2vw, 57px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.npl-contact-form-heading h2 span {
+    color: #987849;
+}
+
+.npl-contact-form-heading > p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--npl-cf-muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.npl-contact-form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 32px;
+}
+
+.npl-contact-form-info,
+.npl-contact-form-card {
+    min-width: 0;
+}
+
+/* =========================================================
+   LEFT INFORMATION PANEL
+========================================================= */
+
+.npl-contact-form-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 43px 36px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(217, 183, 125, 0.13),
+            transparent 35%
+        ),
+        var(--npl-cf-dark);
+}
+
+.npl-contact-form-info-top {
+    position: relative;
+    z-index: 1;
+}
+
+.npl-contact-form-info-label {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--npl-cf-gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.npl-contact-form-info-top h3 {
+    max-width: 380px;
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(29px, 2.7vw, 38px);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.npl-contact-form-info-top > p {
+    margin: 0;
+    color: #c2d0c8;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.npl-contact-details {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 37px;
+}
+
+.npl-contact-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 21px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.npl-contact-detail-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.npl-contact-detail-icon {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(217, 183, 125, 0.4);
+    color: var(--npl-cf-gold);
+    font-size: 18px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.npl-contact-detail-item:hover .npl-contact-detail-icon {
+    background: var(--npl-cf-gold);
+    color: var(--npl-cf-dark);
+}
+
+.npl-contact-detail-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-top: 3px;
+}
+
+.npl-contact-detail-content > span {
+    margin-bottom: 9px;
+    color: var(--npl-cf-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.npl-contact-detail-content p,
+.npl-contact-detail-content a {
+    margin: 0;
+    color: #f0f3ef;
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.npl-contact-detail-content a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.npl-contact-detail-content a:hover {
+    color: var(--npl-cf-gold);
+}
+
+/* =========================================================
+   TRUST NOTE
+========================================================= */
+
+.npl-contact-form-trust {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid rgba(217, 183, 125, 0.22);
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.npl-contact-form-trust-icon {
+    display: flex;
+    flex: 0 0 34px;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    color: var(--npl-cf-gold);
+    font-size: 20px;
+}
+
+.npl-contact-form-trust strong {
+    display: block;
+    margin-bottom: 7px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.npl-contact-form-trust p {
+    margin: 0;
+    color: #c2d0c8;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   DECORATIVE DETAIL
+========================================================= */
+
+.npl-contact-form-decoration {
+    position: absolute;
+    right: -18px;
+    bottom: -30px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(217, 183, 125, 0.08);
+    pointer-events: none;
+}
+
+.npl-contact-form-decoration span {
+    font-family: "Playfair Display", serif;
+    font-size: 75px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.npl-contact-form-decoration i {
+    font-size: 65px;
+}
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.npl-contact-form-card {
+    padding: 43px 40px;
+    border: 1px solid var(--npl-cf-border);
+    background: #ffffff;
+    box-shadow: 0 18px 55px rgba(3, 29, 25, 0.045);
+}
+
+.npl-contact-form-card-heading {
+    margin-bottom: 32px;
+}
+
+.npl-contact-form-card-heading > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #947345;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.npl-contact-form-card-heading h3 {
+    margin: 0 0 12px;
+    color: var(--npl-cf-dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(27px, 2.6vw, 35px);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.npl-contact-form-card-heading p {
+    margin: 0;
+    color: var(--npl-cf-muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.npl-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.npl-contact-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.npl-contact-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 10px;
+}
+
+.npl-contact-field > label {
+    color: var(--npl-cf-text);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.npl-contact-field > label span,
+.npl-contact-form-consent label span {
+    color: #a77d40;
+}
+
+/* =========================================================
+   INPUT FIELDS
+========================================================= */
+
+.npl-contact-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.npl-contact-input-wrap > i {
+    position: absolute;
+    left: 16px;
+    color: #9a8868;
+    font-size: 15px;
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+.npl-contact-input-wrap input,
+.npl-contact-select-wrap select,
+.npl-contact-textarea-wrap textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    border: 1px solid #e2e5dc;
+    border-radius: 0;
+    outline: none;
+    background: #fcfcf9;
+    color: var(--npl-cf-dark);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.npl-contact-input-wrap input {
+    height: 53px;
+    padding: 0 14px 0 44px;
+}
+
+.npl-contact-input-wrap input::placeholder,
+.npl-contact-textarea-wrap textarea::placeholder {
+    color: #9a9f97;
+    opacity: 1;
+}
+
+.npl-contact-input-wrap:focus-within > i {
+    color: #987849;
+}
+
+.npl-contact-input-wrap input:focus,
+.npl-contact-select-wrap select:focus,
+.npl-contact-textarea-wrap textarea:focus {
+    border-color: #b79b69;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(217, 183, 125, 0.13);
+}
+
+/* =========================================================
+   NATIVE SELECT FALLBACK
+   Use only if the form still contains a <select>.
+========================================================= */
+
+.npl-contact-select-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.npl-contact-select-wrap select {
+    height: 53px;
+    padding: 0 42px 0 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.npl-contact-select-wrap > i {
+    position: absolute;
+    right: 16px;
+    color: #9a8868;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+/* =========================================================
+   CUSTOM JAVASCRIPT SERVICE DROPDOWN
+========================================================= */
+
+.npl-contact-custom-dropdown {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.npl-contact-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    min-height: 53px;
+    padding: 14px 15px;
+
+    border: 1px solid #e2e5dc;
+    border-radius: 0;
+    outline: none;
+    background: #fcfcf9;
+    color: var(--npl-cf-dark);
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+
+    cursor: pointer;
+    transition: border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.npl-contact-dropdown-trigger:hover,
+.npl-contact-dropdown-trigger:focus-visible,
+.npl-contact-custom-dropdown.is-open .npl-contact-dropdown-trigger {
+    border-color: #b79b69;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(217, 183, 125, 0.13);
+}
+
+.npl-contact-dropdown-trigger > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.npl-contact-dropdown-trigger > i {
+    flex-shrink: 0;
+    color: #9a8868;
+    font-size: 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.npl-contact-custom-dropdown.is-open .npl-contact-dropdown-trigger > i {
+    color: #987849;
+    transform: rotate(180deg);
+}
+
+.npl-contact-dropdown-options {
+    position: absolute;
+    top: calc(100% + 7px);
+    right: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    max-height: 250px;
+    margin: 0;
+    padding: 7px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+
+    border: 1px solid #e4e7e3;
+    background: #ffffff;
+    box-shadow: 0 14px 35px rgba(3, 29, 25, 0.14);
+}
+
+.npl-contact-dropdown-options[hidden] {
+    display: none !important;
+}
+
+.npl-contact-dropdown-options li {
+    padding: 12px 13px;
+    border-radius: 2px;
+    color: #344740;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.npl-contact-dropdown-options li:hover,
+.npl-contact-dropdown-options li:focus-visible,
+.npl-contact-dropdown-options li.is-active {
+    outline: none;
+    background: #f5f0e6;
+    color: #72572b;
+}
+
+.npl-contact-dropdown-options li.is-selected {
+    background: #f0e6d3;
+    color: #63491f;
+    font-weight: 700;
+}
+
+.npl-contact-dropdown-error {
+    display: block;
+    margin-top: 5px;
+    color: #b42318;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.npl-contact-dropdown-error:empty {
+    display: none;
+}
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.npl-contact-textarea-wrap {
+    display: flex;
+    min-width: 0;
+}
+
+.npl-contact-textarea-wrap textarea {
+    min-height: 145px;
+    padding: 16px;
+    resize: vertical;
+    line-height: 1.8;
+}
+
+.npl-contact-field-hint {
+    color: #7b857d;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   CONSENT
+========================================================= */
+
+.npl-contact-form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.npl-contact-form-consent input {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    margin: 4px 0 0;
+    accent-color: var(--npl-cf-dark);
+    cursor: pointer;
+}
+
+.npl-contact-form-consent label {
+    color: var(--npl-cf-muted);
+    font-size: 12px;
+    line-height: 1.8;
+    cursor: pointer;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.npl-contact-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+    min-height: 57px;
+    padding: 16px 21px;
+
+    border: 1px solid var(--npl-cf-dark);
+    background: var(--npl-cf-dark);
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+
+    cursor: pointer;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.npl-contact-submit-btn i {
+    flex-shrink: 0;
+    color: var(--npl-cf-gold);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.npl-contact-submit-btn:hover {
+    border-color: var(--npl-cf-gold);
+    background: var(--npl-cf-gold);
+    color: var(--npl-cf-dark);
+}
+
+.npl-contact-submit-btn:hover i {
+    color: var(--npl-cf-dark);
+    transform: translateX(5px);
+}
+
+.npl-contact-submit-btn:focus-visible {
+    outline: 3px solid rgba(183, 155, 105, 0.45);
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   FORM NOTE
+========================================================= */
+
+.npl-contact-form-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin: -8px 0 0;
+    color: #7a847c;
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.npl-contact-form-note i {
+    flex-shrink: 0;
+    color: #947345;
+}
+
+/* =========================================================
+   FORM STATUS
+========================================================= */
+
+.npl-contact-form-status {
+    padding: 14px 16px;
+    border: 1px solid var(--npl-cf-gold);
+    background: #fbf7ed;
+    color: var(--npl-cf-dark);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.npl-contact-form-status[hidden] {
+    display: none !important;
+}
+
+/* =========================================================
+   RESPONSIVE: TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+    .npl-contact-form-section {
+        padding: 80px 4%;
+    }
+
+    .npl-contact-form-layout {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 22px;
+    }
+
+    .npl-contact-form-info {
+        padding: 35px 25px;
+    }
+
+    .npl-contact-form-card {
+        padding: 35px 27px;
+    }
+
+    .npl-contact-form-info-top h3 {
+        font-size: 31px;
+    }
+
+    .npl-contact-form-row {
+        gap: 15px;
+    }
+
+    .npl-contact-input-wrap input {
+        padding-left: 40px;
+        font-size: 13px;
+    }
+
+    .npl-contact-detail-item {
+        gap: 13px;
+    }
+
+    .npl-contact-detail-icon {
+        flex-basis: 43px;
+        width: 43px;
+        height: 43px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE: MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+    .npl-contact-form-section {
+        padding: 75px 5%;
+    }
+
+    .npl-contact-form-heading {
+        margin-bottom: 40px;
+    }
+
+    .npl-contact-form-heading h2 {
+        font-size: clamp(35px, 6vw, 48px);
+    }
+
+    .npl-contact-form-heading > p {
+        font-size: 15px;
+    }
+
+    .npl-contact-form-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .npl-contact-form-info {
+        padding: 37px 30px;
+    }
+
+    .npl-contact-form-info-top h3 {
+        max-width: 500px;
+        font-size: 35px;
+    }
+
+    .npl-contact-details {
+        margin-top: 30px;
+    }
+
+    .npl-contact-form-card {
+        padding: 36px 30px;
+    }
+
+    .npl-contact-form-card-heading h3 {
+        font-size: 32px;
+    }
+
+    .npl-contact-form-row {
+        gap: 18px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE: SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+    .npl-contact-form-section {
+        padding: 60px 5%;
+    }
+
+    .npl-contact-form-heading {
+        margin-bottom: 32px;
+    }
+
+    .npl-contact-form-eyebrow {
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .npl-contact-form-heading h2 {
+        font-size: 35px;
+        letter-spacing: -0.5px;
+    }
+
+    .npl-contact-form-heading > p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .npl-contact-form-info {
+        padding: 29px 21px;
+    }
+
+    .npl-contact-form-info-label {
+        font-size: 10px;
+    }
+
+    .npl-contact-form-info-top h3 {
+        font-size: 29px;
+    }
+
+    .npl-contact-form-info-top > p {
+        font-size: 13px;
+    }
+
+    .npl-contact-detail-item {
+        gap: 12px;
+        padding: 18px 0;
+    }
+
+    .npl-contact-detail-icon {
+        flex-basis: 41px;
+        width: 41px;
+        height: 41px;
+        font-size: 16px;
+    }
+
+    .npl-contact-detail-content > span {
+        font-size: 10px;
+    }
+
+    .npl-contact-detail-content p,
+    .npl-contact-detail-content a {
+        font-size: 12px;
+    }
+
+    .npl-contact-form-trust {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .npl-contact-form-trust strong {
+        font-size: 13px;
+    }
+
+    .npl-contact-form-trust p {
+        font-size: 11px;
+    }
+
+    .npl-contact-form-decoration span {
+        font-size: 55px;
+    }
+
+    .npl-contact-form-decoration i {
+        font-size: 45px;
+    }
+
+    .npl-contact-form-card {
+        padding: 27px 19px;
+    }
+
+    .npl-contact-form-card-heading {
+        margin-bottom: 27px;
+    }
+
+    .npl-contact-form-card-heading h3 {
+        font-size: 27px;
+    }
+
+    .npl-contact-form-card-heading p {
+        font-size: 13px;
+    }
+
+    .npl-contact-form {
+        gap: 21px;
+    }
+
+    .npl-contact-form-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 21px;
+    }
+
+    .npl-contact-field > label {
+        font-size: 13px;
+    }
+
+    .npl-contact-input-wrap input,
+    .npl-contact-select-wrap select {
+        height: 51px;
+        font-size: 13px;
+    }
+
+    .npl-contact-dropdown-trigger {
+        min-height: 51px;
+        padding: 13px 14px;
+        font-size: 13px;
+    }
+
+    .npl-contact-dropdown-options {
+        max-height: 220px;
+    }
+
+    .npl-contact-dropdown-options li {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+
+    .npl-contact-textarea-wrap textarea {
+        min-height: 130px;
+        font-size: 13px;
+    }
+
+    .npl-contact-form-consent label {
+        font-size: 11px;
+    }
+
+    .npl-contact-submit-btn {
+        min-height: 53px;
+        padding: 14px 17px;
+        font-size: 13px;
+    }
+
+    .npl-contact-form-note {
+        font-size: 10px;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+    .npl-contact-form-info {
+        padding: 25px 17px;
+    }
+
+    .npl-contact-form-card {
+        padding: 24px 15px;
+    }
+
+    .npl-contact-form-heading h2 {
+        font-size: 31px;
+    }
+
+    .npl-contact-form-info-top h3 {
+        font-size: 26px;
+    }
+
+    .npl-contact-form-card-heading h3 {
+        font-size: 24px;
+    }
+
+    .npl-contact-detail-content p,
+    .npl-contact-detail-content a {
+        font-size: 11px;
+    }
+
+    .npl-contact-dropdown-trigger {
+        padding-right: 11px;
+        padding-left: 11px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY: REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-contact-form-section *,
+    .npl-contact-form-section *::before,
+    .npl-contact-form-section *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+.npl-contact-form-status[data-state="success"] {
+    border-color: #9bc5a4;
+    background: #f0f8f1;
+    color: #205b32;
+}
+
+.npl-contact-form-status[data-state="error"] {
+    border-color: #e4aaaa;
+    background: #fff3f3;
+    color: #9b2424;
+}
+
+.npl-contact-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+
+
+/* ==========================================
+   STACKLY LEGAL
+   CONTACT OFFICE MAP SECTION
+========================================== */
+
+.npl-contact-map-section,
+.npl-contact-map-section * {
+    box-sizing: border-box;
+}
+
+.npl-contact-map-section {
+    position: relative;
+    width: 100%;
+    padding: 50px 5%;
+    overflow: hidden;
+    background: #f7f7f2;
+}
+
+.npl-contact-map-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* MAP HEADING */
+
+.npl-contact-map-heading {
+    max-width: 700px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.npl-contact-map-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    color: #52645b;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.npl-contact-map-eyebrow span {
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: #d9b77d;
+}
+
+.npl-contact-map-heading h2 {
+    margin: 0 0 16px;
+    color: #031d19;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.npl-contact-map-heading h2 span {
+    color: #a7874f;
+    font-style: italic;
+}
+
+.npl-contact-map-heading p {
+    max-width: 590px;
+    margin: 0 auto;
+    color: #68736d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* MAP FRAME */
+
+.npl-contact-map-frame {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    border: 1px solid rgba(3, 29, 25, 0.12);
+    border-radius: 16px;
+    background: #e8ebe5;
+    box-shadow: 0 18px 45px rgba(3, 29, 25, 0.09);
+}
+
+.npl-contact-map-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .npl-contact-map-section {
+        padding: 70px 5%;
+    }
+
+    .npl-contact-map-heading {
+        margin-bottom: 30px;
+    }
+
+    .npl-contact-map-frame {
+        height: 350px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .npl-contact-map-section {
+        padding: 55px 5%;
+    }
+
+    .npl-contact-map-heading h2 {
+        font-size: 34px;
+    }
+
+    .npl-contact-map-heading p {
+        font-size: 14px;
+    }
+
+    .npl-contact-map-frame {
+        height: 280px;
+        border-radius: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-contact-map-section *,
+    .npl-contact-map-section *::before,
+    .npl-contact-map-section *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+/* ==========================================
+   STACKLY LEGAL
+   CONTACT FAQ - EDITORIAL ACCORDION DESIGN
+   Larger Typography | Responsive | Accessible
+========================================== */
+
+.npl-contact-faq-section,
+.npl-contact-faq-section * {
+    box-sizing: border-box;
+}
+
+.npl-contact-faq-section {
+    position: relative;
+    width: 100%;
+    padding: 105px 5%;
+    overflow: hidden;
+    background: #031d19;
+    color: #f7f7f2;
+}
+
+.npl-contact-faq-container {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 75px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   LEFT INTRODUCTION
+========================================== */
+
+.npl-contact-faq-intro {
+    position: sticky;
+    top: 100px;
+    padding: 15px 0 25px;
+}
+
+.npl-contact-faq-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    color: #d9b77d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.npl-contact-faq-eyebrow-line {
+    display: inline-block;
+    width: 35px;
+    height: 2px;
+    background: #d9b77d;
+    flex-shrink: 0;
+}
+
+.npl-contact-faq-intro h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 25px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 4.2vw, 58px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.npl-contact-faq-intro h2 span {
+    display: block;
+    color: #d9b77d;
+    font-style: italic;
+}
+
+.npl-contact-faq-intro > p {
+    max-width: 460px;
+    margin: 0 0 32px;
+    color: #c1cdc7;
+    font-family: "DM Sans", sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* ==========================================
+   INTRODUCTION CTA
+========================================== */
+
+.npl-contact-faq-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 58px;
+    padding: 0 27px;
+    border: 1px solid #d9b77d;
+    border-radius: 3px;
+    background: #d9b77d;
+    color: #031d19;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.npl-contact-faq-cta i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.npl-contact-faq-cta:hover {
+    background: transparent;
+    color: #d9b77d;
+    transform: translateY(-3px);
+}
+
+.npl-contact-faq-cta:hover i {
+    transform: translate(3px, -2px);
+}
+
+.npl-contact-faq-cta:focus-visible {
+    outline: 2px solid #f7f7f2;
+    outline-offset: 5px;
+}
+
+/* ==========================================
+   SUPPORT NOTE
+========================================== */
+
+.npl-contact-faq-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    max-width: 450px;
+    margin-top: 45px;
+    padding: 23px 0;
+    border-top: 1px solid rgba(217, 183, 125, 0.3);
+    border-bottom: 1px solid rgba(217, 183, 125, 0.3);
+}
+
+.npl-contact-faq-note-icon {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(217, 183, 125, 0.5);
+    border-radius: 50%;
+    color: #d9b77d;
+    font-size: 19px;
+}
+
+.npl-contact-faq-note strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #f7f7f2;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.npl-contact-faq-note p {
+    margin: 0;
+    color: #bdc9c3;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* ==========================================
+   DECORATIVE WATERMARK
+========================================== */
+
+.npl-contact-faq-watermark {
+    display: block;
+    margin-top: 38px;
+    color: rgba(217, 183, 125, 0.09);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(75px, 9vw, 125px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: 5px;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ==========================================
+   FAQ LIST
+========================================== */
+
+.npl-contact-faq-list {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.npl-contact-faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.npl-contact-faq-item.active {
+    border-bottom-color: rgba(217, 183, 125, 0.75);
+}
+
+/* ==========================================
+   FAQ QUESTION BUTTON
+========================================== */
+
+.npl-contact-faq-question {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 17px;
+    width: 100%;
+    min-height: 100px;
+    padding: 25px 0;
+    border: 0;
+    background: transparent;
+    color: #f7f7f2;
+    text-align: left;
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+}
+
+.npl-contact-faq-number {
+    align-self: start;
+    padding-top: 5px;
+    color: #d9b77d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.npl-contact-faq-question-text {
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.65;
+    transition: color 0.3s ease;
+}
+
+.npl-contact-faq-question:hover
+.npl-contact-faq-question-text,
+.npl-contact-faq-item.active
+.npl-contact-faq-question-text {
+    color: #d9b77d;
+}
+
+/* ==========================================
+   PLUS / MINUS TOGGLE
+========================================== */
+
+.npl-contact-faq-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    color: #d9b77d;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.npl-contact-faq-item.active
+.npl-contact-faq-toggle {
+    transform: rotate(45deg);
+    border-color: #d9b77d;
+    background: #d9b77d;
+    color: #031d19;
+}
+
+.npl-contact-faq-question:focus-visible {
+    outline: 2px solid #d9b77d;
+    outline-offset: 5px;
+}
+
+/* ==========================================
+   FAQ ANSWER
+========================================== */
+
+.npl-contact-faq-answer {
+    display: grid;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition:
+        grid-template-rows 0.35s ease,
+        opacity 0.3s ease;
+}
+
+.npl-contact-faq-answer[hidden] {
+    display: none;
+}
+
+.npl-contact-faq-answer-inner {
+    min-height: 0;
+    padding: 0 60px 32px 55px;
+    color: #c1cdc7;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.95;
+}
+
+.npl-contact-faq-answer-inner p {
+    margin: 0;
+}
+
+/* ==========================================
+   LARGE LAPTOPS
+========================================== */
+
+@media (min-width: 1001px) and (max-width: 1200px) {
+    .npl-contact-faq-container {
+        gap: 50px;
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .npl-contact-faq-intro h2 {
+        font-size: 46px;
+    }
+
+    .npl-contact-faq-question-text {
+        font-size: 17px;
+    }
+
+    .npl-contact-faq-answer-inner {
+        padding-right: 35px;
+    }
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 1000px) {
+    .npl-contact-faq-section {
+        padding: 85px 6%;
+    }
+
+    .npl-contact-faq-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .npl-contact-faq-intro {
+        position: relative;
+        top: auto;
+        max-width: 720px;
+        padding-top: 0;
+    }
+
+    .npl-contact-faq-intro h2 {
+        font-size: clamp(42px, 6vw, 54px);
+    }
+
+    .npl-contact-faq-intro > p {
+        max-width: 650px;
+        font-size: 17px;
+    }
+
+    .npl-contact-faq-note {
+        margin-top: 32px;
+    }
+
+    .npl-contact-faq-watermark {
+        display: none;
+    }
+
+    .npl-contact-faq-question {
+        min-height: 94px;
+    }
+
+    .npl-contact-faq-question-text {
+        font-size: 18px;
+    }
+
+    .npl-contact-faq-answer-inner {
+        padding: 0 65px 30px 55px;
+        font-size: 16px;
+    }
+}
+
+/* ==========================================
+   MOBILE DEVICES
+========================================== */
+
+@media (max-width: 600px) {
+    .npl-contact-faq-section {
+        padding: 70px 6%;
+    }
+
+    .npl-contact-faq-container {
+        gap: 35px;
+    }
+
+    .npl-contact-faq-eyebrow {
+        gap: 10px;
+        margin-bottom: 20px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .npl-contact-faq-eyebrow-line {
+        width: 27px;
+    }
+
+    .npl-contact-faq-intro h2 {
+        margin-bottom: 20px;
+        font-size: clamp(36px, 9vw, 44px);
+        line-height: 1.2;
+    }
+
+    .npl-contact-faq-intro > p {
+        margin-bottom: 26px;
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    .npl-contact-faq-cta {
+        min-height: 54px;
+        padding: 0 20px;
+        gap: 11px;
+        font-size: 14px;
+    }
+
+    .npl-contact-faq-note {
+        gap: 13px;
+        margin-top: 30px;
+        padding: 19px 0;
+    }
+
+    .npl-contact-faq-note-icon {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .npl-contact-faq-note strong {
+        font-size: 15px;
+    }
+
+    .npl-contact-faq-note p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .npl-contact-faq-question {
+        grid-template-columns: 27px minmax(0, 1fr) 34px;
+        gap: 10px;
+        min-height: 82px;
+        padding: 20px 0;
+    }
+
+    .npl-contact-faq-number {
+        padding-top: 4px;
+        font-size: 12px;
+    }
+
+    .npl-contact-faq-question-text {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .npl-contact-faq-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .npl-contact-faq-answer-inner {
+        padding: 0 5px 25px 37px;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE DEVICES
+========================================== */
+
+@media (max-width: 380px) {
+    .npl-contact-faq-section {
+        padding: 60px 5%;
+    }
+
+    .npl-contact-faq-intro h2 {
+        font-size: 34px;
+    }
+
+    .npl-contact-faq-question {
+        grid-template-columns: 23px minmax(0, 1fr) 30px;
+        gap: 8px;
+    }
+
+    .npl-contact-faq-question-text {
+        font-size: 14px;
+    }
+
+    .npl-contact-faq-toggle {
+        width: 29px;
+        height: 29px;
+    }
+
+    .npl-contact-faq-answer-inner {
+        padding-left: 31px;
+        font-size: 13px;
+    }
+
+    .npl-contact-faq-cta {
+        padding: 0 16px;
+        font-size: 13px;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-contact-faq-section *,
+    .npl-contact-faq-section *::before,
+    .npl-contact-faq-section *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+

@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Client Dashboard to manage legal cases, appointments, documents, and client information.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+<div class="npl-client-dashboard">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="npl-client-overlay" id="nplClientOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="npl-client-sidebar" id="nplClientSidebar"
+        aria-label="Client dashboard navigation">
+
+        <div class="npl-client-brand">
+
+            <a href="client.html" class="npl-client-brand-link"
+                aria-label="Stackly Legal Services home">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Legal Services Logo"
+                    class="npl-client-logo">
+
+                 
+
+            </a>
+
+            <button type="button"
+                class="npl-client-mobile-close"
+                id="nplClientMobileClose"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        
+        <nav class="npl-client-nav">
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client.html"
+                class="npl-client-nav-link"
+                aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="client-cases.html" class="npl-client-nav-link">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>My Legal Cases</span>
+            </a>
+
+            <a href="client-appointments.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="client-documents.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>My Documents</span>
+            </a>
+
+            <a href="client-messages.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-comments"></i>
+                <span>Messages</span>
+            </a>
+
+            <a href="client-billing.html" class="npl-client-nav-link npl-client-nav-active">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Billing & Payments</span>
+            </a>
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client-profile.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="npl-client-sidebar-spacer"></div>
+
+        <div class="npl-client-help-card">
+            <div class="npl-client-help-icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <h4>Need legal assistance?</h4>
+
+            <p>Contact our legal team if you need help with your case or documents.</p>
+
+            <a href="404-client.html">
+                Contact Support <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        
+
+        <div class="npl-client-sidebar-bottom">
+
+            <a href="index.html"
+                class="npl-client-nav-link npl-client-logout"
+                id="nplClientLogout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="npl-client-main">
+
+        <!-- TOP BAR -->
+        <header class="npl-client-topbar">
+
+            <div class="npl-client-topbar-left">
+
+                <button type="button"
+                    class="npl-client-menu-button"
+                    id="nplClientMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="nplClientSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="npl-client-page-heading">
+                    <h1>Client Dashboard</h1>
+                    <p>Manage your legal matters in one place.</p>
+                </div>
+
+            </div>
+
+            <div class="npl-client-topbar-right">
+
+                <a href="404-client.html"><button type="button"
+                    class="npl-client-notification"
+                    aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="npl-client-notification-dot"></span>
+                </button></a>
+
+                <div class="npl-client-user">
+
+                    <div class="npl-client-user-info">
+                        <strong id="nplClientUserName">Client</strong>
+
+                        <a href="mailto:client@example.com"
+                            id="nplClientUserEmail">
+                            client@example.com
+                        </a>
+                    </div>
+
+                    <div class="npl-client-user-avatar"
+                        id="nplClientUserAvatar"
+                        aria-hidden="true">
+                        C
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- ==========================================
+     STACKLY LEGAL SERVICES
+     CLIENT BILLING & PAYMENTS PAGE
+========================================== -->
+
+<section class="npl-billing-page">
+
+    <!-- PAGE HEADING -->
+    <div class="npl-billing-heading">
+        <div>
+            <span class="npl-billing-eyebrow">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                FINANCIAL OVERVIEW
+            </span>
+
+            <h2>Billing & Payments</h2>
+
+            <p>
+                Manage your legal service invoices, payments, and billing details.
+            </p>
+        </div>
+
+        <a href="404-client.html" class="npl-billing-primary-btn">
+            <i class="fa-solid fa-download"></i>
+            Download Statement
+        </a>
+    </div>
+
+    <!-- BILLING SUMMARY -->
+    <div class="npl-billing-stats">
+
+        <!-- TOTAL PAID -->
+        <article class="npl-billing-stat">
+            <div class="npl-billing-stat-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <div>
+                <p>Total Paid</p>
+                <h3>₹48,500</h3>
+                <span class="npl-billing-stat-note">
+                    Across all invoices
+                </span>
+            </div>
+        </article>
+
+        <!-- OUTSTANDING BALANCE -->
+        <article class="npl-billing-stat">
+            <div class="npl-billing-stat-icon npl-billing-gold">
+                <i class="fa-solid fa-file-invoice"></i>
+            </div>
+
+            <div>
+                <p>Outstanding Balance</p>
+                <h3>₹8,500</h3>
+                <span class="npl-billing-stat-note">
+                    2 invoices pending
+                </span>
+            </div>
+        </article>
+
+        <!-- PAID INVOICES -->
+        <article class="npl-billing-stat">
+            <div class="npl-billing-stat-icon npl-billing-blue">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+                <p>Paid Invoices</p>
+                <h3>12</h3>
+                <span class="npl-billing-stat-note">
+                    Successfully completed
+                </span>
+            </div>
+        </article>
+
+        <!-- NEXT PAYMENT -->
+        <article class="npl-billing-stat">
+            <div class="npl-billing-stat-icon npl-billing-purple">
+                <i class="fa-regular fa-calendar"></i>
+            </div>
+
+            <div>
+                <p>Next Payment Due</p>
+                <h3>₹5,000</h3>
+                <span class="npl-billing-stat-note">
+                    October 20, 2026
+                </span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- PAYMENT REMINDER -->
+    <section class="npl-billing-reminder">
+
+        <div class="npl-billing-reminder-icon">
+            <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+
+        <div class="npl-billing-reminder-content">
+            <h3>Payment Reminder</h3>
+
+            <p>
+                You have outstanding legal service invoices.
+                Please review your pending payments and due dates.
+            </p>
+        </div>
+
+        <a href="404-client.html" class="npl-billing-reminder-btn">
+            View Invoices
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+    <!-- RECENT INVOICES -->
+    <section class="npl-billing-section" id="nplBillingInvoices">
+
+        <div class="npl-billing-section-heading">
+            <div>
+                <span class="npl-billing-section-label">
+                    INVOICE MANAGEMENT
+                </span>
+
+                <h3>Recent Invoices</h3>
+
+                <p>Review your legal service charges and payment status.</p>
+            </div>
+
+            <a href="404-client.html" class="npl-billing-view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="npl-billing-table-wrap">
+
+            <table class="npl-billing-table">
+
+                <thead>
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Legal Service</th>
+                        <th>Issue Date</th>
+                        <th>Due Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <strong>INV-1024</strong>
+                        </td>
+
+                        <td>Property Documentation</td>
+
+                        <td>Oct 01, 2026</td>
+
+                        <td>Oct 20, 2026</td>
+
+                        <td class="npl-billing-amount">₹5,000</td>
+
+                        <td>
+                            <span class="npl-billing-status npl-billing-pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-client.html"
+                                class="npl-billing-action">
+                                Pay Now
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>INV-1023</strong>
+                        </td>
+
+                        <td>Notary Certification</td>
+
+                        <td>Sep 25, 2026</td>
+
+                        <td>Oct 15, 2026</td>
+
+                        <td class="npl-billing-amount">₹3,500</td>
+
+                        <td>
+                            <span class="npl-billing-status npl-billing-pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-client.html"
+                                class="npl-billing-action">
+                                Pay Now
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>INV-1022</strong>
+                        </td>
+
+                        <td>Legal Consultation</td>
+
+                        <td>Sep 18, 2026</td>
+
+                        <td>Sep 25, 2026</td>
+
+                        <td class="npl-billing-amount">₹2,500</td>
+
+                        <td>
+                            <span class="npl-billing-status npl-billing-paid">
+                                Paid
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-client.html"
+                                class="npl-billing-action npl-billing-receipt">
+                                Receipt
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>INV-1021</strong>
+                        </td>
+
+                        <td>Affidavit Preparation</td>
+
+                        <td>Sep 10, 2026</td>
+
+                        <td>Sep 17, 2026</td>
+
+                        <td class="npl-billing-amount">₹4,000</td>
+
+                        <td>
+                            <span class="npl-billing-status npl-billing-paid">
+                                Paid
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-client.html"
+                                class="npl-billing-action npl-billing-receipt">
+                                Receipt
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- PAYMENT HISTORY -->
+    <section class="npl-billing-section">
+
+        <div class="npl-billing-section-heading">
+            <div>
+                <span class="npl-billing-section-label">
+                    TRANSACTION RECORDS
+                </span>
+
+                <h3>Payment History</h3>
+
+                <p>Track your previous legal service transactions.</p>
+            </div>
+
+            <a href="404-client.html" class="npl-billing-view-all">
+                Full History
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="npl-billing-history">
+
+            <!-- TRANSACTION 1 -->
+            <article class="npl-billing-transaction">
+
+                <div class="npl-billing-transaction-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="npl-billing-transaction-info">
+                    <h4>Legal Consultation</h4>
+                    <p>Invoice INV-1022 · Sep 25, 2026</p>
+                </div>
+
+                <div class="npl-billing-transaction-method">
+                    <i class="fa-regular fa-credit-card"></i>
+                    Card Payment
+                </div>
+
+                <div class="npl-billing-transaction-amount">
+                    <strong>₹2,500</strong>
+                    <span>Completed</span>
+                </div>
+
+            </article>
+
+            <!-- TRANSACTION 2 -->
+            <article class="npl-billing-transaction">
+
+                <div class="npl-billing-transaction-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="npl-billing-transaction-info">
+                    <h4>Affidavit Preparation</h4>
+                    <p>Invoice INV-1021 · Sep 17, 2026</p>
+                </div>
+
+                <div class="npl-billing-transaction-method">
+                    <i class="fa-solid fa-building-columns"></i>
+                    Bank Transfer
+                </div>
+
+                <div class="npl-billing-transaction-amount">
+                    <strong>₹4,000</strong>
+                    <span>Completed</span>
+                </div>
+
+            </article>
+
+            <!-- TRANSACTION 3 -->
+            <article class="npl-billing-transaction">
+
+                <div class="npl-billing-transaction-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="npl-billing-transaction-info">
+                    <h4>Document Verification</h4>
+                    <p>Invoice INV-1018 · Sep 05, 2026</p>
+                </div>
+
+                <div class="npl-billing-transaction-method">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    UPI Payment
+                </div>
+
+                <div class="npl-billing-transaction-amount">
+                    <strong>₹1,500</strong>
+                    <span>Completed</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- PAYMENT METHODS AND BILLING DETAILS -->
+    <div class="npl-billing-bottom-grid">
+
+        <!-- PAYMENT METHODS -->
+        <section class="npl-billing-panel">
+
+            <div class="npl-billing-panel-heading">
+                <div>
+                    <span class="npl-billing-section-label">
+                        PAYMENT OPTIONS
+                    </span>
+
+                    <h3>Payment Methods</h3>
+                </div>
+
+                <i class="fa-regular fa-credit-card"></i>
+            </div>
+
+            <div class="npl-billing-method">
+
+                <div class="npl-billing-method-icon">
+                    <i class="fa-regular fa-credit-card"></i>
+                </div>
+
+                <div class="npl-billing-method-info">
+                    <h4>Debit / Credit Card</h4>
+                    <p>Secure card payment</p>
+                </div>
+
+                <span class="npl-billing-method-tag">Available</span>
+
+            </div>
+
+            <div class="npl-billing-method">
+
+                <div class="npl-billing-method-icon npl-billing-upi-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <div class="npl-billing-method-info">
+                    <h4>UPI Payment</h4>
+                    <p>Pay using your UPI app</p>
+                </div>
+
+                <span class="npl-billing-method-tag">Available</span>
+
+            </div>
+
+            <div class="npl-billing-method">
+
+                <div class="npl-billing-method-icon npl-billing-bank-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <div class="npl-billing-method-info">
+                    <h4>Bank Transfer</h4>
+                    <p>Direct bank payment</p>
+                </div>
+
+                <span class="npl-billing-method-tag">Available</span>
+
+            </div>
+
+            <a href="404-client.html" class="npl-billing-manage-link">
+                Manage Payment Methods
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+        <!-- BILLING DETAILS -->
+        <section class="npl-billing-panel">
+
+            <div class="npl-billing-panel-heading">
+                <div>
+                    <span class="npl-billing-section-label">
+                        ACCOUNT INFORMATION
+                    </span>
+
+                    <h3>Billing Details</h3>
+                </div>
+
+                <i class="fa-regular fa-building"></i>
+            </div>
+
+            <div class="npl-billing-details">
+
+                <div class="npl-billing-detail-row">
+                    <span>Client Name</span>
+                    <strong>Client Name</strong>
+                </div>
+
+                <div class="npl-billing-detail-row">
+                    <span>Email Address</span>
+                    <strong>client@example.com</strong>
+                </div>
+
+                <div class="npl-billing-detail-row">
+                    <span>Client ID</span>
+                    <strong>NPL-CL-014</strong>
+                </div>
+
+                <div class="npl-billing-detail-row">
+                    <span>Billing Currency</span>
+                    <strong>INR (₹)</strong>
+                </div>
+
+            </div>
+
+            <a href="404-client.html" class="npl-billing-manage-link">
+                Update Billing Details
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+    </div>
+
+    <!-- BILLING SUPPORT -->
+    <section class="npl-billing-support">
+
+        <div class="npl-billing-support-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="npl-billing-support-content">
+            <h3>Need Help With a Payment?</h3>
+
+            <p>
+                Contact our support team for invoice questions,
+                payment confirmation, or billing assistance.
+            </p>
+        </div>
+
+        <a href="404-client.html" class="npl-billing-support-btn">
+            Contact Support
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</section>
+
+
+</main>
+
+</div>
+
+<script src="client.js"></script>
+
+</body>
+</html>

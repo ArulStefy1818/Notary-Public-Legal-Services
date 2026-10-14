@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login / Sign Up | Stackly Legal</title>
+
+    <meta name="description"
+        content="Access your Stackly Legal account to manage legal service enquiries and documentation requests.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HEADER
+    ========================================== -->
+
+    <header class="npl-auth-header">
+
+        <a href="index.html"
+            class="npl-auth-logo"
+            aria-label="Stackly Legal home">
+
+            <img src="Stackly-logo-Blue.webp"
+                alt="Stackly Legal logo">
+
+        </a>
+
+        <a href="index.html" class="npl-auth-home">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            <span>Go Back Home</span>
+        </a>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN AUTHENTICATION CONTENT
+    ========================================== -->
+
+    <main class="npl-auth-main">
+
+        <div class="npl-auth-layout">
+
+            <!-- LEFT BRAND PANEL -->
+
+            <aside class="npl-auth-brand-panel">
+
+                <div class="npl-auth-brand-top">
+
+                    <span class="npl-auth-brand-tag">
+                        <span></span>
+                        Your Legal Partner
+                    </span>
+
+                    <h1>
+                        Trusted Guidance.
+                        <span>Confident Decisions.</span>
+                    </h1>
+
+                    <p class="npl-auth-brand-description">
+                        Access your legal service account to manage enquiries,
+                        follow your requests, and stay connected with our
+                        professional team.
+                    </p>
+
+                    <div class="npl-auth-benefits">
+
+                        <div class="npl-auth-benefit">
+
+                            <div class="npl-auth-benefit-icon">
+                                <i class="fa-solid fa-scale-balanced"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <h3>Professional Legal Support</h3>
+                                <p>Get assistance with notary services and
+                                    important legal documentation.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="npl-auth-benefit">
+
+                            <div class="npl-auth-benefit-icon">
+                                <i class="fa-solid fa-file-shield"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <h3>Organized Service Access</h3>
+                                <p>Keep your service enquiries and account
+                                    information organized.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="npl-auth-benefit">
+
+                            <div class="npl-auth-benefit-icon">
+                                <i class="fa-solid fa-user-check"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <h3>Simple Account Management</h3>
+                                <p>Use your account to stay connected with
+                                    your legal service team.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="npl-auth-brand-bottom">
+                    <i class="fa-solid fa-shield-halved"
+                        aria-hidden="true"></i>
+
+                    <p>
+                        Clear communication. Professional service.
+                        Dependable support.
+                    </p>
+                </div>
+
+            </aside>
+
+
+            <!-- RIGHT FORM PANEL -->
+
+            <section class="npl-auth-form-panel"
+                aria-label="Account access">
+
+                <div class="npl-auth-form-content">
+
+                    <div class="npl-auth-mobile-brand">
+                        STACKLY <span>LEGAL</span>
+                    </div>
+
+                    <!-- FORM HEADING -->
+
+                    <div class="npl-auth-heading">
+
+                        <span class="npl-auth-eyebrow">
+                            Secure Account Access
+                        </span>
+
+                        <h2 id="nplAuthHeading">
+                            Welcome Back
+                        </h2>
+
+                        <p id="nplAuthDescription">
+                            Sign in to access your legal service account.
+                        </p>
+
+                    </div>
+
+
+                    <!-- LOGIN / SIGNUP TABS -->
+
+                    <div class="npl-auth-tabs"
+                        role="tablist"
+                        aria-label="Choose login or signup">
+
+                        <button type="button"
+                            class="npl-auth-tab active"
+                            id="nplAuthLoginTab"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="nplAuthLoginForm"
+                            data-auth-mode="login">
+
+                            Login
+
+                        </button>
+
+                        <button type="button"
+                            class="npl-auth-tab"
+                            id="nplAuthSignupTab"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="nplAuthSignupForm"
+                            data-auth-mode="signup">
+
+                            Sign Up
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- GLOBAL STATUS MESSAGE -->
+
+                    <div class="npl-auth-status"
+                        id="nplAuthStatus"
+                        role="status"
+                        aria-live="polite">
+                    </div>
+
+
+                    <!-- ======================================
+                         LOGIN FORM
+                    ====================================== -->
+
+                    <form class="npl-auth-form active"
+                        id="nplAuthLoginForm"
+                        data-auth-form="login"
+                        novalidate>
+
+                        <!-- Email -->
+
+                        <div class="npl-auth-field">
+
+                            <label for="nplAuthLoginEmail">
+                                Email Address
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <input type="email"
+                                class="npl-auth-input"
+                                id="nplAuthLoginEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required>
+
+                            <span class="npl-auth-field-error"
+                                data-error-for="nplAuthLoginEmail"></span>
+
+                        </div>
+
+
+                        <!-- Role Dropdown -->
+
+                        <div class="npl-auth-field">
+
+                            <label class="npl-auth-field-label">
+                                Login As
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <div class="npl-auth-role"
+                                data-role-dropdown
+                                data-role-value=""
+                                aria-invalid="false">
+
+                                <input type="hidden"
+                                    name="role"
+                                    value=""
+                                    data-role-input>
+
+                                <button type="button"
+                                    class="npl-auth-role-trigger"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                    aria-label="Choose login role">
+
+                                    <span class="npl-auth-role-trigger-text">
+
+                                        <i class="fa-solid fa-user-shield"
+                                            aria-hidden="true"></i>
+
+                                        <span class="npl-auth-role-selected">
+                                            <span class="npl-auth-role-placeholder">
+                                                Select your role
+                                            </span>
+                                        </span>
+
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-down npl-auth-role-chevron"
+                                        aria-hidden="true"></i>
+
+                                </button>
+
+                                <div class="npl-auth-role-options"
+                                    role="listbox"
+                                    aria-label="Login role">
+
+                                    <button type="button"
+                                        class="npl-auth-role-option"
+                                        role="option"
+                                        aria-selected="false"
+                                        data-role-option="admin">
+
+                                        <i class="fa-solid fa-user-shield"
+                                            aria-hidden="true"></i>
+
+                                        <span>Admin</span>
+
+                                    </button>
+
+                                    <button type="button"
+                                        class="npl-auth-role-option"
+                                        role="option"
+                                        aria-selected="false"
+                                        data-role-option="client">
+
+                                        <i class="fa-solid fa-user"
+                                            aria-hidden="true"></i>
+
+                                        <span>Client</span>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <span class="npl-auth-field-error"
+                                data-role-error></span>
+
+                        </div>
+
+
+                        <!-- Password -->
+
+                        <div class="npl-auth-field">
+
+                            <label for="nplAuthLoginPassword">
+                                Password
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <div class="npl-auth-input-wrap">
+
+                                <input type="password"
+                                    class="npl-auth-input has-icon"
+                                    id="nplAuthLoginPassword"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required>
+
+                                <button type="button"
+                                    class="npl-auth-password-toggle"
+                                    data-password-toggle="nplAuthLoginPassword"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+
+                                    <i class="fa-regular fa-eye"
+                                        aria-hidden="true"></i>
+
+                                </button>
+
+                            </div>
+
+                            <span class="npl-auth-field-error"
+                                data-error-for="nplAuthLoginPassword"></span>
+
+                        </div>
+
+
+                        <!-- Remember Me / Forgot Password -->
+
+                        <div class="npl-auth-options">
+
+                            <label class="npl-auth-checkbox-label">
+
+                                <input type="checkbox"
+                                    id="nplAuthRemember"
+                                    name="remember">
+
+                                <span>Remember me</span>
+
+                            </label>
+
+                            <a href="404.html"><button type="button"
+                                class="npl-auth-link"
+                                id="nplAuthForgotPassword">
+
+                                Forgot Password?
+
+                            </button></a>
+
+                        </div>
+
+
+                        <!-- Submit -->
+
+                        <button type="submit"
+                            class="npl-auth-submit">
+
+                            <span>Login to Your Account</span>
+
+                            <i class="fa-solid fa-arrow-right"
+                                aria-hidden="true"></i>
+
+                        </button>
+
+
+                        <!-- Switch to Signup -->
+
+                        <p class="npl-auth-switch">
+
+                            Don't have an account?
+
+                            <button type="button"
+                                data-auth-mode="signup">
+
+                                Sign Up
+
+                            </button>
+
+                        </p>
+
+                    </form>
+
+
+                    <!-- ======================================
+                         SIGNUP FORM
+                    ====================================== -->
+
+                    <form class="npl-auth-form"
+                        id="nplAuthSignupForm"
+                        data-auth-form="signup"
+                        novalidate
+                        hidden>
+
+                        <!-- Full Name -->
+
+                        <div class="npl-auth-field">
+
+                            <label for="nplAuthSignupName">
+                                Full Name
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <input type="text"
+                                class="npl-auth-input"
+                                id="nplAuthSignupName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                minlength="2"
+                                maxlength="100"
+                                required>
+
+                            <span class="npl-auth-field-error"
+                                data-error-for="nplAuthSignupName"></span>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="npl-auth-field">
+
+                            <label for="nplAuthSignupEmail">
+                                Email Address
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <input type="email"
+                                class="npl-auth-input"
+                                id="nplAuthSignupEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required>
+
+                            <span class="npl-auth-field-error"
+                                data-error-for="nplAuthSignupEmail"></span>
+
+                        </div>
+
+
+                        <!-- Role Dropdown -->
+
+                        <div class="npl-auth-field">
+
+                            <label class="npl-auth-field-label">
+                                Register As
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <div class="npl-auth-role"
+                                data-role-dropdown
+                                data-role-value=""
+                                aria-invalid="false">
+
+                                <input type="hidden"
+                                    name="role"
+                                    value=""
+                                    data-role-input>
+
+                                <button type="button"
+                                    class="npl-auth-role-trigger"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                    aria-label="Choose registration role">
+
+                                    <span class="npl-auth-role-trigger-text">
+
+                                        <i class="fa-solid fa-user-shield"
+                                            aria-hidden="true"></i>
+
+                                        <span class="npl-auth-role-selected">
+                                            <span class="npl-auth-role-placeholder">
+                                                Select your role
+                                            </span>
+                                        </span>
+
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-down npl-auth-role-chevron"
+                                        aria-hidden="true"></i>
+
+                                </button>
+
+                                <div class="npl-auth-role-options"
+                                    role="listbox"
+                                    aria-label="Registration role">
+
+                                    <button type="button"
+                                        class="npl-auth-role-option"
+                                        role="option"
+                                        aria-selected="false"
+                                        data-role-option="admin">
+
+                                        <i class="fa-solid fa-user-shield"
+                                            aria-hidden="true"></i>
+
+                                        <span>Admin</span>
+
+                                    </button>
+
+                                    <button type="button"
+                                        class="npl-auth-role-option"
+                                        role="option"
+                                        aria-selected="false"
+                                        data-role-option="client">
+
+                                        <i class="fa-solid fa-user"
+                                            aria-hidden="true"></i>
+
+                                        <span>Client</span>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <span class="npl-auth-field-error"
+                                data-role-error></span>
+
+                        </div>
+
+
+                        <!-- Create Password -->
+
+                        <div class="npl-auth-field">
+
+                            <label for="nplAuthSignupPassword">
+                                Create Password
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <div class="npl-auth-input-wrap">
+
+                                <input type="password"
+                                    class="npl-auth-input has-icon"
+                                    id="nplAuthSignupPassword"
+                                    name="password"
+                                    placeholder="Create a strong password"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    required>
+
+                                <button type="button"
+                                    class="npl-auth-password-toggle"
+                                    data-password-toggle="nplAuthSignupPassword"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+
+                                    <i class="fa-regular fa-eye"
+                                        aria-hidden="true"></i>
+
+                                </button>
+
+                            </div>
+
+                            <span class="npl-auth-field-error"
+                                data-error-for="nplAuthSignupPassword"></span>
+
+                        </div>
+
+
+                        <!-- Confirm Password -->
+
+                        <div class="npl-auth-field">
+
+                            <label for="nplAuthConfirmPassword">
+                                Confirm Password
+                                <span class="npl-auth-required">*</span>
+                            </label>
+
+                            <div class="npl-auth-input-wrap">
+
+                                <input type="password"
+                                    class="npl-auth-input has-icon"
+                                    id="nplAuthConfirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Re-enter your password"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    required>
+
+                                <button type="button"
+                                    class="npl-auth-password-toggle"
+                                    data-password-toggle="nplAuthConfirmPassword"
+                                    aria-label="Show confirm password"
+                                    aria-pressed="false">
+
+                                    <i class="fa-regular fa-eye"
+                                        aria-hidden="true"></i>
+
+                                </button>
+
+                            </div>
+
+                            <span class="npl-auth-field-error"
+                                data-error-for="nplAuthConfirmPassword"></span>
+
+                        </div>
+
+
+                        <!-- Terms -->
+
+                        <div class="npl-auth-field">
+
+                            <label class="npl-auth-checkbox-label">
+
+                                <input type="checkbox"
+                                    id="nplAuthTerms"
+                                    name="terms"
+                                    required>
+
+                                <span>
+                                    I agree to the
+                                    <a href="404.html"
+                                        class="npl-auth-link">
+                                        Terms of Service
+                                    </a>
+                                    and
+                                    <a href="404.html"
+                                        class="npl-auth-link">
+                                        Privacy Policy
+                                    </a>.
+                                </span>
+
+                            </label>
+
+                            <span class="npl-auth-field-error"
+                                data-error-for="nplAuthTerms"></span>
+
+                        </div>
+
+
+                        <!-- Submit -->
+
+                        <button type="submit"
+                            class="npl-auth-submit">
+
+                            <span>Create Your Account</span>
+
+                            <i class="fa-solid fa-arrow-right"
+                                aria-hidden="true"></i>
+
+                        </button>
+
+
+                        <!-- Switch to Login -->
+
+                        <p class="npl-auth-switch">
+
+                            Already have an account?
+
+                            <button type="button"
+                                data-auth-mode="login">
+
+                                Login
+
+                            </button>
+
+                        </p>
+
+                    </form>
+
+
+                    <!-- PRIVACY NOTE -->
+
+                    <div class="npl-auth-privacy-note">
+
+                        <i class="fa-solid fa-lock"
+                            aria-hidden="true"></i>
+
+                        <p>
+                            Your account details should be handled securely.
+                            Never share your password with anyone.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+ 
+
+    <!-- ==========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
+

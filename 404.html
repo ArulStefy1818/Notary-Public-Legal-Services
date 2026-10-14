@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 - Page Not Found | Notary Public & Legal Services</title>
+
+    <meta name="description"
+        content="The page you are looking for could not be found. Return to our homepage to explore our notary and legal services.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="404.css">
+</head>
+
+<body>
+
+    <!-- 404 Page -->
+    <main class="npl-404-page">
+
+        <div class="npl-404-decoration npl-404-decoration-one"></div>
+        <div class="npl-404-decoration npl-404-decoration-two"></div>
+
+        <div class="npl-404-container">
+
+            <!-- Error Illustration -->
+            <div class="npl-404-illustration">
+                <span class="npl-404-number">4</span>
+
+                <div class="npl-404-icon">
+                    <i class="fa-solid fa-scale-balanced"
+                        aria-hidden="true"></i>
+                </div>
+
+                <span class="npl-404-number">4</span>
+            </div>
+
+            <!-- Error Content -->
+            <div class="npl-404-content">
+
+                <span class="npl-404-label">
+                    <span></span>
+                    ERROR 404
+                    <span></span>
+                </span>
+
+                <h1>Page Not Found</h1>
+
+                <p>
+                    The page you are looking for may have been moved,
+                    removed, or is temporarily unavailable. Let us help
+                    you find your way back.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="npl-404-actions">
+
+                    <a href="index.html" class="npl-404-btn npl-404-home">
+                        <i class="fa-solid fa-house"
+                            aria-hidden="true"></i>
+                        <span>Go Home</span>
+                    </a>
+
+                    <button type="button"
+                        class="npl-404-btn npl-404-back"
+                        id="npl404GoBack">
+
+                        <i class="fa-solid fa-arrow-left"
+                            aria-hidden="true"></i>
+                        <span>Go Back</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Decorative Legal Seal -->
+            <div class="npl-404-seal" aria-hidden="true">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>TRUST</span>
+                <span>JUSTICE</span>
+            </div>
+
+        </div>
+ 
+
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* Dynamic Copyright Year */
+            const yearElement = document.getElementById("npl404Year");
+
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            /* Go Back Button */
+            const backButton = document.getElementById("npl404GoBack");
+
+            if (backButton) {
+                backButton.addEventListener("click", function () {
+
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = "index.html";
+                    }
+
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>

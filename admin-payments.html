@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Admin Dashboard for managing clients, legal cases, appointments, and documents.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="npl-admin-dashboard">
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div class="npl-admin-overlay" id="nplAdminOverlay"></div>
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="npl-admin-sidebar" id="nplAdminSidebar">
+
+            <div class="npl-admin-brand">
+
+                <a href="admin.html" class="npl-admin-logo" aria-label="Stackly Legal Home">
+                    <img src="Stackly-logo-Blue.webp" alt="Stackly Legal Services">
+                </a>
+
+                <button type="button" class="npl-admin-mobile-close"
+                    id="nplAdminClose" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p class="npl-admin-sidebar-label">Workspace</p>
+
+            <nav class="npl-admin-nav" aria-label="Admin navigation">
+
+                <a href="admin.html"
+                    class="npl-admin-nav-link"
+                    aria-current="page">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-cases.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Legal Cases</span>
+                    <span class="npl-admin-nav-count">12</span>
+                </a>
+
+                <a href="admin-clients.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+
+                <a href="admin-appointments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="npl-admin-nav-count">5</span>
+                </a>
+
+                <a href="admin-documents.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documents</span>
+                </a>
+
+                <p class="npl-admin-sidebar-label">Management</p>
+
+                <a href="admin-notary.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-stamp"></i>
+                    <span>Notary Services</span>
+                </a>
+
+                <a href="admin-payments.html" class="npl-admin-nav-link npl-admin-active">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                 
+                <p class="npl-admin-sidebar-label">Preferences</p>
+
+                <a href="admin-settings.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="npl-admin-sidebar-bottom">
+
+                 <div class="npl-admin-support-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Legal Support</h4>
+                    <p>Keep your legal operations organized and your client services running smoothly.</p>
+                </div>
+
+                <a href="index.html" class="npl-admin-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="npl-admin-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="npl-admin-topbar">
+
+                <div class="npl-admin-topbar-left">
+
+                    <button type="button" class="npl-admin-menu-toggle"
+                        id="nplAdminMenuToggle"
+                        aria-label="Open navigation menu"
+                        aria-controls="nplAdminSidebar"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="npl-admin-page-heading">
+                        <h1>Admin Dashboard</h1>
+                        <p>Manage your legal services workspace</p>
+                    </div>
+
+                </div>
+
+                <div class="npl-admin-topbar-right">
+
+                    <span class="npl-admin-topbar-date" id="nplAdminDate"></span>
+
+                    <a href="404-admin.html"><button type="button" class="npl-admin-notification"
+                        aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="npl-admin-notification-dot"></span>
+                    </button></a>
+
+                    <!-- ADMIN EMAIL TOP RIGHT -->
+
+                    <div class="npl-admin-profile">
+
+                        
+<div class="npl-admin-profile-info">
+    <strong id="nplAdminUserName">Administrator</strong>
+    <a href="mailto:admin@stacklylegal.com"
+       id="nplAdminUserEmail">
+        admin@stacklylegal.com
+    </a>
+</div>
+
+                        <div class="npl-admin-avatar" aria-hidden="true">
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+<!-- =========================================
+     PAYMENTS PAGE CONTENT
+========================================= -->
+
+<section class="npl-payments-page">
+
+    <!-- PAGE INTRO -->
+    <div class="npl-payments-intro">
+        <div>
+            <span class="npl-payments-eyebrow">
+                <i class="fa-solid fa-shield-halved"></i>
+                FINANCIAL MANAGEMENT
+            </span>
+
+            <h2>Payments & Revenue</h2>
+
+            <p>
+                Monitor legal service payments, track invoices,
+                and manage your financial activity in one place.
+            </p>
+        </div>
+
+        <div class="npl-payments-intro-actions">
+            <a href="404-admin.html"><button type="button" class="npl-payments-btn npl-payments-btn-light"
+                id="nplPaymentsExport">
+                <i class="fa-solid fa-download"></i>
+                Export Report
+            </button></a>
+            <a href="404-admin.html"><button type="button" class="npl-payments-btn npl-payments-btn-primary"
+                id="nplPaymentsInvoice">
+                <i class="fa-solid fa-plus"></i>
+                Create Invoice
+            </button></a>
+        </div>
+    </div>
+
+    <!-- SUMMARY CARDS -->
+    <div class="npl-payments-stats">
+
+        <article class="npl-payments-stat-card">
+            <div class="npl-payments-stat-top">
+                <span>Total Revenue</span>
+                <span class="npl-payments-stat-icon npl-payments-icon-green">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </span>
+            </div>
+
+            <h3>₹8,42,650</h3>
+
+            <div class="npl-payments-stat-bottom">
+                <span class="npl-payments-positive">
+                    <i class="fa-solid fa-arrow-trend-up"></i> 12.8%
+                </span>
+                <span>vs. last month</span>
+            </div>
+
+            <div class="npl-payments-stat-line npl-payments-line-green"></div>
+        </article>
+
+        <article class="npl-payments-stat-card">
+            <div class="npl-payments-stat-top">
+                <span>Payments Received</span>
+                <span class="npl-payments-stat-icon npl-payments-icon-blue">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+            </div>
+
+            <h3>186</h3>
+
+            <div class="npl-payments-stat-bottom">
+                <span class="npl-payments-positive">
+                    <i class="fa-solid fa-arrow-trend-up"></i> 8.4%
+                </span>
+                <span>vs. last month</span>
+            </div>
+
+            <div class="npl-payments-stat-line npl-payments-line-blue"></div>
+        </article>
+
+        <article class="npl-payments-stat-card">
+            <div class="npl-payments-stat-top">
+                <span>Pending Payments</span>
+                <span class="npl-payments-stat-icon npl-payments-icon-orange">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+            </div>
+
+            <h3>₹64,200</h3>
+
+            <div class="npl-payments-stat-bottom">
+                <span class="npl-payments-warning">
+                    <i class="fa-solid fa-hourglass-half"></i> 12 invoices
+                </span>
+                <span>awaiting payment</span>
+            </div>
+
+            <div class="npl-payments-stat-line npl-payments-line-orange"></div>
+        </article>
+
+        <article class="npl-payments-stat-card">
+            <div class="npl-payments-stat-top">
+                <span>Overdue Invoices</span>
+                <span class="npl-payments-stat-icon npl-payments-icon-red">
+                    <i class="fa-solid fa-file-circle-exclamation"></i>
+                </span>
+            </div>
+
+            <h3>₹18,500</h3>
+
+            <div class="npl-payments-stat-bottom">
+                <span class="npl-payments-danger">
+                    <i class="fa-solid fa-circle-exclamation"></i> 4 invoices
+                </span>
+                <span>need attention</span>
+            </div>
+
+            <div class="npl-payments-stat-line npl-payments-line-red"></div>
+        </article>
+
+    </div>
+
+    <!-- REVENUE ANALYTICS AND PAYMENT METHODS -->
+    <div class="npl-payments-analytics-grid">
+
+        <!-- REVENUE CHART -->
+        <section class="npl-payments-panel npl-payments-revenue-panel">
+
+            <div class="npl-payments-panel-heading">
+                <div>
+                    <span class="npl-payments-section-label">REVENUE OVERVIEW</span>
+                    <h3>Income Analytics</h3>
+                    <p>Track your monthly legal service collections.</p>
+                </div>
+
+                
+<div class="npl-payments-period-dropdown">
+    <i class="fa-regular fa-calendar-days"></i>
+
+    <select id="nplPaymentsPeriod" aria-label="Revenue chart period">
+        <option value="6">Last 6 Months</option>
+        <option value="12">Last 12 Months</option>
+    </select>
+
+    <i class="fa-solid fa-chevron-down npl-payments-period-arrow"></i>
+</div>
+
+            </div>
+
+            <div class="npl-payments-chart-summary">
+                <div>
+                    <span>Collected revenue</span>
+                    <strong id="nplPaymentsChartTotal">₹8.42L</strong>
+                </div>
+
+                <span class="npl-payments-chart-trend">
+                    <i class="fa-solid fa-arrow-up"></i> 12.8%
+                </span>
+            </div>
+
+            <div class="npl-payments-chart" id="nplPaymentsChart"
+                role="img" aria-label="Monthly revenue bar chart">
+
+                <div class="npl-payments-chart-column">
+                    <span class="npl-payments-chart-value">₹82K</span>
+                    <div class="npl-payments-bar" style="--bar-height:48%"></div>
+                    <span class="npl-payments-chart-month">May</span>
+                </div>
+
+                <div class="npl-payments-chart-column">
+                    <span class="npl-payments-chart-value">₹96K</span>
+                    <div class="npl-payments-bar" style="--bar-height:57%"></div>
+                    <span class="npl-payments-chart-month">Jun</span>
+                </div>
+
+                <div class="npl-payments-chart-column">
+                    <span class="npl-payments-chart-value">₹1.1L</span>
+                    <div class="npl-payments-bar" style="--bar-height:66%"></div>
+                    <span class="npl-payments-chart-month">Jul</span>
+                </div>
+
+                <div class="npl-payments-chart-column">
+                    <span class="npl-payments-chart-value">₹1.0L</span>
+                    <div class="npl-payments-bar" style="--bar-height:61%"></div>
+                    <span class="npl-payments-chart-month">Aug</span>
+                </div>
+
+                <div class="npl-payments-chart-column">
+                    <span class="npl-payments-chart-value">₹1.3L</span>
+                    <div class="npl-payments-bar" style="--bar-height:78%"></div>
+                    <span class="npl-payments-chart-month">Sep</span>
+                </div>
+
+                <div class="npl-payments-chart-column npl-payments-bar-current">
+                    <span class="npl-payments-chart-value">₹1.5L</span>
+                    <div class="npl-payments-bar" style="--bar-height:92%"></div>
+                    <span class="npl-payments-chart-month">Oct</span>
+                </div>
+
+            </div>
+
+            <div class="npl-payments-chart-footer">
+                <span><i class="npl-payments-legend-dot"></i> Collected payments</span>
+                <span>Illustrative monthly figures</span>
+            </div>
+
+        </section>
+
+        <!-- PAYMENT METHODS -->
+        <section class="npl-payments-panel npl-payments-method-panel">
+
+            <div class="npl-payments-panel-heading">
+                <div>
+                    <span class="npl-payments-section-label">COLLECTION CHANNELS</span>
+                    <h3>Payment Methods</h3>
+                    <p>Distribution of received payments.</p>
+                </div>
+            </div>
+
+            <div class="npl-payments-method-highlight">
+                <div class="npl-payments-method-circle">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <div>
+                    <span>Total transactions</span>
+                    <strong>186</strong>
+                </div>
+            </div>
+
+            <div class="npl-payments-method-list">
+
+                <div class="npl-payments-method-item">
+                    <div class="npl-payments-method-name">
+                        <span class="npl-payments-method-dot npl-payments-dot-purple"></span>
+                        <span>UPI Payments</span>
+                    </div>
+                    <strong>42%</strong>
+                    <div class="npl-payments-method-track">
+                        <span style="--method-width:42%;"></span>
+                    </div>
+                </div>
+
+                <div class="npl-payments-method-item">
+                    <div class="npl-payments-method-name">
+                        <span class="npl-payments-method-dot npl-payments-dot-blue"></span>
+                        <span>Bank Transfer</span>
+                    </div>
+                    <strong>28%</strong>
+                    <div class="npl-payments-method-track">
+                        <span style="--method-width:28%;"></span>
+                    </div>
+                </div>
+
+                <div class="npl-payments-method-item">
+                    <div class="npl-payments-method-name">
+                        <span class="npl-payments-method-dot npl-payments-dot-orange"></span>
+                        <span>Credit / Debit Card</span>
+                    </div>
+                    <strong>20%</strong>
+                    <div class="npl-payments-method-track">
+                        <span style="--method-width:20%;"></span>
+                    </div>
+                </div>
+
+                <div class="npl-payments-method-item">
+                    <div class="npl-payments-method-name">
+                        <span class="npl-payments-method-dot npl-payments-dot-green"></span>
+                        <span>Cash</span>
+                    </div>
+                    <strong>10%</strong>
+                    <div class="npl-payments-method-track">
+                        <span style="--method-width:10%;"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="npl-payments-method-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Percentages are illustrative sample data.</span>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- PAYMENT REMINDERS -->
+    <section class="npl-payments-reminder-banner">
+
+        <div class="npl-payments-reminder-icon">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+
+        <div class="npl-payments-reminder-content">
+            <span class="npl-payments-reminder-label">PAYMENT FOLLOW-UP</span>
+            <h3>12 invoices are awaiting payment</h3>
+            <p>
+                Review outstanding invoices and follow up with clients
+                to keep your payment records up to date.
+            </p>
+        </div>
+
+        <a href="404-admin.html" class="npl-payments-reminder-link">
+            Review Payments
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+    <!-- TRANSACTION HISTORY -->
+    <section class="npl-payments-panel npl-payments-transactions"
+        id="nplPaymentsTransactionSection">
+
+        <div class="npl-payments-transactions-heading">
+            <div>
+                <span class="npl-payments-section-label">PAYMENT RECORDS</span>
+                <h3>Recent Transactions</h3>
+                <p>Review and manage client payment activity.</p>
+            </div>
+
+            <a href="404-admin.html"><button type="button" class="npl-payments-btn npl-payments-btn-light"
+                id="nplPaymentsViewAll">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </button></a>
+        </div>
+ 
+        <div class="npl-payments-table-wrap">
+            <table class="npl-payments-table">
+
+                <thead>
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Client</th>
+                        <th>Legal Service</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Payment Method</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="nplPaymentsTableBody">
+
+                    <tr data-status="paid" data-service="notary">
+                        <td><span class="npl-payments-invoice-id">INV-2026-1042</span></td>
+                        <td>
+                            <div class="npl-payments-client">
+                                <span class="npl-payments-client-avatar npl-payments-avatar-purple">RK</span>
+                                <div>
+                                    <strong>Rahul Kumar</strong>
+                                    <span>rahul.k@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Notary Services</td>
+                        <td>12 Oct 2026</td>
+                        <td class="npl-payments-amount">₹4,500</td>
+                        <td><i class="fa-solid fa-mobile-screen-button"></i> UPI</td>
+                        <td><span class="npl-payments-status npl-payments-status-paid">Paid</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-payments-row-action"
+                                data-payment-action="details" aria-label="View invoice INV-2026-1042">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="pending" data-service="power">
+                        <td><span class="npl-payments-invoice-id">INV-2026-1041</span></td>
+                        <td>
+                            <div class="npl-payments-client">
+                                <span class="npl-payments-client-avatar npl-payments-avatar-blue">AS</span>
+                                <div>
+                                    <strong>Ananya Sharma</strong>
+                                    <span>ananya.s@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Power of Attorney</td>
+                        <td>11 Oct 2026</td>
+                        <td class="npl-payments-amount">₹8,000</td>
+                        <td><i class="fa-solid fa-building-columns"></i> Bank Transfer</td>
+                        <td><span class="npl-payments-status npl-payments-status-pending">Pending</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-payments-row-action"
+                                data-payment-action="details" aria-label="View invoice INV-2026-1042">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="paid" data-service="affidavit">
+                        <td><span class="npl-payments-invoice-id">INV-2026-1040</span></td>
+                        <td>
+                            <div class="npl-payments-client">
+                                <span class="npl-payments-client-avatar npl-payments-avatar-green">PM</span>
+                                <div>
+                                    <strong>Priya Menon</strong>
+                                    <span>priya.m@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Affidavit</td>
+                        <td>10 Oct 2026</td>
+                        <td class="npl-payments-amount">₹2,200</td>
+                        <td><i class="fa-regular fa-credit-card"></i> Card</td>
+                        <td><span class="npl-payments-status npl-payments-status-paid">Paid</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-payments-row-action"
+                                data-payment-action="details" aria-label="View invoice INV-2026-1042">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="overdue" data-service="property">
+                        <td><span class="npl-payments-invoice-id">INV-2026-1039</span></td>
+                        <td>
+                            <div class="npl-payments-client">
+                                <span class="npl-payments-client-avatar npl-payments-avatar-orange">VK</span>
+                                <div>
+                                    <strong>Vikram Krishnan</strong>
+                                    <span>vikram.k@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Property Documents</td>
+                        <td>08 Oct 2026</td>
+                        <td class="npl-payments-amount">₹12,500</td>
+                        <td><i class="fa-solid fa-building-columns"></i> Bank Transfer</td>
+                        <td><span class="npl-payments-status npl-payments-status-overdue">Overdue</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-payments-row-action"
+                                data-payment-action="details" aria-label="View invoice INV-2026-1042">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="paid" data-service="notary">
+                        <td><span class="npl-payments-invoice-id">INV-2026-1038</span></td>
+                        <td>
+                            <div class="npl-payments-client">
+                                <span class="npl-payments-client-avatar npl-payments-avatar-pink">SJ</span>
+                                <div>
+                                    <strong>Sneha Joseph</strong>
+                                    <span>sneha.j@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Notary Services</td>
+                        <td>07 Oct 2026</td>
+                        <td class="npl-payments-amount">₹3,750</td>
+                        <td><i class="fa-solid fa-mobile-screen-button"></i> UPI</td>
+                        <td><span class="npl-payments-status npl-payments-status-paid">Paid</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-payments-row-action"
+                                data-payment-action="details" aria-label="View invoice INV-2026-1042">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="pending" data-service="power">
+                        <td><span class="npl-payments-invoice-id">INV-2026-1037</span></td>
+                        <td>
+                            <div class="npl-payments-client">
+                                <span class="npl-payments-client-avatar npl-payments-avatar-teal">DR</span>
+                                <div>
+                                    <strong>Deepak Rao</strong>
+                                    <span>deepak.r@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Power of Attorney</td>
+                        <td>06 Oct 2026</td>
+                        <td class="npl-payments-amount">₹6,500</td>
+                        <td><i class="fa-regular fa-credit-card"></i> Card</td>
+                        <td><span class="npl-payments-status npl-payments-status-pending">Pending</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-payments-row-action"
+                                data-payment-action="details" aria-label="View invoice INV-2026-1042">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="npl-payments-table-footer">
+            <span id="nplPaymentsResultsCount">Showing 6 transactions</span>
+
+             
+        </div>
+
+    </section>
+
+    <!-- BOTTOM INFORMATION CARDS -->
+    <div class="npl-payments-bottom-grid">
+
+        <section class="npl-payments-panel npl-payments-invoice-summary">
+
+            <div class="npl-payments-bottom-heading">
+                <div class="npl-payments-bottom-icon npl-payments-bottom-purple">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+                <div>
+                    <h3>Invoice Summary</h3>
+                    <p>Current billing overview</p>
+                </div>
+            </div>
+
+            <div class="npl-payments-summary-row">
+                <span>Total invoices issued</span>
+                <strong>202</strong>
+            </div>
+
+            <div class="npl-payments-summary-row">
+                <span>Successfully paid</span>
+                <strong>186</strong>
+            </div>
+
+            <div class="npl-payments-summary-row">
+                <span>Awaiting payment</span>
+                <strong>12</strong>
+            </div>
+
+            <div class="npl-payments-summary-row">
+                <span>Overdue</span>
+                <strong class="npl-payments-summary-danger">4</strong>
+            </div>
+
+            <a href="404-admin.html"><button type="button" class="npl-payments-text-action"
+                id="nplPaymentsInvoiceSummary">
+                Manage invoices
+                <i class="fa-solid fa-arrow-right"></i>
+            </button></a>
+
+        </section>
+
+        <section class="npl-payments-panel npl-payments-finance-note">
+
+            <div class="npl-payments-bottom-heading">
+                <div class="npl-payments-bottom-icon npl-payments-bottom-green">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+
+                <div>
+                    <h3>Financial Records</h3>
+                    <p>Keep payment records organized</p>
+                </div>
+            </div>
+
+            <p class="npl-payments-finance-description">
+                Maintain accurate transaction records for notary appointments,
+                document verification, affidavits, and power of attorney services.
+            </p>
+
+            <div class="npl-payments-finance-tip">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Record each payment against its corresponding invoice.</span>
+            </div>
+
+            <a href="404-admin.html"><button type="button" class="npl-payments-text-action"
+                id="nplPaymentsRecords">
+                Review records
+                <i class="fa-solid fa-arrow-right"></i>
+            </button></a>
+
+        </section>
+
+    </div>
+
+     
+
+</section>
+
+
+</main>
+
+    </div>
+
+    <!-- =========================================
+         MOBILE SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

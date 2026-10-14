@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Client Dashboard to manage legal cases, appointments, documents, and client information.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+<div class="npl-client-dashboard">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="npl-client-overlay" id="nplClientOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="npl-client-sidebar" id="nplClientSidebar"
+        aria-label="Client dashboard navigation">
+
+        <div class="npl-client-brand">
+
+            <a href="client.html" class="npl-client-brand-link"
+                aria-label="Stackly Legal Services home">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Legal Services Logo"
+                    class="npl-client-logo">
+
+                 
+
+            </a>
+
+            <button type="button"
+                class="npl-client-mobile-close"
+                id="nplClientMobileClose"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        
+        <nav class="npl-client-nav">
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client.html"
+                class="npl-client-nav-link"
+                aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="client-cases.html" class="npl-client-nav-link npl-client-nav-active">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>My Legal Cases</span>
+            </a>
+
+            <a href="client-appointments.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="client-documents.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>My Documents</span>
+            </a>
+
+            <a href="client-messages.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-comments"></i>
+                <span>Messages</span>
+            </a>
+
+            <a href="client-billing.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Billing & Payments</span>
+            </a>
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client-profile.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="npl-client-sidebar-spacer"></div>
+
+        <div class="npl-client-help-card">
+            <div class="npl-client-help-icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <h4>Need legal assistance?</h4>
+
+            <p>Contact our legal team if you need help with your case or documents.</p>
+
+            <a href="404-client.html">
+                Contact Support <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        
+
+        <div class="npl-client-sidebar-bottom">
+
+            <a href="index.html"
+                class="npl-client-nav-link npl-client-logout"
+                id="nplClientLogout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="npl-client-main">
+
+        <!-- TOP BAR -->
+        <header class="npl-client-topbar">
+
+            <div class="npl-client-topbar-left">
+
+                <button type="button"
+                    class="npl-client-menu-button"
+                    id="nplClientMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="nplClientSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="npl-client-page-heading">
+                    <h1>Client Dashboard</h1>
+                    <p>Manage your legal matters in one place.</p>
+                </div>
+
+            </div>
+
+            <div class="npl-client-topbar-right">
+
+                <a href="404-client.html"><button type="button"
+                    class="npl-client-notification"
+                    aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="npl-client-notification-dot"></span>
+                </button></a>
+
+                <div class="npl-client-user">
+
+                    <div class="npl-client-user-info">
+                        <strong id="nplClientUserName">Client</strong>
+
+                        <a href="mailto:client@example.com"
+                            id="nplClientUserEmail">
+                            client@example.com
+                        </a>
+                    </div>
+
+                    <div class="npl-client-user-avatar"
+                        id="nplClientUserAvatar"
+                        aria-hidden="true">
+                        C
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- =========================================
+     MY LEGAL CASES PAGE CONTENT
+========================================= -->
+
+<div class="npl-client-cases-page">
+
+    <!-- PAGE INTRODUCTION -->
+    <section class="npl-client-cases-intro">
+        <div class="npl-client-cases-intro-content">
+            <span class="npl-client-section-eyebrow">
+                <i class="fa-solid fa-scale-balanced"></i>
+                LEGAL CASE MANAGEMENT
+            </span>
+
+            <h2>My Legal Cases</h2>
+
+            <p>
+                Stay informed about your legal matters, follow case
+                progress, and keep track of important upcoming milestones.
+            </p>
+
+            <div class="npl-client-cases-intro-actions">
+                <a href="404-client.html"
+                   class="npl-client-case-primary-btn">
+                    <i class="fa-regular fa-calendar-plus"></i>
+                    Schedule Consultation
+                </a>
+
+                 
+            </div>
+        </div>
+
+        <div class="npl-client-cases-intro-visual">
+            <div class="npl-client-case-visual-circle"></div>
+
+            <div class="npl-client-case-visual-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div class="npl-client-case-visual-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <strong>Your Legal Matters</strong>
+                    <span>Organized in one place</span>
+                </div>
+            </div>
+
+            <div class="npl-client-case-visual-number">
+                <strong>01</strong>
+                <span>CASE OVERVIEW</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CASE STATISTICS -->
+    <section class="npl-client-case-stats"
+             aria-label="Legal case statistics">
+
+        <article class="npl-client-case-stat-card">
+            <div class="npl-client-case-stat-top">
+                <span>Total Cases</span>
+                <span class="npl-client-case-stat-icon npl-case-icon-gold">
+                    <i class="fa-solid fa-folder-tree"></i>
+                </span>
+            </div>
+
+            <div class="npl-client-case-stat-bottom">
+                <strong>08</strong>
+                <span>All registered matters</span>
+            </div>
+        </article>
+
+        <article class="npl-client-case-stat-card">
+            <div class="npl-client-case-stat-top">
+                <span>Active Cases</span>
+                <span class="npl-client-case-stat-icon npl-case-icon-blue">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </span>
+            </div>
+
+            <div class="npl-client-case-stat-bottom">
+                <strong>03</strong>
+                <span>Currently in progress</span>
+            </div>
+        </article>
+
+        <article class="npl-client-case-stat-card">
+            <div class="npl-client-case-stat-top">
+                <span>Awaiting Review</span>
+                <span class="npl-client-case-stat-icon npl-case-icon-orange">
+                    <i class="fa-regular fa-clock"></i>
+                </span>
+            </div>
+
+            <div class="npl-client-case-stat-bottom">
+                <strong>02</strong>
+                <span>Pending review or action</span>
+            </div>
+        </article>
+
+        <article class="npl-client-case-stat-card">
+            <div class="npl-client-case-stat-top">
+                <span>Completed</span>
+                <span class="npl-client-case-stat-icon npl-case-icon-green">
+                    <i class="fa-solid fa-check-double"></i>
+                </span>
+            </div>
+
+            <div class="npl-client-case-stat-bottom">
+                <strong>03</strong>
+                <span>Successfully concluded</span>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- FEATURED CASE + CASE PROGRESS -->
+    <section class="npl-client-case-feature-grid">
+
+        <!-- FEATURED CASE -->
+        <article class="npl-client-featured-case">
+
+            <div class="npl-client-featured-case-header">
+                <div>
+                    <span class="npl-client-card-eyebrow">
+                        FEATURED CASE
+                    </span>
+
+                    <h3>Property Documentation</h3>
+                </div>
+
+                <span class="npl-client-case-status npl-case-status-progress">
+                    <span></span>
+                    In Progress
+                </span>
+            </div>
+
+            <div class="npl-client-featured-case-id">
+                <span>Case Reference</span>
+                <strong>NPL-2026-0148</strong>
+                <button type="button"
+                        class="npl-client-case-copy"
+                        data-copy-case="NPL-2026-0148"
+                        aria-label="Copy case reference">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
+
+            <p class="npl-client-featured-case-description">
+                Property ownership documentation and deed verification
+                are being reviewed before the next processing stage.
+            </p>
+
+            <div class="npl-client-featured-case-details">
+                <div>
+                    <span>Case Category</span>
+                    <strong>Property Law</strong>
+                </div>
+
+                <div>
+                    <span>Assigned Attorney</span>
+                    <strong>Legal Team</strong>
+                </div>
+
+                <div>
+                    <span>Opened On</span>
+                    <strong>05 Oct 2026</strong>
+                </div>
+
+                <div>
+                    <span>Next Review</span>
+                    <strong>20 Oct 2026</strong>
+                </div>
+            </div>
+
+            <div class="npl-client-case-progress-heading">
+                <span>Case Progress</span>
+                <strong>65%</strong>
+            </div>
+
+            <div class="npl-client-case-progress-track"
+                 role="progressbar"
+                 aria-label="Property documentation case progress"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-valuenow="65">
+                <span style="width: 65%;"></span>
+            </div>
+
+            <div class="npl-client-case-progress-labels">
+                <span>Case opened</span>
+                <span>Under review</span>
+                <span>Completion</span>
+            </div>
+
+            <a href="404-client.html"
+               class="npl-client-featured-case-link">
+                View Case Timeline
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+
+        <!-- RECENT CASE ACTIVITY -->
+        <article class="npl-client-case-activity">
+
+            <div class="npl-client-case-activity-heading">
+                <div>
+                    <span class="npl-client-card-eyebrow">
+                        CASE UPDATES
+                    </span>
+                    <h3>Recent Activity</h3>
+                </div>
+
+                <span class="npl-client-activity-live">
+                    <span></span>
+                    Updates
+                </span>
+            </div>
+
+            <div class="npl-client-activity-list">
+
+                <div class="npl-client-activity-item">
+                    <div class="npl-client-activity-icon npl-activity-gold">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                    <div class="npl-client-activity-content">
+                        <strong>Document verification started</strong>
+                        <p>Property Documentation</p>
+                        <span>13 Oct 2026 · 10:30 AM</span>
+                    </div>
+                </div>
+
+                <div class="npl-client-activity-item">
+                    <div class="npl-client-activity-icon npl-activity-blue">
+                        <i class="fa-solid fa-file-arrow-up"></i>
+                    </div>
+
+                    <div class="npl-client-activity-content">
+                        <strong>Supporting documents received</strong>
+                        <p>Notary Certification</p>
+                        <span>11 Oct 2026 · 02:15 PM</span>
+                    </div>
+                </div>
+
+                <div class="npl-client-activity-item">
+                    <div class="npl-client-activity-icon npl-activity-green">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div class="npl-client-activity-content">
+                        <strong>Consultation completed</strong>
+                        <p>Legal Consultation</p>
+                        <span>09 Oct 2026 · 11:00 AM</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="404-client.html"
+               class="npl-client-activity-footer">
+                Contact the Legal Team
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+    </section>
+
+
+    <!-- CASE TIMELINE -->
+    <section class="npl-client-case-timeline-section"
+             id="nplClientCaseTimeline">
+
+        <div class="npl-client-case-section-heading">
+            <div>
+                <span class="npl-client-card-eyebrow">
+                    YOUR CASE JOURNEY
+                </span>
+                <h3>Case Progress Timeline</h3>
+                <p>Follow the key stages of your featured legal matter.</p>
+            </div>
+
+            <span class="npl-client-timeline-reference">
+                NPL-2026-0148
+            </span>
+        </div>
+
+        <div class="npl-client-case-timeline">
+
+            <div class="npl-client-timeline-step npl-timeline-complete">
+                <div class="npl-client-timeline-marker">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="npl-client-timeline-content">
+                    <span>05 OCT 2026</span>
+                    <h4>Case Registered</h4>
+                    <p>Your property documentation case was registered.</p>
+                    <small>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Completed
+                    </small>
+                </div>
+            </div>
+
+            <div class="npl-client-timeline-step npl-timeline-complete">
+                <div class="npl-client-timeline-marker">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="npl-client-timeline-content">
+                    <span>08 OCT 2026</span>
+                    <h4>Documents Submitted</h4>
+                    <p>Required supporting documents were submitted for review.</p>
+                    <small>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Completed
+                    </small>
+                </div>
+            </div>
+
+            <div class="npl-client-timeline-step npl-timeline-current">
+                <div class="npl-client-timeline-marker">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="npl-client-timeline-content">
+                    <span>13 OCT 2026</span>
+                    <h4>Legal Review</h4>
+                    <p>Documents are being examined for accuracy and completeness.</p>
+                    <small>
+                        <i class="fa-solid fa-spinner"></i>
+                        In Progress
+                    </small>
+                </div>
+            </div>
+
+            <div class="npl-client-timeline-step npl-timeline-upcoming">
+                <div class="npl-client-timeline-marker">
+                    <i class="fa-regular fa-calendar"></i>
+                </div>
+
+                <div class="npl-client-timeline-content">
+                    <span>20 OCT 2026</span>
+                    <h4>Next Review Meeting</h4>
+                    <p>Review the findings and discuss the next steps with your legal team.</p>
+                    <small>
+                        <i class="fa-regular fa-clock"></i>
+                        Upcoming
+                    </small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- UPCOMING MILESTONES -->
+    <section class="npl-client-case-milestones">
+
+        <div class="npl-client-case-section-heading">
+            <div>
+                <span class="npl-client-card-eyebrow">
+                    STAY PREPARED
+                </span>
+                <h3>Upcoming Legal Milestones</h3>
+                <p>Keep track of the next important dates on your calendar.</p>
+            </div>
+
+            <a href="404-client.html"
+               class="npl-client-milestone-view-all">
+                View Appointments
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="npl-client-milestone-grid">
+
+            <article class="npl-client-milestone-card">
+                <div class="npl-client-milestone-date">
+                    <span>OCT</span>
+                    <strong>20</strong>
+                </div>
+
+                <div class="npl-client-milestone-info">
+                    <span class="npl-client-milestone-type">
+                        CASE REVIEW
+                    </span>
+                    <h4>Property Document Review</h4>
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        Time to be confirmed
+                    </p>
+                    <span class="npl-client-milestone-case">
+                        NPL-2026-0148
+                    </span>
+                </div>
+
+                <a href="404-client.html"><i class="fa-solid fa-arrow-up-right-from-square
+                          npl-client-milestone-arrow"></i></a>
+            </article>
+
+            <article class="npl-client-milestone-card">
+                <div class="npl-client-milestone-date">
+                    <span>OCT</span>
+                    <strong>23</strong>
+                </div>
+
+                <div class="npl-client-milestone-info">
+                    <span class="npl-client-milestone-type">
+                        DOCUMENTATION
+                    </span>
+                    <h4>Notary Document Follow-up</h4>
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        Time to be confirmed
+                    </p>
+                    <span class="npl-client-milestone-case">
+                        NPL-2026-0126
+                    </span>
+                </div>
+
+                <a href="404-client.html"><i class="fa-solid fa-arrow-up-right-from-square
+                          npl-client-milestone-arrow"></i></a>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ALL LEGAL CASES -->
+    <section class="npl-client-all-cases-section"
+             id="nplClientAllCases">
+
+        <div class="npl-client-case-section-heading">
+            <div>
+                <span class="npl-client-card-eyebrow">
+                    CASE DIRECTORY
+                </span>
+                <h3>All Legal Cases</h3>
+                <p>Search and review the status of your legal matters.</p>
+            </div>
+
+            <span class="npl-client-case-count">
+                8 Sample Records
+            </span>
+        </div>
+
+
+        <!-- SEARCH AND FILTERS -->
+        <div class="npl-client-case-toolbar">
+
+            <label class="npl-client-case-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search"
+                       id="nplClientCaseSearch"
+                       placeholder="Search by case ID, title or category..."
+                       aria-label="Search legal cases">
+            </label>
+
+            <label class="npl-client-case-filter">
+                <span class="npl-client-filter-label">Status</span>
+                <select id="nplClientCaseStatusFilter"
+                        aria-label="Filter cases by status">
+                    <option value="all">All Statuses</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Under Review">Under Review</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </label>
+
+            <label class="npl-client-case-filter">
+                <span class="npl-client-filter-label">Category</span>
+                <select id="nplClientCaseCategoryFilter"
+                        aria-label="Filter cases by category">
+                    <option value="all">All Categories</option>
+                    <option value="Property Law">Property Law</option>
+                    <option value="Notary Services">Notary Services</option>
+                    <option value="Family Law">Family Law</option>
+                    <option value="Corporate Law">Corporate Law</option>
+                    <option value="Legal Consultation">Legal Consultation</option>
+                </select>
+            </label>
+
+        </div>
+
+
+        <!-- CASE TABLE -->
+        <div class="npl-client-case-table-wrapper">
+
+            <table class="npl-client-case-table">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Case Details</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Opened On</th>
+                        <th scope="col">Next Milestone</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="nplClientCasesTableBody">
+
+                    <tr data-case-status="In Progress"
+                        data-case-category="Property Law">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                </span>
+                                <div>
+                                    <strong>Property Documentation</strong>
+                                    <span>NPL-2026-0148</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Property Law</td>
+                        <td>05 Oct 2026</td>
+                        <td>20 Oct 2026</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-progress">
+                                <span></span>In Progress
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="View Property Documentation case">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-case-status="Under Review"
+                        data-case-category="Notary Services">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-file-signature"></i>
+                                </span>
+                                <div>
+                                    <strong>Notary Certification</strong>
+                                    <span>NPL-2026-0142</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Notary Services</td>
+                        <td>03 Oct 2026</td>
+                        <td>23 Oct 2026</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-review">
+                                <span></span>Under Review
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="View Notary Certification documents">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-case-status="Pending"
+                        data-case-category="Family Law">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-people-roof"></i>
+                                </span>
+                                <div>
+                                    <strong>Family Agreement Review</strong>
+                                    <span>NPL-2026-0139</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Family Law</td>
+                        <td>01 Oct 2026</td>
+                        <td>Awaiting Confirmation</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-pending">
+                                <span></span>Pending
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="Ask about Family Agreement Review">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-case-status="Completed"
+                        data-case-category="Corporate Law">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </span>
+                                <div>
+                                    <strong>Business Agreement</strong>
+                                    <span>NPL-2026-0131</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Corporate Law</td>
+                        <td>25 Sep 2026</td>
+                        <td>Completed</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-completed">
+                                <span></span>Completed
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="View Business Agreement documents">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-case-status="In Progress"
+                        data-case-category="Legal Consultation">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-comments"></i>
+                                </span>
+                                <div>
+                                    <strong>Legal Consultation</strong>
+                                    <span>NPL-2026-0129</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Legal Consultation</td>
+                        <td>24 Sep 2026</td>
+                        <td>To Be Confirmed</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-progress">
+                                <span></span>In Progress
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="View Legal Consultation appointments">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-case-status="Completed"
+                        data-case-category="Notary Services">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-stamp"></i>
+                                </span>
+                                <div>
+                                    <strong>Affidavit Attestation</strong>
+                                    <span>NPL-2026-0121</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Notary Services</td>
+                        <td>18 Sep 2026</td>
+                        <td>Completed</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-completed">
+                                <span></span>Completed
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="View Affidavit Attestation documents">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-case-status="Under Review"
+                        data-case-category="Property Law">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </span>
+                                <div>
+                                    <strong>Deed Verification</strong>
+                                    <span>NPL-2026-0117</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Property Law</td>
+                        <td>12 Sep 2026</td>
+                        <td>Awaiting Review</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-review">
+                                <span></span>Under Review
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="View Deed Verification documents">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-case-status="Completed"
+                        data-case-category="Corporate Law">
+                        <td>
+                            <div class="npl-client-table-case">
+                                <span class="npl-client-table-case-icon">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </span>
+                                <div>
+                                    <strong>Corporate Document Review</strong>
+                                    <span>NPL-2026-0108</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Corporate Law</td>
+                        <td>02 Sep 2026</td>
+                        <td>Completed</td>
+                        <td>
+                            <span class="npl-client-case-status npl-case-status-completed">
+                                <span></span>Completed
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-client.html"
+                               class="npl-client-table-action"
+                               aria-label="View Corporate Document Review documents">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <div class="npl-client-case-no-results"
+                 id="nplClientCasesNoResults"
+                 hidden>
+                <i class="fa-solid fa-folder-open"></i>
+                <strong>No matching cases found</strong>
+                <p>Try another search term or change your filters.</p>
+            </div>
+
+        </div>
+
+        <div class="npl-client-case-table-footer">
+            <span id="nplClientCasesResultCount">
+                Showing 8 of 8 cases
+            </span>
+
+            <button type="button"
+                    id="nplClientCasesReset"
+                    class="npl-client-case-reset">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset Filters
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- LEGAL DOCUMENT REMINDER -->
+    <section class="npl-client-case-reminder">
+
+        <div class="npl-client-case-reminder-icon">
+            <i class="fa-solid fa-file-circle-exclamation"></i>
+        </div>
+
+        <div class="npl-client-case-reminder-content">
+            <span>CLIENT REMINDER</span>
+            <h3>Keep Your Case Documents Up to Date</h3>
+            <p>
+                Missing paperwork can delay a legal review.
+                Check your document workspace for any outstanding
+                requests from your legal team.
+            </p>
+        </div>
+
+        <a href="404-client.html"
+           class="npl-client-case-reminder-btn">
+            Check Documents
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="client.js"></script>
+
+</body>
+</html>

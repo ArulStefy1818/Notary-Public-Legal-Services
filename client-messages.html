@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Client Dashboard to manage legal cases, appointments, documents, and client information.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+<div class="npl-client-dashboard">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="npl-client-overlay" id="nplClientOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="npl-client-sidebar" id="nplClientSidebar"
+        aria-label="Client dashboard navigation">
+
+        <div class="npl-client-brand">
+
+            <a href="client.html" class="npl-client-brand-link"
+                aria-label="Stackly Legal Services home">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Legal Services Logo"
+                    class="npl-client-logo">
+
+                 
+
+            </a>
+
+            <button type="button"
+                class="npl-client-mobile-close"
+                id="nplClientMobileClose"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        
+        <nav class="npl-client-nav">
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client.html"
+                class="npl-client-nav-link"
+                aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="client-cases.html" class="npl-client-nav-link">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>My Legal Cases</span>
+            </a>
+
+            <a href="client-appointments.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="client-documents.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>My Documents</span>
+            </a>
+
+            <a href="client-messages.html" class="npl-client-nav-link npl-client-nav-active">
+                <i class="fa-regular fa-comments"></i>
+                <span>Messages</span>
+            </a>
+
+            <a href="client-billing.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Billing & Payments</span>
+            </a>
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client-profile.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="npl-client-sidebar-spacer"></div>
+
+        <div class="npl-client-help-card">
+            <div class="npl-client-help-icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <h4>Need legal assistance?</h4>
+
+            <p>Contact our legal team if you need help with your case or documents.</p>
+
+            <a href="404-client.html">
+                Contact Support <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        
+
+        <div class="npl-client-sidebar-bottom">
+
+            <a href="index.html"
+                class="npl-client-nav-link npl-client-logout"
+                id="nplClientLogout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="npl-client-main">
+
+        <!-- TOP BAR -->
+        <header class="npl-client-topbar">
+
+            <div class="npl-client-topbar-left">
+
+                <button type="button"
+                    class="npl-client-menu-button"
+                    id="nplClientMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="nplClientSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="npl-client-page-heading">
+                    <h1>Client Dashboard</h1>
+                    <p>Manage your legal matters in one place.</p>
+                </div>
+
+            </div>
+
+            <div class="npl-client-topbar-right">
+
+                <a href="404-client.html"><button type="button"
+                    class="npl-client-notification"
+                    aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="npl-client-notification-dot"></span>
+                </button></a>
+
+                <div class="npl-client-user">
+
+                    <div class="npl-client-user-info">
+                        <strong id="nplClientUserName">Client</strong>
+
+                        <a href="mailto:client@example.com"
+                            id="nplClientUserEmail">
+                            client@example.com
+                        </a>
+                    </div>
+
+                    <div class="npl-client-user-avatar"
+                        id="nplClientUserAvatar"
+                        aria-hidden="true">
+                        C
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- ==========================================
+     STACKLY LEGAL SERVICES
+     CLIENT MESSAGES PAGE
+========================================== -->
+
+<section class="npl-messages-page">
+
+    <!-- PAGE HEADING -->
+    <div class="npl-messages-heading">
+        <div>
+            <span class="npl-messages-eyebrow">
+                <i class="fa-regular fa-comments"></i>
+                CLIENT COMMUNICATION
+            </span>
+            <h2>My Messages</h2>
+            <p>Connect with your legal team and stay updated on your cases.</p>
+        </div>
+
+        <a href="404-client.html" class="npl-messages-new-btn">
+            <i class="fa-solid fa-plus"></i>
+            New Message
+        </a>
+    </div>
+
+    <!-- MESSAGE SUMMARY -->
+    <div class="npl-messages-stats">
+
+        <article class="npl-messages-stat">
+            <div class="npl-messages-stat-icon">
+                <i class="fa-regular fa-comments"></i>
+            </div>
+            <div>
+                <h3>08</h3>
+                <p>Total Conversations</p>
+            </div>
+        </article>
+
+        <article class="npl-messages-stat">
+            <div class="npl-messages-stat-icon npl-messages-blue">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div>
+                <h3>03</h3>
+                <p>Unread Messages</p>
+            </div>
+        </article>
+
+        <article class="npl-messages-stat">
+            <div class="npl-messages-stat-icon npl-messages-gold">
+                <i class="fa-regular fa-clock"></i>
+            </div>
+            <div>
+                <h3>02</h3>
+                <p>Pending Replies</p>
+            </div>
+        </article>
+    </div>
+
+    <!-- MESSAGES WORKSPACE -->
+    <div class="npl-messages-workspace">
+
+        <!-- CONVERSATION LIST -->
+        <section class="npl-messages-inbox">
+
+            <div class="npl-messages-section-heading">
+                <h3>Conversations</h3>
+                <span>Recent chats</span>
+            </div>
+
+             
+
+            <!-- CONVERSATION 1 -->
+            <a href="#nplMessagesChat"
+                class="npl-messages-contact npl-messages-contact-active">
+
+                <div class="npl-messages-avatar npl-messages-avatar-green">
+                    SM
+                </div>
+
+                <div class="npl-messages-contact-info">
+                    <div class="npl-messages-contact-top">
+                        <h4>Sarah Mitchell</h4>
+                        <span>10:42 AM</span>
+                    </div>
+                    <p>Senior Legal Advisor</p>
+                    <div class="npl-messages-preview">
+                        Your documents have been reviewed.
+                        <span class="npl-messages-unread">2</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- CONVERSATION 2 -->
+            <a href="#nplMessagesChat" class="npl-messages-contact">
+                <div class="npl-messages-avatar npl-messages-avatar-blue">
+                    DC
+                </div>
+
+                <div class="npl-messages-contact-info">
+                    <div class="npl-messages-contact-top">
+                        <h4>Daniel Carter</h4>
+                        <span>Yesterday</span>
+                    </div>
+                    <p>Document Specialist</p>
+                    <div class="npl-messages-preview">
+                        Please provide the signed agreement.
+                        <span class="npl-messages-unread">1</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- CONVERSATION 3 -->
+            <a href="#nplMessagesChat" class="npl-messages-contact">
+                <div class="npl-messages-avatar npl-messages-avatar-gold">
+                    EW
+                </div>
+
+                <div class="npl-messages-contact-info">
+                    <div class="npl-messages-contact-top">
+                        <h4>Emily Wilson</h4>
+                        <span>Yesterday</span>
+                    </div>
+                    <p>Appointment Coordinator</p>
+                    <div class="npl-messages-preview">
+                        Your consultation is confirmed.
+                    </div>
+                </div>
+            </a>
+
+            <!-- CONVERSATION 4 -->
+            <a href="#nplMessagesChat" class="npl-messages-contact">
+                <div class="npl-messages-avatar npl-messages-avatar-purple">
+                    MA
+                </div>
+
+                <div class="npl-messages-contact-info">
+                    <div class="npl-messages-contact-top">
+                        <h4>Michael Anderson</h4>
+                        <span>Oct 10</span>
+                    </div>
+                    <p>Legal Consultant</p>
+                    <div class="npl-messages-preview">
+                        Let us discuss your next steps.
+                    </div>
+                </div>
+            </a>
+
+        </section>
+
+        <!-- CHAT WINDOW -->
+        <section class="npl-messages-chat" id="nplMessagesChat">
+
+            <div class="npl-messages-chat-header">
+                <div class="npl-messages-avatar npl-messages-avatar-green">
+                    SM
+                </div>
+
+                <div class="npl-messages-chat-person">
+                    <h3>Sarah Mitchell</h3>
+                    <p>
+                        <span class="npl-messages-online-dot"></span>
+                        Senior Legal Advisor
+                    </p>
+                </div>
+
+                <a href="404-client.html"
+                    class="npl-messages-chat-more"
+                    aria-label="Conversation details">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </a>
+            </div>
+
+            <!-- RELATED CASE -->
+            <div class="npl-messages-case">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <div>
+                    <span>RELATED LEGAL CASE</span>
+                    <strong>Property Documentation</strong>
+                </div>
+                <span class="npl-messages-case-id">CASE-014</span>
+            </div>
+
+            <!-- CHAT HISTORY -->
+            <div class="npl-messages-history">
+
+                <div class="npl-messages-date">
+                    <span>Today, October 13</span>
+                </div>
+
+                <div class="npl-messages-bubble-row">
+                    <div class="npl-messages-chat-avatar">SM</div>
+                    <div class="npl-messages-bubble-wrap">
+                        <span class="npl-messages-time">10:15 AM</span>
+                        <div class="npl-messages-bubble">
+                            Good morning! I have reviewed the documents
+                            you submitted for your property matter.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="npl-messages-bubble-row npl-messages-outgoing">
+                    <div class="npl-messages-bubble-wrap">
+                        <span class="npl-messages-time">10:28 AM</span>
+                        <div class="npl-messages-bubble">
+                            Thank you for the update. Please let me know
+                            if any additional documents are required.
+                        </div>
+                        <span class="npl-messages-delivered">
+                            <i class="fa-solid fa-check-double"></i>
+                            Delivered
+                        </span>
+                    </div>
+                </div>
+
+                <div class="npl-messages-bubble-row">
+                    <div class="npl-messages-chat-avatar">SM</div>
+                    <div class="npl-messages-bubble-wrap">
+                        <span class="npl-messages-time">10:42 AM</span>
+                        <div class="npl-messages-bubble">
+                            Please share your latest property tax receipt.
+                            We can continue the review once it is received.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MESSAGE COMPOSER -->
+            <form class="npl-messages-reply"
+                action="#"
+                method="get">
+
+                <label for="nplMessagesInput" class="npl-messages-sr-only">
+                    Write your message
+                </label>
+
+                <input type="text"
+                    id="nplMessagesInput"
+                    placeholder="Write your message..."
+                    autocomplete="off"
+                    required>
+
+                <button type="submit" aria-label="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send
+                </button>
+            </form>
+
+            <div class="npl-messages-secure-note">
+                <i class="fa-solid fa-lock"></i>
+                Keep your legal conversations confidential.
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- SUPPORT BANNER -->
+    <section class="npl-messages-support">
+        <div class="npl-messages-support-icon">
+            <i class="fa-regular fa-circle-question"></i>
+        </div>
+
+        <div>
+            <h3>Need help with a conversation?</h3>
+            <p>Contact our support team for assistance with your legal matters.</p>
+        </div>
+
+        <a href="404-client.html">
+            Contact Support
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </section>
+
+</section>
+
+
+</main>
+
+</div>
+
+<script src="client.js"></script>
+
+</body>
+</html>

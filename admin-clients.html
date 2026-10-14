@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Admin Dashboard for managing clients, legal cases, appointments, and documents.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="npl-admin-dashboard">
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div class="npl-admin-overlay" id="nplAdminOverlay"></div>
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="npl-admin-sidebar" id="nplAdminSidebar">
+
+            <div class="npl-admin-brand">
+
+                <a href="admin.html" class="npl-admin-logo" aria-label="Stackly Legal Home">
+                    <img src="Stackly-logo-Blue.webp" alt="Stackly Legal Services">
+                </a>
+
+                <button type="button" class="npl-admin-mobile-close"
+                    id="nplAdminClose" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p class="npl-admin-sidebar-label">Workspace</p>
+
+            <nav class="npl-admin-nav" aria-label="Admin navigation">
+
+                <a href="admin.html"
+                    class="npl-admin-nav-link"
+                    aria-current="page">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-cases.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Legal Cases</span>
+                    <span class="npl-admin-nav-count">12</span>
+                </a>
+
+                <a href="admin-clients.html" class="npl-admin-nav-link npl-admin-active">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+
+                <a href="admin-appointments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="npl-admin-nav-count">5</span>
+                </a>
+
+                <a href="admin-documents.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documents</span>
+                </a>
+
+                <p class="npl-admin-sidebar-label">Management</p>
+
+                <a href="admin-notary.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-stamp"></i>
+                    <span>Notary Services</span>
+                </a>
+
+                <a href="admin-payments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                 
+                <p class="npl-admin-sidebar-label">Preferences</p>
+
+                <a href="admin-settings.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="npl-admin-sidebar-bottom">
+
+                 <div class="npl-admin-support-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Legal Support</h4>
+                    <p>Keep your legal operations organized and your client services running smoothly.</p>
+                </div>
+
+                <a href="index.html" class="npl-admin-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="npl-admin-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="npl-admin-topbar">
+
+                <div class="npl-admin-topbar-left">
+
+                    <button type="button" class="npl-admin-menu-toggle"
+                        id="nplAdminMenuToggle"
+                        aria-label="Open navigation menu"
+                        aria-controls="nplAdminSidebar"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="npl-admin-page-heading">
+                        <h1>Admin Dashboard</h1>
+                        <p>Manage your legal services workspace</p>
+                    </div>
+
+                </div>
+
+                <div class="npl-admin-topbar-right">
+
+                    <span class="npl-admin-topbar-date" id="nplAdminDate"></span>
+
+                    <a href="404-admin.html"><button type="button" class="npl-admin-notification"
+                        aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="npl-admin-notification-dot"></span>
+                    </button></a>
+
+                    <!-- ADMIN EMAIL TOP RIGHT -->
+
+                    <div class="npl-admin-profile">
+
+                        
+<div class="npl-admin-profile-info">
+    <strong id="nplAdminUserName">Administrator</strong>
+    <a href="mailto:admin@stacklylegal.com"
+       id="nplAdminUserEmail">
+        admin@stacklylegal.com
+    </a>
+</div>
+
+                        <div class="npl-admin-avatar" aria-hidden="true">
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+<!-- =========================================
+     CLIENT MANAGEMENT WORKSPACE
+========================================== -->
+
+<section class="npl-clients-workspace">
+
+    <!-- CLIENTS HERO -->
+    <div class="npl-clients-hero">
+        <div class="npl-clients-hero-content">
+            <span class="npl-clients-eyebrow">
+                <i class="fa-solid fa-users"></i>
+                CLIENT RELATIONSHIP CENTER
+            </span>
+
+            <h2>Every Client. Every Detail. In One Place.</h2>
+
+            <p>
+                Build stronger client relationships, organize essential
+                information, and keep every legal service moving forward.
+            </p>
+
+            <div class="npl-clients-hero-actions">
+                <a href="404-admin.html" class="npl-clients-btn-primary">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add New Client
+                </a>
+
+                <a href="404-admin.html" class="npl-clients-btn-outline">
+                    <i class="fa-solid fa-address-book"></i>
+                    Explore Directory
+                </a>
+            </div>
+        </div>
+
+        <div class="npl-clients-hero-visual" aria-hidden="true">
+            <div class="npl-clients-orbit npl-clients-orbit-one"></div>
+            <div class="npl-clients-orbit npl-clients-orbit-two"></div>
+
+            <div class="npl-clients-hero-icon">
+                <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+
+            <span class="npl-clients-floating-icon npl-clients-float-one">
+                <i class="fa-solid fa-user-check"></i>
+            </span>
+
+            <span class="npl-clients-floating-icon npl-clients-float-two">
+                <i class="fa-solid fa-file-shield"></i>
+            </span>
+        </div>
+    </div>
+
+    <!-- CLIENT OVERVIEW -->
+    <div class="npl-clients-section-heading">
+        <div>
+            <span class="npl-clients-kicker">CLIENT OVERVIEW</span>
+            <h3>Relationship Insights</h3>
+            <p>A quick look at your client portfolio.</p>
+        </div>
+
+        <span class="npl-clients-period">
+            <i class="fa-regular fa-calendar"></i>
+            Current overview
+        </span>
+    </div>
+
+    <div class="npl-clients-stats-grid">
+
+        <article class="npl-clients-stat-card">
+            <div class="npl-clients-stat-head">
+                <span class="npl-clients-stat-icon npl-clients-stat-green">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+                <span class="npl-clients-stat-label">Client base</span>
+            </div>
+            <h3>1,284</h3>
+            <p>Total Registered Clients</p>
+            <div class="npl-clients-stat-foot">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <span>32 new this month</span>
+            </div>
+        </article>
+
+        <article class="npl-clients-stat-card">
+            <div class="npl-clients-stat-head">
+                <span class="npl-clients-stat-icon npl-clients-stat-blue">
+                    <i class="fa-solid fa-user-check"></i>
+                </span>
+                <span class="npl-clients-stat-label">Engagement</span>
+            </div>
+            <h3>968</h3>
+            <p>Active Clients</p>
+            <div class="npl-clients-stat-foot">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Currently engaged</span>
+            </div>
+        </article>
+
+        <article class="npl-clients-stat-card">
+            <div class="npl-clients-stat-head">
+                <span class="npl-clients-stat-icon npl-clients-stat-gold">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </span>
+                <span class="npl-clients-stat-label">Verification</span>
+            </div>
+            <h3>42</h3>
+            <p>Verification Pending</p>
+            <div class="npl-clients-stat-foot npl-clients-foot-attention">
+                <i class="fa-solid fa-clock"></i>
+                <span>Review required</span>
+            </div>
+        </article>
+
+        <article class="npl-clients-stat-card">
+            <div class="npl-clients-stat-head">
+                <span class="npl-clients-stat-icon npl-clients-stat-purple">
+                    <i class="fa-solid fa-user-clock"></i>
+                </span>
+                <span class="npl-clients-stat-label">Follow-up</span>
+            </div>
+            <h3>18</h3>
+            <p>Follow-ups Due</p>
+            <div class="npl-clients-stat-foot npl-clients-foot-follow">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Scheduled reminders</span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- FEATURED CLIENT AND CLIENT MIX -->
+    <div class="npl-clients-feature-grid">
+
+        <!-- FEATURED CLIENT -->
+        <section class="npl-clients-panel npl-clients-featured">
+
+            <div class="npl-clients-panel-heading">
+                <div>
+                    <span class="npl-clients-kicker">CLIENT SPOTLIGHT</span>
+                    <h3>Featured Client Profile</h3>
+                </div>
+                <span class="npl-clients-feature-badge">
+                    <i class="fa-solid fa-star"></i>
+                    Featured
+                </span>
+            </div>
+
+            <div class="npl-clients-feature-profile">
+                <div class="npl-clients-feature-avatar">AK</div>
+
+                <div class="npl-clients-feature-identity">
+                    <h4>Arun Kumar</h4>
+                    <p>Client ID: NPL-CL-1024</p>
+                    <span class="npl-clients-verified">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Identity verified
+                    </span>
+                </div>
+            </div>
+
+            <div class="npl-clients-profile-details">
+                <div>
+                    <span>Client Since</span>
+                    <strong>March 2025</strong>
+                </div>
+                <div>
+                    <span>Open Matters</span>
+                    <strong>03 Cases</strong>
+                </div>
+                <div>
+                    <span>Client Category</span>
+                    <strong>Individual</strong>
+                </div>
+                <div>
+                    <span>Next Appointment</span>
+                    <strong>15 Oct 2026</strong>
+                </div>
+            </div>
+
+            <a href="404-admin.html" class="npl-clients-profile-link">
+                View Complete Profile
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+        <!-- CLIENT CATEGORIES -->
+        <section class="npl-clients-panel npl-clients-category-panel">
+
+            <div class="npl-clients-panel-heading">
+                <div>
+                    <span class="npl-clients-kicker">PORTFOLIO BREAKDOWN</span>
+                    <h3>Client Categories</h3>
+                </div>
+                <i class="fa-solid fa-chart-pie npl-clients-panel-icon"></i>
+            </div>
+
+            <p class="npl-clients-panel-description">
+                A sample breakdown of your client relationships.
+            </p>
+
+            <div class="npl-clients-category-item">
+                <div class="npl-clients-category-title">
+                    <span><i class="fa-solid fa-user"></i> Individual Clients</span>
+                    <strong>58%</strong>
+                </div>
+                <div class="npl-clients-category-track">
+                    <span class="npl-clients-category-fill npl-clients-category-individual"
+                        style="width:58%"></span>
+                </div>
+            </div>
+
+            <div class="npl-clients-category-item">
+                <div class="npl-clients-category-title">
+                    <span><i class="fa-solid fa-building"></i> Business Clients</span>
+                    <strong>27%</strong>
+                </div>
+                <div class="npl-clients-category-track">
+                    <span class="npl-clients-category-fill npl-clients-category-business"
+                        style="width:27%"></span>
+                </div>
+            </div>
+
+            <div class="npl-clients-category-item">
+                <div class="npl-clients-category-title">
+                    <span><i class="fa-solid fa-landmark"></i> Corporate Clients</span>
+                    <strong>15%</strong>
+                </div>
+                <div class="npl-clients-category-track">
+                    <span class="npl-clients-category-fill npl-clients-category-corporate"
+                        style="width:15%"></span>
+                </div>
+            </div>
+
+            <div class="npl-clients-category-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Illustrative percentages for the dashboard design.</span>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- CLIENT DIRECTORY -->
+    <section class="npl-clients-panel npl-clients-directory"
+        id="nplClientsDirectory">
+
+        <div class="npl-clients-directory-heading">
+            <div>
+                <span class="npl-clients-kicker">CLIENT MANAGEMENT</span>
+                <h3>Client Directory</h3>
+                <p>Find client records and review their current status.</p>
+            </div>
+
+            <a href="404-admin.html" class="npl-clients-btn-primary">
+                <i class="fa-solid fa-plus"></i>
+                New Client
+            </a>
+        </div>
+
+        <!-- SEARCH AND FILTERS -->
+         
+
+        <div class="npl-clients-table-wrap">
+            <table class="npl-clients-table">
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Contact Information</th>
+                        <th>Category</th>
+                        <th>Cases</th>
+                        <th>Joined Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="nplClientsTableBody">
+
+                    <tr data-type="individual" data-status="active">
+                        <td>
+                            <div class="npl-clients-table-person">
+                                <span class="npl-clients-table-avatar npl-clients-avatar-green">AK</span>
+                                <div>
+                                    <strong>Arun Kumar</strong>
+                                    <small>NPL-CL-1024</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="npl-clients-contact">
+                                <span>arun@example.com</span>
+                                <small>+91 98765 43210</small>
+                            </div>
+                        </td>
+                        <td>Individual</td>
+                        <td><span class="npl-clients-case-count">03</span></td>
+                        <td>12 Mar 2025</td>
+                        <td><span class="npl-clients-status npl-clients-status-active">Active</span></td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="npl-clients-view-link"
+                                aria-label="View Arun Kumar profile">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-type="business" data-status="active">
+                        <td>
+                            <div class="npl-clients-table-person">
+                                <span class="npl-clients-table-avatar npl-clients-avatar-gold">MT</span>
+                                <div>
+                                    <strong>Meena Traders</strong>
+                                    <small>NPL-CL-1023</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="npl-clients-contact">
+                                <span>office@example.com</span>
+                                <small>+91 91234 56780</small>
+                            </div>
+                        </td>
+                        <td>Business</td>
+                        <td><span class="npl-clients-case-count">05</span></td>
+                        <td>08 Mar 2025</td>
+                        <td><span class="npl-clients-status npl-clients-status-active">Active</span></td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="npl-clients-view-link"
+                                aria-label="View Meena Traders profile">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-type="individual" data-status="pending">
+                        <td>
+                            <div class="npl-clients-table-person">
+                                <span class="npl-clients-table-avatar npl-clients-avatar-purple">PS</span>
+                                <div>
+                                    <strong>Priya S.</strong>
+                                    <small>NPL-CL-1022</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="npl-clients-contact">
+                                <span>priya@example.com</span>
+                                <small>+91 99887 66554</small>
+                            </div>
+                        </td>
+                        <td>Individual</td>
+                        <td><span class="npl-clients-case-count">02</span></td>
+                        <td>02 Mar 2025</td>
+                        <td><span class="npl-clients-status npl-clients-status-pending">Pending</span></td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="npl-clients-view-link"
+                                aria-label="View Priya profile">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-type="corporate" data-status="active">
+                        <td>
+                            <div class="npl-clients-table-person">
+                                <span class="npl-clients-table-avatar npl-clients-avatar-blue">GC</span>
+                                <div>
+                                    <strong>Greenfield Corp.</strong>
+                                    <small>NPL-CL-1021</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="npl-clients-contact">
+                                <span>legal@example.com</span>
+                                <small>+91 90000 12345</small>
+                            </div>
+                        </td>
+                        <td>Corporate</td>
+                        <td><span class="npl-clients-case-count">07</span></td>
+                        <td>25 Feb 2025</td>
+                        <td><span class="npl-clients-status npl-clients-status-active">Active</span></td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="npl-clients-view-link"
+                                aria-label="View Greenfield Corporation profile">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-type="individual" data-status="inactive">
+                        <td>
+                            <div class="npl-clients-table-person">
+                                <span class="npl-clients-table-avatar npl-clients-avatar-rose">VR</span>
+                                <div>
+                                    <strong>Vijay R.</strong>
+                                    <small>NPL-CL-1020</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="npl-clients-contact">
+                                <span>vijay@example.com</span>
+                                <small>+91 93456 78901</small>
+                            </div>
+                        </td>
+                        <td>Individual</td>
+                        <td><span class="npl-clients-case-count">01</span></td>
+                        <td>19 Feb 2025</td>
+                        <td><span class="npl-clients-status npl-clients-status-inactive">Inactive</span></td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="npl-clients-view-link"
+                                aria-label="View Vijay profile">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="npl-clients-empty-state" id="nplClientsEmptyState" hidden>
+                <i class="fa-solid fa-user-slash"></i>
+                <h4>No clients found</h4>
+                <p>Try another search term or adjust the filters.</p>
+            </div>
+        </div>
+
+        <div class="npl-clients-directory-footer">
+            <span id="nplClientsResultCount">Showing 5 of 5 clients</span>
+            <a href="404-admin.html">
+                View All Clients
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- ACTIVITY AND FOLLOW-UPS -->
+    <div class="npl-clients-bottom-grid">
+
+        <!-- RECENT ACTIVITY -->
+        <section class="npl-clients-panel npl-clients-activity">
+
+            <div class="npl-clients-panel-heading">
+                <div>
+                    <span class="npl-clients-kicker">LATEST UPDATES</span>
+                    <h3>Recent Client Activity</h3>
+                </div>
+                <i class="fa-solid fa-clock-rotate-left npl-clients-panel-icon"></i>
+            </div>
+
+            <div class="npl-clients-timeline">
+
+                <article class="npl-clients-timeline-item">
+                    <span class="npl-clients-timeline-icon npl-clients-timeline-green">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </span>
+                    <div>
+                        <h4>New client registered</h4>
+                        <p>Priya S. was added to the client directory.</p>
+                        <span>Today · 10:15 AM</span>
+                    </div>
+                </article>
+
+                <article class="npl-clients-timeline-item">
+                    <span class="npl-clients-timeline-icon npl-clients-timeline-blue">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </span>
+                    <div>
+                        <h4>Client document updated</h4>
+                        <p>Property records were updated for Arun Kumar.</p>
+                        <span>Yesterday · 03:40 PM</span>
+                    </div>
+                </article>
+
+                <article class="npl-clients-timeline-item">
+                    <span class="npl-clients-timeline-icon npl-clients-timeline-gold">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </span>
+                    <div>
+                        <h4>Appointment scheduled</h4>
+                        <p>A client consultation was added to the calendar.</p>
+                        <span>10 Oct 2026 · 11:20 AM</span>
+                    </div>
+                </article>
+
+                <article class="npl-clients-timeline-item">
+                    <span class="npl-clients-timeline-icon npl-clients-timeline-purple">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+                    <div>
+                        <h4>Verification completed</h4>
+                        <p>A client identity review was marked complete.</p>
+                        <span>09 Oct 2026 · 02:00 PM</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FOLLOW-UP REMINDERS -->
+        <section class="npl-clients-panel npl-clients-followups">
+
+            <div class="npl-clients-panel-heading">
+                <div>
+                    <span class="npl-clients-kicker">CLIENT CARE</span>
+                    <h3>Follow-up Reminders</h3>
+                </div>
+                <i class="fa-regular fa-bell npl-clients-panel-icon"></i>
+            </div>
+
+            <p class="npl-clients-panel-description">
+                Keep important conversations and appointments on track.
+            </p>
+
+            <article class="npl-clients-followup-item">
+                <div class="npl-clients-followup-date">
+                    <strong>15</strong>
+                    <span>OCT</span>
+                </div>
+                <div class="npl-clients-followup-info">
+                    <h4>Arun Kumar</h4>
+                    <p>Property document consultation</p>
+                    <span class="npl-clients-reminder-tag">Appointment</span>
+                </div>
+                <a href="404-admin.html" aria-label="View Arun Kumar appointment">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="npl-clients-followup-item">
+                <div class="npl-clients-followup-date">
+                    <strong>17</strong>
+                    <span>OCT</span>
+                </div>
+                <div class="npl-clients-followup-info">
+                    <h4>Priya S.</h4>
+                    <p>Identity verification documents</p>
+                    <span class="npl-clients-reminder-tag npl-clients-reminder-pending">
+                        Pending review
+                    </span>
+                </div>
+                <a href="404-admin.html" aria-label="Review Priya documents">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="npl-clients-followup-item">
+                <div class="npl-clients-followup-date">
+                    <strong>20</strong>
+                    <span>OCT</span>
+                </div>
+                <div class="npl-clients-followup-info">
+                    <h4>Meena Traders</h4>
+                    <p>Business agreement follow-up</p>
+                    <span class="npl-clients-reminder-tag">Client meeting</span>
+                </div>
+                <a href="404-admin.html" aria-label="View Meena Traders appointment">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <a href="404-admin.html" class="npl-clients-all-reminders">
+                View Appointment Schedule
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+    </div>
+ 
+
+</section>
+
+
+</main>
+
+    </div>
+
+    <!-- =========================================
+         MOBILE SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

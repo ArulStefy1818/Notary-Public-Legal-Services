@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Admin Dashboard for managing clients, legal cases, appointments, and documents.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="npl-admin-dashboard">
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div class="npl-admin-overlay" id="nplAdminOverlay"></div>
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="npl-admin-sidebar" id="nplAdminSidebar">
+
+            <div class="npl-admin-brand">
+
+                <a href="admin.html" class="npl-admin-logo" aria-label="Stackly Legal Home">
+                    <img src="Stackly-logo-Blue.webp" alt="Stackly Legal Services">
+                </a>
+
+                <button type="button" class="npl-admin-mobile-close"
+                    id="nplAdminClose" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p class="npl-admin-sidebar-label">Workspace</p>
+
+            <nav class="npl-admin-nav" aria-label="Admin navigation">
+
+                <a href="admin.html"
+                    class="npl-admin-nav-link"
+                    aria-current="page">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-cases.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Legal Cases</span>
+                    <span class="npl-admin-nav-count">12</span>
+                </a>
+
+                <a href="admin-clients.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+
+                <a href="admin-appointments.html" class="npl-admin-nav-link npl-admin-active">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="npl-admin-nav-count">5</span>
+                </a>
+
+                <a href="admin-documents.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documents</span>
+                </a>
+
+                <p class="npl-admin-sidebar-label">Management</p>
+
+                <a href="admin-notary.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-stamp"></i>
+                    <span>Notary Services</span>
+                </a>
+
+                <a href="admin-payments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                 
+                <p class="npl-admin-sidebar-label">Preferences</p>
+
+                <a href="admin-settings.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="npl-admin-sidebar-bottom">
+
+                 <div class="npl-admin-support-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Legal Support</h4>
+                    <p>Keep your legal operations organized and your client services running smoothly.</p>
+                </div>
+
+                <a href="index.html" class="npl-admin-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="npl-admin-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="npl-admin-topbar">
+
+                <div class="npl-admin-topbar-left">
+
+                    <button type="button" class="npl-admin-menu-toggle"
+                        id="nplAdminMenuToggle"
+                        aria-label="Open navigation menu"
+                        aria-controls="nplAdminSidebar"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="npl-admin-page-heading">
+                        <h1>Admin Dashboard</h1>
+                        <p>Manage your legal services workspace</p>
+                    </div>
+
+                </div>
+
+                <div class="npl-admin-topbar-right">
+
+                    <span class="npl-admin-topbar-date" id="nplAdminDate"></span>
+
+                    <a href="404-admin.html"><button type="button" class="npl-admin-notification"
+                        aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="npl-admin-notification-dot"></span>
+                    </button></a>
+
+                    <!-- ADMIN EMAIL TOP RIGHT -->
+
+                    <div class="npl-admin-profile">
+
+                        
+<div class="npl-admin-profile-info">
+    <strong id="nplAdminUserName">Administrator</strong>
+    <a href="mailto:admin@stacklylegal.com"
+       id="nplAdminUserEmail">
+        admin@stacklylegal.com
+    </a>
+</div>
+
+                        <div class="npl-admin-avatar" aria-hidden="true">
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+<!-- =========================================
+     APPOINTMENTS PAGE CONTENT
+========================================== -->
+
+<section class="npl-appt-workspace">
+
+    <!-- PAGE INTRO -->
+    <div class="npl-appt-intro">
+        <div>
+            <span class="npl-appt-eyebrow">
+                <i class="fa-regular fa-calendar-check"></i>
+                APPOINTMENT MANAGEMENT
+            </span>
+
+            <h2>Appointments & Consultations</h2>
+
+            <p>
+                Schedule legal consultations, coordinate client meetings,
+                and keep every appointment organized.
+            </p>
+        </div>
+
+        <div class="npl-appt-intro-actions">
+            <button type="button" class="npl-appt-btn npl-appt-btn-light"
+                id="nplApptExport">
+                <i class="fa-solid fa-download"></i>
+                Export Schedule
+            </button>
+
+            <a href="404-admin.html"><button type="button" class="npl-appt-btn npl-appt-btn-primary"
+                id="nplApptAddBtn">
+                <i class="fa-solid fa-plus"></i>
+                New Appointment
+            </button></a>
+        </div>
+    </div>
+
+    <!-- APPOINTMENT STATISTICS -->
+    <div class="npl-appt-stats">
+
+        <article class="npl-appt-stat-card">
+            <div class="npl-appt-stat-top">
+                <span>Total Appointments</span>
+                <span class="npl-appt-stat-icon npl-appt-icon-green">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+            </div>
+            <h3>248</h3>
+            <p><span>+12.8%</span> compared with last month</p>
+            <div class="npl-appt-stat-track">
+                <span style="width:76%"></span>
+            </div>
+        </article>
+
+        <article class="npl-appt-stat-card">
+            <div class="npl-appt-stat-top">
+                <span>Today's Meetings</span>
+                <span class="npl-appt-stat-icon npl-appt-icon-blue">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+            </div>
+            <h3>08</h3>
+            <p>Across <strong>3 legal services</strong></p>
+            <div class="npl-appt-stat-track npl-appt-track-blue">
+                <span style="width:58%"></span>
+            </div>
+        </article>
+
+        <article class="npl-appt-stat-card">
+            <div class="npl-appt-stat-top">
+                <span>Pending Approval</span>
+                <span class="npl-appt-stat-icon npl-appt-icon-orange">
+                    <i class="fa-regular fa-clock"></i>
+                </span>
+            </div>
+            <h3>05</h3>
+            <p>Require your <strong>confirmation</strong></p>
+            <div class="npl-appt-stat-track npl-appt-track-orange">
+                <span style="width:36%"></span>
+            </div>
+        </article>
+
+        <article class="npl-appt-stat-card">
+            <div class="npl-appt-stat-top">
+                <span>Completed</span>
+                <span class="npl-appt-stat-icon npl-appt-icon-purple">
+                    <i class="fa-solid fa-check-double"></i>
+                </span>
+            </div>
+            <h3>186</h3>
+            <p><strong>94%</strong> successful attendance</p>
+            <div class="npl-appt-stat-track npl-appt-track-purple">
+                <span style="width:94%"></span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- MAIN APPOINTMENT LAYOUT -->
+    <div class="npl-appt-layout">
+
+        <!-- LEFT: TODAY'S SCHEDULE -->
+        <section class="npl-appt-panel npl-appt-schedule-panel">
+
+            <div class="npl-appt-panel-heading">
+                <div>
+                    <span class="npl-appt-section-label">YOUR DAILY PLAN</span>
+                    <h3>Today's Schedule</h3>
+                    <p>Appointments arranged by time</p>
+                </div>
+
+                <span class="npl-appt-live-badge">
+                    <span></span> Daily View
+                </span>
+            </div>
+
+            <div class="npl-appt-day-selector">
+                <button type="button" id="nplApptPrevDay"
+                    aria-label="Previous day">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div>
+                    <strong id="nplApptSelectedDay">Monday, October 19</strong>
+                    <span id="nplApptSelectedCount">4 scheduled meetings</span>
+                </div>
+
+                <button type="button" id="nplApptNextDay"
+                    aria-label="Next day">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="npl-appt-timeline" id="nplApptTimeline">
+
+                <article class="npl-appt-timeline-item">
+                    <div class="npl-appt-time">
+                        <strong>09:00</strong>
+                        <span>AM</span>
+                    </div>
+
+                    <div class="npl-appt-timeline-line">
+                        <span></span>
+                    </div>
+
+                    <div class="npl-appt-event npl-appt-event-green">
+                        <div class="npl-appt-event-top">
+                            <span class="npl-appt-event-category">
+                                DOCUMENT NOTARIZATION
+                            </span>
+                            <span class="npl-appt-status npl-appt-status-confirmed">
+                                Confirmed
+                            </span>
+                        </div>
+
+                        <h4>Property Agreement Verification</h4>
+
+                        <div class="npl-appt-event-meta">
+                            <span><i class="fa-regular fa-user"></i> Olivia Martin</span>
+                            <span><i class="fa-regular fa-clock"></i> 30 min</span>
+                        </div>
+
+                        <div class="npl-appt-event-footer">
+                            <span><i class="fa-solid fa-location-dot"></i>
+                                Meeting Room A</span>
+                            <a href="404-admin.html">View details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="npl-appt-timeline-item">
+                    <div class="npl-appt-time">
+                        <strong>10:30</strong>
+                        <span>AM</span>
+                    </div>
+
+                    <div class="npl-appt-timeline-line">
+                        <span></span>
+                    </div>
+
+                    <div class="npl-appt-event npl-appt-event-blue">
+                        <div class="npl-appt-event-top">
+                            <span class="npl-appt-event-category">
+                                LEGAL CONSULTATION
+                            </span>
+                            <span class="npl-appt-status npl-appt-status-pending">
+                                Pending
+                            </span>
+                        </div>
+
+                        <h4>Family Legal Consultation</h4>
+
+                        <div class="npl-appt-event-meta">
+                            <span><i class="fa-regular fa-user"></i> James Wilson</span>
+                            <span><i class="fa-regular fa-clock"></i> 45 min</span>
+                        </div>
+
+                        <div class="npl-appt-event-footer">
+                            <span><i class="fa-solid fa-video"></i>
+                                Online Meeting</span>
+                            <a href="404-admin.html">View details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="npl-appt-timeline-item">
+                    <div class="npl-appt-time">
+                        <strong>01:00</strong>
+                        <span>PM</span>
+                    </div>
+
+                    <div class="npl-appt-timeline-line">
+                        <span></span>
+                    </div>
+
+                    <div class="npl-appt-event npl-appt-event-purple">
+                        <div class="npl-appt-event-top">
+                            <span class="npl-appt-event-category">
+                                CORPORATE SERVICES
+                            </span>
+                            <span class="npl-appt-status npl-appt-status-confirmed">
+                                Confirmed
+                            </span>
+                        </div>
+
+                        <h4>Business Agreement Review</h4>
+
+                        <div class="npl-appt-event-meta">
+                            <span><i class="fa-regular fa-user"></i> Sophia Bennett</span>
+                            <span><i class="fa-regular fa-clock"></i> 60 min</span>
+                        </div>
+
+                        <div class="npl-appt-event-footer">
+                            <span><i class="fa-solid fa-location-dot"></i>
+                                Conference Room</span>
+                            <a href="404-admin.html">View details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="npl-appt-timeline-item">
+                    <div class="npl-appt-time">
+                        <strong>03:00</strong>
+                        <span>PM</span>
+                    </div>
+
+                    <div class="npl-appt-timeline-line">
+                        <span></span>
+                    </div>
+
+                    <div class="npl-appt-event npl-appt-event-orange">
+                        <div class="npl-appt-event-top">
+                            <span class="npl-appt-event-category">
+                                DOCUMENT CERTIFICATION
+                            </span>
+                            <span class="npl-appt-status npl-appt-status-confirmed">
+                                Confirmed
+                            </span>
+                        </div>
+
+                        <h4>Power of Attorney Certification</h4>
+
+                        <div class="npl-appt-event-meta">
+                            <span><i class="fa-regular fa-user"></i> Daniel Cooper</span>
+                            <span><i class="fa-regular fa-clock"></i> 30 min</span>
+                        </div>
+
+                        <div class="npl-appt-event-footer">
+                            <span><i class="fa-solid fa-location-dot"></i>
+                                Meeting Room B</span>
+                            <a href="404-admin.html">View details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <a href="#nplApptTable" class="npl-appt-view-all">
+                View all appointments
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+        <!-- RIGHT: CALENDAR AND INSIGHTS -->
+        <div class="npl-appt-right-column">
+
+            <!-- MINI CALENDAR -->
+            <section class="npl-appt-panel npl-appt-calendar-panel">
+
+                <div class="npl-appt-panel-heading">
+                    <div>
+                        <span class="npl-appt-section-label">OVERVIEW</span>
+                        <h3>Booking Calendar</h3>
+                    </div>
+
+                    <i class="fa-regular fa-calendar npl-appt-calendar-heading-icon"></i>
+                </div>
+
+                <div class="npl-appt-calendar-controls">
+                    <button type="button" id="nplApptPrevMonth"
+                        aria-label="Previous month">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <strong id="nplApptMonthLabel">October 2026</strong>
+
+                    <button type="button" id="nplApptNextMonth"
+                        aria-label="Next month">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="npl-appt-calendar-grid"
+                    id="nplApptCalendarGrid">
+
+                    <span class="npl-appt-weekday">Mon</span>
+                    <span class="npl-appt-weekday">Tue</span>
+                    <span class="npl-appt-weekday">Wed</span>
+                    <span class="npl-appt-weekday">Thu</span>
+                    <span class="npl-appt-weekday">Fri</span>
+                    <span class="npl-appt-weekday">Sat</span>
+                    <span class="npl-appt-weekday">Sun</span>
+
+                </div>
+
+                <div class="npl-appt-calendar-legend">
+                    <span><i class="npl-appt-legend-dot"></i> Appointments</span>
+                    <span><i class="npl-appt-legend-dot npl-appt-legend-selected"></i>
+                        Selected day</span>
+                </div>
+
+                <div class="npl-appt-calendar-summary">
+                    <div>
+                        <span>Selected date</span>
+                        <strong id="nplApptCalendarSelected">19 Oct 2026</strong>
+                    </div>
+                    <div class="npl-appt-calendar-summary-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                </div>
+
+            </section>
+
+             
+
+        </div>
+
+    </div>
+
+    <!-- APPOINTMENTS TABLE -->
+    <section class="npl-appt-panel npl-appt-table-panel"
+        id="nplApptTable">
+
+        <div class="npl-appt-panel-heading npl-appt-table-heading">
+            <div>
+                <span class="npl-appt-section-label">CLIENT BOOKINGS</span>
+                <h3>All Appointments</h3>
+                <p>Review and manage your consultation schedule</p>
+            </div>
+
+            <span class="npl-appt-total-label">
+                <i class="fa-solid fa-list-check"></i>
+                6 records
+            </span>
+        </div>
+
+        <!-- SEARCH AND FILTERS -->
+        <div class="npl-appt-toolbar">
+
+            <div class="npl-appt-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="nplApptSearch"
+                    placeholder="Search clients, services..."
+                    aria-label="Search appointments">
+            </div>
+
+            <div class="npl-appt-filter-group">
+                <select id="nplApptStatusFilter" aria-label="Filter by status">
+                    <option value="all">All statuses</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+
+                <select id="nplApptServiceFilter" aria-label="Filter by service">
+                    <option value="all">All services</option>
+                    <option value="notary">Notary Services</option>
+                    <option value="consultation">Legal Consultation</option>
+                    <option value="corporate">Corporate Legal</option>
+                    <option value="document">Document Review</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="npl-appt-table-wrap">
+            <table class="npl-appt-table">
+
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Service</th>
+                        <th>Date & Time</th>
+                        <th>Assigned To</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="nplApptTableBody">
+
+                    <tr data-status="confirmed" data-service="notary">
+                        <td>
+                            <div class="npl-appt-client">
+                                <span class="npl-appt-client-avatar npl-appt-avatar-one">OM</span>
+                                <div>
+                                    <strong>Olivia Martin</strong>
+                                    <span>olivia.martin@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="npl-appt-service-name">Property Notarization</span>
+                            <span class="npl-appt-service-type">Notary Services</span>
+                        </td>
+                        <td>
+                            <strong>19 Oct 2026</strong>
+                            <span class="npl-appt-table-subtext">09:00 AM</span>
+                        </td>
+                        <td>Michael Anderson</td>
+                        <td><span class="npl-appt-status npl-appt-status-confirmed">Confirmed</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-appt-action-btn"
+                                data-action="details" aria-label="View Olivia Martin appointment">
+                                <i class="fa-regular fa-eye"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="pending" data-service="consultation">
+                        <td>
+                            <div class="npl-appt-client">
+                                <span class="npl-appt-client-avatar npl-appt-avatar-two">JW</span>
+                                <div>
+                                    <strong>James Wilson</strong>
+                                    <span>james.wilson@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="npl-appt-service-name">Family Law Consultation</span>
+                            <span class="npl-appt-service-type">Legal Consultation</span>
+                        </td>
+                        <td>
+                            <strong>19 Oct 2026</strong>
+                            <span class="npl-appt-table-subtext">10:30 AM</span>
+                        </td>
+                        <td>Sarah Mitchell</td>
+                        <td><span class="npl-appt-status npl-appt-status-pending">Pending</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-appt-action-btn"
+                                data-action="details" aria-label="View Olivia Martin appointment">
+                                <i class="fa-regular fa-eye"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="confirmed" data-service="corporate">
+                        <td>
+                            <div class="npl-appt-client">
+                                <span class="npl-appt-client-avatar npl-appt-avatar-three">SB</span>
+                                <div>
+                                    <strong>Sophia Bennett</strong>
+                                    <span>sophia.bennett@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="npl-appt-service-name">Business Agreement Review</span>
+                            <span class="npl-appt-service-type">Corporate Legal</span>
+                        </td>
+                        <td>
+                            <strong>19 Oct 2026</strong>
+                            <span class="npl-appt-table-subtext">01:00 PM</span>
+                        </td>
+                        <td>David Thompson</td>
+                        <td><span class="npl-appt-status npl-appt-status-confirmed">Confirmed</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-appt-action-btn"
+                                data-action="details" aria-label="View Olivia Martin appointment">
+                                <i class="fa-regular fa-eye"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="completed" data-service="document">
+                        <td>
+                            <div class="npl-appt-client">
+                                <span class="npl-appt-client-avatar npl-appt-avatar-four">EC</span>
+                                <div>
+                                    <strong>Emily Carter</strong>
+                                    <span>emily.carter@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="npl-appt-service-name">Contract Document Review</span>
+                            <span class="npl-appt-service-type">Document Review</span>
+                        </td>
+                        <td>
+                            <strong>20 Oct 2026</strong>
+                            <span class="npl-appt-table-subtext">11:00 AM</span>
+                        </td>
+                        <td>Michael Anderson</td>
+                        <td><span class="npl-appt-status npl-appt-status-completed">Completed</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-appt-action-btn"
+                                data-action="details" aria-label="View Olivia Martin appointment">
+                                <i class="fa-regular fa-eye"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="cancelled" data-service="notary">
+                        <td>
+                            <div class="npl-appt-client">
+                                <span class="npl-appt-client-avatar npl-appt-avatar-five">RD</span>
+                                <div>
+                                    <strong>Ryan Davis</strong>
+                                    <span>ryan.davis@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="npl-appt-service-name">Signature Verification</span>
+                            <span class="npl-appt-service-type">Notary Services</span>
+                        </td>
+                        <td>
+                            <strong>21 Oct 2026</strong>
+                            <span class="npl-appt-table-subtext">02:30 PM</span>
+                        </td>
+                        <td>Sarah Mitchell</td>
+                        <td><span class="npl-appt-status npl-appt-status-cancelled">Cancelled</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-appt-action-btn"
+                                data-action="details" aria-label="View Olivia Martin appointment">
+                                <i class="fa-regular fa-eye"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="confirmed" data-service="consultation">
+                        <td>
+                            <div class="npl-appt-client">
+                                <span class="npl-appt-client-avatar npl-appt-avatar-six">DC</span>
+                                <div>
+                                    <strong>Daniel Cooper</strong>
+                                    <span>daniel.cooper@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="npl-appt-service-name">Power of Attorney</span>
+                            <span class="npl-appt-service-type">Legal Consultation</span>
+                        </td>
+                        <td>
+                            <strong>22 Oct 2026</strong>
+                            <span class="npl-appt-table-subtext">03:00 PM</span>
+                        </td>
+                        <td>David Thompson</td>
+                        <td><span class="npl-appt-status npl-appt-status-confirmed">Confirmed</span></td>
+                        <td>
+                            <a href="404-admin.html"><button type="button" class="npl-appt-action-btn"
+                                data-action="details" aria-label="View Olivia Martin appointment">
+                                <i class="fa-regular fa-eye"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr class="npl-appt-no-results" id="nplApptNoResults" hidden>
+                        <td colspan="6">No appointments match your search or selected filters.</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="npl-appt-table-footer">
+            <span id="nplApptResultCount">Showing 6 appointments</span>
+
+            <a href="404-admin.html" class="npl-appt-cases-link">
+                <i class="fa-solid fa-folder-open"></i>
+                View Legal Cases
+            </a>
+        </div>
+
+    </section>
+
+    <!-- NEW APPOINTMENT MODAL -->
+    <div class="npl-appt-modal" id="nplApptModal"
+        aria-hidden="true">
+
+        <div class="npl-appt-modal-backdrop" data-close-modal></div>
+
+        <div class="npl-appt-modal-card" role="dialog"
+            aria-modal="true" aria-labelledby="nplApptModalTitle">
+
+            <div class="npl-appt-modal-header">
+                <div>
+                    <span class="npl-appt-section-label">BOOKING WORKSPACE</span>
+                    <h3 id="nplApptModalTitle">Create Appointment</h3>
+                </div>
+
+                <button type="button" id="nplApptModalClose"
+                    aria-label="Close appointment form">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="nplApptForm" class="npl-appt-form">
+
+                <label>
+                    Client Name
+                    <input type="text" name="client" required
+                        placeholder="Enter client's full name">
+                </label>
+
+                <label>
+                    Client Email
+                    <input type="email" name="email" required
+                        placeholder="client@example.com">
+                </label>
+
+                <label>
+                    Legal Service
+                    <select name="service" required>
+                        <option value="">Choose a service</option>
+                        <option value="notary">Notary Services</option>
+                        <option value="consultation">Legal Consultation</option>
+                        <option value="corporate">Corporate Legal</option>
+                        <option value="document">Document Review</option>
+                    </select>
+                </label>
+
+                <label>
+                    Assigned Professional
+                    <select name="professional" required>
+                        <option value="">Choose a professional</option>
+                        <option>Michael Anderson</option>
+                        <option>Sarah Mitchell</option>
+                        <option>David Thompson</option>
+                    </select>
+                </label>
+
+                <div class="npl-appt-form-row">
+                    <label>
+                        Appointment Date
+                        <input type="date" name="date" required>
+                    </label>
+
+                    <label>
+                        Appointment Time
+                        <input type="time" name="time" required>
+                    </label>
+                </div>
+
+                <label>
+                    Additional Notes
+                    <textarea name="notes" rows="3"
+                        placeholder="Enter meeting details (optional)"></textarea>
+                </label>
+
+                <div class="npl-appt-form-actions">
+                    <button type="button" class="npl-appt-btn npl-appt-btn-light"
+                        data-close-modal>Cancel</button>
+
+                    <button type="submit" class="npl-appt-btn npl-appt-btn-primary">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        Save Appointment
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- APPOINTMENT DETAILS MODAL -->
+    <div class="npl-appt-modal" id="nplApptDetailsModal"
+        aria-hidden="true">
+
+        <div class="npl-appt-modal-backdrop" data-close-modal></div>
+
+        <div class="npl-appt-modal-card npl-appt-details-card"
+            role="dialog" aria-modal="true"
+            aria-labelledby="nplApptDetailsTitle">
+
+            <div class="npl-appt-modal-header">
+                <div>
+                    <span class="npl-appt-section-label">BOOKING DETAILS</span>
+                    <h3 id="nplApptDetailsTitle">Appointment Information</h3>
+                </div>
+
+                <button type="button" data-close-modal
+                    aria-label="Close appointment details">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div id="nplApptDetailsContent"
+                class="npl-appt-details-content"></div>
+
+            <div class="npl-appt-details-actions">
+                <button type="button" class="npl-appt-btn npl-appt-btn-light"
+                    data-close-modal>Close</button>
+
+                <button type="button" class="npl-appt-btn npl-appt-btn-primary"
+                    id="nplApptConfirmBtn">
+                    <i class="fa-solid fa-check"></i>
+                    Confirm Appointment
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="npl-appt-toast" id="nplApptToast"
+        role="status" aria-live="polite"></div>
+
+</section>
+
+
+</main>
+
+    </div>
+
+    <!-- =========================================
+         MOBILE SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

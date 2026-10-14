@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Admin Dashboard for managing clients, legal cases, appointments, and documents.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="npl-admin-dashboard">
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div class="npl-admin-overlay" id="nplAdminOverlay"></div>
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="npl-admin-sidebar" id="nplAdminSidebar">
+
+            <div class="npl-admin-brand">
+
+                <a href="admin.html" class="npl-admin-logo" aria-label="Stackly Legal Home">
+                    <img src="Stackly-logo-Blue.webp" alt="Stackly Legal Services">
+                </a>
+
+                <button type="button" class="npl-admin-mobile-close"
+                    id="nplAdminClose" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p class="npl-admin-sidebar-label">Workspace</p>
+
+            <nav class="npl-admin-nav" aria-label="Admin navigation">
+
+                <a href="admin.html"
+                    class="npl-admin-nav-link"
+                    aria-current="page">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-cases.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Legal Cases</span>
+                    <span class="npl-admin-nav-count">12</span>
+                </a>
+
+                <a href="admin-clients.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+
+                <a href="admin-appointments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="npl-admin-nav-count">5</span>
+                </a>
+
+                <a href="admin-documents.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documents</span>
+                </a>
+
+                <p class="npl-admin-sidebar-label">Management</p>
+
+                <a href="admin-notary.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-stamp"></i>
+                    <span>Notary Services</span>
+                </a>
+
+                <a href="admin-payments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                 
+                <p class="npl-admin-sidebar-label">Preferences</p>
+
+                <a href="admin-settings.html" class="npl-admin-nav-link npl-admin-active">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="npl-admin-sidebar-bottom">
+
+                 <div class="npl-admin-support-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Legal Support</h4>
+                    <p>Keep your legal operations organized and your client services running smoothly.</p>
+                </div>
+
+                <a href="index.html" class="npl-admin-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="npl-admin-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="npl-admin-topbar">
+
+                <div class="npl-admin-topbar-left">
+
+                    <button type="button" class="npl-admin-menu-toggle"
+                        id="nplAdminMenuToggle"
+                        aria-label="Open navigation menu"
+                        aria-controls="nplAdminSidebar"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="npl-admin-page-heading">
+                        <h1>Admin Dashboard</h1>
+                        <p>Manage your legal services workspace</p>
+                    </div>
+
+                </div>
+
+                <div class="npl-admin-topbar-right">
+
+                    <span class="npl-admin-topbar-date" id="nplAdminDate"></span>
+
+                    <a href="404-admin.html"><button type="button" class="npl-admin-notification"
+                        aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="npl-admin-notification-dot"></span>
+                    </button></a>
+
+                    <!-- ADMIN EMAIL TOP RIGHT -->
+
+                    <div class="npl-admin-profile">
+
+                        
+<div class="npl-admin-profile-info">
+    <strong id="nplAdminUserName">Administrator</strong>
+    <a href="mailto:admin@stacklylegal.com"
+       id="nplAdminUserEmail">
+        admin@stacklylegal.com
+    </a>
+</div>
+
+                        <div class="npl-admin-avatar" aria-hidden="true">
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+ 
+<!-- ==========================================
+     SETTINGS PAGE CONTENT
+========================================== -->
+
+<section class="npl-admin-settings">
+
+    <!-- PAGE INTRO -->
+    <div class="npl-settings-intro">
+        <div>
+            <span class="npl-settings-eyebrow">WORKSPACE PREFERENCES</span>
+            <h2>Settings</h2>
+            <p>Manage your account, notifications, security, and workspace preferences.</p>
+        </div>
+
+        <a href="404-client.html"><button type="button" class="npl-settings-save-btn">
+            <i class="fa-solid fa-check"></i>
+            Save Changes
+        </button></a>
+    </div>
+
+    <!-- SETTINGS OVERVIEW -->
+    <div class="npl-settings-overview">
+
+        <div class="npl-settings-overview-card">
+            <div class="npl-settings-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div>
+                <h3>Account</h3>
+                <p>Profile and personal information</p>
+            </div>
+        </div>
+
+        <div class="npl-settings-overview-card">
+            <div class="npl-settings-icon">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div>
+                <h3>Notifications</h3>
+                <p>Alerts and email preferences</p>
+            </div>
+        </div>
+
+        <div class="npl-settings-overview-card">
+            <div class="npl-settings-icon">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div>
+                <h3>Security</h3>
+                <p>Password and account protection</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ACCOUNT SETTINGS -->
+    <div class="npl-settings-card">
+        <div class="npl-settings-card-heading">
+            <div class="npl-settings-section-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div>
+                <h3>Account Information</h3>
+                <p>Update your administrator profile details.</p>
+            </div>
+        </div>
+
+        <form class="npl-settings-form">
+
+            <div class="npl-settings-form-grid">
+
+                <div class="npl-settings-field">
+                    <label for="nplSettingsName">Full Name</label>
+                    <input type="text"
+                           id="nplSettingsName"
+                           placeholder="Enter your full name">
+                </div>
+
+                <div class="npl-settings-field">
+                    <label for="nplSettingsEmail">Email Address</label>
+                    <input type="email"
+                           id="nplSettingsEmail"
+                           placeholder="Enter your email">
+                </div>
+
+                <div class="npl-settings-field">
+                    <label for="nplSettingsPhone">Phone Number</label>
+                    <input type="tel"
+                           id="nplSettingsPhone"
+                           placeholder="Enter your phone number">
+                </div>
+
+                <div class="npl-settings-field">
+                    <label for="nplSettingsRole">Account Role</label>
+                    <input type="text"
+                           id="nplSettingsRole"
+                           value="Administrator"
+                           readonly>
+                </div>
+
+            </div>
+
+            <div class="npl-settings-card-actions">
+                <button type="reset" class="npl-settings-reset-btn">
+                    Reset
+                </button>
+                <button type="button" class="npl-settings-primary-btn">
+                    Update Profile
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- NOTIFICATION SETTINGS -->
+    <div class="npl-settings-card">
+
+        <div class="npl-settings-card-heading">
+            <div class="npl-settings-section-icon">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div>
+                <h3>Notification Preferences</h3>
+                <p>Choose which updates you would like to receive.</p>
+            </div>
+        </div>
+
+        <div class="npl-settings-option">
+            <div>
+                <h4>Email Notifications</h4>
+                <p>Receive important updates through email.</p>
+            </div>
+            <label class="npl-settings-switch">
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="npl-settings-option">
+            <div>
+                <h4>Appointment Reminders</h4>
+                <p>Get notified about upcoming legal appointments.</p>
+            </div>
+            <label class="npl-settings-switch">
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="npl-settings-option">
+            <div>
+                <h4>Case Updates</h4>
+                <p>Receive alerts when case information changes.</p>
+            </div>
+            <label class="npl-settings-switch">
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="npl-settings-option">
+            <div>
+                <h4>Payment Notifications</h4>
+                <p>Receive updates about payments and invoices.</p>
+            </div>
+            <label class="npl-settings-switch">
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </div>
+
+    </div>
+
+    <!-- SECURITY SETTINGS -->
+    <div class="npl-settings-card">
+
+        <div class="npl-settings-card-heading">
+            <div class="npl-settings-section-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+                <h3>Security Settings</h3>
+                <p>Manage your password and account security.</p>
+            </div>
+        </div>
+
+        <div class="npl-settings-security-row">
+            <div class="npl-settings-security-icon">
+                <i class="fa-solid fa-key"></i>
+            </div>
+            <div class="npl-settings-security-info">
+                <h4>Change Password</h4>
+                <p>Update your password regularly to help protect your account.</p>
+            </div>
+            <a href="404-admin.html" class="npl-settings-secondary-btn">
+                Change Password
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="npl-settings-security-row">
+            <div class="npl-settings-security-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <div class="npl-settings-security-info">
+                <h4>Two-Factor Authentication</h4>
+                <p>Add an additional layer of protection to your account.</p>
+            </div>
+            <span class="npl-settings-status">Not Enabled</span>
+        </div>
+
+    </div>
+
+    <!-- WORKSPACE PREFERENCES -->
+    <div class="npl-settings-card">
+
+        <div class="npl-settings-card-heading">
+            <div class="npl-settings-section-icon">
+                <i class="fa-solid fa-sliders"></i>
+            </div>
+            <div>
+                <h3>Workspace Preferences</h3>
+                <p>Customize your dashboard preferences.</p>
+            </div>
+        </div>
+
+        <div class="npl-settings-form-grid">
+
+            <div class="npl-settings-field">
+                <label for="nplSettingsLanguage">Language</label>
+                <select id="nplSettingsLanguage">
+                    <option value="en">English</option>
+                    <option value="ta">Tamil</option>
+                </select>
+            </div>
+
+            <div class="npl-settings-field">
+                <label for="nplSettingsTimezone">Time Zone</label>
+                <select id="nplSettingsTimezone">
+                    <option value="Asia/Kolkata">India Standard Time (IST)</option>
+                    <option value="UTC">Coordinated Universal Time (UTC)</option>
+                </select>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DANGER ZONE -->
+    <div class="npl-settings-card npl-settings-danger-card">
+
+        <div class="npl-settings-card-heading">
+            <div class="npl-settings-section-icon npl-settings-danger-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+                <h3>Account Actions</h3>
+                <p>Manage your session and account access.</p>
+            </div>
+        </div>
+
+        <div class="npl-settings-option">
+            <div>
+                <h4>Sign Out</h4>
+                <p>Leave your administrator workspace securely.</p>
+            </div>
+            <a href="index.html" class="npl-settings-logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+    </div>
+
+    <!-- =========================================
+         MOBILE SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

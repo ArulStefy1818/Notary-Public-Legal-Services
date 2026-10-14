@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Client Dashboard to manage legal cases, appointments, documents, and client information.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+<div class="npl-client-dashboard">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="npl-client-overlay" id="nplClientOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="npl-client-sidebar" id="nplClientSidebar"
+        aria-label="Client dashboard navigation">
+
+        <div class="npl-client-brand">
+
+            <a href="client.html" class="npl-client-brand-link"
+                aria-label="Stackly Legal Services home">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Legal Services Logo"
+                    class="npl-client-logo">
+
+                 
+
+            </a>
+
+            <button type="button"
+                class="npl-client-mobile-close"
+                id="nplClientMobileClose"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        
+        <nav class="npl-client-nav">
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client.html"
+                class="npl-client-nav-link npl-client-nav-active"
+                aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="client-cases.html" class="npl-client-nav-link">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>My Legal Cases</span>
+            </a>
+
+            <a href="client-appointments.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="client-documents.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>My Documents</span>
+            </a>
+
+            <a href="client-messages.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-comments"></i>
+                <span>Messages</span>
+            </a>
+
+            <a href="client-billing.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Billing & Payments</span>
+            </a>
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client-profile.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="npl-client-sidebar-spacer"></div>
+
+        <div class="npl-client-help-card">
+            <div class="npl-client-help-icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <h4>Need legal assistance?</h4>
+
+            <p>Contact our legal team if you need help with your case or documents.</p>
+
+            <a href="404-client.html">
+                Contact Support <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        
+
+        <div class="npl-client-sidebar-bottom">
+
+            <a href="index.html"
+                class="npl-client-nav-link npl-client-logout"
+                id="nplClientLogout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="npl-client-main">
+
+        <!-- TOP BAR -->
+        <header class="npl-client-topbar">
+
+            <div class="npl-client-topbar-left">
+
+                <button type="button"
+                    class="npl-client-menu-button"
+                    id="nplClientMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="nplClientSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="npl-client-page-heading">
+                    <h1>Client Dashboard</h1>
+                    <p>Manage your legal matters in one place.</p>
+                </div>
+
+            </div>
+
+            <div class="npl-client-topbar-right">
+
+                <a href="404-client.html"><button type="button"
+                    class="npl-client-notification"
+                    aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="npl-client-notification-dot"></span>
+                </button></a>
+
+                <div class="npl-client-user">
+
+                    <div class="npl-client-user-info">
+                        <strong id="nplClientUserName">Client</strong>
+
+                        <a href="mailto:client@example.com"
+                            id="nplClientUserEmail">
+                            client@example.com
+                        </a>
+                    </div>
+
+                    <div class="npl-client-user-avatar"
+                        id="nplClientUserAvatar"
+                        aria-hidden="true">
+                        C
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <div class="npl-client-content">
+
+            <!-- WELCOME -->
+            <section class="npl-client-welcome">
+
+                <div>
+                    <h2>Welcome back, <span id="nplClientWelcomeName">Client</span></h2>
+
+                    <p>
+                        Here is an overview of your legal matters and upcoming activities.
+                    </p>
+                </div>
+
+                <a href="404-client.html"
+                    class="npl-client-primary-button">
+                    <i class="fa-solid fa-plus"></i>
+                    Book an Appointment
+                </a>
+
+            </section>
+
+            <!-- STAT CARDS -->
+            <section class="npl-client-stats"
+                aria-label="Legal services summary">
+
+                <article class="npl-client-stat-card">
+                    <div class="npl-client-stat-top">
+                        <div class="npl-client-stat-icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                    </div>
+
+                    <p class="npl-client-stat-label">My Legal Cases</p>
+                    <h3 class="npl-client-stat-value">03</h3>
+                    <p class="npl-client-stat-note">Cases in your workspace</p>
+                </article>
+
+                <article class="npl-client-stat-card">
+                    <div class="npl-client-stat-top">
+                        <div class="npl-client-stat-icon npl-client-icon-green">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                    </div>
+
+                    <p class="npl-client-stat-label">Active Cases</p>
+                    <h3 class="npl-client-stat-value">02</h3>
+                    <p class="npl-client-stat-note">Currently being handled</p>
+                </article>
+
+                <article class="npl-client-stat-card">
+                    <div class="npl-client-stat-top">
+                        <div class="npl-client-stat-icon npl-client-icon-blue">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+                    </div>
+
+                    <p class="npl-client-stat-label">Appointments</p>
+                    <h3 class="npl-client-stat-value">02</h3>
+                    <p class="npl-client-stat-note">Upcoming consultations</p>
+                </article>
+
+                <article class="npl-client-stat-card">
+                    <div class="npl-client-stat-top">
+                        <div class="npl-client-stat-icon npl-client-icon-orange">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                    </div>
+
+                    <p class="npl-client-stat-label">My Documents</p>
+                    <h3 class="npl-client-stat-value">08</h3>
+                    <p class="npl-client-stat-note">Documents in your workspace</p>
+                </article>
+
+            </section>
+
+            <!-- DASHBOARD GRID -->
+            <div class="npl-client-grid">
+
+                <!-- LEFT COLUMN -->
+                <div>
+
+                    <!-- LEGAL CASES -->
+                    <section class="npl-client-panel">
+
+                        <div class="npl-client-panel-header">
+                            <h3>My Legal Cases</h3>
+
+                            <a href="404-client.html"
+                                class="npl-client-view-link">
+                                View All <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="npl-client-table-wrap">
+
+                            <table class="npl-client-table">
+                                <thead>
+                                    <tr>
+                                        <th>Case Details</th>
+                                        <th>Case ID</th>
+                                        <th>Updated</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Property Documentation</strong>
+                                            <small>Property Law</small>
+                                        </td>
+                                        <td>NPL-2026-104</td>
+                                        <td>12 Oct 2026</td>
+                                        <td>
+                                            <span class="npl-client-status">
+                                                Active
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <strong>Notary Verification</strong>
+                                            <small>Notary Services</small>
+                                        </td>
+                                        <td>NPL-2026-098</td>
+                                        <td>10 Oct 2026</td>
+                                        <td>
+                                            <span class="npl-client-status npl-client-status-pending">
+                                                Pending
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <strong>Legal Agreement</strong>
+                                            <small>Document Review</small>
+                                        </td>
+                                        <td>NPL-2026-087</td>
+                                        <td>08 Oct 2026</td>
+                                        <td>
+                                            <span class="npl-client-status npl-client-status-review">
+                                                In Review
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </section>
+
+                    <!-- DOCUMENTS -->
+                    <section class="npl-client-panel">
+
+                        <div class="npl-client-panel-header">
+                            <h3>Recent Documents</h3>
+
+                            <a href="404-client.html"
+                                class="npl-client-view-link">
+                                View All <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="npl-client-document-list">
+
+                            <div class="npl-client-document">
+
+                                <div class="npl-client-document-icon">
+                                    <i class="fa-regular fa-file-pdf"></i>
+                                </div>
+
+                                <div class="npl-client-document-info">
+                                    <h4>Property_Agreement.pdf</h4>
+                                    <p>PDF Document · 12 Oct 2026</p>
+                                </div>
+
+                                <a href="404-client.html"
+                                    class="npl-client-document-action"
+                                    aria-label="View property agreement">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                            </div>
+
+                            <div class="npl-client-document">
+
+                                <div class="npl-client-document-icon">
+                                    <i class="fa-regular fa-file-lines"></i>
+                                </div>
+
+                                <div class="npl-client-document-info">
+                                    <h4>Verification_Report.pdf</h4>
+                                    <p>PDF Document · 10 Oct 2026</p>
+                                </div>
+
+                                <a href="404-client.html"
+                                    class="npl-client-document-action"
+                                    aria-label="View verification report">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                            </div>
+
+                            <div class="npl-client-document">
+
+                                <div class="npl-client-document-icon">
+                                    <i class="fa-regular fa-file-word"></i>
+                                </div>
+
+                                <div class="npl-client-document-info">
+                                    <h4>Legal_Review.docx</h4>
+                                    <p>Word Document · 08 Oct 2026</p>
+                                </div>
+
+                                <a href="404-client.html"
+                                    class="npl-client-document-action"
+                                    aria-label="View legal review">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div>
+
+                    <!-- APPOINTMENTS -->
+                    <section class="npl-client-panel">
+
+                        <div class="npl-client-panel-header">
+                            <h3>Upcoming Appointments</h3>
+
+                            <a href="404-client.html"
+                                class="npl-client-view-link">
+                                View All
+                            </a>
+                        </div>
+
+                        <div class="npl-client-appointment-list">
+
+                            <article class="npl-client-appointment">
+
+                                <div class="npl-client-date-box">
+                                    <span>Oct</span>
+                                    <strong>15</strong>
+                                </div>
+
+                                <div class="npl-client-appointment-info">
+                                    <h4>Legal Consultation</h4>
+                                    <p>
+                                        <i class="fa-regular fa-clock"></i>
+                                        10:30 AM
+                                    </p>
+                                    <p>
+                                        <i class="fa-regular fa-user"></i>
+                                        Legal Consultant
+                                    </p>
+                                </div>
+
+                            </article>
+
+                            <article class="npl-client-appointment">
+
+                                <div class="npl-client-date-box">
+                                    <span>Oct</span>
+                                    <strong>19</strong>
+                                </div>
+
+                                <div class="npl-client-appointment-info">
+                                    <h4>Document Verification</h4>
+                                    <p>
+                                        <i class="fa-regular fa-clock"></i>
+                                        02:00 PM
+                                    </p>
+                                    <p>
+                                        <i class="fa-regular fa-user"></i>
+                                        Notary Specialist
+                                    </p>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+                    <!-- QUICK ACTIONS -->
+                    <section class="npl-client-panel">
+
+                        <div class="npl-client-panel-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+
+                        <div class="npl-client-quick-actions">
+
+                            <a href="404-client.html"
+                                class="npl-client-quick-action">
+                                <i class="fa-regular fa-calendar-plus"></i>
+                                <span>Book Appointment</span>
+                            </a>
+
+                            <a href="404-client.html"
+                                class="npl-client-quick-action">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <span>My Documents</span>
+                            </a>
+
+                            <a href="404-client.html"
+                                class="npl-client-quick-action">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                                <span>Track My Case</span>
+                            </a>
+
+                            <a href="404-client.html"
+                                class="npl-client-quick-action">
+                                <i class="fa-regular fa-message"></i>
+                                <span>Contact Support</span>
+                            </a>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+ 
+
+        </div>
+
+        
+    </main>
+
+</div>
+
+<script src="client.js"></script>
+
+</body>
+</html>

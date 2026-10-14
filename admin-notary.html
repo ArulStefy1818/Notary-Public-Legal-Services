@@ -1,0 +1,916 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Admin Dashboard for managing clients, legal cases, appointments, and documents.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="npl-admin-dashboard">
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div class="npl-admin-overlay" id="nplAdminOverlay"></div>
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="npl-admin-sidebar" id="nplAdminSidebar">
+
+            <div class="npl-admin-brand">
+
+                <a href="admin.html" class="npl-admin-logo" aria-label="Stackly Legal Home">
+                    <img src="Stackly-logo-Blue.webp" alt="Stackly Legal Services">
+                </a>
+
+                <button type="button" class="npl-admin-mobile-close"
+                    id="nplAdminClose" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p class="npl-admin-sidebar-label">Workspace</p>
+
+            <nav class="npl-admin-nav" aria-label="Admin navigation">
+
+                <a href="admin.html"
+                    class="npl-admin-nav-link"
+                    aria-current="page">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-cases.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Legal Cases</span>
+                    <span class="npl-admin-nav-count">12</span>
+                </a>
+
+                <a href="admin-clients.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+
+                <a href="admin-appointments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="npl-admin-nav-count">5</span>
+                </a>
+
+                <a href="admin-documents.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documents</span>
+                </a>
+
+                <p class="npl-admin-sidebar-label">Management</p>
+
+                <a href="admin-notary.html" class="npl-admin-nav-link npl-admin-active">
+                    <i class="fa-solid fa-stamp"></i>
+                    <span>Notary Services</span>
+                </a>
+
+                <a href="admin-payments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                 
+                <p class="npl-admin-sidebar-label">Preferences</p>
+
+                <a href="admin-settings.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="npl-admin-sidebar-bottom">
+
+                 <div class="npl-admin-support-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Legal Support</h4>
+                    <p>Keep your legal operations organized and your client services running smoothly.</p>
+                </div>
+
+                <a href="index.html" class="npl-admin-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="npl-admin-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="npl-admin-topbar">
+
+                <div class="npl-admin-topbar-left">
+
+                    <button type="button" class="npl-admin-menu-toggle"
+                        id="nplAdminMenuToggle"
+                        aria-label="Open navigation menu"
+                        aria-controls="nplAdminSidebar"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="npl-admin-page-heading">
+                        <h1>Admin Dashboard</h1>
+                        <p>Manage your legal services workspace</p>
+                    </div>
+
+                </div>
+
+                <div class="npl-admin-topbar-right">
+
+                    <span class="npl-admin-topbar-date" id="nplAdminDate"></span>
+
+                    <a href="404-admin.html"><button type="button" class="npl-admin-notification"
+                        aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="npl-admin-notification-dot"></span>
+                    </button></a>
+
+                    <!-- ADMIN EMAIL TOP RIGHT -->
+
+                    <div class="npl-admin-profile">
+
+                        
+<div class="npl-admin-profile-info">
+    <strong id="nplAdminUserName">Administrator</strong>
+    <a href="mailto:admin@stacklylegal.com"
+       id="nplAdminUserEmail">
+        admin@stacklylegal.com
+    </a>
+</div>
+
+                        <div class="npl-admin-avatar" aria-hidden="true">
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+<!-- =========================================
+     NOTARY SERVICES WORKSPACE
+========================================= -->
+
+<section class="npl-notary-workspace">
+
+    <!-- PAGE INTRO -->
+    <div class="npl-notary-intro">
+        <div class="npl-notary-intro-content">
+            <span class="npl-notary-eyebrow">
+                <i class="fa-solid fa-stamp"></i>
+                NOTARY MANAGEMENT
+            </span>
+
+            <h2>Notary Services</h2>
+
+            <p>
+                Manage notarization requests, verify legal documents,
+                and keep every certification organized in one place.
+            </p>
+
+            <div class="npl-notary-intro-meta">
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Document Workflow
+                </span>
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    Track Every Request
+                </span>
+            </div>
+        </div>
+
+        <div class="npl-notary-intro-actions">
+            <a href="404-admin.html" class="npl-notary-btn npl-notary-btn-outline">
+                <i class="fa-solid fa-list-check"></i>
+                View Requests
+            </a>
+
+            <a href="404-admin.html"><button type="button" class="npl-notary-btn npl-notary-btn-primary"
+                id="nplNotaryNewRequest">
+                <i class="fa-solid fa-plus"></i>
+                New Request
+            </button></a>
+        </div>
+    </div>
+
+
+    <!-- OVERVIEW STATISTICS -->
+    <div class="npl-notary-stats">
+
+        <article class="npl-notary-stat-card">
+            <div class="npl-notary-stat-top">
+                <span>Total Requests</span>
+                <span class="npl-notary-stat-icon npl-notary-icon-green">
+                    <i class="fa-solid fa-folder-open"></i>
+                </span>
+            </div>
+
+            <h3>248</h3>
+
+            <div class="npl-notary-stat-bottom">
+                <span class="npl-notary-stat-trend">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    12.8%
+                </span>
+                <span>vs. last month</span>
+            </div>
+        </article>
+
+        <article class="npl-notary-stat-card">
+            <div class="npl-notary-stat-top">
+                <span>Awaiting Review</span>
+                <span class="npl-notary-stat-icon npl-notary-icon-gold">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                </span>
+            </div>
+
+            <h3>18</h3>
+
+            <div class="npl-notary-stat-bottom">
+                <span class="npl-notary-stat-neutral">
+                    <i class="fa-solid fa-clock"></i>
+                    Pending
+                </span>
+                <span>Require attention</span>
+            </div>
+        </article>
+
+        <article class="npl-notary-stat-card">
+            <div class="npl-notary-stat-top">
+                <span>Completed</span>
+                <span class="npl-notary-stat-icon npl-notary-icon-blue">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </span>
+            </div>
+
+            <h3>196</h3>
+
+            <div class="npl-notary-stat-bottom">
+                <span class="npl-notary-stat-trend">
+                    <i class="fa-solid fa-check"></i>
+                    Completed
+                </span>
+                <span>This month</span>
+            </div>
+        </article>
+
+        <article class="npl-notary-stat-card">
+            <div class="npl-notary-stat-top">
+                <span>Scheduled Today</span>
+                <span class="npl-notary-stat-icon npl-notary-icon-purple">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </span>
+            </div>
+
+            <h3>08</h3>
+
+            <div class="npl-notary-stat-bottom">
+                <span class="npl-notary-stat-neutral">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    Appointments
+                </span>
+                <span>Today's schedule</span>
+            </div>
+        </article>
+
+    </div>
+
+
+    <!-- SERVICE CATALOG -->
+    <section class="npl-notary-section">
+        <div class="npl-notary-section-heading">
+            <div>
+                <span class="npl-notary-section-label">SERVICE DIRECTORY</span>
+                <h3>Notarial Service Categories</h3>
+                <p>Manage the main services offered to your clients.</p>
+            </div>
+
+            <a href="404-admin.html" class="npl-notary-text-link">
+                Manage services
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="npl-notary-service-grid">
+
+            <article class="npl-notary-service-card">
+                <div class="npl-notary-service-top">
+                    <span class="npl-notary-service-icon npl-notary-icon-green">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </span>
+                    <span class="npl-notary-service-indicator">Active</span>
+                </div>
+
+                <h4>Document Notarization</h4>
+                <p>Manage document authentication and notarization requests.</p>
+
+                <div class="npl-notary-service-footer">
+                    <span><strong>64</strong> requests</span>
+                    <a href="404-admin.html" aria-label="View document notarization requests">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="npl-notary-service-card">
+                <div class="npl-notary-service-top">
+                    <span class="npl-notary-service-icon npl-notary-icon-gold">
+                        <i class="fa-solid fa-signature"></i>
+                    </span>
+                    <span class="npl-notary-service-indicator">Active</span>
+                </div>
+
+                <h4>Signature Verification</h4>
+                <p>Organize identity checks and signature verification workflows.</p>
+
+                <div class="npl-notary-service-footer">
+                    <span><strong>42</strong> requests</span>
+                    <a href="404-admin.html" aria-label="View signature verification requests">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="npl-notary-service-card">
+                <div class="npl-notary-service-top">
+                    <span class="npl-notary-service-icon npl-notary-icon-blue">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </span>
+                    <span class="npl-notary-service-indicator">Active</span>
+                </div>
+
+                <h4>Affidavits & Declarations</h4>
+                <p>Track affidavits, sworn statements, and declarations.</p>
+
+                <div class="npl-notary-service-footer">
+                    <span><strong>38</strong> requests</span>
+                    <a href="404-admin.html" aria-label="View affidavit requests">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="npl-notary-service-card">
+                <div class="npl-notary-service-top">
+                    <span class="npl-notary-service-icon npl-notary-icon-purple">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+                    <span class="npl-notary-service-indicator">Active</span>
+                </div>
+
+                <h4>Power of Attorney Services</h4>
+                <p>Organize power of attorney document review and appointments.</p>
+
+                <div class="npl-notary-service-footer">
+                    <span><strong>27</strong> requests</span>
+                    <a href="404-admin.html" aria-label="View power of attorney requests">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- WORKFLOW AND QUICK ACTIONS -->
+    <div class="npl-notary-management-grid">
+
+        <!-- WORKFLOW -->
+        <section class="npl-notary-panel">
+            <div class="npl-notary-panel-heading">
+                <div>
+                    <span class="npl-notary-section-label">WORKFLOW OVERVIEW</span>
+                    <h3>Request Progress</h3>
+                </div>
+
+                <span class="npl-notary-heading-icon">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </span>
+            </div>
+
+            <div class="npl-notary-workflow">
+
+                <div class="npl-notary-workflow-item">
+                    <span class="npl-notary-workflow-number">01</span>
+
+                    <div class="npl-notary-workflow-info">
+                        <h4>Request Received</h4>
+                        <p>Client submits documents and service details.</p>
+                    </div>
+
+                    <span class="npl-notary-workflow-count">18</span>
+                </div>
+
+                <div class="npl-notary-workflow-item">
+                    <span class="npl-notary-workflow-number">02</span>
+
+                    <div class="npl-notary-workflow-info">
+                        <h4>Document Review</h4>
+                        <p>Check documents for completeness and requirements.</p>
+                    </div>
+
+                    <span class="npl-notary-workflow-count">12</span>
+                </div>
+
+                <div class="npl-notary-workflow-item">
+                    <span class="npl-notary-workflow-number">03</span>
+
+                    <div class="npl-notary-workflow-info">
+                        <h4>Appointment Scheduled</h4>
+                        <p>Coordinate the appointment and identity checks.</p>
+                    </div>
+
+                    <span class="npl-notary-workflow-count">09</span>
+                </div>
+
+                <div class="npl-notary-workflow-item">
+                    <span class="npl-notary-workflow-number">04</span>
+
+                    <div class="npl-notary-workflow-info">
+                        <h4>Completed & Archived</h4>
+                        <p>Record completed services and archive documents.</p>
+                    </div>
+
+                    <span class="npl-notary-workflow-count">196</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="npl-notary-panel npl-notary-quick-panel">
+            <div class="npl-notary-panel-heading">
+                <div>
+                    <span class="npl-notary-section-label">QUICK ACCESS</span>
+                    <h3>Workspace Actions</h3>
+                </div>
+
+                <span class="npl-notary-heading-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+            </div>
+
+            <div class="npl-notary-quick-actions">
+
+                <a href="404-admin.html" class="npl-notary-quick-action">
+                    <span class="npl-notary-quick-icon">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                    </span>
+
+                    <span>
+                        <strong>Schedule Appointment</strong>
+                        <small>Manage upcoming consultations</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right npl-notary-quick-arrow"></i>
+                </a>
+
+                <a href="404-admin.html" class="npl-notary-quick-action">
+                    <span class="npl-notary-quick-icon">
+                        <i class="fa-solid fa-folder-plus"></i>
+                    </span>
+
+                    <span>
+                        <strong>Document Library</strong>
+                        <small>Access stored legal documents</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right npl-notary-quick-arrow"></i>
+                </a>
+
+                <a href="404-admin.html" class="npl-notary-quick-action">
+                    <span class="npl-notary-quick-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </span>
+
+                    <span>
+                        <strong>Client Verification</strong>
+                        <small>Review client information</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right npl-notary-quick-arrow"></i>
+                </a>
+
+                <a href="404-admin.html" class="npl-notary-quick-action">
+                    <span class="npl-notary-quick-icon">
+                        <i class="fa-solid fa-receipt"></i>
+                    </span>
+
+                    <span>
+                        <strong>Service Payments</strong>
+                        <small>Review service payment records</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right npl-notary-quick-arrow"></i>
+                </a>
+
+            </div>
+
+            <div class="npl-notary-security-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p>
+                    <strong>Confidentiality matters</strong>
+                    <span>Keep client records and legal documents accessible only to authorized personnel.</span>
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- RECENT NOTARY REQUESTS -->
+    <section class="npl-notary-panel npl-notary-requests-panel"
+        id="nplNotaryRequests">
+
+        <div class="npl-notary-panel-heading npl-notary-requests-heading">
+            <div>
+                <span class="npl-notary-section-label">REQUEST MANAGEMENT</span>
+                <h3>Recent Notarization Requests</h3>
+                <p>Review and track the latest service requests.</p>
+            </div>
+
+            <div class="npl-notary-request-heading-actions">
+                <label class="npl-notary-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="nplNotarySearch"
+                        placeholder="Search requests..."
+                        aria-label="Search notary requests">
+                </label>
+
+                <select id="nplNotaryStatusFilter"
+                    class="npl-notary-status-filter"
+                    aria-label="Filter requests by status">
+                    <option value="all">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Review">In Review</option>
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="npl-notary-table-wrap">
+            <table class="npl-notary-table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Client</th>
+                        <th>Service Type</th>
+                        <th>Submitted</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="nplNotaryRequestsBody">
+
+                    <tr data-status="Pending">
+                        <td>
+                            <span class="npl-notary-request-id">NOT-1024</span>
+                        </td>
+
+                        <td>
+                            <div class="npl-notary-client">
+                                <span class="npl-notary-client-avatar npl-notary-avatar-one">RK</span>
+                                <span>
+                                    <strong>Rahul Kumar</strong>
+                                    <small>rahul.k@example.com</small>
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>Document Notarization</td>
+                        <td>12 Oct 2026</td>
+
+                        <td>
+                            <span class="npl-notary-priority npl-notary-priority-high">
+                                <span></span> High
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="npl-notary-status npl-notary-status-pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"><button type="button"
+                                class="npl-notary-row-action"
+                                data-request="NOT-1024"
+                                aria-label="View request NOT-1024">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="In Review">
+                        <td>
+                            <span class="npl-notary-request-id">NOT-1023</span>
+                        </td>
+
+                        <td>
+                            <div class="npl-notary-client">
+                                <span class="npl-notary-client-avatar npl-notary-avatar-two">PS</span>
+                                <span>
+                                    <strong>Priya Sharma</strong>
+                                    <small>priya.s@example.com</small>
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>Signature Verification</td>
+                        <td>11 Oct 2026</td>
+
+                        <td>
+                            <span class="npl-notary-priority npl-notary-priority-medium">
+                                <span></span> Medium
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="npl-notary-status npl-notary-status-review">
+                                In Review
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"><button type="button"
+                                class="npl-notary-row-action"
+                                data-request="NOT-1024"
+                                aria-label="View request NOT-1024">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="Scheduled">
+                        <td>
+                            <span class="npl-notary-request-id">NOT-1022</span>
+                        </td>
+
+                        <td>
+                            <div class="npl-notary-client">
+                                <span class="npl-notary-client-avatar npl-notary-avatar-three">AM</span>
+                                <span>
+                                    <strong>Ananya Menon</strong>
+                                    <small>ananya.m@example.com</small>
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>Power of Attorney</td>
+                        <td>10 Oct 2026</td>
+
+                        <td>
+                            <span class="npl-notary-priority npl-notary-priority-high">
+                                <span></span> High
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="npl-notary-status npl-notary-status-scheduled">
+                                Scheduled
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"><button type="button"
+                                class="npl-notary-row-action"
+                                data-request="NOT-1024"
+                                aria-label="View request NOT-1024">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="Completed">
+                        <td>
+                            <span class="npl-notary-request-id">NOT-1021</span>
+                        </td>
+
+                        <td>
+                            <div class="npl-notary-client">
+                                <span class="npl-notary-client-avatar npl-notary-avatar-four">DV</span>
+                                <span>
+                                    <strong>Deepak Verma</strong>
+                                    <small>deepak.v@example.com</small>
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>Affidavit & Declaration</td>
+                        <td>09 Oct 2026</td>
+
+                        <td>
+                            <span class="npl-notary-priority npl-notary-priority-low">
+                                <span></span> Low
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="npl-notary-status npl-notary-status-completed">
+                                Completed
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"><button type="button"
+                                class="npl-notary-row-action"
+                                data-request="NOT-1024"
+                                aria-label="View request NOT-1024">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="npl-notary-empty-state" id="nplNotaryEmptyState" hidden>
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>No requests found</h4>
+                <p>Try changing your search or status filter.</p>
+            </div>
+        </div>
+
+        <div class="npl-notary-table-footer">
+            <span>Showing <strong id="nplNotaryVisibleCount">4</strong> requests</span>
+            <a href="404-admin.html" class="npl-notary-text-link">
+                View all requests
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- BOTTOM INFORMATION CARDS -->
+    <div class="npl-notary-bottom-grid">
+
+        <article class="npl-notary-info-card">
+            <div class="npl-notary-info-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div>
+                <span class="npl-notary-section-label">UPCOMING</span>
+                <h3>Today's Appointments</h3>
+                <p>8 appointments are scheduled for today. Review the schedule before each client visit.</p>
+                <a href="404-admin.html">
+                    Open calendar
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+
+        <article class="npl-notary-info-card npl-notary-info-gold">
+            <div class="npl-notary-info-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+
+            <div>
+                <span class="npl-notary-section-label">QUALITY CONTROL</span>
+                <h3>Review Checklist</h3>
+                <p>Confirm identity, required documents, signatures, and applicable notarial procedures.</p>
+                <a href="404-admin.html">
+                    Review requests
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- NEW NOTARY REQUEST MODAL -->
+<div class="npl-notary-modal" id="nplNotaryModal"
+    aria-hidden="true">
+
+    <div class="npl-notary-modal-backdrop" data-notary-close></div>
+
+    <div class="npl-notary-modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="nplNotaryModalTitle">
+
+        <div class="npl-notary-modal-heading">
+            <div>
+                <span class="npl-notary-section-label">REQUEST MANAGEMENT</span>
+                <h3 id="nplNotaryModalTitle">Create Notary Request</h3>
+                <p>Add a new request to the workspace.</p>
+            </div>
+
+            <button type="button" class="npl-notary-modal-close"
+                data-notary-close aria-label="Close dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="nplNotaryRequestForm">
+
+            <div class="npl-notary-form-group">
+                <label for="nplNotaryClientName">Client Name</label>
+                <input type="text" id="nplNotaryClientName"
+                    name="clientName" placeholder="Enter client name" required>
+            </div>
+
+            <div class="npl-notary-form-group">
+                <label for="nplNotaryClientEmail">Client Email</label>
+                <input type="email" id="nplNotaryClientEmail"
+                    name="clientEmail" placeholder="client@example.com" required>
+            </div>
+
+            <div class="npl-notary-form-group">
+                <label for="nplNotaryServiceType">Service Type</label>
+                <select id="nplNotaryServiceType" name="serviceType" required>
+                    <option value="">Select a service</option>
+                    <option>Document Notarization</option>
+                    <option>Signature Verification</option>
+                    <option>Affidavit & Declaration</option>
+                    <option>Power of Attorney</option>
+                </select>
+            </div>
+
+            <div class="npl-notary-form-group">
+                <label for="nplNotaryPriority">Priority</label>
+                <select id="nplNotaryPriority" name="priority" required>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <div class="npl-notary-form-actions">
+                <button type="button" class="npl-notary-btn npl-notary-btn-outline"
+                    data-notary-close>
+                    Cancel
+                </button>
+
+                <button type="submit" class="npl-notary-btn npl-notary-btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Request
+                </button>
+            </div>
+
+            <p class="npl-notary-form-message" id="nplNotaryFormMessage"
+                role="status" hidden></p>
+
+        </form>
+    </div>
+</div>
+
+</main>
+
+    </div>
+
+    <!-- =========================================
+         MOBILE SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

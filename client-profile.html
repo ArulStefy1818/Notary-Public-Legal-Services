@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Client Dashboard to manage legal cases, appointments, documents, and client information.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+<div class="npl-client-dashboard">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="npl-client-overlay" id="nplClientOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="npl-client-sidebar" id="nplClientSidebar"
+        aria-label="Client dashboard navigation">
+
+        <div class="npl-client-brand">
+
+            <a href="client.html" class="npl-client-brand-link"
+                aria-label="Stackly Legal Services home">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Legal Services Logo"
+                    class="npl-client-logo">
+
+                 
+
+            </a>
+
+            <button type="button"
+                class="npl-client-mobile-close"
+                id="nplClientMobileClose"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        
+        <nav class="npl-client-nav">
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client.html"
+                class="npl-client-nav-link"
+                aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="client-cases.html" class="npl-client-nav-link">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>My Legal Cases</span>
+            </a>
+
+            <a href="client-appointments.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="client-documents.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>My Documents</span>
+            </a>
+
+            <a href="client-messages.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-comments"></i>
+                <span>Messages</span>
+            </a>
+
+            <a href="client-billing.html" class="npl-client-nav-link">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Billing & Payments</span>
+            </a>
+
+            <p class="npl-client-nav-label">Client Workspace</p>
+
+            <a href="client-profile.html" class="npl-client-nav-link npl-client-nav-active">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="npl-client-sidebar-spacer"></div>
+
+        <div class="npl-client-help-card">
+            <div class="npl-client-help-icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <h4>Need legal assistance?</h4>
+
+            <p>Contact our legal team if you need help with your case or documents.</p>
+
+            <a href="404-client.html">
+                Contact Support <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        
+
+        <div class="npl-client-sidebar-bottom">
+
+            <a href="index.html"
+                class="npl-client-nav-link npl-client-logout"
+                id="nplClientLogout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="npl-client-main">
+
+        <!-- TOP BAR -->
+        <header class="npl-client-topbar">
+
+            <div class="npl-client-topbar-left">
+
+                <button type="button"
+                    class="npl-client-menu-button"
+                    id="nplClientMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="nplClientSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="npl-client-page-heading">
+                    <h1>Client Dashboard</h1>
+                    <p>Manage your legal matters in one place.</p>
+                </div>
+
+            </div>
+
+            <div class="npl-client-topbar-right">
+
+                <a href="404-client.html"><button type="button"
+                    class="npl-client-notification"
+                    aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="npl-client-notification-dot"></span>
+                </button></a>
+
+                <div class="npl-client-user">
+
+                    <div class="npl-client-user-info">
+                        <strong id="nplClientUserName">Client</strong>
+
+                        <a href="mailto:client@example.com"
+                            id="nplClientUserEmail">
+                            client@example.com
+                        </a>
+                    </div>
+
+                    <div class="npl-client-user-avatar"
+                        id="nplClientUserAvatar"
+                        aria-hidden="true">
+                        C
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- ==========================================
+     STACKLY LEGAL SERVICES
+     CLIENT PROFILE PAGE
+========================================== -->
+
+<section class="npl-profile-page">
+
+    <!-- PROFILE PAGE HEADING -->
+    <div class="npl-profile-heading">
+        <div>
+            <span class="npl-profile-eyebrow">
+                <i class="fa-regular fa-user"></i>
+                PERSONAL WORKSPACE
+            </span>
+
+            <h2>My Profile</h2>
+
+            <p>Manage your personal information and account preferences.</p>
+        </div>
+
+        <a href="404-client.html" class="npl-profile-edit-main">
+            <i class="fa-solid fa-pen-to-square"></i>
+            Edit Profile
+        </a>
+    </div>
+
+    <!-- PROFILE OVERVIEW -->
+    <section class="npl-profile-overview">
+
+        <div class="npl-profile-cover">
+            <div class="npl-profile-cover-pattern"></div>
+
+            <span class="npl-profile-member-tag">
+                <i class="fa-solid fa-shield-halved"></i>
+                Verified Client
+            </span>
+        </div>
+
+        <div class="npl-profile-overview-content">
+
+            <div class="npl-profile-avatar-large">
+                <span id="nplProfileAvatarLetter">C</span>
+                <span class="npl-profile-online-dot"></span>
+            </div>
+
+            <div class="npl-profile-overview-info">
+                <h3 id="nplProfileName">Client Name</h3>
+
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    <span id="nplProfileEmail">client@example.com</span>
+                </p>
+
+                <span class="npl-profile-client-id">
+                    Client ID: NPL-CL-014
+                </span>
+            </div>
+
+            <div class="npl-profile-member-since">
+                <span>MEMBER SINCE</span>
+                <strong>January 2026</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROFILE QUICK STATS -->
+    <div class="npl-profile-stats">
+
+        <article class="npl-profile-stat">
+            <div class="npl-profile-stat-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+                <span>Legal Cases</span>
+                <h3>04</h3>
+                <p>Case records</p>
+            </div>
+        </article>
+
+        <article class="npl-profile-stat">
+            <div class="npl-profile-stat-icon npl-profile-stat-gold">
+                <i class="fa-regular fa-calendar-check"></i>
+            </div>
+
+            <div>
+                <span>Appointments</span>
+                <h3>08</h3>
+                <p>Total scheduled</p>
+            </div>
+        </article>
+
+        <article class="npl-profile-stat">
+            <div class="npl-profile-stat-icon npl-profile-stat-blue">
+                <i class="fa-regular fa-folder-open"></i>
+            </div>
+
+            <div>
+                <span>Documents</span>
+                <h3>12</h3>
+                <p>Stored records</p>
+            </div>
+        </article>
+
+        <article class="npl-profile-stat">
+            <div class="npl-profile-stat-icon npl-profile-stat-purple">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+                <span>Account Status</span>
+                <h3 class="npl-profile-status-text">Active</h3>
+                <p>Account available</p>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- PERSONAL INFORMATION + CONTACT DETAILS -->
+    <div class="npl-profile-content-grid">
+
+        <!-- PERSONAL INFORMATION -->
+        <section class="npl-profile-card">
+
+            <div class="npl-profile-card-heading">
+                <div class="npl-profile-card-title-icon">
+                    <i class="fa-regular fa-address-card"></i>
+                </div>
+
+                <div>
+                    <h3>Personal Information</h3>
+                    <p>Your basic identity details</p>
+                </div>
+
+                <a href="404-client.html"
+                   class="npl-profile-small-edit"
+                   aria-label="Edit personal information">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+            </div>
+
+            <div class="npl-profile-info-list">
+
+                <div class="npl-profile-info-row">
+                    <span>Full Name</span>
+                    <strong id="nplProfileFullName">Client Name</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>Date of Birth</span>
+                    <strong>Not provided</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>Gender</span>
+                    <strong>Not provided</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>Occupation</span>
+                    <strong>Not provided</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>Preferred Language</span>
+                    <strong>English</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT INFORMATION -->
+        <section class="npl-profile-card">
+
+            <div class="npl-profile-card-heading">
+                <div class="npl-profile-card-title-icon npl-profile-icon-gold">
+                    <i class="fa-solid fa-address-book"></i>
+                </div>
+
+                <div>
+                    <h3>Contact Information</h3>
+                    <p>How our legal team reaches you</p>
+                </div>
+
+                <a href="404-client.html"
+                   class="npl-profile-small-edit"
+                   aria-label="Edit contact information">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+            </div>
+
+            <div class="npl-profile-info-list">
+
+                <div class="npl-profile-info-row">
+                    <span>Email Address</span>
+                    <strong id="nplProfileInfoEmail">client@example.com</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>Phone Number</span>
+                    <strong>Not provided</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>City</span>
+                    <strong>Not provided</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>State</span>
+                    <strong>Not provided</strong>
+                </div>
+
+                <div class="npl-profile-info-row">
+                    <span>Country</span>
+                    <strong>India</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- LEGAL PREFERENCES -->
+    <section class="npl-profile-card npl-profile-preferences">
+
+        <div class="npl-profile-card-heading">
+            <div class="npl-profile-card-title-icon npl-profile-icon-purple">
+                <i class="fa-solid fa-sliders"></i>
+            </div>
+
+            <div>
+                <h3>Legal Service Preferences</h3>
+                <p>Personalize your client experience</p>
+            </div>
+        </div>
+
+        <div class="npl-profile-preference-grid">
+
+            <article class="npl-profile-preference">
+                <div class="npl-profile-preference-icon">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+
+                <div>
+                    <h4>Preferred Language</h4>
+                    <p>Choose the language for communication.</p>
+                    <strong>English</strong>
+                </div>
+
+                <a href="404-client.html"
+                   aria-label="Update preferred language">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </article>
+
+            <article class="npl-profile-preference">
+                <div class="npl-profile-preference-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <div>
+                    <h4>Contact Preference</h4>
+                    <p>Select how you prefer to be contacted.</p>
+                    <strong>Email Communication</strong>
+                </div>
+
+                <a href="404-client.html"
+                   aria-label="Update contact preference">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </article>
+
+            <article class="npl-profile-preference">
+                <div class="npl-profile-preference-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+
+                <div>
+                    <h4>Case Notifications</h4>
+                    <p>Receive updates about legal matters.</p>
+                    <strong>Email Updates</strong>
+                </div>
+
+                <a href="404-client.html"
+                   aria-label="Update notification preferences">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </article>
+
+            <article class="npl-profile-preference">
+                <div class="npl-profile-preference-icon">
+                    <i class="fa-solid fa-file-shield"></i>
+                </div>
+
+                <div>
+                    <h4>Document Privacy</h4>
+                    <p>Review your legal document privacy settings.</p>
+                    <strong>Private Client Records</strong>
+                </div>
+
+                <a href="404-client.html"
+                   aria-label="Review document privacy settings">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- ACCOUNT SECURITY -->
+    <section class="npl-profile-security">
+
+        <div class="npl-profile-security-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div class="npl-profile-security-content">
+            <span>ACCOUNT PROTECTION</span>
+            <h3>Keep Your Account Secure</h3>
+
+            <p>
+                Protect your personal information and legal documents.
+                Review your password and account security settings regularly.
+            </p>
+        </div>
+
+        <a href="404-client.html" class="npl-profile-security-btn">
+            Security Settings
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+    <!-- RECENT ACCOUNT ACTIVITY -->
+    <section class="npl-profile-card npl-profile-activity">
+
+        <div class="npl-profile-card-heading">
+            <div class="npl-profile-card-title-icon">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+
+            <div>
+                <h3>Recent Account Activity</h3>
+                <p>A quick overview of your recent account events</p>
+            </div>
+        </div>
+
+        <div class="npl-profile-activity-list">
+
+            <article class="npl-profile-activity-item">
+                <div class="npl-profile-activity-icon">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+
+                <div class="npl-profile-activity-info">
+                    <h4>Client Profile Created</h4>
+                    <p>Your client profile was registered successfully.</p>
+                </div>
+
+                <span class="npl-profile-activity-date">
+                    Jan 2026
+                </span>
+            </article>
+
+            <article class="npl-profile-activity-item">
+                <div class="npl-profile-activity-icon npl-profile-activity-gold">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <div class="npl-profile-activity-info">
+                    <h4>Legal Documents Added</h4>
+                    <p>Documents were added to your client workspace.</p>
+                </div>
+
+                <span class="npl-profile-activity-date">
+                    Recent
+                </span>
+            </article>
+
+            <article class="npl-profile-activity-item">
+                <div class="npl-profile-activity-icon npl-profile-activity-blue">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="npl-profile-activity-info">
+                    <h4>Account Security</h4>
+                    <p>Review your security settings to help protect your account.</p>
+                </div>
+
+                <a href="404-client.html" class="npl-profile-activity-link">
+                    Review
+                </a>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- PROFILE SUPPORT -->
+    <section class="npl-profile-support">
+
+        <div class="npl-profile-support-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="npl-profile-support-content">
+            <h3>Need Help Updating Your Profile?</h3>
+            <p>
+                Contact our support team if you need assistance with your
+                account information or client details.
+            </p>
+        </div>
+
+        <a href="404-client.html" class="npl-profile-support-btn">
+            Contact Support
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="client.js"></script>
+
+</body>
+</html>

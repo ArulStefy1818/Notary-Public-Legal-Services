@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Stackly Legal Services</title>
+
+    <meta name="description"
+        content="Stackly Notary Public and Legal Services Admin Dashboard for managing clients, legal cases, appointments, and documents.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="npl-admin-dashboard">
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div class="npl-admin-overlay" id="nplAdminOverlay"></div>
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="npl-admin-sidebar" id="nplAdminSidebar">
+
+            <div class="npl-admin-brand">
+
+                <a href="admin.html" class="npl-admin-logo" aria-label="Stackly Legal Home">
+                    <img src="Stackly-logo-Blue.webp" alt="Stackly Legal Services">
+                </a>
+
+                <button type="button" class="npl-admin-mobile-close"
+                    id="nplAdminClose" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p class="npl-admin-sidebar-label">Workspace</p>
+
+            <nav class="npl-admin-nav" aria-label="Admin navigation">
+
+                <a href="admin.html"
+                    class="npl-admin-nav-link"
+                    aria-current="page">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-cases.html" class="npl-admin-nav-link npl-admin-active">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Legal Cases</span>
+                    <span class="npl-admin-nav-count">12</span>
+                </a>
+
+                <a href="admin-clients.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clients</span>
+                </a>
+
+                <a href="admin-appointments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="npl-admin-nav-count">5</span>
+                </a>
+
+                <a href="admin-documents.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Documents</span>
+                </a>
+
+                <p class="npl-admin-sidebar-label">Management</p>
+
+                <a href="admin-notary.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-stamp"></i>
+                    <span>Notary Services</span>
+                </a>
+
+                <a href="admin-payments.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                 
+                <p class="npl-admin-sidebar-label">Preferences</p>
+
+                <a href="admin-settings.html" class="npl-admin-nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="npl-admin-sidebar-bottom">
+
+                 <div class="npl-admin-support-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Legal Support</h4>
+                    <p>Keep your legal operations organized and your client services running smoothly.</p>
+                </div>
+
+                <a href="index.html" class="npl-admin-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="npl-admin-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="npl-admin-topbar">
+
+                <div class="npl-admin-topbar-left">
+
+                    <button type="button" class="npl-admin-menu-toggle"
+                        id="nplAdminMenuToggle"
+                        aria-label="Open navigation menu"
+                        aria-controls="nplAdminSidebar"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="npl-admin-page-heading">
+                        <h1>Admin Dashboard</h1>
+                        <p>Manage your legal services workspace</p>
+                    </div>
+
+                </div>
+
+                <div class="npl-admin-topbar-right">
+
+                    <span class="npl-admin-topbar-date" id="nplAdminDate"></span>
+
+                    <a href="404-admin.html"><button type="button" class="npl-admin-notification"
+                        aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="npl-admin-notification-dot"></span>
+                    </button></a>
+
+                    <!-- ADMIN EMAIL TOP RIGHT -->
+
+                    <div class="npl-admin-profile">
+
+                        
+<div class="npl-admin-profile-info">
+    <strong id="nplAdminUserName">Administrator</strong>
+    <a href="mailto:admin@stacklylegal.com"
+       id="nplAdminUserEmail">
+        admin@stacklylegal.com
+    </a>
+</div>
+
+                        <div class="npl-admin-avatar" aria-hidden="true">
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+<!-- =========================================
+     LEGAL CASES WORKSPACE
+========================================== -->
+
+<section class="npl-cases-workspace">
+
+    <!-- WELCOME BANNER -->
+    <div class="npl-cases-welcome">
+        <div class="npl-cases-welcome-content">
+            <span class="npl-cases-eyebrow">
+                <i class="fa-solid fa-scale-balanced"></i>
+                LEGAL OPERATIONS
+            </span>
+
+            <h2 id="nplAdminWelcomeHeading">Welcome Back, Admin</h2>
+
+            <p>
+                Track legal matters, monitor case progress, and stay
+                ahead of important client deadlines.
+            </p>
+
+            <div class="npl-cases-welcome-actions">
+                <a href="404-admin.html" class="npl-cases-primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Create New Case
+                </a>
+
+                <a href="404-admin.html" class="npl-cases-outline-btn">
+                    <i class="fa-solid fa-folder-open"></i>
+                    View All Cases
+                </a>
+            </div>
+        </div>
+
+        <div class="npl-cases-welcome-art">
+            <div class="npl-cases-art-circle">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <span class="npl-cases-art-label">JUSTICE • TRUST • SERVICE</span>
+        </div>
+    </div>
+
+    <!-- CASE STATISTICS -->
+    <div class="npl-cases-section-heading">
+        <div>
+            <span class="npl-cases-section-kicker">OVERVIEW</span>
+            <h3>Case Performance</h3>
+            <p>A snapshot of your current legal workload.</p>
+        </div>
+
+        <span class="npl-cases-period">
+            <i class="fa-regular fa-calendar"></i>
+            Current overview
+        </span>
+    </div>
+
+    <div class="npl-cases-stats-grid">
+
+        <article class="npl-cases-stat-card">
+            <div class="npl-cases-stat-top">
+                <span class="npl-cases-stat-icon npl-cases-icon-green">
+                    <i class="fa-solid fa-folder-open"></i>
+                </span>
+                <span class="npl-cases-stat-tag">All matters</span>
+            </div>
+            <h3>248</h3>
+            <p>Total Legal Cases</p>
+            <div class="npl-cases-stat-foot">
+                <i class="fa-solid fa-arrow-up"></i>
+                <span>12 added this month</span>
+            </div>
+        </article>
+
+        <article class="npl-cases-stat-card">
+            <div class="npl-cases-stat-top">
+                <span class="npl-cases-stat-icon npl-cases-icon-blue">
+                    <i class="fa-solid fa-spinner"></i>
+                </span>
+                <span class="npl-cases-stat-tag">In progress</span>
+            </div>
+            <h3>86</h3>
+            <p>Active Cases</p>
+            <div class="npl-cases-stat-foot">
+                <i class="fa-solid fa-clock"></i>
+                <span>Across all practice areas</span>
+            </div>
+        </article>
+
+        <article class="npl-cases-stat-card">
+            <div class="npl-cases-stat-top">
+                <span class="npl-cases-stat-icon npl-cases-icon-gold">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </span>
+                <span class="npl-cases-stat-tag">Needs attention</span>
+            </div>
+            <h3>14</h3>
+            <p>Upcoming Deadlines</p>
+            <div class="npl-cases-stat-foot npl-cases-foot-warning">
+                <i class="fa-solid fa-bell"></i>
+                <span>Review scheduled dates</span>
+            </div>
+        </article>
+
+        <article class="npl-cases-stat-card">
+            <div class="npl-cases-stat-top">
+                <span class="npl-cases-stat-icon npl-cases-icon-purple">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <span class="npl-cases-stat-tag">Successfully closed</span>
+            </div>
+            <h3>148</h3>
+            <p>Resolved Cases</p>
+            <div class="npl-cases-stat-foot">
+                <i class="fa-solid fa-check"></i>
+                <span>Completed matters</span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- MAIN TWO-COLUMN AREA -->
+    <div class="npl-cases-insights-grid">
+
+        <!-- CASE PROGRESS -->
+        <section class="npl-cases-panel npl-cases-progress-panel">
+
+            <div class="npl-cases-panel-heading">
+                <div>
+                    <span class="npl-cases-section-kicker">WORKLOAD</span>
+                    <h3>Case Progress</h3>
+                </div>
+                <i class="fa-solid fa-chart-pie npl-cases-heading-icon"></i>
+            </div>
+
+            <p class="npl-cases-panel-description">
+                Distribution of matters by their current stage.
+            </p>
+
+            <div class="npl-cases-progress-item">
+                <div class="npl-cases-progress-label">
+                    <span><i class="fa-solid fa-magnifying-glass"></i> Under Review</span>
+                    <strong>32%</strong>
+                </div>
+                <div class="npl-cases-progress-track">
+                    <span class="npl-cases-progress-fill npl-cases-progress-review"
+                        style="width:32%"></span>
+                </div>
+            </div>
+
+            <div class="npl-cases-progress-item">
+                <div class="npl-cases-progress-label">
+                    <span><i class="fa-solid fa-file-signature"></i> Documentation</span>
+                    <strong>26%</strong>
+                </div>
+                <div class="npl-cases-progress-track">
+                    <span class="npl-cases-progress-fill npl-cases-progress-docs"
+                        style="width:26%"></span>
+                </div>
+            </div>
+
+            <div class="npl-cases-progress-item">
+                <div class="npl-cases-progress-label">
+                    <span><i class="fa-solid fa-gavel"></i> Court Proceedings</span>
+                    <strong>24%</strong>
+                </div>
+                <div class="npl-cases-progress-track">
+                    <span class="npl-cases-progress-fill npl-cases-progress-court"
+                        style="width:24%"></span>
+                </div>
+            </div>
+
+            <div class="npl-cases-progress-item">
+                <div class="npl-cases-progress-label">
+                    <span><i class="fa-solid fa-clipboard-check"></i> Final Review</span>
+                    <strong>18%</strong>
+                </div>
+                <div class="npl-cases-progress-track">
+                    <span class="npl-cases-progress-fill npl-cases-progress-final"
+                        style="width:18%"></span>
+                </div>
+            </div>
+
+            <div class="npl-cases-progress-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Illustrative workload distribution for dashboard design.</span>
+            </div>
+
+        </section>
+
+        <!-- PRIORITY CASES -->
+        <section class="npl-cases-panel npl-cases-priority-panel">
+
+            <div class="npl-cases-panel-heading">
+                <div>
+                    <span class="npl-cases-section-kicker">ACTION REQUIRED</span>
+                    <h3>Priority Cases</h3>
+                </div>
+                <span class="npl-cases-priority-count">03</span>
+            </div>
+
+            <p class="npl-cases-panel-description">
+                Matters that may need closer attention.
+            </p>
+
+            <article class="npl-cases-priority-item">
+                <div class="npl-cases-priority-symbol npl-cases-priority-red">
+                    <i class="fa-solid fa-file-circle-exclamation"></i>
+                </div>
+                <div class="npl-cases-priority-details">
+                    <h4>Property Documentation</h4>
+                    <p>CASE-2026-104 · Client: Arun Kumar</p>
+                    <span class="npl-cases-priority-status">Documents pending</span>
+                </div>
+                <a href="404-admin.html" aria-label="View property case">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="npl-cases-priority-item">
+                <div class="npl-cases-priority-symbol npl-cases-priority-gold">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="npl-cases-priority-details">
+                    <h4>Affidavit Verification</h4>
+                    <p>CASE-2026-098 · Client: Priya S.</p>
+                    <span class="npl-cases-priority-status">Review required</span>
+                </div>
+                <a href="404-admin.html" aria-label="View affidavit case">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="npl-cases-priority-item">
+                <div class="npl-cases-priority-symbol npl-cases-priority-blue">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+                <div class="npl-cases-priority-details">
+                    <h4>Agreement Notarization</h4>
+                    <p>CASE-2026-087 · Client: R. Meena</p>
+                    <span class="npl-cases-priority-status">Awaiting signature</span>
+                </div>
+                <a href="404-admin.html" aria-label="View agreement case">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+        </section>
+
+    </div>
+
+    <!-- CASE REGISTER -->
+    <section class="npl-cases-panel npl-cases-register" id="nplCasesTable">
+
+        <div class="npl-cases-register-heading">
+            <div>
+                <span class="npl-cases-section-kicker">CASE MANAGEMENT</span>
+                <h3>Recent Legal Cases</h3>
+                <p>Review and track the latest case records.</p>
+            </div>
+
+            <a href="404-admin.html" class="npl-cases-primary-btn">
+                <i class="fa-solid fa-plus"></i>
+                Add Case
+            </a>
+        </div>
+
+        <!-- SEARCH AND FILTERS -->
+         
+
+        <div class="npl-cases-table-wrap">
+            <table class="npl-cases-table">
+                <thead>
+                    <tr>
+                        <th>Case Details</th>
+                        <th>Client</th>
+                        <th>Case Type</th>
+                        <th>Last Updated</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="nplCasesTableBody">
+
+                    <tr data-status="in progress" data-type="property">
+                        <td>
+                            <div class="npl-cases-table-case">
+                                <span class="npl-cases-table-icon">
+                                    <i class="fa-solid fa-house"></i>
+                                </span>
+                                <div>
+                                    <strong>Property Transfer</strong>
+                                    <small>CASE-2026-104</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Arun Kumar</td>
+                        <td>Property</td>
+                        <td>12 Oct 2026</td>
+                        <td><span class="npl-cases-status npl-cases-status-progress">In Progress</span></td>
+                        <td><span class="npl-cases-priority-high">High</span></td>
+                        <td>
+                            <a href="404-admin.html" class="npl-cases-action-link"
+                                aria-label="View Property Transfer case">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="under review" data-type="notary">
+                        <td>
+                            <div class="npl-cases-table-case">
+                                <span class="npl-cases-table-icon">
+                                    <i class="fa-solid fa-stamp"></i>
+                                </span>
+                                <div>
+                                    <strong>Affidavit Verification</strong>
+                                    <small>CASE-2026-098</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Priya S.</td>
+                        <td>Notary</td>
+                        <td>11 Oct 2026</td>
+                        <td><span class="npl-cases-status npl-cases-status-review">Under Review</span></td>
+                        <td><span class="npl-cases-priority-high">High</span></td>
+                        <td>
+                            <a href="404-admin.html" class="npl-cases-action-link"
+                                aria-label="View Affidavit Verification case">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="pending" data-type="family">
+                        <td>
+                            <div class="npl-cases-table-case">
+                                <span class="npl-cases-table-icon">
+                                    <i class="fa-solid fa-people-roof"></i>
+                                </span>
+                                <div>
+                                    <strong>Family Settlement Deed</strong>
+                                    <small>CASE-2026-093</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Vijay R.</td>
+                        <td>Family</td>
+                        <td>10 Oct 2026</td>
+                        <td><span class="npl-cases-status npl-cases-status-pending">Pending</span></td>
+                        <td><span class="npl-cases-priority-medium">Medium</span></td>
+                        <td>
+                            <a href="404-admin.html" class="npl-cases-action-link"
+                                aria-label="View Family Settlement case">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="in progress" data-type="corporate">
+                        <td>
+                            <div class="npl-cases-table-case">
+                                <span class="npl-cases-table-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </span>
+                                <div>
+                                    <strong>Business Agreement</strong>
+                                    <small>CASE-2026-091</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Meena Traders</td>
+                        <td>Corporate</td>
+                        <td>09 Oct 2026</td>
+                        <td><span class="npl-cases-status npl-cases-status-progress">In Progress</span></td>
+                        <td><span class="npl-cases-priority-medium">Medium</span></td>
+                        <td>
+                            <a href="404-admin.html" class="npl-cases-action-link"
+                                aria-label="View Business Agreement case">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr data-status="resolved" data-type="notary">
+                        <td>
+                            <div class="npl-cases-table-case">
+                                <span class="npl-cases-table-icon">
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </span>
+                                <div>
+                                    <strong>Power of Attorney</strong>
+                                    <small>CASE-2026-082</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>R. Meena</td>
+                        <td>Notary</td>
+                        <td>08 Oct 2026</td>
+                        <td><span class="npl-cases-status npl-cases-status-resolved">Resolved</span></td>
+                        <td><span class="npl-cases-priority-low">Low</span></td>
+                        <td>
+                            <a href="404-admin.html" class="npl-cases-action-link"
+                                aria-label="View Power of Attorney case">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="npl-cases-empty-state" id="nplCasesEmptyState" hidden>
+                <i class="fa-solid fa-folder-open"></i>
+                <h4>No matching cases found</h4>
+                <p>Try another search term or change your filters.</p>
+            </div>
+        </div>
+
+        <div class="npl-cases-table-footer">
+            <span id="nplCasesResultCount">Showing 5 cases</span>
+            <a href="404-admin.html">
+                View case register
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- DEADLINES AND QUICK ACTIONS -->
+    <div class="npl-cases-bottom-grid">
+
+        <section class="npl-cases-panel npl-cases-deadlines">
+
+            <div class="npl-cases-panel-heading">
+                <div>
+                    <span class="npl-cases-section-kicker">STAY PREPARED</span>
+                    <h3>Upcoming Deadlines</h3>
+                </div>
+                <i class="fa-regular fa-calendar-check npl-cases-heading-icon"></i>
+            </div>
+
+            <article class="npl-cases-deadline-item">
+                <div class="npl-cases-deadline-date">
+                    <strong>15</strong>
+                    <span>OCT</span>
+                </div>
+                <div class="npl-cases-deadline-info">
+                    <h4>Property Document Review</h4>
+                    <p>CASE-2026-104 · Client documentation</p>
+                </div>
+                <span class="npl-cases-deadline-dot"></span>
+            </article>
+
+            <article class="npl-cases-deadline-item">
+                <div class="npl-cases-deadline-date">
+                    <strong>17</strong>
+                    <span>OCT</span>
+                </div>
+                <div class="npl-cases-deadline-info">
+                    <h4>Affidavit Verification</h4>
+                    <p>CASE-2026-098 · Verification review</p>
+                </div>
+                <span class="npl-cases-deadline-dot"></span>
+            </article>
+
+            <article class="npl-cases-deadline-item">
+                <div class="npl-cases-deadline-date">
+                    <strong>20</strong>
+                    <span>OCT</span>
+                </div>
+                <div class="npl-cases-deadline-info">
+                    <h4>Agreement Signing</h4>
+                    <p>CASE-2026-087 · Client signature</p>
+                </div>
+                <span class="npl-cases-deadline-dot"></span>
+            </article>
+
+        </section>
+
+        <section class="npl-cases-panel npl-cases-quick-actions">
+
+            <div class="npl-cases-panel-heading">
+                <div>
+                    <span class="npl-cases-section-kicker">WORK SMARTER</span>
+                    <h3>Quick Actions</h3>
+                </div>
+                <i class="fa-solid fa-bolt npl-cases-heading-icon"></i>
+            </div>
+
+            <a href="404-admin.html" class="npl-cases-quick-action">
+                <span class="npl-cases-quick-icon">
+                    <i class="fa-solid fa-folder-plus"></i>
+                </span>
+                <span>
+                    <strong>Create a Case</strong>
+                    <small>Register a new legal matter</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="404-admin.html" class="npl-cases-quick-action">
+                <span class="npl-cases-quick-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </span>
+                <span>
+                    <strong>Manage Clients</strong>
+                    <small>Review client information</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="404-admin.html" class="npl-cases-quick-action">
+                <span class="npl-cases-quick-icon">
+                    <i class="fa-solid fa-file-circle-plus"></i>
+                </span>
+                <span>
+                    <strong>Review Documents</strong>
+                    <small>Access legal paperwork</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="404-admin.html" class="npl-cases-quick-action">
+                <span class="npl-cases-quick-icon">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </span>
+                <span>
+                    <strong>Schedule Appointment</strong>
+                    <small>Organize a client meeting</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+    </div>
+
+</section>
+
+
+</main>
+
+    </div>
+
+    <!-- =========================================
+         MOBILE SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
