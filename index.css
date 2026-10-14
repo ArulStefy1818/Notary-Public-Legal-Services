@@ -3219,7 +3219,7 @@ input:focus-visible {
             rgba(25, 48, 47, 0.78) 55%,
             rgba(25, 48, 47, 0.96) 100%
         ),
-        url("./personal-injury.webp");
+        url("personal-injury.webp");
 
     background-size: cover;
     background-position: center;
