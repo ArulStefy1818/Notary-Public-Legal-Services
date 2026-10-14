@@ -3188,32 +3188,65 @@ input:focus-visible {
    FEATURED SERVICE PANEL
 ========================================================= */
 
+/* ==========================================
+   NPL FEATURED SERVICE - BACKGROUND IMAGE
+========================================== */
+
 .npl-service-featured {
     position: relative;
+    isolation: isolate;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     min-width: 0;
-    min-height: 0;
+    min-height: 100px;
     padding: 28px 32px;
+
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
-    background: #304b4d;
+
+    background-color: #304b4d;
+
+    /* Background image with dark overlay */
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(25, 48, 47, 0.40) 0%,
+            rgba(25, 48, 47, 0.78) 55%,
+            rgba(25, 48, 47, 0.96) 100%
+        ),
+        url("./personal-injury.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     transition:
-        background 0.35s ease,
-        box-shadow 0.35s ease;
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background-position 0.5s ease;
 }
 
+/* Card Hover */
+
 .npl-service-featured:hover {
-    background: #38585a;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+    border-color: rgba(180, 147, 98, 0.65);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+    background-position: center 45%;
 }
+
+/* Service Number */
 
 .npl-service-featured-number {
     position: absolute;
     top: 2px;
     left: 24px;
+    z-index: 2;
+
     color: #ffffff;
     font-family: "Playfair Display", serif;
     font-size: 40px;
@@ -3221,28 +3254,49 @@ input:focus-visible {
     line-height: 1;
 }
 
+/* Service Icon */
+
 .npl-service-featured-icon {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 2;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 64px;
     height: 64px;
+
     border-radius: 0 0 0 17px;
     background: #b49362;
     color: #ffffff;
     font-size: 23px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
+.npl-service-featured:hover .npl-service-featured-icon {
+    background: #d9b77d;
+    color: #243b3c;
+}
+
+/* Content */
+
 .npl-service-featured-content {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
     padding-top: 30px;
 }
 
 .npl-service-featured-content h3 {
     margin: 0 0 12px;
+
     color: #ffffff;
     font-family: "Playfair Display", serif;
     font-size: 20px;
@@ -3253,26 +3307,33 @@ input:focus-visible {
 .npl-service-featured-content p {
     max-width: 600px;
     margin: 0 0 8px;
-    color: #d0d9d6;
+
+    color: #f0f2ef;
     font-size: 12px;
     line-height: 1.75;
 }
 
-/* Featured button */
+/* Read More Button */
 
 .npl-service-read-more {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 9px;
+
     min-height: 20px;
     padding: 9px 20px;
+
     border: 1px solid rgba(255, 255, 255, 0.75);
     border-radius: 30px;
+
+    background: transparent;
     color: #ffffff;
+
     font-size: 11px;
     font-weight: 700;
     text-decoration: none;
+
     transition:
         color 0.3s ease,
         background 0.3s ease,
@@ -3284,6 +3345,36 @@ input:focus-visible {
     border-color: #ffffff;
     color: #243b3c;
 }
+
+/* Mobile Responsive */
+
+@media (max-width: 576px) {
+    .npl-service-featured {
+        min-height: 300px;
+        padding: 24px 20px;
+        background-position: center;
+    }
+
+    .npl-service-featured-number {
+        left: 20px;
+        font-size: 34px;
+    }
+
+    .npl-service-featured-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-service-featured,
+    .npl-service-featured-icon,
+    .npl-service-read-more {
+        transition: none;
+    }
+}
+
 
 /* =========================================================
    LARGE DESKTOP
@@ -7297,7 +7388,132 @@ input:focus-visible {
 .npl-footer-contact-item a:hover {
     color: var(--npl-footer-gold-light);
 }
+/* ==========================================
+   NPL FOOTER CONTACT - HOVER EFFECTS
+========================================== */
 
+.npl-footer-contact-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-width: 0;
+    transition: transform 0.35s ease;
+}
+
+/* Contact Item Hover */
+.npl-footer-contact-item:hover {
+    transform: translateX(5px);
+}
+
+/* Contact Icon */
+.npl-footer-contact-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 39px;
+    height: 39px;
+
+    border: 1px solid rgba(197, 161, 107, 0.3);
+    border-radius: 9px;
+
+    background-color: rgba(197, 161, 107, 0.07);
+    color: var(--npl-footer-gold);
+
+    font-size: 15px;
+
+    transition:
+        color 0.35s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Icon Hover Animation */
+.npl-footer-contact-item:hover .npl-footer-contact-icon {
+    color: #101716;
+    background-color: var(--npl-footer-gold);
+    border-color: var(--npl-footer-gold);
+
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow: 0 6px 18px rgba(197, 161, 107, 0.2);
+}
+
+/* Contact Label */
+.npl-footer-contact-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+
+    transition: color 0.3s ease;
+}
+
+/* Label Hover */
+.npl-footer-contact-item:hover .npl-footer-contact-label {
+    color: var(--npl-footer-gold-light);
+}
+
+/* Contact Text and Links */
+.npl-footer-contact-item p,
+.npl-footer-contact-item a {
+    display: block;
+    margin: 0;
+
+    color: var(--npl-footer-text);
+    font-size: 13px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+/* Link Styling */
+.npl-footer-contact-item a {
+    width: fit-content;
+    max-width: 100%;
+    text-decoration: none;
+}
+
+/* Link Hover */
+.npl-footer-contact-item a:hover {
+    color: var(--npl-footer-gold-light);
+    letter-spacing: 0.2px;
+}
+
+/* Keyboard Accessibility */
+.npl-footer-contact-item a:focus-visible {
+    outline: 2px solid var(--npl-footer-gold);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .npl-footer-contact-item,
+    .npl-footer-contact-icon,
+    .npl-footer-contact-label,
+    .npl-footer-contact-item p,
+    .npl-footer-contact-item a {
+        transition: none;
+    }
+
+    .npl-footer-contact-item:hover,
+    .npl-footer-contact-item:hover .npl-footer-contact-icon {
+        transform: none;
+    }
+}
 .npl-footer-find-us {
     display: inline-flex;
     align-items: center;

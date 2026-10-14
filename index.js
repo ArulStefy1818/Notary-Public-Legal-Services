@@ -1416,3 +1416,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 })();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+        if (typeof AOS !== "undefined") {
+            AOS.init({
+                duration: 900,
+                once: true,
+                offset: 70,
+                easing: "ease-out-cubic",
+                mirror: false,
+                disable: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches
+            });
+        }
+    });
