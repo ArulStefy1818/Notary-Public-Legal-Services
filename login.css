@@ -281,7 +281,7 @@
             max-width: 400px;
             margin-bottom: 22px;
             font-family: "Playfair Display", serif;
-            font-size: clamp(38px, 4vw, 53px);
+            font-size: clamp(35px, 3vw, 45px);
             font-weight: 500;
             line-height: 1.2;
         }
@@ -299,43 +299,122 @@
             line-height: 1.95;
         }
 
-        .npl-auth-benefits {
-            display: grid;
-            gap: 20px;
-            margin-top: 42px;
-        }
+        /* ==========================================
+   NPL AUTH BENEFITS - HOVER EFFECTS
+========================================== */
 
-        .npl-auth-benefit {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
+.npl-auth-benefits {
+    display: grid;
+    gap: 20px;
+    margin-top: 42px;
+}
 
-        .npl-auth-benefit-icon {
-            display: flex;
-            flex: 0 0 42px;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border: 1px solid rgba(217, 183, 125, 0.4);
-            border-radius: 50%;
-            color: var(--npl-auth-gold);
-            font-size: 15px;
-        }
+.npl-auth-benefit {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 16px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: transparent;
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
 
-        .npl-auth-benefit h3 {
-            margin: 1px 0 5px;
-            color: var(--npl-auth-cream);
-            font-size: 15px;
-            font-weight: 700;
-        }
+/* Benefit card hover */
+.npl-auth-benefit:hover {
+    transform: translateX(6px);
+    background: rgba(217, 183, 125, 0.06);
+    border-color: rgba(217, 183, 125, 0.28);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
 
-        .npl-auth-benefit p {
-            color: #aebeb6;
-            font-size: 13px;
-            line-height: 1.7;
-        }
+/* Benefit icon */
+.npl-auth-benefit-icon {
+    display: flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(217, 183, 125, 0.4);
+    border-radius: 50%;
+    color: var(--npl-auth-gold);
+    font-size: 15px;
+    background: rgba(217, 183, 125, 0.04);
+    transition:
+        color 0.35s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Icon hover animation */
+.npl-auth-benefit:hover .npl-auth-benefit-icon {
+    color: #101716;
+    background: var(--npl-auth-gold);
+    border-color: var(--npl-auth-gold);
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: 0 0 18px rgba(217, 183, 125, 0.18);
+}
+
+/* Benefit heading */
+.npl-auth-benefit h3 {
+    margin: 1px 0 5px;
+    color: var(--npl-auth-cream);
+    font-size: 15px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.npl-auth-benefit:hover h3 {
+    color: var(--npl-auth-gold);
+}
+
+/* Benefit description */
+.npl-auth-benefit p {
+    margin: 0;
+    color: #aebeb6;
+    font-size: 13px;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+}
+
+.npl-auth-benefit:hover p {
+    color: #d0d9d3;
+}
+
+/* Keyboard accessibility */
+.npl-auth-benefit:focus-within {
+    outline: 2px solid var(--npl-auth-gold);
+    outline-offset: 3px;
+}
+
+/* Touch devices and reduced motion */
+@media (hover: none) {
+    .npl-auth-benefit:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .npl-auth-benefit,
+    .npl-auth-benefit-icon,
+    .npl-auth-benefit h3,
+    .npl-auth-benefit p {
+        transition: none;
+    }
+
+    .npl-auth-benefit:hover,
+    .npl-auth-benefit:hover .npl-auth-benefit-icon {
+        transform: none;
+    }
+}
 
         .npl-auth-brand-bottom {
             display: flex;
